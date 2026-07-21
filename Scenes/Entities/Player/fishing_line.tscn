@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Entities/Player/fishing_line.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/rope.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0.933333, 0.835294, 1 )
+
+[node name="line" type="Spatial"]
+script = ExtResource( 1 )
+y_drop = -1.403
+
+[node name="points" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="points"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )

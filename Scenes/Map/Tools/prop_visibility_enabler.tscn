@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Map/Tools/prop_visibility_enabler.gd" type="Script" id=1]
+
+[node name="prop_visibility_enabler" type="VisibilityNotifier"]
+script = ExtResource( 1 )
+
+[connection signal="camera_entered" from="." to="." method="_on_prop_visibility_enabler_camera_entered"]
+[connection signal="camera_exited" from="." to="." method="_on_prop_visibility_enabler_camera_exited"]

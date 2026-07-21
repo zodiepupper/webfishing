@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/World/world.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Map/main_map.tscn" type="PackedScene" id=2]
+
+[node name="world" type="ViewportContainer" groups=["world"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch = true
+script = ExtResource( 1 )
+
+[node name="Viewport" type="Viewport" parent="." groups=["world_viewport"]]
+size = Vector2( 1920, 1080 )
+handle_input_locally = false
+render_target_update_mode = 3
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+
+[node name="main" type="Spatial" parent="Viewport"]
+
+[node name="entities" type="Node" parent="Viewport/main"]
+
+[node name="map" type="Node" parent="Viewport/main"]
+
+[node name="main_map" parent="Viewport/main/map" instance=ExtResource( 2 )]
+
+[node name="track_camera" type="Node" parent="Viewport/main"]
+
+[node name="Camera" type="Camera" parent="Viewport/main/track_camera"]
+transform = Transform( -0.875987, 0.0960796, 0.472668, 0, 0.979959, -0.199197, -0.482335, -0.174494, -0.858432, 59.662, 4.147, -23.126 )
+fov = 35.0
+far = 8192.0
+
+[node name="shader_ignore" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="shader_ignore" groups=["shader_ignore"]]
+size = Vector2( 1920, 1080 )
+own_world = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="shader_ignore/Viewport"]
+fov = 50.0
+
+[node name="spawn_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="metal_spawn_timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="ambient_spawn_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="host_check_timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="ping_update" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="music_check" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="lobby_value_update" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="time_update" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="autosave_timer" type="Timer" parent="."]
+wait_time = 300.0
+autostart = true
+
+[connection signal="timeout" from="spawn_timer" to="." method="_host_spawn_object"]
+[connection signal="timeout" from="metal_spawn_timer" to="." method="_spawn_metal_spot"]
+[connection signal="timeout" from="ambient_spawn_timer" to="." method="_on_ambient_spawn_timer_timeout"]
+[connection signal="timeout" from="host_check_timer" to="." method="_on_host_check_timer_timeout"]
+[connection signal="timeout" from="ping_update" to="." method="_on_ping_update_timeout"]
+[connection signal="timeout" from="music_check" to="." method="_on_music_check_timeout"]
+[connection signal="timeout" from="lobby_value_update" to="." method="_on_lobby_value_update_timeout"]
+[connection signal="timeout" from="time_update" to="." method="_on_time_update_timeout"]
+[connection signal="timeout" from="autosave_timer" to="." method="_on_autosave_timer_timeout"]

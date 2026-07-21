@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Interactables/bait_refill.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/tan.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Materials/brown.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Materials/maroon.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Models/noticeboard.obj" type="ArrayMesh" id=5]
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1.80863, 1.84215, 1.04565 )
+
+[node name="npc_test" type="Area"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.718824, -1.25883 )
+shape = SubResource( 10 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( -0.961923, 0.0459201, -0.269436, 0, 0.985786, 0.168008, 0.273322, 0.16161, -0.948249, 1.926, 0.696, -13.241 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.348276, 0, 0, 0, 0.423166, 0, 0, 0, 0.423166, 0, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = ExtResource( 4 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 3 )

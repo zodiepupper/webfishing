@@ -1,0 +1,190 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_cosmetic_unlock.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Textures/UI/bait_icons3.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_item.gd" type="Script" id=6]
+[ext_resource path="res://Sounds/npc_voice_3.ogg" type="AudioStream" id=7]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 7 )
+
+[node name="boat_shop" type="Node"]
+script = ExtResource( 2 )
+shop_title = "dock shop"
+dialogue = true
+dialogue_open = [ "hello!!!!!", "hi!!!!", "hello there!!!!" ]
+dialogue_buy = [ "yay!!!!", "OMG thankies!!!!", "YES!!!", "YIPPIE!!" ]
+dialogue_voice = SubResource( 1 )
+
+[node name="metal" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "trinkets and treasure hunting"
+
+[node name="shop_button7" parent="metal" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 100
+item_id = "metal_detector"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button9" parent="metal" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+cost = 25
+item_require = [ "mdl_piece_watch", "mdl_piece_watch", "mdl_piece_watch" ]
+custom_warning = "[color=#d57900]Requires 3 Watch Fragments to purchase[/color]"
+cosmetic_unlock = "accessory_watch"
+
+[node name="shop_button8" parent="metal" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+cost = 25
+item_require = [ "mdl_piece_monocle", "mdl_piece_monocle", "mdl_piece_monocle" ]
+custom_warning = "[color=#d57900]Requires 3 Monocle Fragments to purchase[/color]"
+cosmetic_unlock = "accessory_monocle"
+
+[node name="shop_button10" parent="metal" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+cost = 25
+item_require = [ "mdl_piece_hat", "mdl_piece_hat", "mdl_piece_hat" ]
+custom_warning = "[color=#d57900]Requires 3 Hat Fragments to purchase[/color]"
+cosmetic_unlock = "hat_tophat"
+
+[node name="shop_button11" parent="metal" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+cost = 25
+item_require = [ "mdl_piece_sword", "mdl_piece_sword", "mdl_piece_sword" ]
+custom_warning = "[color=#d57900]Requires 3 Blade Fragments to purchase[/color]"
+cosmetic_unlock = "accessory_sword"
+
+[node name="gambling" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "gambling"
+
+[node name="shop_button20" parent="gambling" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 25
+item_id = "scratch_off"
+item_no_duplicates = false
+max_item_owned = -1
+
+[node name="shop_button21" parent="gambling" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 75
+loan_level_require = 1
+item_id = "scratch_off_2"
+item_no_duplicates = false
+max_item_owned = -1
+
+[node name="shop_button22" parent="gambling" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 350
+loan_level_require = 3
+item_id = "scratch_off_3"
+item_no_duplicates = false
+max_item_owned = -1
+
+[node name="props" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "props"
+
+[node name="shop_button20" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 100
+item_id = "prop_picnic"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button29" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 100
+item_id = "prop_beer"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button23" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 300
+loan_level_require = 1
+item_id = "prop_campfire"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button21" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 300
+loan_level_require = 1
+item_id = "prop_boombox"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button22" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 300
+loan_level_require = 1
+item_id = "prop_well"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button24" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 150
+loan_level_require = 1
+item_id = "prop_chair"
+item_no_duplicates = false
+max_item_owned = 4
+
+[node name="shop_button26" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 300
+loan_level_require = 1
+item_id = "prop_table"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button30" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 300
+loan_level_require = 1
+item_id = "prop_greenscreen"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button25" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 500
+loan_level_require = 2
+item_id = "prop_therapy_seat"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button27" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 500
+loan_level_require = 2
+item_id = "prop_toilet"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button28" parent="props" instance=ExtResource( 1 )]
+icon = ExtResource( 4 )
+script = ExtResource( 6 )
+cost = 500
+loan_level_require = 2
+item_id = "prop_whoopie"
+item_no_duplicates = true
+max_item_owned = -1

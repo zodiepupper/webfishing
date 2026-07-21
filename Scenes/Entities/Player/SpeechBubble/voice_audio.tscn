@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Entities/Player/SpeechBubble/voice_audio.gd" type="Script" id=1]
+
+[node name="voice_audio" type="AudioStreamPlayer3D"]
+unit_db = 0.3
+unit_size = 2.4
+max_db = -13.0
+pitch_scale = 1.5
+max_distance = 70.0
+script = ExtResource( 1 )
+
+[connection signal="finished" from="." to="." method="_on_voice_audio_finished"]

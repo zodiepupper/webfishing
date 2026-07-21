@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=6]
+code = "shader_type spatial;
+render_mode depth_draw_opaque;
+
+uniform vec4 color : hint_color;
+uniform float scroll_amt = 0.0;
+uniform float scroll_width = 0.5;
+uniform float bar_width = 1.0;
+
+void vertex() { 
+	
+	float a;
+	if (VERTEX.x > scroll_amt - (scroll_width/2.0)) {
+		a = scroll_amt - VERTEX.x;
+	} else {
+		a = VERTEX.x - (scroll_amt - scroll_width);
+	}
+	
+	VERTEX.z = VERTEX.z * clamp(a * bar_width, 0.0, 1.0);
+	
+}
+
+void fragment() {
+	ALBEDO = color.rgb;
+}"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 6 )
+shader_param/color = Color( 1, 0.968627, 0.921569, 1 )
+shader_param/scroll_amt = 0.0
+shader_param/scroll_width = 3.502
+shader_param/bar_width = 0.305

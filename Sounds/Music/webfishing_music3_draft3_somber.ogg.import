@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/webfishing_music3_draft3_somber.ogg-0239a1ab40efd7bf4469ab23e6ad113c.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/webfishing_music3_draft3_somber.ogg"
+dest_files=[ "res://.import/webfishing_music3_draft3_somber.ogg-0239a1ab40efd7bf4469ab23e6ad113c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

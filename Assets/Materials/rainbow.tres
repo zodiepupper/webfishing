@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=9]
+code = "shader_type spatial;
+
+uniform float sin_frequency : hint_range(0.1, 2.0) = 0.04;  
+uniform float sin_offset : hint_range(0.0, 360.0) = 0.0;  
+uniform float light_offset : hint_range(0.0, 1.0) = 0.5;
+
+void fragment() { 
+	vec4 animated_line_color = vec4(light_offset + sin(2.0*3.14*sin_frequency*TIME),
+							   light_offset + sin(2.0*3.14*sin_frequency*TIME + radians(120.0)),
+							   light_offset + sin(2.0*3.14*sin_frequency*TIME + radians(240.0)),
+							   1.0);
+	
+	ALBEDO.rgb = animated_line_color.rgb;
+}"
+
+[resource]
+shader = SubResource( 9 )
+shader_param/sin_frequency = 0.04
+shader_param/sin_offset = 0.0
+shader_param/light_offset = 0.5

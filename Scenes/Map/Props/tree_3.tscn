@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Placeholder/tree_3.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Materials/very_dark_brown.tres" type="Material" id=2]
+[ext_resource path="res://Scenes/Map/Props/prop.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Map/Props/prop_shadow.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform vec4 albedo : hint_color;
+uniform float wobble_speed = 1.0;
+uniform float wobble_amt = 1.0;
+
+void vertex() {
+	VERTEX.x += sin(TIME * VERTEX.x * wobble_speed) * wobble_amt;
+	VERTEX.y += sin(TIME * VERTEX.y * wobble_speed) * wobble_amt;
+	VERTEX.z += sin(TIME * VERTEX.z * wobble_speed) * wobble_amt;
+}
+
+void fragment() {
+	ALBEDO = albedo.rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/albedo = Color( 0.258824, 0.356863, 0.207843, 1 )
+shader_param/wobble_speed = 0.15
+shader_param/wobble_amt = 0.05
+
+[sub_resource type="CylinderShape" id=3]
+
+[node name="tree_3" type="Spatial"]
+script = ExtResource( 4 )
+cull_max_range = 150
+premade_cull_vis = NodePath("VisibilityNotifier")
+nudge = -0.06
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93568, 0 )
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+material/1 = SubResource( 2 )
+
+[node name="shadow" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0.071, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 0.54347, 0, 0, 0, 2.10395, 0, 0, 0, 0.54347, 0.0160812, 2.12052, 0 )
+shape = SubResource( 3 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.66322, 0 )
+aabb = AABB( -2.04645, -4.97461, -2.21089, 4.0929, 9.94922, 4.42177 )

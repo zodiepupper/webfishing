@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/HUD/Shop/sell_all_button.gd" type="Script" id=1]
+
+[node name="sell_all_container" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="sell_all" type="Button" parent="Control"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.7
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "sell all"
+
+[connection signal="pressed" from="Control/sell_all" to="." method="_on_sell_all_pressed"]

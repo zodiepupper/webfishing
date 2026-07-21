@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/geiger.wav-fb72c9bae88674bfe27eb74d4b367aff.sample"
+
+[deps]
+
+source_file="res://Sounds/geiger.wav"
+dest_files=[ "res://.import/geiger.wav-fb72c9bae88674bfe27eb74d4b367aff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

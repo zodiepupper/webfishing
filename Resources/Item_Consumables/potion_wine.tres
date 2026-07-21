@@ -1,0 +1,44 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ItemMeshes/Drinks/drink_wine.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Textures/Items/toolicons16.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Red Carp-ernet Sauvignon Wine"
+item_description = "For those special occasions!"
+catch_blurb = ""
+item_is_hidden = false
+icon = ExtResource( 3 )
+show_item = false
+item_scene = ExtResource( 2 )
+show_scene = true
+uses_size = false
+action = "_consume_item"
+action_params = [ "beer_big" ]
+release_action = ""
+prop_code = ""
+help_text = ""
+arm_value = 0.3
+hold_offset = 0.0
+unselectable = false
+unrenamable = false
+category = "tool"
+alive = true
+tier = 0
+catch_difficulty = 1.0
+catch_speed = 120.0
+loot_table = "none"
+loot_weight = 1.0
+average_size = 1.0
+sell_value = 5
+sell_multiplier = 1.0
+obtain_xp = 30
+generate_worth = true
+can_be_sold = false
+rare = false
+stackable = true
+max_stacks = 99
+show_bait = false
+detect_item = false

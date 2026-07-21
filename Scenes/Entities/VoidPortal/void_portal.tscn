@@ -1,0 +1,193 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/Entities/VoidPortal/void_portal.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/disk.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Scenes/Map/Tools/transition_zone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Shaders/interior_placeholder4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/circle_fade.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Shaders/interior_placeholder5.png" type="Texture" id=6]
+[ext_resource path="res://Sounds/howling_wind.ogg" type="AudioStream" id=7]
+
+[sub_resource type="Shader" id=14]
+code = "shader_type spatial;
+//render_mode unshaded;
+
+uniform vec2 rooms = vec2(1, 1);
+uniform float room_seed :hint_range(0.0, 999.0, 1.0) = 0.0;
+uniform vec2 atlas_rooms = vec2(1, 1);
+uniform float depth :hint_range(0.0, 1.0)= 0.5;
+uniform float emission_cutoff :hint_range(0.0, 1.0) = 0.5;
+uniform float emission_strength :hint_range(0.0, 10.0) = 1.0;
+uniform sampler2D room_texture :hint_white;
+uniform sampler2D room_emit_texture :hint_black;
+uniform sampler2D emission_texture :hint_black;
+
+varying vec3 tangent_view_dir;
+
+// psuedo random with float input
+vec2 f_random(float co){
+	return fract(sin((co + room_seed) * vec2(12.9898,78.233)) * 43758.5453);
+}
+
+void vertex(){
+	// scale the UVs by the amount of rooms
+	UV = UV*rooms;
+	
+	// Get camera position in World space coordinates
+	vec3 cam_pos = (inverse(MODELVIEW_MATRIX) * vec4(0, 0, 0, 1)).xyz; //object space
+	vec3 view_dir = VERTEX - cam_pos;
+	vec3 bitangent = normalize(cross(TANGENT, NORMAL));
+
+	// get tangent space camera vector
+	tangent_view_dir = vec3(
+		dot(view_dir, TANGENT),
+		dot(view_dir, bitangent),
+		dot(view_dir, NORMAL)
+	);
+	
+	VERTEX.x += sin(TIME+VERTEX.z*0.2*VERTEX.z)*VERTEX.z*0.04;
+	VERTEX.z += sin((TIME+200.0)*0.2*VERTEX.x)*VERTEX.x*0.04;
+}
+
+void fragment () {
+	// room uvs
+	vec2 room_uv = fract(UV);
+	vec2 room_index_uv = floor(UV);
+
+	// randomize the rooms
+	vec2 n = floor(f_random(room_index_uv.x + room_index_uv.y * (room_index_uv.x + 1.0)) * atlas_rooms);
+	room_index_uv += n;
+
+	// get room depth from room atlas alpha else use the Depth paramater
+	float far_frac = textureLod(room_texture, (room_index_uv+0.5)/atlas_rooms, 0.0).a;
+	if (far_frac == 1.0) far_frac = depth;
+
+	float depth_scale = 1.0 / (1.0 - far_frac) - 1.0;
+
+	// raytrace box from view dir
+	vec3 pos = vec3(room_uv * 2.0 - 1.0, -1.0);
+	vec3 _tangent_view_dir = tangent_view_dir;
+	_tangent_view_dir.z *= -depth_scale;
+	vec3 id = 1.0 / _tangent_view_dir;
+	vec3 k = abs(id) - pos * id;
+	float k_min = min(min(k.x, k.y), k.z);
+	pos += k_min * _tangent_view_dir;
+
+	// 0.0 - 1.0 room depth
+	float interp = pos.z * 0.5 + 0.5;
+
+	// account for perspective in \"room\" textures
+	// assumes camera with an fov of 53.13 degrees (atan(0.5))
+	float real_z = clamp(interp, 0.0, 1.0) / depth_scale + 1.0;
+	interp = 1.0 - (1.0 / real_z);
+	interp *= depth_scale + 1.0;
+
+	// iterpolate from wall back to near wall
+	vec2 interior_uv = pos.xy * mix(1.0, far_frac, interp);
+	interior_uv = interior_uv * 0.5 + 0.5;
+
+	// sample room atlas texture
+	vec2 uv = (room_index_uv + interior_uv) / atlas_rooms;
+	vec3 room = texture(room_texture, uv).rgb;
+
+	// final result
+	ALBEDO = room; // * (1.0 - is_emit);
+}"
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = SubResource( 14 )
+shader_param/rooms = Vector2( 1, 1 )
+shader_param/room_seed = 0.0
+shader_param/atlas_rooms = Vector2( 1, 1 )
+shader_param/depth = 0.5
+shader_param/emission_cutoff = 0.5
+shader_param/emission_strength = 1.0
+shader_param/room_texture = ExtResource( 4 )
+shader_param/room_emit_texture = ExtResource( 6 )
+
+[sub_resource type="SphereShape" id=16]
+
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.515982, 0.434091 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 2
+emission_box_extents = Vector3( 3, 1, 3 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.5
+initial_velocity_random = 1.0
+scale = 0.33
+scale_random = 0.62
+scale_curve = SubResource( 13 )
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.0196078, 0.0431373, 0.0823529, 1 )
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
+
+[node name="void_portal" type="KinematicBody" groups=["void_portal"]]
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+decay = true
+decay_timer = 36000
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.052, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 15 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 0.498488, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 5 )
+disabled = true
+
+[node name="hub_use" parent="." instance=ExtResource( 3 )]
+text = "ENTER...?"
+zone_id = "void_zone"
+spawn_id = "void_entrance"
+use_text = "[color=#4a2c4a]you feel a light breeze...[/color]"
+
+[node name="CollisionShape" type="CollisionShape" parent="hub_use"]
+transform = Transform( 0.619033, 0, 0, 0, 0.619033, 0, 0, 0, 0.619033, 0, 0.229347, 0 )
+shape = SubResource( 6 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617171, 0 )
+lifetime = 6.0
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )
+
+[node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.946636, 0 )
+enabled = true
+cast_to = Vector3( 0, -10, 0 )
+
+[node name="wind" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 7 )
+unit_db = 2.0
+unit_size = 3.5
+max_db = -3.0
+autoplay = true
+max_distance = 30.0
+bus = "LightDoppler"

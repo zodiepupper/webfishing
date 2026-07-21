@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Materials/tan.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Materials/maroon.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Models/boxingglove.obj" type="ArrayMesh" id=4]
+
+[node name="tool_boxingglove" type="Spatial"]
+script = ExtResource( 2 )
+hotspot_node = NodePath("Position3D")
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( -0.136603, -0.0615887, 0.00681991, -0.026763, 0.0735307, 0.127973, 0.0558876, -0.115326, 0.077952, -0.061, 0.011, -0.002 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 1 )
+
+[node name="Position3D" type="Position3D" parent="."]

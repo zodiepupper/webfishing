@@ -1,0 +1,1477 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Textures/UI/bait_icons3.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_cosmetic_unlock.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_item.gd" type="Script" id=6]
+[ext_resource path="res://Sounds/npc_voice_4.ogg" type="AudioStream" id=7]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 7 )
+
+[node name="test_shop" type="Node"]
+script = ExtResource( 2 )
+shop_title = "general store"
+dialogue = true
+dialogue_open = [ "buy something... or whatever...", "you should really think about buying new clothes...", "you should buy something... or dont i dont care" ]
+dialogue_buy = [ "thanks! I mean-... ugh... thanks...", "cool", "sick", "sweet", "i like that one too" ]
+dialogue_voice = SubResource( 1 )
+
+[node name="face" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "face"
+
+[node name="shop_button9" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "nose_pierced"
+
+[node name="shop_button15" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "nose_button"
+
+[node name="shop_button23" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "nose_nostril"
+
+[node name="shop_button24" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "nose_long"
+
+[node name="shop_button42" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "nose_clown"
+
+[node name="shop_button10" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_grin"
+
+[node name="shop_button11" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_happy"
+
+[node name="shop_button16" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_distraught"
+
+[node name="shop_button17" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_bucktoothed"
+
+[node name="shop_button25" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_toothier"
+
+[node name="shop_button26" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_sabertooth"
+
+[node name="shop_button28" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_hymn"
+
+[node name="shop_button36" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_braces"
+
+[node name="shop_button37" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_fangs"
+
+[node name="shop_button38" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_bite"
+
+[node name="shop_button39" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_drool"
+
+[node name="shop_button40" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "mouth_jaws"
+
+[node name="shop_button45" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "mouth_fishy"
+
+[node name="shop_button13" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "eye_angry"
+
+[node name="shop_button14" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "eye_sad"
+
+[node name="shop_button18" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_froggy"
+
+[node name="shop_button19" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_glare"
+
+[node name="shop_button20" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_haunted"
+
+[node name="shop_button21" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_possessed"
+
+[node name="shop_button22" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_distraught"
+
+[node name="shop_button27" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_goat"
+
+[node name="shop_button29" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_inverted"
+
+[node name="shop_button30" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_squared"
+
+[node name="shop_button31" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_starlight"
+
+[node name="shop_button32" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_harper"
+
+[node name="shop_button33" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_lenny"
+
+[node name="shop_button34" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_fierce"
+
+[node name="shop_button35" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_wings"
+
+[node name="shop_button41" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_almond"
+
+[node name="shop_button43" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_catsoup"
+
+[node name="shop_button44" parent="face" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "eye_dispondant"
+
+[node name="hats" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "hats"
+
+[node name="shop_button9" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_green"
+
+[node name="shop_button10" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_missing"
+
+[node name="shop_button11" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_orange"
+
+[node name="shop_button12" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_size"
+
+[node name="shop_button13" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_big"
+
+[node name="shop_button21" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_mcd"
+
+[node name="shop_button23" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_sports"
+
+[node name="shop_button22" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_pee"
+
+[node name="shop_button24" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "hat_baseball_cap_exclaim"
+
+[node name="shop_button14" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "hat_beanie_black"
+
+[node name="shop_button15" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "hat_beanie_blue"
+
+[node name="shop_button16" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "hat_beanie_green"
+
+[node name="shop_button17" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "hat_beanie_maroon"
+
+[node name="shop_button18" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "hat_beanie_teal"
+
+[node name="shop_button19" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "hat_beanie_white"
+
+[node name="shop_button20" parent="hats" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "hat_beanie_yellow"
+
+[node name="tshirts" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "tshirts"
+
+[node name="shop_button9" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_white"
+
+[node name="shop_button10" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_tan"
+
+[node name="shop_button11" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_brown"
+
+[node name="shop_button12" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_red"
+
+[node name="shop_button13" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_maroon"
+
+[node name="shop_button14" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_salmon"
+
+[node name="shop_button15" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_olive"
+
+[node name="shop_button16" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_green"
+
+[node name="shop_button17" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_blue"
+
+[node name="shop_button18" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_grey"
+
+[node name="shop_button19" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_purple"
+
+[node name="shop_button21" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_yellow"
+
+[node name="shop_button22" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_orange"
+
+[node name="shop_button20" parent="tshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tshirt_black"
+
+[node name="graphic_ts" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "graphic tshirts"
+
+[node name="shop_button9" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "undershirt_graphic_tshirt_goodboy"
+
+[node name="shop_button10" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "undershirt_graphic_tshirt_hooklite"
+
+[node name="shop_button11" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "undershirt_graphic_tshirt_smokemon"
+
+[node name="shop_button12" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "undershirt_graphic_tshirt_soscary"
+
+[node name="shop_button13" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "undershirt_graphic_tshirt_nobait"
+
+[node name="shop_button14" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "undershirt_graphic_tshirt_anchor"
+
+[node name="shop_button15" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_gay"
+
+[node name="shop_button16" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_bi"
+
+[node name="shop_button17" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_pan"
+
+[node name="shop_button18" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_trans"
+
+[node name="shop_button19" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_ace"
+
+[node name="shop_button20" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_lesbian"
+
+[node name="shop_button21" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_mlm"
+
+[node name="shop_button22" parent="graphic_ts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_graphic_tshirt_nonbinary"
+
+[node name="tanktops" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "tanktops"
+
+[node name="shop_button9" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_black"
+
+[node name="shop_button10" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_blue"
+
+[node name="shop_button11" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_brown"
+
+[node name="shop_button12" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_green"
+
+[node name="shop_button13" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_grey"
+
+[node name="shop_button14" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_maroon"
+
+[node name="shop_button15" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_olive"
+
+[node name="shop_button16" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_orange"
+
+[node name="shop_button17" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_purple"
+
+[node name="shop_button18" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_red"
+
+[node name="shop_button19" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_salmon"
+
+[node name="shop_button20" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_tan"
+
+[node name="shop_button21" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_teal"
+
+[node name="shop_button22" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_white"
+
+[node name="shop_button23" parent="tanktops" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 25
+cosmetic_unlock = "undershirt_tanktop_yellow"
+
+[node name="pants" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "pants and shorts"
+
+[node name="shop_button9" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_black"
+
+[node name="shop_button10" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_blue"
+
+[node name="shop_button11" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_brown"
+
+[node name="shop_button12" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_green"
+
+[node name="shop_button13" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_grey"
+
+[node name="shop_button14" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_maroon"
+
+[node name="shop_button15" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_olive"
+
+[node name="shop_button16" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_orange"
+
+[node name="shop_button17" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_purple"
+
+[node name="shop_button18" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_red"
+
+[node name="shop_button19" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_salmon"
+
+[node name="shop_button20" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_tan"
+
+[node name="shop_button21" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_teal"
+
+[node name="shop_button22" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_white"
+
+[node name="shop_button23" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_long_yellow"
+
+[node name="shop_button24" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_black"
+
+[node name="shop_button25" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_blue"
+
+[node name="shop_button26" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_brown"
+
+[node name="shop_button27" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_green"
+
+[node name="shop_button28" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_grey"
+
+[node name="shop_button29" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_maroon"
+
+[node name="shop_button30" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_olive"
+
+[node name="shop_button31" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_orange"
+
+[node name="shop_button32" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_purple"
+
+[node name="shop_button33" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_red"
+
+[node name="shop_button34" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_salmon"
+
+[node name="shop_button35" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_tan"
+
+[node name="shop_button36" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_teal"
+
+[node name="shop_button37" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_white"
+
+[node name="shop_button38" parent="pants" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "legs_pants_short_yellow"
+
+[node name="flannels" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "flannels"
+loan_level_lock = 1
+
+[node name="shop_button9" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_red"
+
+[node name="shop_button10" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_white"
+
+[node name="shop_button11" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_teal"
+
+[node name="shop_button12" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_green"
+
+[node name="shop_button13" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_olive"
+
+[node name="shop_button14" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_yellow"
+
+[node name="shop_button15" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_blue"
+
+[node name="shop_button16" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_salmon"
+
+[node name="shop_button17" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_purple"
+
+[node name="shop_button18" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_closed_black"
+
+[node name="shop_button19" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_red"
+
+[node name="shop_button20" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_white"
+
+[node name="shop_button21" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_teal"
+
+[node name="shop_button22" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_green"
+
+[node name="shop_button23" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_olive"
+
+[node name="shop_button24" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_yellow"
+
+[node name="shop_button25" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_blue"
+
+[node name="shop_button26" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_salmon"
+
+[node name="shop_button27" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_purple"
+
+[node name="shop_button28" parent="flannels" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_flannel_open_black"
+
+[node name="sweatshirts" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "hoodies"
+loan_level_lock = 1
+
+[node name="shop_button9" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_black"
+
+[node name="shop_button10" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_blue"
+
+[node name="shop_button11" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_brown"
+
+[node name="shop_button12" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_green"
+
+[node name="shop_button13" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_grey"
+
+[node name="shop_button14" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_maroon"
+
+[node name="shop_button15" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_olive"
+
+[node name="shop_button16" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_orange"
+
+[node name="shop_button17" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_purple"
+
+[node name="shop_button18" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_red"
+
+[node name="shop_button19" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_salmon"
+
+[node name="shop_button20" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_tan"
+
+[node name="shop_button21" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_teal"
+
+[node name="shop_button22" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_white"
+
+[node name="shop_button23" parent="sweatshirts" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+loan_level_require = 1
+cosmetic_unlock = "overshirt_sweatshirt_yellow"
+
+[node name="accessories" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "accessories"
+
+[node name="shop_button18" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 50
+cosmetic_unlock = "accessory_glasses"
+
+[node name="shop_button17" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 100
+cosmetic_unlock = "accessory_glasses_round"
+
+[node name="shop_button9" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 150
+cosmetic_unlock = "accessory_rain_boots_yellow"
+
+[node name="shop_button11" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 500
+cosmetic_unlock = "accessory_collar"
+
+[node name="shop_button10" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 550
+cosmetic_unlock = "accessory_collar_bell"
+
+[node name="shop_button12" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 500
+cosmetic_unlock = "accessory_shades"
+
+[node name="shop_button15" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 150
+cosmetic_unlock = "accessory_cig"
+
+[node name="shop_button16" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 200
+cosmetic_unlock = "accessory_hook"
+
+[node name="shop_button20" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 250
+cosmetic_unlock = "accessory_bandaid"
+
+[node name="shop_button21" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 200
+cosmetic_unlock = "accessory_antlers"
+
+[node name="shop_button13" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 5000
+loan_level_require = 3
+cosmetic_unlock = "accessory_heart_particles"
+
+[node name="shop_button14" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 5000
+loan_level_require = 3
+cosmetic_unlock = "accessory_stink_particles"
+
+[node name="shop_button19" parent="accessories" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 5000
+loan_level_require = 3
+cosmetic_unlock = "accessory_sparkle_particles"
+
+[node name="misc" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "misc"
+
+[node name="shop_button8" parent="misc" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 100
+item_id = "boxing_glove"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button10" parent="misc" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 5000
+loan_level_require = 2
+item_id = "boxing_glove_super"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button13" parent="misc" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 500
+item_id = "hand_labeler"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button9" parent="misc" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 500
+loan_level_require = 1
+cosmetic_unlock = "overshirt_overall_yellow"
+
+[node name="shop_button11" parent="misc" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 500
+loan_level_require = 1
+cosmetic_unlock = "overshirt_labcoat"
+
+[node name="shop_button12" parent="misc" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 500
+loan_level_require = 1
+cosmetic_unlock = "overshirt_trenchcoat"
+
+[node name="shop_button7" parent="misc" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 1000
+item_id = "ringbox"
+item_no_duplicates = false
+max_item_owned = -1
+
+[node name="bobbers" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "bobbers"
+loan_level_lock = 1
+
+[node name="shop_button18" parent="bobbers" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 500
+loan_level_require = 1
+cosmetic_unlock = "bobber_slip"
+
+[node name="shop_button19" parent="bobbers" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 1500
+loan_level_require = 2
+cosmetic_unlock = "bobber_ducky"
+
+[node name="shop_button20" parent="bobbers" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 1500
+loan_level_require = 2
+cosmetic_unlock = "bobber_lilypad"
+
+[node name="shop_button21" parent="bobbers" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 1500
+loan_level_require = 2
+cosmetic_unlock = "bobber_bomb"
+
+[node name="titles" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "titles"
+
+[node name="shop_button9" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_sillyguy"
+
+[node name="shop_button10" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_littlelad"
+
+[node name="shop_button11" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_soggy"
+
+[node name="shop_button12" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_stinkerdinker"
+
+[node name="shop_button13" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_iscool"
+
+[node name="shop_button14" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_gay"
+
+[node name="shop_button15" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_ace"
+
+[node name="shop_button16" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_bi"
+
+[node name="shop_button17" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_pan"
+
+[node name="shop_button18" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_trans"
+
+[node name="shop_button19" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_queer"
+
+[node name="shop_button25" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_lesbian"
+
+[node name="shop_button31" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_nonbinary"
+
+[node name="shop_button20" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_equalsthree"
+
+[node name="shop_button21" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_yapper"
+
+[node name="shop_button22" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_goober"
+
+[node name="shop_button23" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_puppy"
+
+[node name="shop_button24" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_kitten"
+
+[node name="shop_button26" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_goodboy"
+
+[node name="shop_button27" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_goodgirl"
+
+[node name="shop_button29" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_creature"
+
+[node name="shop_button30" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 75
+cosmetic_unlock = "title_cryptid"
+
+[node name="shop_button28" parent="titles" instance=ExtResource( 1 )]
+icon = ExtResource( 3 )
+script = ExtResource( 4 )
+cost = 9999
+cosmetic_unlock = "title_straight"
+
+[node name="chalk" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "chalk"
+
+[node name="shop_button7" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 25
+item_id = "chalk_white"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button8" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 25
+item_id = "chalk_black"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button9" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 25
+item_id = "chalk_red"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button10" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 25
+item_id = "chalk_blue"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button11" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 25
+item_id = "chalk_yellow"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button14" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 25
+item_id = "chalk_green"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button12" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 25
+item_id = "chalk_eraser"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button13" parent="chalk" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 2000
+item_id = "chalk_special"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="instruments" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "instruments"
+
+[node name="shop_button7" parent="instruments" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 250
+item_id = "guitar"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button8" parent="instruments" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 400
+item_id = "guitar_gradient"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button9" parent="instruments" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 400
+item_id = "guitar_stickers"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button10" parent="instruments" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 400
+item_id = "guitar_black"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button11" parent="instruments" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 400
+item_id = "guitar_pink"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button12" parent="instruments" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 9999
+loan_level_require = 3
+item_id = "guitar_gold"
+item_no_duplicates = true
+max_item_owned = -1
+
+[node name="shop_button13" parent="instruments" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 150
+item_id = "tambourine"
+item_no_duplicates = true
+max_item_owned = -1

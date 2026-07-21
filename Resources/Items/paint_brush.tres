@@ -1,0 +1,43 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Items/toolicons5.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Paint Brush"
+item_description = "Bring out your inner artist!"
+catch_blurb = ""
+item_is_hidden = false
+icon = ExtResource( 2 )
+show_item = true
+show_scene = false
+uses_size = false
+action = ""
+action_params = [  ]
+release_action = ""
+prop_code = ""
+help_text = ""
+arm_value = 0.0
+hold_offset = 0.0
+unselectable = true
+unrenamable = false
+category = "tool"
+alive = true
+tier = 0
+catch_difficulty = 1.0
+catch_speed = 120.0
+loot_table = "lake"
+loot_weight = 1.0
+average_size = 1.0
+sell_value = 5
+sell_multiplier = 1.0
+obtain_xp = 30
+generate_worth = true
+can_be_sold = false
+rare = false
+stackable = false
+max_stacks = 99
+unobtainable = true
+show_bait = false
+detect_item = false

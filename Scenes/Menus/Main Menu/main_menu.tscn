@@ -1,0 +1,1338 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Scenes/Menus/Main Menu/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
+[ext_resource path="res://Scenes/World/world.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Textures/UI/logo2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Themes/button_tan_normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Themes/button_tan_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://Assets/Themes/button_tan_hover.tres" type="StyleBox" id=7]
+[ext_resource path="res://Assets/Themes/accid___.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Textures/UI/lamdev.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=11]
+[ext_resource path="res://Assets/Textures/UI/knot_sep2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=13]
+[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Textures/UI/loading_dial.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Menus/Main Menu/save_select.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Menus/Main Menu/PlayercountDial/playercount_dial.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Textures/UI/player_options5.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Menus/Main Menu/lobby_tag.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=20]
+
+[sub_resource type="Gradient" id=4]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.597668 )
+colors = PoolColorArray( 1, 0.933333, 0.835294, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 4 )
+fill_to = Vector2( 0, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 34
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.803922, 0.0156863, 0.384314, 1 )
+border_color = Color( 0.835294, 0.666667, 0.45098, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.67451, 0, 0.160784, 1 )
+border_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.803922, 0.0156863, 0.384314, 1 )
+border_color = Color( 0.835294, 0.666667, 0.45098, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.67451, 0, 0.160784, 1 )
+border_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="world" parent="." instance=ExtResource( 3 )]
+backdrop = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.164706 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 3 )
+expand = true
+stretch_mode = 1
+flip_v = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.441
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.4
+anchor_top = 0.61
+anchor_right = 0.6
+anchor_bottom = 0.825
+custom_constants/separation = 8
+alignment = 2
+
+[node name="create_game" type="Button" parent="VBoxContainer"]
+margin_right = 384.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Create Game"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="VBoxContainer/create_game"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "[color=#6a4420]Create Game"
+body = "Create your own lobby!"
+
+[node name="join_game" type="Button" parent="VBoxContainer"]
+margin_top = 60.0
+margin_right = 384.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Join Game"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="VBoxContainer/join_game"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "[color=#6a4420]Join Game"
+body = "Join someone else's lobby!"
+
+[node name="settings" type="Button" parent="VBoxContainer"]
+margin_top = 120.0
+margin_right = 384.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Settings"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="VBoxContainer/settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "[color=#6a4420]Settings"
+body = "Tweak stuff to your liking!"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+margin_top = 180.0
+margin_right = 384.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Quit"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="VBoxContainer/quit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "[color=#6a4420]Quit"
+body = "it's fine. yeah, no- you can leave. i dont care. go on then. go."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.753646
+anchor_top = 0.946296
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -16.0
+margin_bottom = -16.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 252.0
+margin_top = 4.0
+margin_right = 410.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+text = "lamedeveloper"
+align = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_left = 414.0
+margin_right = 456.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 42, 42 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="save_select_button" type="Button" parent="."]
+anchor_left = 0.95
+anchor_top = 0.0222222
+anchor_right = 0.989
+anchor_bottom = 0.0882222
+margin_right = -2.88
+margin_bottom = 0.720001
+icon = ExtResource( 18 )
+icon_align = 1
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TooltipNode" type="Control" parent="save_select_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Change Save"
+body = "Change & manage your loaded save files."
+
+[node name="create_lobby_menu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="create_lobby_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+
+[node name="Panel" type="Panel" parent="create_lobby_menu"]
+anchor_left = 0.2
+anchor_top = 0.34
+anchor_right = 0.8
+anchor_bottom = 0.66
+
+[node name="close" type="Button" parent="create_lobby_menu/Panel"]
+anchor_left = 0.974826
+anchor_top = -0.0360082
+anchor_right = 1.01653
+anchor_bottom = 0.085
+margin_right = -0.0402832
+margin_bottom = 2.952
+text = "X"
+script = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="create_lobby_menu/Panel"]
+anchor_left = 0.014
+anchor_top = 0.0337449
+anchor_right = 1.0
+anchor_bottom = 0.121193
+margin_top = 3.6502
+margin_right = -0.000244141
+margin_bottom = 7.84772
+text = "Create Game"
+
+[node name="sep" type="TextureRect" parent="create_lobby_menu/Panel"]
+anchor_top = 0.0380659
+anchor_right = 1.0
+anchor_bottom = 0.12037
+margin_top = 3.47736
+margin_bottom = 7.42798
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="create_lobby_menu/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 64.0
+margin_right = -24.0
+margin_bottom = -24.0
+custom_styles/panel = ExtResource( 11 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="create_lobby_menu/Panel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_constants/separation = 12
+
+[node name="display_name" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
+margin_right = 1072.0
+margin_bottom = 34.0
+
+[node name="Label" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name"]
+margin_right = 258.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Lobby Display Name: "
+valign = 1
+
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Lobby Display Name"
+body = "Set the lobby name that all players can visually see!"
+
+[node name="lobbyname" type="LineEdit" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name"]
+unique_name_in_owner = true
+margin_left = 262.0
+margin_right = 1072.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 12.5
+max_length = 40
+placeholder_text = "[player lobby name]"
+script = ExtResource( 14 )
+
+[node name="lobby_type" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
+margin_top = 46.0
+margin_right = 1072.0
+margin_bottom = 80.0
+
+[node name="type" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type"]
+margin_right = 799.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.16
+text = "Type: "
+valign = 1
+
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type/type"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Lobby Type"
+body = "Choose how the lobby operates.
+[color=#6a4420]PUBLIC[/color]: Public and visible in the Game Browser for all to join.
+[color=#6a4420]UNLISTED[/color]: Public, but not visible in the Game Browser, while still allowing players to join via code and game invites.
+[color=#6a4420]PRIVATE[/color]: Private lobby, only players directly invited may join.
+[color=#6a4420]OFFLINE[/color]: Start a game alone, with players unable to join you."
+
+[node name="serv_options" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type"]
+unique_name_in_owner = true
+margin_left = 803.0
+margin_right = 1072.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.39
+script = ExtResource( 14 )
+
+[node name="max_players" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
+margin_top = 92.0
+margin_right = 1072.0
+margin_bottom = 126.0
+
+[node name="maxplayerslabel" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players"]
+margin_right = 796.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.94
+text = "Max Players: "
+valign = 1
+
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players/maxplayerslabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Max Players"
+body = "Maximum player count for your lobby."
+
+[node name="max_players" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players"]
+unique_name_in_owner = true
+margin_left = 800.0
+margin_right = 1072.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+script = ExtResource( 14 )
+
+[node name="players_request" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
+margin_top = 138.0
+margin_right = 1072.0
+margin_bottom = 172.0
+
+[node name="players_request" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request"]
+margin_right = 796.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.94
+text = "Request To Join: "
+valign = 1
+
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request/players_request"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Request To Join"
+body = "Choose whether or not players must request your permission to enter your lobby.
+[color=#6a4420]AUTOMATIC:[/color] Players are automatically accepted into your lobby, unless banned or blocked.
+[color=#6a4420]MANUAL:[/color] Players send you a request to join, and you may accept or deny this before they enter."
+
+[node name="players_request2" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request"]
+unique_name_in_owner = true
+margin_left = 800.0
+margin_right = 1072.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+script = ExtResource( 14 )
+
+[node name="social_tags" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
+margin_top = 184.0
+margin_right = 1072.0
+margin_bottom = 218.0
+
+[node name="tags" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags"]
+margin_right = 796.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.94
+text = "Social Tags: "
+valign = 1
+
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags/tags"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Social Tags"
+body = "Optional tags for your lobby to assist with filtering."
+
+[node name="Button" type="Button" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags"]
+margin_left = 800.0
+margin_right = 1072.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0 Tags Selected"
+script = ExtResource( 14 )
+
+[node name="Button" type="Button" parent="create_lobby_menu/Panel/Panel"]
+anchor_left = 0.818384
+anchor_top = 0.943198
+anchor_right = 1.03308
+anchor_bottom = 1.16721
+margin_left = -0.495972
+margin_top = -0.0216827
+margin_right = -0.52002
+margin_bottom = -0.0495911
+text = "Create Game"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="create_lobby_tag_menu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="create_lobby_tag_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+
+[node name="Panel" type="Panel" parent="create_lobby_tag_menu"]
+anchor_left = 0.32
+anchor_top = 0.34
+anchor_right = 0.68
+anchor_bottom = 0.66
+
+[node name="Label" type="Label" parent="create_lobby_tag_menu/Panel"]
+anchor_right = 1.0
+margin_bottom = 71.0
+text = "Select \"Social Tags\" for your lobby. "
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="create_lobby_tag_menu/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 64.0
+margin_right = -24.0
+margin_bottom = -24.0
+custom_styles/panel = ExtResource( 11 )
+
+[node name="tagbox" type="GridContainer" parent="create_lobby_tag_menu/Panel/Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_constants/vseparation = 16
+custom_constants/hseparation = 24
+columns = 2
+
+[node name="tag_talktive" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_right = 294.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Talkative"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "talkative"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_talktive"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Talkative"
+body = "This tag affects nothing gameplay-wise, and simply affects filtering."
+
+[node name="tag_quiet" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_left = 318.0
+margin_right = 611.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Quiet"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "quiet"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_quiet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Quiet"
+body = "This tag affects nothing gameplay-wise, and simply affects filtering."
+
+[node name="tag_grinding" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_top = 61.0
+margin_right = 294.0
+margin_bottom = 105.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Grinding"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "grinding"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_grinding"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Grinding"
+body = "This tag affects nothing gameplay-wise, and simply affects filtering."
+
+[node name="tag_chill" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_left = 318.0
+margin_top = 61.0
+margin_right = 611.0
+margin_bottom = 105.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Chill"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "chill"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_chill"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Chill"
+body = "This tag affects nothing gameplay-wise, and simply affects filtering."
+
+[node name="tag_silly" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_top = 121.0
+margin_right = 294.0
+margin_bottom = 165.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Silly"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "silly"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_silly"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Silly"
+body = "This tag affects nothing gameplay-wise, and simply affects filtering."
+
+[node name="tag_hardcore" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_left = 318.0
+margin_top = 121.0
+margin_right = 611.0
+margin_bottom = 165.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Hardcore"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "hardcore"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_hardcore"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Hardcore"
+body = "This tag affects nothing gameplay-wise, and simply affects filtering."
+
+[node name="tag_mature" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_top = 181.0
+margin_right = 294.0
+margin_bottom = 225.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 20 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/hover_pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Mature (18+)"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "mature"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_mature"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Mature"
+body = "This tag is hidden by default in the browser, and requires players to accept a brief popup upon joining confirming they are aware the lobby could contain mature topics in the chat."
+
+[node name="tag_modded" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
+margin_left = 318.0
+margin_top = 181.0
+margin_right = 611.0
+margin_bottom = 225.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 20 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/hover_pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Modded"
+align = 1
+icon_align = 1
+script = ExtResource( 19 )
+lobby_tag = "modded"
+
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_modded"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Tag: Modded"
+body = "This tag is hidden by default in the browser, and requires players to accept a brief popup upon joining confirming they are aware the lobby could contain modifications that other players may have issues running."
+
+[node name="Button" type="Button" parent="create_lobby_tag_menu/Panel"]
+anchor_left = 0.76847
+anchor_top = 0.911074
+anchor_right = 1.01302
+anchor_bottom = 1.05556
+margin_left = -0.166443
+margin_top = 0.132782
+margin_right = 0.799988
+margin_bottom = -0.800018
+text = "Confirm Tags"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="lobby_browser" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="lobby_browser"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+
+[node name="Panel" type="Panel" parent="lobby_browser"]
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+
+[node name="Label2" type="Label" parent="lobby_browser/Panel"]
+anchor_left = 0.014
+anchor_top = 0.0126545
+anchor_right = 1.0
+anchor_bottom = 0.0651237
+text = "Join Game"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="sep2" type="TextureRect" parent="lobby_browser/Panel"]
+anchor_top = 0.0169755
+anchor_right = 1.0
+anchor_bottom = 0.0663585
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="lobby_browser/Panel"]
+anchor_left = 0.979167
+anchor_top = -0.0262346
+anchor_right = 1.01417
+anchor_bottom = 0.0257654
+margin_right = 1.68005
+margin_bottom = 8.304
+text = "X"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="code_join" type="Panel" parent="lobby_browser/Panel"]
+anchor_top = 0.0661726
+anchor_right = 1.0
+anchor_bottom = 0.206174
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_styles/panel = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="lobby_browser/Panel/code_join"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 10.0
+margin_right = -16.0
+margin_bottom = -10.0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="lobby_browser/Panel/code_join/HBoxContainer"]
+margin_top = 2.0
+margin_right = 608.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+text = "Join Game from Code"
+valign = 1
+
+[node name="serv_options" type="LineEdit" parent="lobby_browser/Panel/code_join/HBoxContainer"]
+margin_left = 620.0
+margin_right = 848.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+custom_colors/cursor_color = Color( 1, 0.933333, 0.835294, 1 )
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+custom_styles/focus = ExtResource( 13 )
+custom_styles/normal = ExtResource( 13 )
+align = 1
+max_length = 6
+placeholder_text = "Code Here  "
+
+[node name="Button" type="Button" parent="lobby_browser/Panel/code_join/HBoxContainer"]
+margin_left = 860.0
+margin_right = 1088.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Join Lobby"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/code_join/HBoxContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Join Lobby from Code"
+body = "Searches for a lobby with the entered code, and joins it."
+
+[node name="lobbies" type="Panel" parent="lobby_browser/Panel"]
+anchor_left = 0.28
+anchor_top = 0.18
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_styles/panel = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="lobby_browser/Panel/lobbies"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="lobby_browser/Panel/lobbies/ScrollContainer"]
+margin_right = 765.44
+margin_bottom = 467.36
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="TextureRect" type="CenterContainer" parent="lobby_browser/Panel/lobbies"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="lobby_browser/Panel/lobbies/TextureRect"]
+margin_left = 398.0
+margin_top = 249.0
+margin_right = 398.0
+margin_bottom = 249.0
+mouse_filter = 2
+
+[node name="dial" type="Sprite" parent="lobby_browser/Panel/lobbies/TextureRect/Control"]
+visible = false
+texture = ExtResource( 15 )
+
+[node name="filters" type="Panel" parent="lobby_browser/Panel"]
+anchor_top = 0.18
+anchor_right = 0.3
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_styles/panel = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="lobby_browser/Panel/filters"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+scroll_horizontal_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer"]
+margin_right = 281.6
+margin_bottom = 467.36
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="side_sep2" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer"]
+margin_right = 6.0
+margin_bottom = 467.0
+custom_constants/separation = 6
+custom_styles/separator = SubResource( 10 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer"]
+margin_left = 10.0
+margin_right = 271.0
+margin_bottom = 467.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="Label" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_right = 261.0
+margin_bottom = 34.0
+text = "Search Filters"
+align = 1
+
+[node name="playercount_filters" type="HBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 42.0
+margin_right = 261.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+
+[node name="HSeparator2" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters"]
+margin_right = 12.0
+margin_bottom = 84.0
+custom_constants/separation = 12
+custom_styles/separator = SubResource( 11 )
+
+[node name="dial" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters" instance=ExtResource( 17 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 245.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters"]
+margin_left = 249.0
+margin_right = 261.0
+margin_bottom = 84.0
+custom_constants/separation = 12
+custom_styles/separator = SubResource( 11 )
+
+[node name="HSeparator" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 134.0
+margin_right = 261.0
+margin_bottom = 146.0
+custom_constants/separation = 12
+custom_styles/separator = SubResource( 9 )
+
+[node name="Label2" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 154.0
+margin_right = 261.0
+margin_bottom = 188.0
+text = "Sort"
+align = 1
+
+[node name="sort_list" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 196.0
+margin_right = 261.0
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( -322, 158.36 )
+text = "Players: High to Low"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/sort_list"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "List Sort"
+body = "Click to swap between how the lobby list is sorted."
+
+[node name="HSeparator2" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 238.0
+margin_right = 261.0
+margin_bottom = 250.0
+custom_constants/separation = 12
+custom_styles/separator = SubResource( 9 )
+
+[node name="Label3" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 258.0
+margin_right = 261.0
+margin_bottom = 292.0
+text = "Filters"
+align = 1
+
+[node name="show_filters" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 300.0
+margin_right = 261.0
+margin_bottom = 334.0
+text = "Show Filters"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/show_filters"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Toggle Filters"
+body = "Open the lobby filter menu for additional search parameters."
+
+[node name="filters" type="VBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+margin_top = 342.0
+margin_right = 258.0
+margin_bottom = 578.0
+
+[node name="tag_filter_search" type="GridContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+unique_name_in_owner = true
+margin_right = 258.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 4
+custom_constants/hseparation = 10
+columns = 2
+
+[node name="filter_talkative" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+margin_right = 124.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Talkative"
+script = ExtResource( 19 )
+lobby_tag = "talkative"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_talkative"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Filter: Talkative"
+body = "Allows lobbies with the tag \"Talkative\" to appear."
+
+[node name="filter_quiet" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+margin_left = 134.0
+margin_right = 258.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Quiet"
+script = ExtResource( 19 )
+lobby_tag = "quiet"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_quiet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Filter: Quiet"
+body = "Allows lobbies with the tag \"Quiet\" to appear."
+
+[node name="filter_grind" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+margin_top = 38.0
+margin_right = 124.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Grinding"
+script = ExtResource( 19 )
+lobby_tag = "grinding"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_grind"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Filter: Grinding"
+body = "Allows lobbies with the tag \"Grinding\" to appear."
+
+[node name="filter_chill" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+margin_left = 134.0
+margin_top = 38.0
+margin_right = 258.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Chill"
+script = ExtResource( 19 )
+lobby_tag = "chill"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_chill"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Filter: Chill"
+body = "Allows lobbies with the tag \"Chill\" to appear."
+
+[node name="filter_silly" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+margin_top = 76.0
+margin_right = 124.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Silly"
+script = ExtResource( 19 )
+lobby_tag = "silly"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_silly"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Filter: Silly"
+body = "Allows lobbies with the tag \"Silly\" to appear."
+
+[node name="filter_hardcore" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+margin_left = 134.0
+margin_top = 76.0
+margin_right = 258.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Hardcore"
+script = ExtResource( 19 )
+lobby_tag = "hardcore"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_hardcore"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Filter: Hardcore"
+body = "Allows lobbies with the tag \"Hardcore\" to appear."
+
+[node name="filter_mature" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+unique_name_in_owner = true
+margin_top = 114.0
+margin_right = 124.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 20 )
+text = "Mature"
+script = ExtResource( 19 )
+lobby_tag = "mature"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_mature"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Bonus Filter: Mature"
+body = "Must accept a brief popup to toggle this on. Allows lobbies with the tag \"Mature\" to appear."
+
+[node name="filter_modded" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+unique_name_in_owner = true
+margin_left = 134.0
+margin_top = 114.0
+margin_right = 258.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 20 )
+text = "Modded"
+script = ExtResource( 19 )
+lobby_tag = "modded"
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_modded"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Bonus Filter: Modded"
+body = "Must accept a brief popup to toggle this on. Allows lobbies with the tag \"Modded\" to appear."
+
+[node name="filter_dis" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+margin_top = 152.0
+margin_right = 258.0
+margin_bottom = 160.0
+size_flags_vertical = 3
+custom_constants/separation = 8
+custom_styles/separator = SubResource( 9 )
+
+[node name="hide_full" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+unique_name_in_owner = true
+margin_top = 202.0
+margin_right = 258.0
+margin_bottom = 236.0
+text = "Hide Full"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/hide_full"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Hide Full"
+body = "Hides lobbies that are at their allowed capacity."
+
+[node name="must_match" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+unique_name_in_owner = true
+margin_top = 164.0
+margin_right = 258.0
+margin_bottom = 198.0
+text = "Must Match"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/must_match"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Must Match Tags"
+body = "Only shows lobbies with exactly all the selected and unselected tags."
+
+[node name="show_names" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+margin_top = 202.0
+margin_right = 258.0
+margin_bottom = 236.0
+pressed = true
+text = "Show Names"
+script = ExtResource( 14 )
+
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/show_names"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+header = "Toggle Names"
+body = "Swaps lobby names between a generic generated name and a user-created custom name."
+
+[node name="filter_dis" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 342.0
+margin_right = 261.0
+margin_bottom = 425.0
+size_flags_vertical = 3
+custom_constants/separation = 16
+custom_styles/separator = SubResource( 9 )
+
+[node name="refresh" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+margin_top = 433.0
+margin_right = 261.0
+margin_bottom = 467.0
+text = "REFRESH"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="side_sep" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer"]
+margin_left = 275.0
+margin_right = 281.0
+margin_bottom = 467.0
+custom_constants/separation = 6
+custom_styles/separator = SubResource( 10 )
+
+[node name="Timer" type="Timer" parent="lobby_browser"]
+autostart = true
+
+[node name="save_select" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 16 )
+
+[node name="ColorRect" type="ColorRect" parent="save_select"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+
+[node name="Panel" type="Panel" parent="save_select"]
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.7
+anchor_bottom = 0.7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="save_select/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 52.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="save_select/Panel"]
+anchor_top = 0.0185185
+anchor_right = 1.0
+anchor_bottom = 0.0185185
+margin_bottom = 34.0
+text = "Choose a Save Profile"
+align = 1
+valign = 2
+
+[node name="close" type="Button" parent="save_select"]
+anchor_left = 0.689062
+anchor_top = 0.287037
+anchor_right = 0.708917
+anchor_bottom = 0.319926
+margin_right = 3.88
+margin_bottom = 6.47995
+text = "x"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="VBoxContainer/create_game" to="." method="_open_create_screen"]
+[connection signal="pressed" from="VBoxContainer/join_game" to="." method="_open_browser"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="save_select_button" to="save_select" method="_on_save_select_button_pressed"]
+[connection signal="pressed" from="create_lobby_menu/Panel/close" to="." method="_close_create_screen"]
+[connection signal="pressed" from="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags/Button" to="." method="_open_tag_menu"]
+[connection signal="pressed" from="create_lobby_menu/Panel/Panel/Button" to="." method="_start_lobby"]
+[connection signal="pressed" from="create_lobby_tag_menu/Panel/Button" to="." method="_close_tag_menu"]
+[connection signal="pressed" from="lobby_browser/Panel/Button" to="." method="_close_browser"]
+[connection signal="pressed" from="lobby_browser/Panel/code_join/HBoxContainer/Button" to="." method="_join_from_code"]
+[connection signal="pressed" from="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/sort_list" to="." method="_on_sort_list_pressed"]
+[connection signal="pressed" from="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/show_filters" to="." method="_on_show_filters_pressed"]
+[connection signal="pressed" from="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_mature" to="." method="_on_filter_mature_pressed"]
+[connection signal="pressed" from="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_modded" to="." method="_on_filter_modded_pressed"]
+[connection signal="toggled" from="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/show_names" to="." method="_on_show_names_toggled"]
+[connection signal="pressed" from="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/refresh" to="." method="_refresh_lobbies"]
+[connection signal="timeout" from="lobby_browser/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="save_select/close" to="save_select" method="_on_close_pressed"]

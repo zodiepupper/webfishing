@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sounds/npc_voice_1.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=5]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 1 )
+
+[node name="test_shop" type="Node"]
+script = ExtResource( 2 )
+shop_title = "bait + sell depot"
+dialogue = true
+dialogue_open = [ "...", "...", "...............", "...", "..." ]
+dialogue_buy = [ "...", "...", "... thanks...", "...", "..." ]
+dialogue_voice = SubResource( 1 )
+
+[node name="bait" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "bait restock"
+replace = 4
+
+[node name="sell" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "sell your items"
+replace = 2
+box_type = 3
+include_sell_all = true

@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Menus/Loading Menu/loading_menu.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="loading_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 720.0
+margin_top = 480.0
+margin_right = 1200.0
+margin_bottom = 599.0
+
+[node name="main" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 480.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 480.0
+margin_bottom = 80.0
+custom_constants/separation = 42
+custom_styles/separator = SubResource( 1 )
+
+[node name="tips" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 480.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 480, 0 )
+custom_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="cancel" type="Button" parent="."]
+visible = false
+anchor_left = 0.42
+anchor_top = 0.94
+anchor_right = 0.58
+anchor_bottom = 0.946
+margin_top = -34.0
+text = "CANCEL"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="tip_timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="tip_timer" to="." method="_on_tip_timer_timeout"]

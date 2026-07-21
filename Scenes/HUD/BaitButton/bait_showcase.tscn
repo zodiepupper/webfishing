@@ -1,0 +1,147 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Textures/UI/bait_icons2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=3]
+[ext_resource path="res://Scenes/HUD/BaitButton/bait_showcase.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 8.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HBoxContainer:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HBoxContainer:margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -8.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HBoxContainer:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -2.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "update"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 8.0, 8.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HBoxContainer:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 2.0, 14.0, 2.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HBoxContainer:margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -8.0, -8.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("HBoxContainer:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -2.0, 2.0, -2.0 ]
+}
+
+[node name="Control" type="Panel"]
+margin_right = 96.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 46, 46 )
+theme = ExtResource( 3 )
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 2.0
+margin_right = -8.0
+margin_bottom = -2.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_right = 39.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 43.0
+margin_top = 4.0
+margin_right = 80.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+text = "x99"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/update = SubResource( 2 )

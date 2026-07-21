@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Meatball Parade.mp3-5472142021bfef6e81b1e8a73ebcff45.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Meatball Parade.mp3"
+dest_files=[ "res://.import/Meatball Parade.mp3-5472142021bfef6e81b1e8a73ebcff45.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

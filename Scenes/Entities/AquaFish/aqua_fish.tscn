@@ -1,0 +1,125 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Entities/AquaFish/aqua_fish.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Particles/sparkle2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Particles/sparkle3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Particles/sparkle1.png" type="Texture" id=4]
+
+[sub_resource type="Curve" id=432]
+_data = [ Vector2( 0, 0 ), 0.0, 4.03678, 0, 0, Vector2( 0.171946, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.755656, 1 ), -0.114805, -0.114805, 0, 0, Vector2( 1, 0 ), -3.21769, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=428]
+curve = SubResource( 432 )
+
+[sub_resource type="ParticlesMaterial" id=433]
+emission_shape = 2
+emission_box_extents = Vector3( 0.8, 0.5, 0.15 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.04
+initial_velocity_random = 0.7
+scale = 0.04
+scale_curve = SubResource( 428 )
+
+[sub_resource type="SpatialMaterial" id=425]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=434]
+material = SubResource( 425 )
+
+[sub_resource type="SpatialMaterial" id=429]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=435]
+material = SubResource( 429 )
+
+[sub_resource type="SpatialMaterial" id=431]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=436]
+material = SubResource( 431 )
+
+[sub_resource type="BoxShape" id=437]
+
+[node name="aqua_fish" type="KinematicBody"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 0.59301, 0, 0, 0, 0.59301, 0, 0, 0, 0.59301, 0, 0, 0 )
+billboard = 1
+alpha_cut = 1
+
+[node name="shining" type="Particles" parent="Sprite3D"]
+emitting = false
+amount = 6
+lifetime = 4.0
+preprocess = 2.0
+local_coords = false
+process_material = SubResource( 433 )
+draw_pass_1 = SubResource( 434 )
+
+[node name="glistening" type="Particles" parent="Sprite3D"]
+emitting = false
+amount = 10
+lifetime = 4.0
+preprocess = 2.0
+local_coords = false
+process_material = SubResource( 433 )
+draw_pass_1 = SubResource( 434 )
+
+[node name="opulent" type="Particles" parent="Sprite3D"]
+emitting = false
+amount = 14
+lifetime = 4.0
+preprocess = 2.0
+local_coords = false
+process_material = SubResource( 433 )
+draw_pass_1 = SubResource( 434 )
+
+[node name="radiant" type="Particles" parent="Sprite3D"]
+transform = Transform( 1, 4.19095e-09, 0, -2.32831e-09, 1, 1.56579e-08, 0, -9.02219e-09, 1, 0, 0, 0 )
+emitting = false
+amount = 16
+lifetime = 4.0
+preprocess = 2.0
+local_coords = false
+process_material = SubResource( 433 )
+draw_pass_1 = SubResource( 435 )
+
+[node name="alpha" type="Particles" parent="Sprite3D"]
+transform = Transform( 1, 4.19095e-09, 0, -2.32831e-09, 1, 1.56579e-08, 0, -9.02219e-09, 1, 0, 0, 0 )
+emitting = false
+amount = 16
+lifetime = 4.0
+preprocess = 2.0
+local_coords = false
+process_material = SubResource( 433 )
+draw_pass_1 = SubResource( 436 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 437 )
+disabled = true
+
+[connection signal="timeout" from="Timer" to="." method="_host_change_id"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fishing_reel.ogg-84496f05bc8ecb11ce634d2ad8f95c81.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Fishing/fishing_reel.ogg"
+dest_files=[ "res://.import/fishing_reel.ogg-84496f05bc8ecb11ce634d2ad8f95c81.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0.0

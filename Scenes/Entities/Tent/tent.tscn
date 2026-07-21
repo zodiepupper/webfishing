@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Entities/Tent/tent.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Map/Tools/transition_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Map/Tools/area_entrance.tscn" type="PackedScene" id=3]
+
+[sub_resource type="PrismMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.67451, 0, 0.160784, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.6, 0.7, 0.4 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -2, 0 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("MeshInstance:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("MeshInstance:translation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("MeshInstance:translation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("MeshInstance:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("MeshInstance:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("MeshInstance:scale:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "intro"
+length = 0.8
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("MeshInstance:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.36, 0.58 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("MeshInstance:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -2, -0.25, 0, 0.14, 2.5646, 1.01434, -0.13, -0.314478, 0.25, 0, 1.01434, -0.25, 0, 0.17, -0.553481, -0.0297238, -0.07, 0.259596, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.22, 0.29, 0.46 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("MeshInstance:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.36, 0.58 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("MeshInstance:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.22, 0.29, 0.46, 0.56 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("MeshInstance:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1.511, -0.25, 0, 0.24, 0.0415249, 1.511, -0.25, 0, 0.05, -0.080772, 1.01966, -0.05, 0.034942, 0.12, -0.0160661, 0.956, -0.07, 0.0216068, 0.07, 0.0230243, 1, -0.04, -0.027118, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.22, 0.46, 0.56 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("MeshInstance:scale:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.22, 0.29, 0.46, 0.56 )
+}
+
+[node name="tent" type="KinematicBody"]
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+can_be_hidden = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.712664, 0, 0, 0, 0.712664, 0, 0, 0, 0.712664, 0, -0.288292, -0.289316 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="transition_zone" parent="." instance=ExtResource( 2 )]
+zone_id = "tent_zone"
+spawn_id = "tent_entrance"
+
+[node name="CollisionShape" type="CollisionShape" parent="transition_zone"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.15638 )
+shape = SubResource( 4 )
+
+[node name="area_entrance" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.10124 )
+entrance_id = "tent_exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/intro = SubResource( 6 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/campfire.ogg-a2e43a3ba673386988c552040ab3d327.oggstr"
+
+[deps]
+
+source_file="res://Sounds/campfire.ogg"
+dest_files=[ "res://.import/campfire.ogg-a2e43a3ba673386988c552040ab3d327.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

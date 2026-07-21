@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/radial_wheel_mask.png-3f09107ff505dd81e455bef10abb0f8c.res"
+
+[deps]
+
+source_file="res://Assets/Textures/UI/radial_wheel_mask.png"
+dest_files=[ "res://.import/radial_wheel_mask.png-3f09107ff505dd81e455bef10abb0f8c.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

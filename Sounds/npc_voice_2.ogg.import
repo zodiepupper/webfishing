@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/npc_voice_2.ogg-054ef38b8b08667fef90cdaad70b1e9b.oggstr"
+
+[deps]
+
+source_file="res://Sounds/npc_voice_2.ogg"
+dest_files=[ "res://.import/npc_voice_2.ogg-054ef38b8b08667fef90cdaad70b1e9b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

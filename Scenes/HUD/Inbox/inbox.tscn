@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/HUD/Inbox/inbox.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Textures/UI/mailbox.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=5]
+
+[node name="inbox" type="Control"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="letters" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1179.4, -138.6 )
+
+[node name="Label2" type="Label" parent="letters"]
+anchor_left = 0.00282986
+anchor_top = 0.0948766
+anchor_right = 1.0
+anchor_bottom = 0.18
+margin_left = 0.783999
+margin_top = -0.368011
+margin_right = -10.2001
+margin_bottom = 0.454376
+text = "INBOX"
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Panel" type="Panel" parent="letters"]
+anchor_top = 0.18
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="letters/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="letters/Panel/ScrollContainer"]
+margin_right = 1823.2
+size_flags_horizontal = 3
+custom_constants/separation = 7
+
+[node name="Button" type="Button" parent="letters"]
+anchor_top = 0.02
+anchor_right = 1.0
+anchor_bottom = 0.1
+margin_right = -0.200073
+margin_bottom = 0.0447845
+size_flags_horizontal = 3
+text = "CREATE LETTER"
+icon = ExtResource( 4 )
+align = 0
+expand_icon = true
+script = ExtResource( 5 )
+
+[connection signal="pressed" from="letters/Button" to="." method="_create_letter"]

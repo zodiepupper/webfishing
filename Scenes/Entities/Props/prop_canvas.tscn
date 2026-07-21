@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Entities/Props/prop.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Entities/ChalkCanvas/chalk_canvas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Materials/concrete.tres" type="Material" id=3]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 5, 5 )
+
+[node name="canvas" type="KinematicBody"]
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+rotation_reset = true
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.008, 0.1 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 3 )
+
+[node name="chalk_canvas" parent="." instance=ExtResource( 2 )]
+canvas_size = 2.4
+inherit_id = NodePath("..")
+circular = false

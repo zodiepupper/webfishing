@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Entities/Props/prop.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Interactables/NPCs/npc_sell_small.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="portable_bait" type="KinematicBody"]
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+decay = true
+decay_timer = 900
+
+[node name="npc_test" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[connection signal="_close" from="npc_test" to="npc_test/npc_baitsell" method="_close"]
+[connection signal="_open" from="npc_test" to="npc_test/npc_baitsell" method="_open"]

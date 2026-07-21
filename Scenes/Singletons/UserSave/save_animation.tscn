@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Textures/UI/autosaving.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Singletons/UserSave/save_animation.gd" type="Script" id=2]
+
+[node name="anim" type="CanvasLayer"]
+layer = 20
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.003
+anchor_top = 0.005
+anchor_right = 0.036
+anchor_bottom = 0.064
+margin_left = -0.76
+margin_top = -0.400001
+margin_right = -0.120003
+margin_bottom = -0.120003
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}

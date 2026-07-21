@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Entities/LooseObject/loose_object.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Entities/MetalSpawn/lo_Interactable.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Models/objmesh.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.6, 0.6, 0.6 )
+
+[node name="loose_object" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 0.527793, 0, 0, 0, 1, 0, 0.0478965, 0 )
+script = ExtResource( 1 )
+decay = true
+decay_timer = 10800
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, 0, -0.256, 0 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 3 )
+
+[node name="Interactable" type="Area" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Interactable"]
+shape = SubResource( 4 )

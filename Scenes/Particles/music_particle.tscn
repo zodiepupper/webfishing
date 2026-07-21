@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Particles/music_particle.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/music_mat_a.tres" type="Material" id=2]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.371591 ), 0.0, 3.46364, 0, 0, Vector2( 0.73622, 0.644318 ), -1.62492, -1.62492, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 5
+emission_ring_radius = 1.2
+emission_ring_inner_radius = 0.8
+emission_ring_height = 0.1
+emission_ring_axis = Vector3( 0, 0, 1 )
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 0.6, 0 )
+initial_velocity = 0.3
+initial_velocity_random = 0.47
+scale = 0.2
+scale_curve = SubResource( 4 )
+
+[sub_resource type="QuadMesh" id=2]
+
+[node name="music_particle" type="Particles"]
+material_override = ExtResource( 2 )
+amount = 1
+lifetime = 3.0
+one_shot = true
+local_coords = false
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 2 )
+script = ExtResource( 1 )

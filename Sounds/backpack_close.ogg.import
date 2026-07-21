@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/backpack_close.ogg-241f6247c4b430fc73332ae09bbcb07d.oggstr"
+
+[deps]
+
+source_file="res://Sounds/backpack_close.ogg"
+dest_files=[ "res://.import/backpack_close.ogg-241f6247c4b430fc73332ae09bbcb07d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

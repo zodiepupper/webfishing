@@ -1,0 +1,38 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Textures/Items/toolicons39.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/ItemMeshes/Misc/tool_metal_detector.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 2 )
+item_name = "Metal Detector"
+item_description = "Hold out to search for hidden treasure around the map!"
+catch_blurb = ""
+item_is_hidden = false
+icon = ExtResource( 1 )
+show_item = false
+item_scene = ExtResource( 3 )
+show_scene = true
+uses_size = false
+action = "_metal_detect_begin"
+action_params = [  ]
+release_action = ""
+prop_code = ""
+help_text = ""
+arm_value = 0.1
+hold_offset = 0.0
+unselectable = true
+category = "tool"
+alive = true
+tier = 0
+catch_difficulty = 1.0
+catch_speed = 120.0
+loot_table = "none"
+loot_weight = 1.0
+average_size = 1.0
+sell_value = 5
+obtain_xp = 30
+can_be_sold = false
+show_bait = false
+detect_item = true

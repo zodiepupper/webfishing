@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Carefree.mp3-eb611c6dabbbf0c4eba4bbf0f67f15c5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Carefree.mp3"
+dest_files=[ "res://.import/Carefree.mp3-eb611c6dabbbf0c4eba4bbf0f67f15c5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

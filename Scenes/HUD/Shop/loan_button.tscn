@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/loan_button.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=6]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/Themes/coolvetica condensed rg.otf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 8 )
+
+[node name="Button" type="Button"]
+margin_right = 92.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 300, 72 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.028
+anchor_right = 0.929
+anchor_bottom = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+margin_right = 270.0
+margin_bottom = 92.0
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_colors/default_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Catch LAKE Fish (0/25)
+Reward: $25"
+text = "Catch LAKE Fish (0/25)
+Reward: $25"
+scroll_active = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchor_left = 0.756
+anchor_top = 0.423914
+anchor_right = 0.984
+anchor_bottom = 0.880654
+margin_right = 0.100006
+margin_bottom = -0.0199966
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="cash" type="Panel" parent="HBoxContainer2"]
+margin_right = 100.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 3
+custom_styles/panel = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="HBoxContainer2/cash"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+text = "$999"
+align = 1
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_left = 0.027
+anchor_top = 0.435
+anchor_right = 0.72
+anchor_bottom = 0.908
+margin_left = -0.100006
+margin_top = -0.0200043
+margin_right = 0.0999756
+margin_bottom = -0.012001
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="ProgressBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+text = "$1000 REMAINING"
+align = 1
+valign = 1
+
+[node name="confim" type="Panel" parent="."]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 8.0
+margin_bottom = 8.0
+custom_styles/panel = ExtResource( 6 )
+
+[node name="TooltipNode" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Camp Tier Increase"
+body = "Pay towards increasing your CAMP TIER! Unlocking additional bait, lures, items, props, and cosmetics in the shops!"
+
+[connection signal="pressed" from="." to="." method="_on_Button_pressed"]

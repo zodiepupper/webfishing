@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons31.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Models/Cosmetics/rain_boots.tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=4]
+
+[resource]
+script = ExtResource( 1 )
+name = "Yellow Rain Boots"
+desc = "Splish Splash!"
+title = ""
+icon = ExtResource( 2 )
+mesh = ExtResource( 3 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 4 )
+main_color = Color( 0.901961, 0.615686, 0, 1 )
+body_pattern = [  ]
+mirror_face = true
+allow_blink = true
+category = "accessory"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = true
+cost = 10

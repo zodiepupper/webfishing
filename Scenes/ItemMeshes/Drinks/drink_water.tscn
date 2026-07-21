@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Materials/gray.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Materials/white.tres" type="Material" id=2]
+[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Models/waterbottle.obj" type="ArrayMesh" id=4]
+
+[node name="drink_hooklite" type="Spatial"]
+script = ExtResource( 3 )
+hotspot_node = NodePath("Position3D")
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -2.73896e-09, 0, 0.0626602, 0, 0.0626602, 0, -0.0626602, 0, -2.73896e-09, 0, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
+
+[node name="Position3D" type="Position3D" parent="."]

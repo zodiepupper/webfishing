@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Placeholder/tree_1.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Materials/dark_brown_alt.tres" type="Material" id=2]
+[ext_resource path="res://Scenes/Map/Props/prop.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Map/Props/prop_shadow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Shaders/leaf_material.tres" type="Material" id=6]
+
+[sub_resource type="CylinderShape" id=1]
+
+[node name="tree_1" type="MeshInstance"]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 6 )
+material/2 = ExtResource( 6 )
+material/3 = ExtResource( 6 )
+script = ExtResource( 4 )
+cull_max_range = 150
+cull_offset = Vector3( 0, 2, 0 )
+premade_cull_vis = NodePath("VisibilityNotifier")
+scale_min = 1.25
+nudge = -0.06
+
+[node name="shadow" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0.0608994, 0 )
+
+[node name="tree_point" type="Position3D" parent="." groups=["tree_point"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32114, 0.416145 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 0.440477, 0, 0, 0, 2.10395, 0, 0, 0, 0.440477, 0.0832821, 2.12052, 0 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.14984, 0 )
+aabb = AABB( -4.89606, -5.81701, -4.16591, 9.79212, 11.634, 8.33182 )

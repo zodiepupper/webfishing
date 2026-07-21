@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dog_whine.ogg-c08fbc8dd2404798aa4fac64ebab69aa.oggstr"
+
+[deps]
+
+source_file="res://Sounds/dog_whine.ogg"
+dest_files=[ "res://.import/dog_whine.ogg-c08fbc8dd2404798aa4fac64ebab69aa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

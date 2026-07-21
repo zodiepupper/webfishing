@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/HUD/NotifPopup/notif_popup.gd" type="Script" id=1]
+
+[node name="notif_popup" type="CanvasLayer"]
+layer = 25
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_left = 0.02
+anchor_top = 0.04
+anchor_right = 0.4
+anchor_bottom = 0.85
+mouse_filter = 2

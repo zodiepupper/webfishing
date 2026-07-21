@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Face/mouth_base7.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Aloof"
+desc = "Whatever..."
+title = ""
+icon = ExtResource( 2 )
+main_color = Color( 1, 1, 1, 1 )
+body_pattern = [  ]
+mirror_face = true
+allow_blink = true
+category = "mouth"
+in_rotation = false
+cost = 10

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Materials/dark_green.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/Entities/Props/prop_fish_trap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Materials/red.tres" type="Material" id=14]
+[ext_resource path="res://Assets/Materials/gray.tres" type="Material" id=16]
+[ext_resource path="res://Assets/Materials/gray_darker.tres" type="Material" id=20]
+
+[node name="fish_trap_ocean" instance=ExtResource( 2 )]
+
+[node name="Interactable" parent="." index="0"]
+fish_type = "ocean"
+
+[node name="main" parent="Interactable/idle_fish" index="0"]
+material/0 = ExtResource( 1 )
+material/4 = ExtResource( 14 )
+
+[node name="hat_1" parent="Interactable/idle_fish/main" index="1"]
+visible = false
+
+[node name="hat_2" parent="Interactable/idle_fish/main" index="2"]
+visible = true
+
+[node name="bucket" parent="Interactable/idle_fish" index="1"]
+material/0 = ExtResource( 20 )
+material/1 = ExtResource( 16 )
+
+[node name="AnimatedSprite3D" parent="Interactable/idle_fish" index="2"]
+frame = 2

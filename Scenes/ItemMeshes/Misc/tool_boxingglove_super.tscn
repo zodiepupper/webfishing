@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Materials/blue.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Materials/gray.tres" type="Material" id=2]
+[ext_resource path="res://Scenes/ItemMeshes/Misc/tool_boxingglove.tscn" type="PackedScene" id=3]
+
+[node name="tool_boxingglove" instance=ExtResource( 3 )]
+
+[node name="MeshInstance3" parent="." index="0"]
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 2 )

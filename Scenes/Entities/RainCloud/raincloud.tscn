@@ -1,0 +1,101 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/Entities/RainCloud/raincloud.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/cloud.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/Textures/Particles/rain1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Particles/rain2.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/rain_loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/ParticleResources/raincloud.tres" type="Material" id=6]
+[ext_resource path="res://Assets/ParticleResources/raincloud_fog.tres" type="Material" id=7]
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.643137, 0.615686, 0.611765, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+params_billboard_mode = 2
+albedo_color = Color( 0, 0.521569, 0.513726, 1 )
+
+[sub_resource type="QuadMesh" id=4]
+material = SubResource( 3 )
+size = Vector2( 0.02, 0.35 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+params_billboard_mode = 2
+albedo_color = Color( 1, 1, 1, 0.152941 )
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+size = Vector2( 4, 4 )
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 1, 1, 1, 0.0196078 )
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=12]
+material = SubResource( 11 )
+size = Vector2( 36, 12 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 36, 50, 36 )
+
+[node name="raincloud" type="KinematicBody" groups=["raincloud"]]
+script = ExtResource( 1 )
+decay = true
+decay_timer = 32500
+packet_send_cooldown = 8
+
+[node name="mesh" type="Spatial" parent="."]
+transform = Transform( 6.08517, 0, 0, 0, 6.08517, 0, 0, 0, 6.08517, 0, 0, -5.53753 )
+
+[node name="MeshInstance" type="MeshInstance" parent="mesh"]
+mesh = ExtResource( 2 )
+material/0 = SubResource( 13 )
+
+[node name="Particles" type="Particles" parent="."]
+amount = 250
+lifetime = 2.0
+visibility_aabb = AABB( -48, -40.9301, -48, 96, 81.8602, 96 )
+local_coords = false
+process_material = ExtResource( 6 )
+draw_pass_1 = SubResource( 4 )
+
+[node name="Particles_sheet" type="Particles" parent="."]
+amount = 25
+lifetime = 2.0
+visibility_aabb = AABB( -48, -48, -48, 96, 64, 96 )
+local_coords = false
+process_material = ExtResource( 6 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="Particles_fog" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.8352, 0 )
+amount = 25
+lifetime = 18.0
+visibility_aabb = AABB( -48, -4, -48, 96, 8, 96 )
+local_coords = false
+process_material = ExtResource( 7 )
+draw_pass_1 = SubResource( 12 )
+
+[node name="Area" type="Area" parent="." groups=["rain_cloud"]]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.0175, 0 )
+shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.9718, 0 )
+stream = ExtResource( 5 )
+unit_size = 50.0
+autoplay = true
+max_distance = 120.0
+bus = "NoDoppler"
+attenuation_filter_cutoff_hz = 15000.0

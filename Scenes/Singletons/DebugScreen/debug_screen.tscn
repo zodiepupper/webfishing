@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Singletons/DebugScreen/debug_screen.gd" type="Script" id=1]
+
+[node name="debug_screen" type="CanvasLayer"]
+layer = 100
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchor_right = 0.139
+anchor_bottom = 0.196
+margin_right = -0.880035
+margin_bottom = 0.319992

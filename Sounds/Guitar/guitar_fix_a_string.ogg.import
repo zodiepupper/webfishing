@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/guitar_fix_a_string.ogg-ea31a9e535f089fbf86d7c83fef670a0.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Guitar/guitar_fix_a_string.ogg"
+dest_files=[ "res://.import/guitar_fix_a_string.ogg-ea31a9e535f089fbf86d7c83fef670a0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

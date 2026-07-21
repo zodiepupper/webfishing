@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/HUD/Inbox/letter_view.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Textures/UI/letterbgh.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="letter_view" type="CanvasLayer"]
+layer = 4
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.784314 )
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Control" type="Control" parent="Control"]
+anchor_left = 0.24
+anchor_top = 0.24
+anchor_right = 0.76
+anchor_bottom = 0.76
+
+[node name="Panel" type="Panel" parent="Control/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="RichTextLabel" type="Label" parent="Control/Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.3
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+text = "text"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/Control/Panel"]
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.611
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="RichTextLabel2" type="Label" parent="Control/Control/Panel"]
+anchor_top = 0.55
+anchor_right = 1.0
+anchor_bottom = 0.687
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+text = "text"
+align = 2
+
+[node name="RichTextLabel4" type="Label" parent="Control/Control/Panel"]
+anchor_top = 0.646
+anchor_right = 1.0
+anchor_bottom = 0.864
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+text = "text"
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Control"]
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_constants/separation = 16
+
+[node name="Button" type="Button" parent="Control/Control/HBoxContainer"]
+margin_right = 171.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "CLOSE"
+
+[node name="TooltipNode" type="Control" parent="Control/Control/HBoxContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+header = "Close Letter"
+body = "stop viewing this letter"
+
+[node name="HSeparator" type="VSeparator" parent="Control/Control/HBoxContainer"]
+margin_left = 187.0
+margin_right = 590.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.34
+custom_styles/separator = SubResource( 1 )
+
+[node name="Button2" type="Button" parent="Control/Control/HBoxContainer"]
+margin_left = 606.0
+margin_right = 778.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "DENY"
+
+[node name="TooltipNode" type="Control" parent="Control/Control/HBoxContainer/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+header = "Deny Letter"
+body = "Deny all gifts and delete this letter forever."
+
+[node name="Button3" type="Button" parent="Control/Control/HBoxContainer"]
+margin_left = 794.0
+margin_right = 966.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "ACCEPT"
+
+[node name="TooltipNode" type="Control" parent="Control/Control/HBoxContainer/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+header = "Accept Letter"
+body = "Delete this letter and accept all gifts inside."
+
+[connection signal="pressed" from="Control/Control/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Control/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Control/Control/HBoxContainer/Button3" to="." method="_on_Button3_pressed"]

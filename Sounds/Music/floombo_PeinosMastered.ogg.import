@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/floombo_PeinosMastered.ogg-46384e35ac2187f2cfc6cb487732509e.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/floombo_PeinosMastered.ogg"
+dest_files=[ "res://.import/floombo_PeinosMastered.ogg-46384e35ac2187f2cfc6cb487732509e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

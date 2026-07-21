@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode depth_draw_alpha_prepass, unshaded;
+
+uniform float speed = 0.1;
+uniform float base = 0.7;
+uniform float flex = 0.3;
+uniform float vert = 0.1;
+uniform float vert_time = 0.1;
+uniform vec4 color : hint_color;
+
+void fragment() {
+	ALBEDO = color.rgb;
+	ALPHA = base + (flex * sin(TIME * speed));
+}
+
+void vertex() {
+	VERTEX.x += sin(TIME * vert_time * VERTEX.y) * vert;
+	VERTEX.y += sin(TIME * vert_time * VERTEX.z) * vert;
+	VERTEX.z += sin(TIME * vert_time * VERTEX.x) * vert;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/speed = 2.0
+shader_param/base = 0.4
+shader_param/flex = 0.15
+shader_param/vert = 0.04
+shader_param/vert_time = 0.1
+shader_param/color = Color( 0.054902, 0.678431, 0.501961, 1 )

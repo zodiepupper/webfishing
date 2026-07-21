@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dog_growl.ogg-2453f71e97d7f2f96f3336289a7b9a80.oggstr"
+
+[deps]
+
+source_file="res://Sounds/dog_growl.ogg"
+dest_files=[ "res://.import/dog_growl.ogg-2453f71e97d7f2f96f3336289a7b9a80.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

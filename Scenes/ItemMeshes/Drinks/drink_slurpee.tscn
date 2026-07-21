@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Materials/brown.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Materials/green.tres" type="Material" id=2]
+[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Materials/white.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Models/slurpee.obj" type="ArrayMesh" id=5]
+
+[node name="drink_hooklite" type="Spatial"]
+script = ExtResource( 3 )
+hotspot_node = NodePath("Position3D")
+
+[node name="slurpee" type="MeshInstance" parent="."]
+transform = Transform( 0.0570768, 0, 0, 0, 0.0440989, 0, 0, 0, 0.0570768, 0, -0.0862057, 0 )
+mesh = ExtResource( 5 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
+material/2 = ExtResource( 4 )
+material/3 = ExtResource( 2 )
+
+[node name="Position3D" type="Position3D" parent="."]

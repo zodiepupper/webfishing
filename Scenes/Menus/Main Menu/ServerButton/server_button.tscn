@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Menus/Main Menu/ServerButton/server_button.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Themes/main_font_tiny.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Textures/UI/request_icon2.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="server_button" type="Control"]
+anchor_right = 0.021
+anchor_bottom = 0.059
+margin_right = 720.68
+margin_bottom = 4.27999
+rect_min_size = Vector2( 0, 68 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 4.0
+margin_right = -16.0
+margin_bottom = -4.0
+alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="Panel/HBoxContainer"]
+margin_right = 729.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+bbcode_enabled = true
+bbcode_text = "Server Name (16/16)"
+text = "Server Name (16/16)"
+scroll_active = false
+
+[node name="tags" type="RichTextLabel" parent="Panel/HBoxContainer"]
+margin_top = 32.0
+margin_right = 729.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Talkative, Chill, Grinding"
+text = "Talkative, Chill, Grinding"
+scroll_active = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+custom_constants/separation = 10
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/HBoxContainer2"]
+margin_right = 158.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+custom_styles/separator = SubResource( 1 )
+
+[node name="players" type="Label" parent="Panel/HBoxContainer2"]
+margin_left = 168.0
+margin_right = 486.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "11/10"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="request" type="TextureRect" parent="Panel/HBoxContainer2"]
+unique_name_in_owner = true
+margin_left = 496.0
+margin_right = 576.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer2"]
+margin_left = 586.0
+margin_right = 729.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.45
+text = "Join"
+clip_text = true
+
+[node name="TooltipNode" type="Control" parent="Panel/HBoxContainer2/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+header = "Join Lobby"
+body = "Attempt to join this lobby!"
+
+[connection signal="pressed" from="Panel/HBoxContainer2/Button" to="." method="_on_Button_pressed"]

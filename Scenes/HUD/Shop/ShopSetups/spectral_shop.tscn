@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_item.gd" type="Script" id=6]
+
+[node name="test_shop" type="Node"]
+script = ExtResource( 2 )
+shop_title = "spectral hand"
+dialogue = true
+dialogue_open = [ "[color=#008583][wave amp=50.0 freq=5.0]....yyyyyouuuuu.......", "[color=#008583][wave amp=50.0 freq=5.0]....mmmyyy.... bboooonesss.....", "[color=#008583][wave amp=50.0 freq=5.0]...... myyy callll.......", "[color=#008583][wave amp=50.0 freq=5.0]..... lloooostt.....", "[color=#008583][wave amp=50.0 freq=5.0]................" ]
+dialogue_buy = [ "[color=#008583][wave amp=50.0 freq=5.0].... ttthhhaaannk.... youu........" ]
+
+[node name="spectral" type="Node" parent="."]
+script = ExtResource( 5 )
+category_title = "spectral goods"
+
+[node name="shop_button7" parent="spectral" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+cost = 500
+item_require = [ "spectral_skull", "spectral_rib", "spectral_femur", "spectral_spine", "spectral_humerus" ]
+custom_warning = "[color=#008583]Requires 5 different Spectral Bones...[/color]"
+item_id = "fishing_rod_skeleton"
+item_no_duplicates = true
+max_item_owned = -1

@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Map/Tools/area_entrance.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Map/Tools/transition_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Materials/dark_brown.tres" type="Material" id=3]
+[ext_resource path="res://Scenes/Entities/Props/prop_boat_spawn.gd" type="Script" id=4]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 8.0
+radial_segments = 6
+
+[sub_resource type="PlaneMesh" id=9]
+subdivide_width = 4
+subdivide_depth = 4
+
+[sub_resource type="Shader" id=11]
+code = "shader_type spatial;
+
+uniform float wave_size = 1.0;
+uniform float face_distortion = 0.5;
+uniform vec2 time_scale = vec2(0.3, 0.0);
+uniform vec2 uv_offset_scale = vec2(-0.2, -0.1);
+
+uniform sampler2D uv_offset_texture : hint_black; 
+uniform vec4 color : hint_color;
+
+void vertex(){
+	// Sample Noise
+	vec2 base_uv_offset = UV * uv_offset_scale;
+	base_uv_offset += TIME * time_scale;
+	float noise = texture(uv_offset_texture, base_uv_offset).r;
+	
+	// Calculate offset
+	float texture_based_offset = noise * 2.0 - 1.0; // Convert from 0.0  1.0 to -1.0  1.0
+	texture_based_offset *= wave_size; // Apply amplitude
+	
+	texture_based_offset *= UV.x; // Apply dampening
+	
+	VERTEX.y += texture_based_offset;
+	
+	VERTEX.z += texture_based_offset * face_distortion; // Distort the face to give impression of conserving shape
+	VERTEX.x += texture_based_offset * -face_distortion;
+}
+
+
+void fragment(){
+	// Sample noise
+	vec2 base_uv_offset = UV * uv_offset_scale;
+	base_uv_offset += TIME * time_scale;
+	float noise = texture(uv_offset_texture, base_uv_offset).r;
+	
+	ALBEDO = color.rgb; //vec3(0.0, noise, 1.0 - noise); //Display noise. Blue for valleys, green for peaks
+	//ALBEDO = vec3(1.0 - UV.x, 0.0, UV.x); //Display dampening. Red is full dampening, blue is none
+}"
+
+[sub_resource type="OpenSimplexNoise" id=7]
+
+[sub_resource type="NoiseTexture" id=12]
+seamless = true
+noise = SubResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 11 )
+shader_param/wave_size = 1.0
+shader_param/face_distortion = 0.5
+shader_param/time_scale = Vector2( 0.3, 0 )
+shader_param/uv_offset_scale = Vector2( -0.2, -0.1 )
+shader_param/color = Color( 1, 0, 0.192157, 1 )
+shader_param/uv_offset_texture = SubResource( 12 )
+
+[sub_resource type="PlaneMesh" id=10]
+flip_faces = true
+subdivide_width = 4
+subdivide_depth = 4
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.6, 0.7, 0.567352 )
+
+[node name="boatraft" type="KinematicBody"]
+script = ExtResource( 4 )
+delete_on_owner_disconnect = true
+zone_name = "island_tiny_zone"
+entrance_name = "island_tiny_entrance"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 1.258, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
+mesh = SubResource( 10 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 5 )
+
+[node name="transition_zone" parent="." instance=ExtResource( 2 )]
+text = "TRAVEL"
+zone_id = "boat_raft_zone"
+spawn_id = "boat_entrance"
+
+[node name="CollisionShape" type="CollisionShape" parent="transition_zone"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712637, -0.00460571 )
+shape = SubResource( 3 )
+
+[node name="area_entrance" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007, 1.257, 0.015 )
+entrance_id = "boat_exit"

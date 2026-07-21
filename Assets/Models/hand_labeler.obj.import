@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hand_labeler.obj-ff0614c781a78c572f86b1e09f3f5caf.mesh"
+
+[deps]
+
+files=[ "res://.import/hand_labeler.obj-ff0614c781a78c572f86b1e09f3f5caf.mesh" ]
+
+source_file="res://Assets/Models/hand_labeler.obj"
+dest_files=[ "res://.import/hand_labeler.obj-ff0614c781a78c572f86b1e09f3f5caf.mesh", "res://.import/hand_labeler.obj-ff0614c781a78c572f86b1e09f3f5caf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

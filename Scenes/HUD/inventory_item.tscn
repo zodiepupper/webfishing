@@ -1,0 +1,161 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/HUD/inventory_item.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Textures/UI/item_star.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Themes/accid___.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="StyleBoxFlat" id=2]
+resource_local_to_scene = true
+bg_color = Color( 1, 0.933333, 0.835294, 1 )
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.133333, 0.843137, 0.133333, 1 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 3.0
+expand_margin_right = 3.0
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.933333, 0.835294, 1 )
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.352941, 0.458824, 0.352941, 1 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+outline_size = 2
+outline_color = Color( 1, 0.933333, 0.835294, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 7 )
+
+[node name="item" type="Button"]
+anchor_right = 0.044
+anchor_bottom = 0.078
+margin_right = -72.48
+margin_bottom = -48.04
+rect_min_size = Vector2( 90, 90 )
+rect_pivot_offset = Vector2( 45, 45 )
+theme = ExtResource( 3 )
+expand_icon = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="root" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+theme = ExtResource( 4 )
+
+[node name="quality" type="Panel" parent="root"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+
+[node name="ColorRect" type="Panel" parent="root"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="root"]
+self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+mouse_filter = 2
+expand = true
+
+[node name="Panel" type="Panel" parent="root"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -22.0
+margin_top = -16.0
+margin_right = 12.0
+margin_bottom = 16.0
+custom_styles/panel = ExtResource( 5 )
+
+[node name="hotkey" type="Label" parent="root/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -4.0
+margin_right = -8.0
+margin_bottom = -2.0
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+text = "1"
+align = 1
+valign = 2
+
+[node name="locked" type="TextureRect" parent="root"]
+anchor_left = -0.166666
+anchor_top = 0.622222
+anchor_right = 0.277889
+anchor_bottom = 1.06678
+margin_right = 5.98999
+margin_bottom = 5.98999
+rect_pivot_offset = Vector2( 22, 22 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tooltip_node" parent="root" instance=ExtResource( 2 )]
+
+[node name="right_mouse" type="Button" parent="root/tooltip_node"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+button_mask = 2
+flat = true
+
+[node name="stack_count" type="Label" parent="root"]
+anchor_left = 0.0666667
+anchor_top = 0.133333
+anchor_right = 1.06667
+anchor_bottom = 1.13333
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_colors/font_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "x99"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="visibility_changed" from="." to="." method="_on_item_visibility_changed"]
+[connection signal="pressed" from="root/tooltip_node/right_mouse" to="." method="_on_right_mouse_pressed"]

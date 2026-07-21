@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Entities/Player/SpeechBubble/speech_bubble.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Themes/accid___.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Textures/UI/bubble_arrow.png" type="Texture" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 4
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.06, 0.11, 0.19, 0.6 )
+border_width_left = 52
+border_width_top = 52
+border_width_right = 52
+border_width_bottom = 52
+border_color = Color( 0.0627451, 0.109804, 0.192157, 0 )
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[node name="speech_bubble" type="CenterContainer"]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -710.0
+margin_bottom = -1038.0
+rect_min_size = Vector2( 128, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_left = 493.0
+margin_right = 717.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "aaaaaaaaaaaaaaaa"
+align = 1
+valign = 1
+
+[node name="Panel2" type="Panel" parent="RichTextLabel"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -8.0
+margin_right = 24.0
+margin_bottom = 8.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Panel" type="Panel" parent="RichTextLabel"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -8.0
+margin_right = 24.0
+margin_bottom = 8.0
+
+[node name="TextureRect" type="TextureRect" parent="RichTextLabel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 4
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

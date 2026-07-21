@@ -1,0 +1,112 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type spatial;
+render_mode depth_draw_always; // Remove this line if you're not on the transparency pipeline.
+
+// Water color
+uniform vec4 out_color: hint_color = vec4(0.0, 0.2, 1.0, 1.0);
+uniform vec4 depth_color: hint_color = vec4(0.0, 0.2, 1.0, 1.0);
+uniform float amount: hint_range(0.2, 5.0, 0.01) = 0.8;
+uniform float speed: hint_range(0.1, 5.0, 0.1) = 1;
+uniform float beer_factor = 0.2;
+uniform float min_alpha = 0.2;
+uniform float metallic = 0.6;
+uniform float specular = 0.5;
+uniform float roughness = 0.2;
+
+uniform vec4 intersection_color : hint_color;
+uniform float intersection_max_threshold = 0.5;
+uniform sampler2D displ_tex : hint_white;
+uniform float displ_amount = 0.6;
+uniform float noise_scale = 1.5;
+uniform float near = 0.15;
+uniform float far = 300.0;
+
+uniform sampler2D wave_noise;
+uniform float wave_speed = 0.1;
+uniform float wave_amp = 2.5;
+
+uniform sampler2D foam_noise;
+uniform vec4 foam_color : hint_color;
+uniform vec4 foam_white_color : hint_color;
+uniform float foam_white_thresh: hint_range(0.0, 1.0, 0.01) = 0.0;
+uniform float foam_scale = 1.0;
+
+float generateOffset(float x, float z, float val1, float val2, float time) {
+	float radiansX = ((mod(x + z * x * val1, amount) / amount) + (time * speed) * mod(x * 0.8 + z, 1.5)) * 2.0 * 3.14;
+	float radiansZ = ((mod(val2 * (z * x + x * z), amount) / amount) + (time * speed) * 2.0 * mod(x, 2.0)) * 2.0 * 3.14;
+	
+	return amount * 0.5 * (sin(radiansZ) * cos(radiansX));
+}
+
+vec3 applyDistortion(vec3 vertex, float time) {
+	float xd = 0.0; //generateOffset(vertex.x, vertex.z, 0.2, 0.1, time);
+	float yd = generateOffset(vertex.x, vertex.z, 0.1, 0.3, time);
+	float zd = 0.0; //generateOffset(vertex.x, vertex.z, 0.15, 0.2, time);
+	
+	return vertex + vec3(xd, yd, zd);
+}
+
+float linearize(float c_depth) {
+    c_depth = 2.0 * c_depth - 1.0;
+    return near * far / (far + c_depth * (near - far));
+}
+
+void vertex() {
+	VERTEX.y += texture(wave_noise, UV + (TIME*wave_speed)).r * wave_amp;
+	//VERTEX = applyDistortion(VERTEX, TIME * 0.1);
+}
+
+void fragment() {
+	NORMAL = normalize(cross(dFdx(VERTEX), dFdy(VERTEX)));
+	METALLIC = metallic;
+	SPECULAR = specular;
+	ROUGHNESS = roughness;
+	
+	vec4 final_color = out_color;
+	float depth_calc = 0.0;
+	
+	if (beer_factor != 0.0) {
+		float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
+		
+		depth = depth * 2.0 - 1.0;
+		depth = PROJECTION_MATRIX[3][2] / (depth + PROJECTION_MATRIX[2][2]);
+		depth = depth + VERTEX.z;
+		
+		depth = exp(-depth * beer_factor);
+		depth_calc = clamp(1.0 - depth, 0.0, 1.0);
+		ALPHA = clamp(depth_calc, min_alpha, 1.0);
+		final_color = mix(out_color, depth_color, 1.0 - depth_calc);
+	} else {
+		ALPHA = out_color.a;
+		final_color = out_color;
+	}
+	
+	float zdepth = linearize(texture(DEPTH_TEXTURE, SCREEN_UV).x);
+	float zpos = linearize(FRAGCOORD.z);
+	float diff = zdepth - zpos;
+	
+	float time = TIME * 0.001 * speed;
+	vec2 displ = texture(displ_tex, UV - (TIME*speed) / 7.0).rg;
+	displ = ((displ * 2.0) - 1.0) * displ_amount;
+	diff += displ.x;
+	diff += texture(foam_noise, UV + time).x*noise_scale;
+	
+	vec4 foam_lines;
+	float foam_val = texture(foam_noise, UV + time).x;
+	if (foam_val > foam_white_thresh) {
+		foam_lines = foam_val * foam_color * foam_color.a;
+	} else {
+		foam_val = 1.0;
+		foam_lines = foam_val * foam_white_color * foam_white_color.a;
+	}
+	//vec4 foam_lines = foam_val * foam_color;
+	foam_lines *= depth_calc;
+	
+	vec4 color = final_color + foam_lines;
+	color.a = ALPHA;
+	vec4 col = mix(intersection_color, color, step(intersection_max_threshold, diff));
+	ALBEDO = col.rgb;
+	ALPHA = col.a;
+}"

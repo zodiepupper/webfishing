@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/floombo_FuibiMastered.ogg-b4adf8de78c5759209ebd9d864801949.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/floombo_FuibiMastered.ogg"
+dest_files=[ "res://.import/floombo_FuibiMastered.ogg-b4adf8de78c5759209ebd9d864801949.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

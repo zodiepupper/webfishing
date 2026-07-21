@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Entities/Props/prop.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Map/Props/bush.tscn" type="PackedScene" id=2]
+
+[node name="bush" type="KinematicBody"]
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+
+[node name="bush" parent="." instance=ExtResource( 2 )]

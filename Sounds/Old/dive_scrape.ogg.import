@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dive_scrape.ogg-b238e2e13657b0aa921a9c5e8cbf494b.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Old/dive_scrape.ogg"
+dest_files=[ "res://.import/dive_scrape.ogg-b238e2e13657b0aa921a9c5e8cbf494b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,174 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/HUD/PaintingScreen/painting_screen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=3]
+
+[node name="painting_screen" type="CanvasLayer"]
+layer = 15
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+theme = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_right = 0.35
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="Control/Panel"]
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.99
+anchor_bottom = 0.6
+custom_styles/panel = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 81.0
+margin_top = 72.0
+margin_right = -67.8
+margin_bottom = 60.0
+expand = true
+stretch_mode = 1
+
+[node name="LineEdit" type="LineEdit" parent="Control/Panel"]
+anchor_left = 0.03
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.02
+margin_bottom = 34.0
+placeholder_text = "Painting Name Here"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
+anchor_left = 0.02
+anchor_top = 0.9
+anchor_right = 0.98
+anchor_bottom = 0.98
+custom_constants/separation = 32
+
+[node name="create_drawing" type="Button" parent="Control/Panel/HBoxContainer"]
+margin_right = 190.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+text = "create object"
+
+[node name="clear" type="Button" parent="Control/Panel/HBoxContainer"]
+margin_left = 222.0
+margin_right = 412.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+text = "clear"
+
+[node name="close" type="Button" parent="Control/Panel/HBoxContainer"]
+margin_left = 444.0
+margin_right = 634.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+text = "leave"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel"]
+anchor_left = 0.02
+anchor_top = 0.61
+anchor_right = 0.98
+anchor_bottom = 0.65
+custom_constants/separation = 32
+
+[node name="Button" type="Button" parent="Control/Panel/HBoxContainer2"]
+margin_right = 301.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+text = "Draw"
+
+[node name="Button2" type="Button" parent="Control/Panel/HBoxContainer2"]
+margin_left = 333.0
+margin_right = 634.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+text = "Erase"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Panel"]
+anchor_left = 0.02
+anchor_top = 0.66
+anchor_right = 0.98
+anchor_bottom = 0.71
+custom_constants/separation = 32
+
+[node name="Button" type="Button" parent="Control/Panel/HBoxContainer3"]
+margin_right = 55.0
+margin_bottom = 52.0
+text = "black"
+
+[node name="Button3" type="Button" parent="Control/Panel/HBoxContainer3"]
+margin_left = 87.0
+margin_right = 122.0
+margin_bottom = 52.0
+text = "red"
+
+[node name="Button4" type="Button" parent="Control/Panel/HBoxContainer3"]
+margin_left = 154.0
+margin_right = 215.0
+margin_bottom = 52.0
+text = "green"
+
+[node name="Button5" type="Button" parent="Control/Panel/HBoxContainer3"]
+margin_left = 247.0
+margin_right = 291.0
+margin_bottom = 52.0
+text = "blue"
+
+[node name="Button6" type="Button" parent="Control/Panel/HBoxContainer3"]
+margin_left = 323.0
+margin_right = 392.0
+margin_bottom = 52.0
+text = "yellow"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Panel"]
+anchor_left = 0.02
+anchor_top = 0.72
+anchor_right = 0.98
+anchor_bottom = 0.77
+custom_constants/separation = 32
+
+[node name="Button" type="Button" parent="Control/Panel/HBoxContainer4"]
+margin_right = 56.0
+margin_bottom = 52.0
+text = "small"
+
+[node name="Button2" type="Button" parent="Control/Panel/HBoxContainer4"]
+margin_left = 88.0
+margin_right = 131.0
+margin_bottom = 52.0
+text = "med"
+
+[node name="Button3" type="Button" parent="Control/Panel/HBoxContainer4"]
+margin_left = 163.0
+margin_right = 218.0
+margin_bottom = 52.0
+text = "large"
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+visible = false
+anchor_left = 0.551042
+anchor_top = 0.0925926
+anchor_right = 0.721
+anchor_bottom = 0.343481
+margin_right = -0.319946
+margin_bottom = 0.0400085
+expand = true
+stretch_mode = 1
+
+[connection signal="pressed" from="Control/Panel/HBoxContainer/create_drawing" to="." method="_on_create_drawing_pressed"]
+[connection signal="pressed" from="Control/Panel/HBoxContainer/clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Control/Panel/HBoxContainer/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Control/Panel/HBoxContainer2/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Panel/HBoxContainer2/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Control/Panel/HBoxContainer4/Button" to="." method="_brush_size" binds= [ 0 ]]
+[connection signal="pressed" from="Control/Panel/HBoxContainer4/Button2" to="." method="_brush_size" binds= [ 1 ]]
+[connection signal="pressed" from="Control/Panel/HBoxContainer4/Button3" to="." method="_brush_size" binds= [ 2 ]]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Face/nose1.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "No Nose"
+desc = "In some artstyles I'm sure this is normal."
+title = ""
+icon = ExtResource( 2 )
+main_color = Color( 1, 1, 1, 1 )
+body_pattern = [  ]
+mirror_face = true
+allow_blink = true
+category = "nose"
+in_rotation = false
+cost = 10

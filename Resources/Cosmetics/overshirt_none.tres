@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "No Shirt"
+desc = "No service!"
+title = ""
+main_color = Color( 0, 0, 0, 1 )
+body_pattern = [  ]
+mirror_face = true
+allow_blink = true
+category = "overshirt"
+in_rotation = false
+chest_reward = false
+cost = 10

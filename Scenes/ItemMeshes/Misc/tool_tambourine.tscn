@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Materials/tan.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Materials/white.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Materials/dark_brown.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Models/Tammy.mtl.obj" type="ArrayMesh" id=5]
+
+[node name="tool_tambourine" type="Spatial"]
+script = ExtResource( 2 )
+hotspot_node = NodePath("Position3D")
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( -0.136603, -0.0615887, 0.00681991, -0.026763, 0.0735307, 0.127973, 0.0558876, -0.115326, 0.077952, -0.021654, 0.0995265, 0.0851396 )
+mesh = ExtResource( 5 )
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 4 )
+material/2 = ExtResource( 3 )
+
+[node name="Position3D" type="Position3D" parent="."]

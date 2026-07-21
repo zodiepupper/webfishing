@@ -1,0 +1,40 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Textures/Items/toolicons49.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/ItemMeshes/Misc/tool_guitar_black.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 2 )
+item_name = "Black Guitar"
+item_description = "Play your little heart out!"
+catch_blurb = ""
+item_is_hidden = false
+icon = ExtResource( 1 )
+show_item = false
+item_scene = ExtResource( 3 )
+show_scene = true
+uses_size = false
+action = "_play_guitar"
+action_params = [  ]
+release_action = ""
+prop_code = ""
+help_text = "play"
+arm_value = 0.4
+hold_offset = 0.0
+unselectable = true
+category = "tool"
+alive = true
+tier = 0
+catch_difficulty = 1.0
+catch_speed = 120.0
+loot_table = "none"
+loot_weight = 1.0
+average_size = 1.0
+sell_value = 5
+sell_multiplier = 1.0
+obtain_xp = 30
+generate_worth = true
+can_be_sold = false
+show_bait = true
+detect_item = false

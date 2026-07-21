@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/slurpee.obj-5ebb8c3def7e7ff332cccfe9ba3e47b1.mesh"
+
+[deps]
+
+files=[ "res://.import/slurpee.obj-5ebb8c3def7e7ff332cccfe9ba3e47b1.mesh" ]
+
+source_file="res://Assets/Models/slurpee.obj"
+dest_files=[ "res://.import/slurpee.obj-5ebb8c3def7e7ff332cccfe9ba3e47b1.mesh", "res://.import/slurpee.obj-5ebb8c3def7e7ff332cccfe9ba3e47b1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

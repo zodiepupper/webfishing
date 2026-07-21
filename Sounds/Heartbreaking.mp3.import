@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Heartbreaking.mp3-b338fff2fd2b56d6032507cedefbeda2.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Heartbreaking.mp3"
+dest_files=[ "res://.import/Heartbreaking.mp3-b338fff2fd2b56d6032507cedefbeda2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

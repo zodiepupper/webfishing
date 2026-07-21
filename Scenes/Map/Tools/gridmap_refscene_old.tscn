@@ -1,0 +1,424 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://Assets/Models/main.material" type="Material" id=1]
+[ext_resource path="res://Assets/Textures/grass.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Models/alt.material" type="Material" id=3]
+[ext_resource path="res://Assets/Textures/rockside.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Models/Material_002.material" type="Material" id=5]
+[ext_resource path="res://Assets/Textures/grass6.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/grass7.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/grass10.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/grass5.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/grass9.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/grass4.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/grass8.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Models/alt_001.material" type="Material" id=13]
+[ext_resource path="res://Assets/Models/Material_001.material" type="Material" id=14]
+[ext_resource path="res://Assets/Models/Material_003.material" type="Material" id=15]
+[ext_resource path="res://Assets/Models/main_001.material" type="Material" id=16]
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "gridmaptiles_Plane"
+surfaces/0 = {
+"aabb": AABB( -1, 0, -1, 2, 1e-05, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ArrayMesh" id=2]
+resource_name = "gridmaptiles_Plane001"
+surfaces/0 = {
+"aabb": AABB( -1, 0, -1, 2, 1e-05, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 16 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+surfaces/1 = {
+"aabb": AABB( -1, -2, 1, 2, 2.00001, 1 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 42, 127, 193, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 42, 127, 193, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 0, 64, 0, 42, 127, 193, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 0, 64, 0, 42, 127, 193, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 13 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ConcavePolygonShape" id=15]
+data = PoolVector3Array( -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, -2, 2, -1, 0, 1, 1, 0, 1, 1, -2, 2, -1, -2, 2 )
+
+[sub_resource type="ArrayMesh" id=3]
+resource_name = "gridmaptiles_Plane002"
+surfaces/0 = {
+"aabb": AABB( -1, 0, -1, 2, 1e-05, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+surfaces/1 = {
+"aabb": AABB( -1, -2, -1, 3, 2.00001, 3 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 42, 127, 193, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 42, 127, 193, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 50, 25, 127, 193, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 84, 42, 127, 63, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 84, 42, 127, 63, 0, 60, 0, 0, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 0, 64, 0, 42, 127, 193, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 0, 64, 0, 42, 127, 193, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 0, 64, 50, 25, 127, 193, 0, 60, 0, 60, 0, 0, 0, 64, 0, 0, 0, 192, 0, 0, 128, 63, 50, 25, 127, 193, 0, 60, 0, 60, 0, 0, 0, 64, 0, 0, 0, 192, 0, 0, 128, 63, 84, 42, 127, 63, 0, 60, 0, 60, 0, 0, 0, 64, 0, 0, 0, 192, 0, 0, 128, 191, 84, 42, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 1, 0, 5, 0, 0, 0, 1, 0, 6, 0, 5, 0, 4, 0, 9, 0, 3, 0, 4, 0, 10, 0, 9, 0, 2, 0, 8, 0, 7, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 15,
+"material": ExtResource( 3 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 11
+}
+
+[sub_resource type="ConcavePolygonShape" id=16]
+data = PoolVector3Array( -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, -2, 2, -1, 0, 1, 1, 0, 1, 1, -2, 2, -1, -2, 2, 1, 0, -1, 2, -2, 1, 1, 0, 1, 1, 0, -1, 2, -2, -1, 2, -2, 1, 1, 0, 1, 2, -2, 1, 1, -2, 2 )
+
+[sub_resource type="ArrayMesh" id=4]
+resource_name = "gridmaptiles_Plane003"
+surfaces/0 = {
+"aabb": AABB( -1, 0, -1, 2, 1e-05, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 95, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 14 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+surfaces/1 = {
+"aabb": AABB( -1, -2, -1, 3, 2.00001, 3 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 49, 26, 127, 193, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 49, 26, 127, 193, 0, 60, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 51, 26, 127, 193, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 51, 26, 127, 193, 0, 60, 0, 0, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 0, 64, 49, 26, 127, 193, 0, 0, 0, 60, 153, 153, 25, 63, 0, 0, 0, 192, 255, 255, 255, 62, 49, 26, 127, 193, 0, 60, 0, 60, 153, 153, 25, 63, 0, 0, 0, 192, 255, 255, 255, 62, 51, 26, 127, 193, 0, 60, 0, 60, 0, 0, 0, 64, 0, 0, 0, 192, 0, 0, 128, 191, 51, 26, 127, 193, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 1, 0, 4, 0, 0, 0, 1, 0, 5, 0, 4, 0, 3, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 12,
+"material": ExtResource( 5 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 8
+}
+
+[sub_resource type="ConcavePolygonShape" id=17]
+data = PoolVector3Array( -1, 0, 1, 1, 0, -1, 0, 0, 0, -1, 0, 1, -1, 0, -1, 1, 0, -1, 0, 0, 0, -1, -2, 2, -1, 0, 1, 0, 0, 0, 0.6, -2, 0.5, -1, -2, 2, 1, 0, -1, 0.6, -2, 0.5, 0, 0, 0, 1, 0, -1, 2, -2, -1, 0.6, -2, 0.5 )
+
+[sub_resource type="ArrayMesh" id=5]
+resource_name = "gridmaptiles_Plane005"
+surfaces/0 = {
+"aabb": AABB( -1, 0, -1, 2, 1e-05, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+surfaces/1 = {
+"aabb": AABB( -1, -2, 1, 2, 2.00001, 3 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 76, 127, 193, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 76, 127, 193, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 128, 64, 0, 76, 127, 193, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 128, 64, 0, 76, 127, 193, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 15 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ArrayMesh" id=6]
+resource_name = "gridmaptiles_Plane006"
+surfaces/0 = {
+"aabb": AABB( -1, 0, -1, 2, 1e-05, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 95, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+surfaces/1 = {
+"aabb": AABB( -1, -2, -1, 5, 2.00001, 5 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 28, 61, 127, 193, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 28, 61, 127, 193, 0, 60, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 37, 61, 127, 193, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 37, 61, 127, 193, 0, 60, 0, 0, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 128, 64, 28, 61, 127, 193, 0, 0, 0, 60, 0, 0, 0, 64, 0, 0, 0, 192, 0, 0, 0, 64, 28, 61, 127, 193, 0, 60, 0, 60, 0, 0, 0, 64, 0, 0, 0, 192, 0, 0, 0, 64, 37, 61, 127, 193, 0, 60, 0, 60, 0, 0, 128, 64, 0, 0, 0, 192, 0, 0, 128, 191, 37, 61, 127, 193, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 1, 0, 4, 0, 0, 0, 1, 0, 5, 0, 4, 0, 3, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 12,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 8
+}
+
+[sub_resource type="ArrayMesh" id=7]
+resource_name = "gridmaptiles_Plane008"
+surfaces/0 = {
+"aabb": AABB( -1, -2, -1, 2, 2, 4.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 64, 64, 129, 0, 127, 63, 0, 0, 0, 60, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 64, 64, 0, 84, 127, 63, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 64, 64, 0, 84, 127, 63, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 64, 64, 127, 0, 127, 63, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 129, 0, 127, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 127, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 84, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 127, 127, 127, 63, 0, 60, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 84, 127, 63, 0, 60, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 127, 0, 127, 63, 0, 60, 0, 0, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 128, 191, 129, 0, 127, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 128, 191, 127, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 128, 191, 127, 127, 127, 63, 0, 60, 0, 0, 0, 0, 128, 63, 0, 0, 0, 192, 0, 0, 128, 191, 127, 0, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 1, 0, 8, 0, 2, 0, 1, 0, 6, 0, 8, 0, 5, 0, 12, 0, 7, 0, 5, 0, 11, 0, 12, 0, 9, 0, 13, 0, 3, 0, 4, 0, 0, 0, 10, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 18,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 14
+}
+
+[sub_resource type="ConcavePolygonShape" id=14]
+data = PoolVector3Array( -1, -2, 3, 1, 0, -1, 1, -2, 3, -1, -2, 3, -1, 0, -1, 1, 0, -1, -1, 0, -1, 1, -2, -1, 1, 0, -1, -1, 0, -1, -1, -2, -1, 1, -2, -1, 1, 0, -1, 1, -2, -1, 1, -2, 3, -1, 0, -1, -1, -2, 3, -1, -2, -1 )
+
+[sub_resource type="ArrayMesh" id=8]
+resource_name = "gridmaptiles_Plane009"
+surfaces/0 = {
+"aabb": AABB( -1, 0, -1, 2, 1e-05, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 127, 127, 63, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 127, 127, 95, 0, 60, 0, 60, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 127, 127, 63, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+surfaces/1 = {
+"aabb": AABB( -1, -2, -1, 3, 2.00001, 5 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 47, 45, 127, 193, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 47, 45, 127, 193, 0, 60, 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 54, 35, 127, 193, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 54, 35, 127, 193, 0, 60, 0, 0, 0, 0, 128, 191, 0, 0, 0, 192, 0, 0, 128, 64, 47, 45, 127, 193, 0, 0, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 102, 102, 102, 63, 47, 45, 127, 193, 0, 60, 0, 60, 0, 0, 128, 63, 0, 0, 0, 192, 102, 102, 102, 63, 54, 35, 127, 193, 0, 60, 0, 60, 0, 0, 0, 64, 0, 0, 0, 192, 0, 0, 128, 191, 54, 35, 127, 193, 0, 60, 0, 0 ),
+"array_index_data": PoolByteArray( 1, 0, 4, 0, 0, 0, 1, 0, 5, 0, 4, 0, 3, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 12,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 8
+}
+
+[sub_resource type="ArrayMesh" id=9]
+
+[sub_resource type="ConcavePolygonShape" id=18]
+data = PoolVector3Array( -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 1, 1, 0.025 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 1, 1, 0.025 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 1.37476, 1, 0.025 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = ExtResource( 11 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_texture = ExtResource( 9 )
+
+[sub_resource type="SpatialMaterial" id=21]
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_texture = ExtResource( 7 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=23]
+albedo_texture = ExtResource( 12 )
+
+[sub_resource type="SpatialMaterial" id=24]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=25]
+albedo_texture = ExtResource( 8 )
+
+[node name="ref" type="Spatial"]
+
+[node name="ground" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="ground_edge" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="ground_edge"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_edge/StaticBody"]
+shape = SubResource( 15 )
+
+[node name="ground_edge_corner" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0 )
+mesh = SubResource( 3 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="ground_edge_corner"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_edge_corner/StaticBody"]
+shape = SubResource( 16 )
+
+[node name="ground_edge_corner_diag" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0 )
+mesh = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="ground_edge_corner_diag"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_edge_corner_diag/StaticBody"]
+shape = SubResource( 17 )
+
+[node name="ground_shallow_edge" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 0 )
+mesh = SubResource( 5 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 4 )
+
+[node name="ground_shallow_edge_corner" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 0 )
+mesh = SubResource( 6 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 4 )
+
+[node name="slope" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, 0 )
+mesh = SubResource( 7 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="slope"]
+
+[node name="CollisionShape" type="CollisionShape" parent="slope/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="ground_shallow_edge_corner001" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 0 )
+mesh = SubResource( 8 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 4 )
+
+[node name="ground_shallow_edge_corner002" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 5 )
+mesh = SubResource( 8 )
+skeleton = NodePath("")
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 4 )
+
+[node name="coll_ground" type="MeshInstance" parent="."]
+mesh = SubResource( 9 )
+
+[node name="StaticBody2" type="StaticBody" parent="coll_ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="coll_ground/StaticBody2"]
+shape = SubResource( 18 )
+
+[node name="coll_ground_edge" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+mesh = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="coll_ground_edge"]
+
+[node name="CollisionShape" type="CollisionShape" parent="coll_ground_edge/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.941, 1 )
+shape = SubResource( 11 )
+
+[node name="coll_ground_corner" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
+mesh = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="coll_ground_corner"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape" parent="coll_ground_corner/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.941, 1 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="coll_ground_corner/StaticBody"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 1.941, 0 )
+shape = SubResource( 12 )
+
+[node name="coll_ground_diag" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )
+mesh = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="coll_ground_diag"]
+
+[node name="CollisionShape" type="CollisionShape" parent="coll_ground_diag/StaticBody"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.941, 0 )
+shape = SubResource( 13 )
+
+[node name="ground_1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 12 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 19 )
+
+[node name="ground_2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 12 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 20 )
+
+[node name="ground_3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 12 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 21 )
+
+[node name="ground2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 14 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 22 )
+
+[node name="ground_4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 14 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 23 )
+
+[node name="ground_5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 14 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 24 )
+
+[node name="ground_6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 14 )
+mesh = SubResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 25 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8, 0 )

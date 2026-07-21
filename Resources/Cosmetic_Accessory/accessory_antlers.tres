@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons63.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Models/Cosmetics/antlers.tres" type="ArrayMesh" id=4]
+
+[resource]
+script = ExtResource( 1 )
+name = "Antlers"
+desc = "What a rack!"
+title = ""
+icon = ExtResource( 3 )
+mesh = ExtResource( 4 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 2 )
+main_color = Color( 0.909804, 0.780392, 0.615686, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "accessory"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = true
+cost = 10

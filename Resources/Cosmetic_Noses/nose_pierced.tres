@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Face/nose5.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Pierced"
+desc = "Fancy!"
+title = ""
+icon = ExtResource( 2 )
+species_alt_mesh = [  ]
+main_color = Color( 1, 1, 1, 1 )
+body_pattern = [  ]
+mirror_face = true
+allow_blink = true
+category = "nose"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = true
+cost = 10

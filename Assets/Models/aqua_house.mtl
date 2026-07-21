@@ -1,0 +1,25 @@
+# Exported from Godot Engine
+
+newmtl base_wood
+Kd 0.8 0.366128 0.190019
+Ks 0.5 0.5 0.5
+
+newmtl base_wood2
+Kd 0.8 0.742818 0.435523
+Ks 0.5 0.5 0.5
+
+newmtl base_wood3
+Kd 0.8 0.434195 0.112611
+Ks 0.5 0.5 0.5
+
+newmtl roof
+Kd 0.012911 0.114936 0.054962
+Ks 0.5 0.5 0.5
+
+newmtl door
+Kd 0.052205 0.020502 0.003072
+Ks 0.5 0.5 0.5
+
+newmtl door_handle
+Kd 0.8 0.238677 0.006567
+Ks 0.5 0.5 0.5

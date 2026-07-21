@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/HUD/EmoteWheel/emote_button_grid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD/EmoteWheel/emote_wheel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons6.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons8.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons5.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons9.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons7.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/UI/ui_buttons10.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="emote_wheel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="wheel" type="AspectRatioContainer" parent="."]
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 576, 324 )
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="wheel"]
+margin_left = 252.0
+margin_right = 900.0
+margin_bottom = 648.0
+columns = 3
+
+[node name="TextureRect3" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_right = 214.0
+margin_bottom = 214.0
+emote_icon = ExtResource( 5 )
+
+[node name="TextureRect4" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_left = 218.0
+margin_right = 431.0
+margin_bottom = 214.0
+emote_id = "sit"
+emote_icon = ExtResource( 6 )
+
+[node name="TextureRect5" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_left = 435.0
+margin_right = 648.0
+margin_bottom = 214.0
+emote_id = "emote_love"
+emotion = "love"
+emote_icon = ExtResource( 7 )
+
+[node name="TextureRect6" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_top = 218.0
+margin_right = 214.0
+margin_bottom = 431.0
+emote_id = "emote_angry"
+emotion = "angry"
+emote_icon = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="wheel/GridContainer" groups=["emote_ignore"]]
+margin_left = 218.0
+margin_top = 218.0
+margin_right = 431.0
+margin_bottom = 431.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="TextureRect8" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_left = 435.0
+margin_top = 218.0
+margin_right = 648.0
+margin_bottom = 431.0
+emote_id = "emote_sad"
+emotion = "sad"
+emote_icon = ExtResource( 8 )
+
+[node name="TextureRect9" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_top = 435.0
+margin_right = 214.0
+margin_bottom = 648.0
+emote_id = "emote_surprised"
+emotion = "surprised"
+emote_icon = ExtResource( 9 )
+
+[node name="TextureRect10" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_left = 218.0
+margin_top = 435.0
+margin_right = 431.0
+margin_bottom = 648.0
+emote_id = "emote_cheer"
+emotion = "happy"
+emote_icon = ExtResource( 10 )
+
+[node name="TextureRect11" parent="wheel/GridContainer" instance=ExtResource( 1 )]
+margin_left = 435.0
+margin_top = 435.0
+margin_right = 648.0
+margin_bottom = 648.0
+emote_id = "emote_bark"
+emotion = "bark_ready"
+emote_icon = ExtResource( 11 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

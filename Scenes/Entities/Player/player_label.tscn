@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Themes/coolvetica rg.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Entities/Player/player_label.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 2
+outline_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_size = 2
+outline_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[node name="player_label" type="Control"]
+margin_right = 720.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 240, 480 )
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 2
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 907.0
+margin_right = 720.0
+margin_bottom = 933.0
+custom_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 937.0
+margin_right = 720.0
+margin_bottom = 960.0
+custom_colors/font_color = Color( 0.835294, 0.666667, 0.45098, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "PLAYER TITLE"
+align = 1
+valign = 1
+
+[node name="bubble_box" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -96.0
+custom_constants/separation = 15
+alignment = 2

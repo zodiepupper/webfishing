@@ -1,0 +1,31 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
+[ext_resource path="res://Assets/Textures/Cosmetics/cosmetic_watch2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons14.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Models/Cosmetics/watch.tres" type="ArrayMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 3 )
+
+[resource]
+script = ExtResource( 1 )
+name = "Gold Watch"
+desc = "The most expensive way to tell the time."
+title = ""
+icon = ExtResource( 4 )
+mesh = ExtResource( 5 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 2 )
+material = SubResource( 1 )
+main_color = Color( 1, 1, 1, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "accessory"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = false
+cost = 10

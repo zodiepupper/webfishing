@@ -1,0 +1,18 @@
+[gd_resource type="ParticlesMaterial" load_steps=3 format=2]
+
+[sub_resource type="Curve" id=416]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.2, 0.238636 ), 0.0, 0.0, 0, 0, Vector2( 0.51236, 0.247727 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=417]
+curve = SubResource( 416 )
+
+[resource]
+direction = Vector3( 0, 1, 0 )
+spread = 37.3
+gravity = Vector3( 0, -6, 0 )
+initial_velocity = 7.0
+initial_velocity_random = 0.39
+linear_accel = -3.41
+angle = 178.5
+angle_random = 0.29
+scale_curve = SubResource( 417 )

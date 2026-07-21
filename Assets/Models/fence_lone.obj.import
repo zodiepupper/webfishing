@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fence_lone.obj-598152bded42cfc65a3d1eb54623b13e.mesh"
+
+[deps]
+
+files=[ "res://.import/fence_lone.obj-598152bded42cfc65a3d1eb54623b13e.mesh" ]
+
+source_file="res://Assets/Models/fence_lone.obj"
+dest_files=[ "res://.import/fence_lone.obj-598152bded42cfc65a3d1eb54623b13e.mesh", "res://.import/fence_lone.obj-598152bded42cfc65a3d1eb54623b13e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,17 @@
+# Exported from Godot Engine
+
+newmtl base
+Kd 0.042028 0.005088 0.003684
+Ks 0.5 0.5 0.5
+
+newmtl front
+Kd 0.8 0.286057 0.112785
+Ks 0.5 0.5 0.5
+
+newmtl black
+Kd 0.0 0.0 0.0
+Ks 0.5 0.5 0.5
+
+newmtl white
+Kd 0.8 0.8 0.8
+Ks 0.5 0.5 0.5

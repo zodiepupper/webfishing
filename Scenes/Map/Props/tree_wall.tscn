@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Placeholder/trees.png" type="Texture" id=1]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 24, 24 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+params_depth_draw_mode = 3
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -2, -2, 0, -2, 2, 0, 2, 2, 0, -2, -2, 0, 2, 2, 0, 2, -2, 0 )
+
+[node name="tree_wall" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )

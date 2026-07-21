@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Entities/actor.gd" type="Script" id=1]
+
+[node name="player" type="KinematicBody"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+has_shadow = true
+can_be_hidden = true

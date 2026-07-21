@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/drown2.ogg-12aed2c885d5c2c4e7d4b74811d3ee88.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Old/drown2.ogg"
+dest_files=[ "res://.import/drown2.ogg-12aed2c885d5c2c4e7d4b74811d3ee88.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

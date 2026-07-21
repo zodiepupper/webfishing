@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Models/Cosmetics/tanktop.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons17.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=4]
+
+[resource]
+script = ExtResource( 4 )
+name = "Orange Tank-Top"
+desc = "Sleeveless!"
+title = ""
+icon = ExtResource( 3 )
+mesh = ExtResource( 1 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 2 )
+main_color = Color( 0.772549, 0.266667, 0, 1 )
+body_pattern = [  ]
+mirror_face = true
+allow_blink = true
+category = "undershirt"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = true
+cost = 10

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
+[ext_resource path="res://Assets/Models/shirt_update.tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons1.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+name = "Teal T-Shirt"
+desc = "Simple yet sweet!"
+title = ""
+icon = ExtResource( 4 )
+mesh = ExtResource( 3 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 2 )
+main_color = Color( 0.352941, 0.458824, 0.352941, 1 )
+body_pattern = [  ]
+mirror_face = true
+allow_blink = true
+category = "undershirt"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = true
+cost = 10

@@ -1,0 +1,43 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Creatures/creature_anomalo.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Anomalocaris"
+item_description = "Anomalocaris canadensis"
+catch_blurb = "Doing it's best :)"
+item_is_hidden = false
+icon = ExtResource( 2 )
+show_item = true
+show_scene = false
+uses_size = true
+action = ""
+action_params = [  ]
+release_action = ""
+prop_code = ""
+help_text = ""
+arm_value = 0.2
+hold_offset = 0.0
+unselectable = false
+unrenamable = false
+category = "fish"
+alive = true
+tier = 0
+catch_difficulty = 4.0
+catch_speed = 120.0
+loot_table = "rain"
+loot_weight = 1.0
+average_size = 45.0
+sell_value = 1
+sell_multiplier = 2.0
+obtain_xp = 100
+generate_worth = true
+can_be_sold = true
+rare = false
+stackable = false
+max_stacks = 99
+unobtainable = false
+show_bait = false
+detect_item = false

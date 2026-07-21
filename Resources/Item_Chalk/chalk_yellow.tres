@@ -1,0 +1,36 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ItemMeshes/Chalk/chalk_yellow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Textures/Items/toolicons21.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Yellow Chalk"
+item_description = "Bring out your inner artist!"
+catch_blurb = ""
+item_is_hidden = false
+icon = ExtResource( 3 )
+show_item = false
+item_scene = ExtResource( 2 )
+show_scene = true
+uses_size = false
+action = "_paint"
+action_params = [ 2, 4 ]
+release_action = "_paint_stop"
+help_text = "draw (SPRINT for bigger brush, SNEAK for smaller)"
+arm_value = 0.3
+hold_offset = 0.0
+unselectable = true
+category = "tool"
+alive = true
+tier = 0
+catch_difficulty = 1.0
+catch_speed = 120.0
+loot_table = "none"
+loot_weight = 1.0
+average_size = 1.0
+sell_value = 5
+obtain_xp = 30
+can_be_sold = false
+show_bait = false

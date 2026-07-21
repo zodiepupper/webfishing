@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+export/
+android/build
+exports/
+temp_unityimp/
+assets/deleteme/
+*.tmp
+*.DS_Store

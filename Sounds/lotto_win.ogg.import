@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lotto_win.ogg-935e1547d29326354e6fed2f8b7d0c86.oggstr"
+
+[deps]
+
+source_file="res://Sounds/lotto_win.ogg"
+dest_files=[ "res://.import/lotto_win.ogg-935e1547d29326354e6fed2f8b7d0c86.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

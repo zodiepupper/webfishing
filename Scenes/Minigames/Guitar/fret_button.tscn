@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Minigames/Guitar/fret_button.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Guitar/marker.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=3]
+
+[node name="fret_button" type="Button"]
+margin_right = 12.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -4.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+text = "G"
+align = 1
+valign = 1

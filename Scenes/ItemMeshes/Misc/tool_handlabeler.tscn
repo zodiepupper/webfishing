@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=1]
+[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Materials/blue.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Models/hand_labeler.obj" type="ArrayMesh" id=4]
+
+[node name="tool_handlabeler" type="Spatial"]
+script = ExtResource( 2 )
+hotspot_node = NodePath("Position3D")
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( -0.0231593, 0.00698568, 0.0970301, -0.0178901, 0.0977349, -0.0113064, -0.0956221, -0.0199773, -0.021385, -0.123, 0.044, 0.016 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 1 )
+
+[node name="Position3D" type="Position3D" parent="."]

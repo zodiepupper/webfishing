@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Textures/Guitar/string.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Minigames/Guitar/string.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Shaders/guitar_string.tres" type="Material" id=3]
+
+[node name="string" type="Control"]
+anchor_right = 0.001
+anchor_bottom = 0.119
+margin_right = 22.08
+margin_bottom = 401.48
+rect_min_size = Vector2( 32, 0 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 1.0
+custom_constants/separation = 0
+
+[node name="string_1" type="TextureRect" parent="VBoxContainer"]
+material = ExtResource( 3 )
+margin_right = 16.0
+margin_bottom = 265.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+
+[node name="string_2" type="TextureRect" parent="VBoxContainer"]
+material = ExtResource( 3 )
+margin_top = 265.0
+margin_right = 16.0
+margin_bottom = 530.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+flip_v = true

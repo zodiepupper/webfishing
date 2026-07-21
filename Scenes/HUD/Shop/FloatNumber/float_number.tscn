@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/FloatNumber/float_number.gd" type="Script" id=2]
+
+[node name="float_number" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 3.325
+anchor_bottom = 1.0
+margin_left = -69.0
+margin_top = -20.0
+margin_right = -69.0
+margin_bottom = -21.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.0627451, 0.109804, 0.192157, 1 )
+text = "-9999999"
+align = 1
+valign = 1

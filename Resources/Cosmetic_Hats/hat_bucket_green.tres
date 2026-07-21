@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=1]
+[ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Materials/dark_green_b.tres" type="Material" id=3]
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons25.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Models/Cosmetics/bucket_hat.tres" type="ArrayMesh" id=6]
+
+[resource]
+script = ExtResource( 4 )
+name = "Green Bucket Hat"
+desc = "Theres more!"
+title = ""
+icon = ExtResource( 5 )
+mesh = ExtResource( 6 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 1 )
+material = ExtResource( 3 )
+secondary_material = ExtResource( 2 )
+main_color = Color( 0.321569, 0.34902, 0, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "hat"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = false
+cost = 10

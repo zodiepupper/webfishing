@@ -1,0 +1,234 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/HUD/Playerlist/player_entry.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Textures/UI/player_options3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/UI/player_options1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Textures/UI/player_options5.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/UI/player_options6.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/UI/player_options7.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/UI/player_options8.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/UI/player_options9.png" type="Texture" id=10]
+
+[node name="entry" type="Control"]
+anchor_right = 0.575
+anchor_bottom = 0.033
+margin_right = -478.0
+margin_bottom = 6.36
+rect_min_size = Vector2( 211.68, 42 )
+size_flags_horizontal = 11
+size_flags_vertical = 9
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 4.0
+margin_right = -16.0
+margin_bottom = -4.0
+custom_constants/separation = 8
+
+[node name="RichTextLabel" type="Label" parent="Panel/HBoxContainer"]
+margin_right = 293.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "NAME HERE"
+valign = 1
+
+[node name="member" type="HBoxContainer" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+margin_left = 145.0
+margin_right = 366.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="ping" type="Label" parent="Panel/HBoxContainer/member"]
+margin_right = 11.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+align = 2
+valign = 1
+
+[node name="mute" type="Button" parent="Panel/HBoxContainer/member"]
+margin_left = 17.0
+margin_right = 53.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 4 )
+
+[node name="TooltipNode" type="Control" parent="Panel/HBoxContainer/member/mute"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Mute Player"
+body = "Prevent seeing messages from this player."
+
+[node name="block" type="Button" parent="Panel/HBoxContainer/member"]
+margin_left = 59.0
+margin_right = 95.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 3 )
+
+[node name="TooltipNode2" type="Control" parent="Panel/HBoxContainer/member/block"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Block Player"
+body = "Fully block all communications with this player, and hide their avatar. "
+
+[node name="steam" type="Button" parent="Panel/HBoxContainer/member"]
+margin_left = 101.0
+margin_right = 137.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 6 )
+
+[node name="TooltipNode3" type="Control" parent="Panel/HBoxContainer/member/steam"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Steam Account"
+body = "Visit this player's steam account."
+
+[node name="kick" type="Button" parent="Panel/HBoxContainer/member"]
+margin_left = 143.0
+margin_right = 179.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 7 )
+
+[node name="TooltipNode4" type="Control" parent="Panel/HBoxContainer/member/kick"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Kick Player"
+body = "Kicks the player from the current lobby. They can attempt to join again afterwards."
+
+[node name="ban" type="Button" parent="Panel/HBoxContainer/member"]
+margin_left = 185.0
+margin_right = 221.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 8 )
+
+[node name="TooltipNode4" type="Control" parent="Panel/HBoxContainer/member/ban"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Ban Player"
+body = "Bans this player, kicking them from the lobby and not allowing them to attempt to return."
+
+[node name="request" type="HBoxContainer" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+margin_left = 183.0
+margin_right = 410.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 12
+alignment = 2
+
+[node name="accept_player" type="Button" parent="Panel/HBoxContainer/request"]
+margin_right = 118.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+text = "Accept "
+icon = ExtResource( 9 )
+
+[node name="TooltipNode" type="Control" parent="Panel/HBoxContainer/request/accept_player"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Accept Player"
+body = "Accept this player into the lobby."
+
+[node name="deny_player" type="Button" parent="Panel/HBoxContainer/request"]
+margin_left = 130.0
+margin_right = 227.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+text = "Deny "
+icon = ExtResource( 10 )
+
+[node name="TooltipNode2" type="Control" parent="Panel/HBoxContainer/request/deny_player"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Deny Player"
+body = "Deny this player from joining, and prevent them from sending any further join requests."
+
+[node name="unban" type="HBoxContainer" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 301.0
+margin_right = 594.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 12
+alignment = 2
+
+[node name="unban_player" type="Button" parent="Panel/HBoxContainer/unban"]
+margin_left = 175.0
+margin_right = 293.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+text = "Un-Ban "
+icon = ExtResource( 9 )
+
+[node name="TooltipNode" type="Control" parent="Panel/HBoxContainer/unban/unban_player"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Un-Ban Player"
+body = "Unbans this player from lobby, allowing them to attempt to join once more."
+
+[node name="unblock" type="HBoxContainer" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+margin_left = 301.0
+margin_right = 594.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 12
+alignment = 2
+
+[node name="unblock_player" type="Button" parent="Panel/HBoxContainer/unblock"]
+margin_left = 175.0
+margin_right = 293.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+text = "Un-Block"
+icon = ExtResource( 9 )
+
+[node name="TooltipNode" type="Control" parent="Panel/HBoxContainer/unblock/unblock_player"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Un-Block Player"
+body = "Unblocks this player, allowing you to see and hear them again."
+
+[connection signal="pressed" from="Panel/HBoxContainer/member/mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/member/block" to="." method="_on_block_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/member/steam" to="." method="_on_steam_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/member/kick" to="." method="_on_kick_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/member/ban" to="." method="_on_ban_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/request/accept_player" to="." method="_on_accept_player_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/request/deny_player" to="." method="_on_deny_player_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/unban/unban_player" to="." method="_on_unban_player_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/unblock/unblock_player" to="." method="_on_unblock_player_pressed"]

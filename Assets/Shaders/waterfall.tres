@@ -1,0 +1,39 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type spatial;
+
+uniform sampler2D noise_tex;
+uniform vec4 light_color : hint_color;
+uniform vec4 dark_color : hint_color;
+
+uniform float stretch = 1.0;
+uniform float scroll_speed = 0.0;
+uniform float threshold = 0.3;
+
+void fragment() {
+	vec2 scroll;
+	scroll.y = (UV.y*stretch) + (TIME * scroll_speed);
+	scroll.x = UV.x;
+	float noise = texture(noise_tex, scroll).r;
+	if (noise > threshold) {
+		ALBEDO = dark_color.rgb;
+	} else {
+		ALBEDO = light_color.rgb;
+	}
+}"
+
+[sub_resource type="OpenSimplexNoise" id=4]
+
+[sub_resource type="NoiseTexture" id=5]
+seamless = true
+noise = SubResource( 4 )
+
+[resource]
+shader = SubResource( 2 )
+shader_param/light_color = Color( 0.109804, 0.619608, 0.596078, 1 )
+shader_param/dark_color = Color( 0, 0.607843, 0.6, 1 )
+shader_param/stretch = 0.28
+shader_param/scroll_speed = -0.5
+shader_param/threshold = 0.51
+shader_param/noise_tex = SubResource( 5 )

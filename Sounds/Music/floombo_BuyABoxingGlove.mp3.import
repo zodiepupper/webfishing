@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/floombo_BuyABoxingGlove.mp3-3325d87676be5af0432eee94b6fee90c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/floombo_BuyABoxingGlove.mp3"
+dest_files=[ "res://.import/floombo_BuyABoxingGlove.mp3-3325d87676be5af0432eee94b6fee90c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

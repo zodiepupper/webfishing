@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4_dog.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4_cat.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons61.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4.png" type="Texture" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "Calico Pattern"
+desc = "Tri-Color!"
+title = ""
+icon = ExtResource( 4 )
+species_alt_mesh = [  ]
+main_color = Color( 0, 0, 0, 1 )
+body_pattern = [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ) ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "pattern"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = false
+cost = 10

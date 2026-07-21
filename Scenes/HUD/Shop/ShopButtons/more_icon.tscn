@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Label" type="Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 92, 92 )
+text = "and 1 more..."
+align = 1
+valign = 2
+autowrap = true

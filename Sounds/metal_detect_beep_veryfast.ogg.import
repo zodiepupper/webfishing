@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/metal_detect_beep_veryfast.ogg-f7d29ab4d936957bf24f01f7b0e75366.oggstr"
+
+[deps]
+
+source_file="res://Sounds/metal_detect_beep_veryfast.ogg"
+dest_files=[ "res://.import/metal_detect_beep_veryfast.ogg-f7d29ab4d936957bf24f01f7b0e75366.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

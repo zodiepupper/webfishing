@@ -1,0 +1,37 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Face/eyes_base27.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Face/eyes_base25.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Face/eyes_base24.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/Face/eyes_base26.png" type="Texture" id=5]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 2
+frames = 4
+fps = 8.0
+frame_0/texture = ExtResource( 4 )
+frame_1/texture = ExtResource( 3 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 5 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 2 )
+frame_3/delay_sec = 0.0
+
+[resource]
+script = ExtResource( 1 )
+name = "Wobble"
+desc = "Quivering!"
+title = ""
+icon = SubResource( 1 )
+species_alt_mesh = [  ]
+main_color = Color( 1, 1, 1, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = false
+category = "eye"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = false
+cost = 10

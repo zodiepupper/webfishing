@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Particles/CosmeticParticles/stink_particle_cosmetic.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons40.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+name = "Smelly Particles"
+desc = "Eeeewwww!"
+title = ""
+icon = ExtResource( 3 )
+species_alt_mesh = [  ]
+main_color = Color( 1, 1, 1, 1 )
+body_pattern = [  ]
+scene_replace = ExtResource( 2 )
+mirror_face = true
+flip = false
+allow_blink = true
+category = "accessory"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = false
+cost = 10

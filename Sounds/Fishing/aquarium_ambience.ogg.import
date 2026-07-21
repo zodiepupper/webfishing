@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/aquarium_ambience.ogg-ba87afe3c8b6c8a559a4472871aa18c9.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Fishing/aquarium_ambience.ogg"
+dest_files=[ "res://.import/aquarium_ambience.ogg-ba87afe3c8b6c8a559a4472871aa18c9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

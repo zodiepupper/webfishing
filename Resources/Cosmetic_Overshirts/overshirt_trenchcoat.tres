@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
+[ext_resource path="res://Assets/Models/Cosmetics/overcoat.tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons66.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=5]
+[ext_resource path="res://Assets/Materials/dark_darker.tres" type="Material" id=6]
+
+[resource]
+script = ExtResource( 1 )
+name = "Trenchcoat"
+desc = "Intimidating!"
+title = ""
+icon = ExtResource( 4 )
+mesh = ExtResource( 3 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 2 )
+material = ExtResource( 5 )
+secondary_material = ExtResource( 6 )
+main_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "overshirt"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = false
+cost = 10

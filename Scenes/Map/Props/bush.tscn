@@ -1,0 +1,73 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Models/bush.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Textures/bush_leaf.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Map/Props/prop_shadow.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Map/Props/prop.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Textures/bush_leaf2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Map/Props/bush_particle_detect.gd" type="Script" id=6]
+[ext_resource path="res://Sounds/Old/leaves.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/ParticleResources/bush.tres" type="Material" id=8]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SphereShape" id=2]
+
+[sub_resource type="SpatialMaterial" id=340]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="QuadMesh" id=338]
+material = SubResource( 340 )
+
+[sub_resource type="AudioStreamRandomPitch" id=339]
+audio_stream = ExtResource( 7 )
+
+[node name="bush" type="Spatial" groups=["bush"]]
+script = ExtResource( 4 )
+random_scale = false
+
+[node name="Leaf" type="MeshInstance" parent="."]
+transform = Transform( 1.8, 0, 0, 0, 1.5, 0, 0, 0, 1.8, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="shadow" parent="." instance=ExtResource( 3 )]
+transform = Transform( 4.2698, 0, 0, 0, -1.86639e-07, 4.2698, 0, -4.2698, -1.86639e-07, 0, 0.01, 0 )
+
+[node name="bush_particle_detect" type="Area" parent="."]
+monitorable = false
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="bush_particle_detect"]
+transform = Transform( 1.46813, 0, 0, 0, 1.46813, 0, 0, 0, 1.46813, 0, 0.55197, 0 )
+shape = SubResource( 2 )
+
+[node name="Particles" type="Particles" parent="bush_particle_detect"]
+emitting = false
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.92
+process_material = ExtResource( 8 )
+draw_pass_1 = SubResource( 338 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="bush_particle_detect"]
+stream = SubResource( 339 )
+unit_size = 2.2
+max_db = -6.0
+bus = "SFX"
+attenuation_filter_cutoff_hz = 7000.0
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624505, 0 )
+aabb = AABB( -2.71039, -1.69975, -2.84559, 5.42079, 3.3995, 5.69117 )
+
+[connection signal="body_entered" from="bush_particle_detect" to="bush_particle_detect" method="_on_bush_particle_detect_body_entered"]

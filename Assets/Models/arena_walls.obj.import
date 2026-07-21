@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/arena_walls.obj-332d8a3ec108600973589cc75e197ae9.mesh"
+
+[deps]
+
+files=[ "res://.import/arena_walls.obj-332d8a3ec108600973589cc75e197ae9.mesh" ]
+
+source_file="res://Assets/Models/arena_walls.obj"
+dest_files=[ "res://.import/arena_walls.obj-332d8a3ec108600973589cc75e197ae9.mesh", "res://.import/arena_walls.obj-332d8a3ec108600973589cc75e197ae9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

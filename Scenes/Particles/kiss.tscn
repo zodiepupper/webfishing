@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Textures/Particles/emotion_particles2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/ParticleResources/love.tres" type="Material" id=2]
+
+[sub_resource type="SpatialMaterial" id=343]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=344]
+material = SubResource( 343 )
+
+[node name="kiss_particle" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004, 0.244, 0.005 )
+emitting = false
+amount = 1
+lifetime = 1.8
+one_shot = true
+explosiveness = 0.16
+local_coords = false
+process_material = ExtResource( 2 )
+draw_pass_1 = SubResource( 344 )

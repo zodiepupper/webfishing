@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigame_breakb.ogg-d5a6820dfcdac8b85f264bf29d87e5cb.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Fishing/minigame_breakb.ogg"
+dest_files=[ "res://.import/minigame_breakb.ogg-d5a6820dfcdac8b85f264bf29d87e5cb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

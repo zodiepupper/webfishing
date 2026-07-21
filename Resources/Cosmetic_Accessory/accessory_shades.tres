@@ -1,0 +1,34 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
+[ext_resource path="res://Assets/Models/Cosmetics/shades.tres" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons8.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/Cosmetics/shades_uv2.png" type="Texture" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+render_priority = 1
+flags_transparent = true
+params_depth_draw_mode = 3
+albedo_texture = ExtResource( 5 )
+
+[resource]
+script = ExtResource( 1 )
+name = "Shades"
+desc = "So cool."
+title = ""
+icon = ExtResource( 4 )
+mesh = ExtResource( 3 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 2 )
+material = SubResource( 1 )
+main_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "accessory"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = true
+cost = 10

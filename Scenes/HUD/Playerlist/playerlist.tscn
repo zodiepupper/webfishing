@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/HUD/Playerlist/playerlist.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
+[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=3]
+
+[node name="playerlist" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "PLAYERLIST"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 88.0
+margin_right = -10.0
+margin_bottom = -10.0
+scroll_horizontal_enabled = false
+
+[node name="GridContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1900.0
+rect_min_size = Vector2( 211.68, 0 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "NO PLAYERS IN SERVER"
+align = 1
+valign = 1
+
+[node name="invite" type="Button" parent="."]
+anchor_left = 0.84
+anchor_right = 1.0
+anchor_bottom = 0.1
+margin_left = 0.319946
+margin_bottom = 0.519997
+text = "Invite Players"
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="invite" to="." method="_on_invite_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=5]
+
+[node name="bait_shop" type="Node"]
+script = ExtResource( 5 )
+
+[node name="bait" type="Node" parent="."]
+script = ExtResource( 1 )
+category_title = "bait restock"
+replace = 4

@@ -1,0 +1,193 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/Minigames/Fishing/fishing.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bg5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bg3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bg4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/top1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/progbar2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/progbar1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bar.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/progbar3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=11]
+[ext_resource path="res://Assets/Textures/UI/countdown4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/UI/winmsg1.png" type="Texture" id=13]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform vec2 motion = vec2(0.0);
+uniform float scale = 1.0;
+uniform vec2 offset = vec2(0.0);
+
+void vertex(){
+	UV = (VERTEX + offset + TIME * motion) * TEXTURE_PIXEL_SIZE * (1.0/scale);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 3 )
+shader_param/motion = Vector2( 16, 16 )
+shader_param/scale = 1.0
+shader_param/offset = Vector2( 0, 0 )
+
+[node name="fishing_minigame" type="CanvasLayer"]
+layer = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="frame" type="TextureRect" parent="Control"]
+anchor_left = 0.1
+anchor_top = 0.25
+anchor_right = 0.261
+anchor_bottom = 0.731
+margin_right = -117.12
+margin_bottom = -357.48
+texture = ExtResource( 3 )
+
+[node name="bg" type="TextureRect" parent="Control/frame"]
+show_behind_parent = true
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="bar_wipe" type="ColorRect" parent="Control/frame"]
+show_behind_parent = true
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.290196, 0.172549, 0.290196, 1 )
+
+[node name="bartop" type="ColorRect" parent="Control/frame"]
+show_behind_parent = true
+anchor_right = 1.0
+margin_left = 4.0
+margin_right = -4.0
+margin_bottom = 15.0
+color = Color( 0.290196, 0.172549, 0.290196, 1 )
+
+[node name="barbot" type="ColorRect" parent="Control/frame"]
+show_behind_parent = true
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = -304.0
+margin_right = -4.0
+color = Color( 0.290196, 0.172549, 0.290196, 1 )
+
+[node name="red" type="TextureProgress" parent="Control/frame"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_right = 6.0
+rect_scale = Vector2( 0.95, 1 )
+max_value = 520.0
+value = 25.0
+texture_progress = ExtResource( 4 )
+fill_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_left = 0.1
+anchor_top = 0.209
+anchor_right = 0.1
+anchor_bottom = 0.24
+margin_top = -1.60001
+margin_right = 200.0
+margin_bottom = 5.92001
+texture = ExtResource( 6 )
+
+[node name="prog" type="TextureProgress" parent="Control/TextureRect"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 41.0
+margin_top = -0.119995
+margin_right = -6.0
+margin_bottom = -0.119995
+max_value = 7.0
+step = 0.0
+value = 5.961
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+
+[node name="TextureProgress" type="TextureProgress" parent="Control/TextureRect"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 41.0
+margin_top = -1.0
+margin_right = -6.0
+margin_bottom = -1.0
+value = 100.0
+texture_progress = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Control/TextureRect"]
+anchor_right = 0.216
+anchor_bottom = 1.0
+text = "99"
+align = 1
+valign = 1
+
+[node name="bar" type="TextureRect" parent="Control"]
+margin_left = 160.0
+margin_top = 273.0
+margin_right = 424.0
+margin_bottom = 305.0
+texture = ExtResource( 9 )
+
+[node name="Control2" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="Control2"]
+margin_left = 113.0
+margin_top = 393.0
+margin_right = 471.0
+margin_bottom = 635.0
+custom_styles/panel = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="TextureRect" parent="Control2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
+texture = ExtResource( 12 )
+stretch_mode = 6
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 116.0
+margin_top = 393.0
+margin_right = 470.0
+margin_bottom = 638.0
+theme = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+stretch_mode = 4
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

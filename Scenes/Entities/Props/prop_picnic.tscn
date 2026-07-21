@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Entities/Props/prop.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/tan.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Models/picnicbasket.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/Textures/picnic.png" type="Texture" id=4]
+
+[sub_resource type="PlaneMesh" id=1]
+subdivide_width = 4
+subdivide_depth = 4
+
+[sub_resource type="Shader" id=2]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.5.1.stable's SpatialMaterial.
+
+shader_type spatial;
+
+uniform sampler2D albedo;
+
+void vertex() {
+	VERTEX.y += (sin(VERTEX.x * 25.0) + sin(VERTEX.z * 25.0))*0.025;
+}
+
+void fragment() {
+	ALBEDO = texture(albedo, UV*2.0).rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/albedo = ExtResource( 4 )
+
+[node name="picnic" type="KinematicBody"]
+script = ExtResource( 1 )
+delete_on_owner_disconnect = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1.3476, 0, 0, 0, 1.3476, 0, 0, 0, 1.3476, 0, 0.071, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.298646, 0, -0.287473, 0, 0.538, 0, 0.287473, 0, 0.298646, -0.684177, 0.0845502, -0.641819 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 2 )

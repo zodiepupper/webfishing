@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/webfishing_music1_draft2b_title.ogg-d21a507e3c496ade2a812fb03dfe4a69.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/webfishing_music1_draft2b_title.ogg"
+dest_files=[ "res://.import/webfishing_music1_draft2b_title.ogg-d21a507e3c496ade2a812fb03dfe4a69.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

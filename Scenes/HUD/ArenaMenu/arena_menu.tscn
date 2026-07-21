@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/HUD/ArenaMenu/arena_menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=3]
+
+[node name="arena_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.7
+
+[node name="Panel" type="Panel" parent="Panel"]
+anchor_left = 0.017
+anchor_top = 0.025
+anchor_right = 0.341
+anchor_bottom = 0.884
+margin_left = -0.128
+margin_top = -0.200001
+margin_right = -0.32
+margin_bottom = -0.176003
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel/ScrollContainer"]
+margin_right = 341.056
+margin_bottom = 339.112
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.0173611
+anchor_top = 0.895062
+anchor_right = 0.341424
+anchor_bottom = 0.971753
+margin_right = -0.32
+margin_bottom = 0.304001
+text = "Register Fish Fighter"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button2" type="Button" parent="Panel"]
+anchor_left = 0.756076
+anchor_top = 0.895062
+anchor_right = 0.984653
+anchor_bottom = 0.97484
+margin_right = -0.32
+margin_bottom = 0.304001
+text = "Join Next Fight"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button3" type="Button" parent="Panel"]
+anchor_left = 0.756076
+anchor_top = 0.808642
+anchor_right = 0.984653
+anchor_bottom = 0.88842
+margin_right = -0.32
+margin_bottom = 0.304001
+text = "Add $10 Bet: $0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_bet"]

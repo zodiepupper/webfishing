@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Interactables/npc_test.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Entities/Player/player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.5, 1.5, 1.5 )
+
+[node name="npc_test" type="Area"]
+script = ExtResource( 1 )
+text = "TALK"
+cam_offset = NodePath("Position3D")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 8 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+delete_on_owner_disconnect = false
+dead_actor = true
+NPC_body = true
+NPC_name = "Grimblo"
+NPC_title = "Selling Expert"
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 0.931317, -0.0356736, 0.362459, 0, 0.995192, 0.0979476, -0.36421, -0.0912203, 0.926838, -0.13, 0.409, 3.025 )

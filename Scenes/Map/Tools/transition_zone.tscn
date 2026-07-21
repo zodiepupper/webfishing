@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Map/Tools/transition_zone.gd" type="Script" id=1]
+
+[node name="transition_zone" type="Area"]
+script = ExtResource( 1 )

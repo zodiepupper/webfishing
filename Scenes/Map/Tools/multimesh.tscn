@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Textures/tuft1.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+params_billboard_mode = 1
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 0.75, 0.75 )
+center_offset = Vector3( 0, 0.363, 0 )
+
+[sub_resource type="MultiMesh" id=2]
+transform_format = 1
+instance_count = 1
+mesh = SubResource( 1 )
+transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="MultiMeshInstance" type="MultiMeshInstance"]
+material_override = SubResource( 3 )
+cast_shadow = 0
+multimesh = SubResource( 2 )

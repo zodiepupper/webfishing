@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/Interactables/npc_test.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/tan.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Materials/brown.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Materials/maroon.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Models/noticeboard.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Assets/Textures/noticeboard1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/noticeboard3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/noticeboard2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/noticeboard4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/catchpopup.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Interactables/questboard_popup.gd" type="Script" id=11]
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 4.65124, 1.84215, 1.04565 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 4.997, 3.482, 0.515 )
+
+[node name="npc_test" type="Area"]
+script = ExtResource( 1 )
+text = "READ QUEST BOARD"
+shop_id = "quest_board"
+cam_offset = NodePath("Position3D")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25883 )
+shape = SubResource( 10 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( -0.961923, 0.0459201, -0.269436, 0, 0.985786, 0.168008, 0.273322, 0.16161, -0.948249, 1.926, 0.696, -13.241 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 5 )
+material/0 = ExtResource( 4 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 3 )
+
+[node name="notice" type="Sprite3D" parent="."]
+transform = Transform( -1.95519, 0, -1.70928e-07, 0, 1.95519, 0, 1.70928e-07, 0, -1.95519, 0, 1.1334, -0.324307 )
+shaded = true
+double_sided = false
+texture = ExtResource( 6 )
+
+[node name="notice2" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.65391, 0.777641, -0.327505 )
+shaded = true
+double_sided = false
+texture = ExtResource( 8 )
+
+[node name="notice5" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.28572, -0.502005, -0.327505 )
+shaded = true
+double_sided = false
+texture = ExtResource( 8 )
+
+[node name="notice3" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.39993, 0.425042, -0.327505 )
+shaded = true
+double_sided = false
+texture = ExtResource( 7 )
+
+[node name="notice4" type="Sprite3D" parent="."]
+transform = Transform( -1.63832, 0, -1.43226e-07, 0, 1.63832, 0, 1.43226e-07, 0, -1.63832, -2.136, 0.0893146, -0.327505 )
+shaded = true
+double_sided = false
+texture = ExtResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 257
+collision_mask = 257
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 9 )
+
+[node name="popup" type="Sprite3D" parent="."]
+transform = Transform( 5.66348, 0, 0, 0, 5.66348, 0, 0, 0, 5.66348, 0, 7.22966, 0 )
+offset = Vector2( 0, 1.766 )
+billboard = 1
+alpha_cut = 2
+texture = ExtResource( 10 )
+script = ExtResource( 11 )

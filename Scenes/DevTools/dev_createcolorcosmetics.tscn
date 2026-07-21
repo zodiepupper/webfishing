@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/DevTools/dev_createcolorcosmetics.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_right = 825.0
+margin_bottom = 613.0
+window_title = "Open a File"
+mode = 0
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 0.006
+anchor_bottom = 0.066
+margin_right = 378.48
+margin_bottom = -2.28
+text = "select folder"
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 0.178
+anchor_bottom = 0.043
+margin_top = 71.0
+margin_right = -0.76001
+margin_bottom = 70.56
+text = "text"
+
+[node name="Button2" type="Button" parent="."]
+anchor_right = 0.006
+anchor_bottom = 0.066
+margin_left = 441.0
+margin_right = 819.48
+margin_bottom = -2.28
+text = "select base"
+
+[node name="Button3" type="Button" parent="."]
+anchor_right = 0.006
+anchor_bottom = 0.066
+margin_left = -1.0
+margin_top = 232.0
+margin_right = 377.48
+margin_bottom = 229.72
+text = "generate for all colors"
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 0.178
+anchor_bottom = 0.043
+margin_left = 441.0
+margin_top = 71.0
+margin_right = 440.24
+margin_bottom = 70.56
+text = "text"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchor_right = 0.331
+anchor_bottom = 0.031
+margin_left = 5.0
+margin_top = 192.0
+margin_right = 4.47992
+margin_bottom = 191.52
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 6.0
+margin_top = 312.0
+margin_right = 217.0
+margin_bottom = 337.0
+text = "set main mat as color match"
+
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

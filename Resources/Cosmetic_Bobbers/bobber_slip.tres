@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/green_c.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons45.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Materials/white.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Models/Cosmetics/bobber_slip.tres" type="ArrayMesh" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "Slip Bobber"
+desc = "Slip-pery!"
+title = ""
+icon = ExtResource( 3 )
+mesh = ExtResource( 5 )
+species_alt_mesh = [  ]
+material = ExtResource( 2 )
+secondary_material = ExtResource( 4 )
+main_color = Color( 1, 1, 1, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "bobber"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = false
+cost = 10

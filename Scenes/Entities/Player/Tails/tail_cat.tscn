@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Entities/Player/tail_root.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Models/Cosmetics/tail_cat.tres" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=3]
+
+[sub_resource type="Skin" id=2]
+resource_name = "Skin2"
+bind_count = 2
+bind/0/name = "tail_main"
+bind/0/bone = -1
+bind/0/pose = Transform( 10.0826, -1.38292e-15, 3.99936e-15, 1.38292e-15, -7.92896, -6.22814, 3.99936e-15, 6.22814, -7.92896, 1.94909e-15, 2.39227, -3.48335 )
+bind/1/name = "tail_2"
+bind/1/bone = -1
+bind/1/pose = Transform( 10.0826, 1.6081e-06, -1.78678e-06, 1.13795e-13, -7.49431, -6.74488, -2.40387e-06, 6.74488, -7.49431, -8.50851e-07, 1.15599, -3.56873 )
+
+[node name="tail" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="rot_point" type="Position3D" parent="."]
+transform = Transform( 0.994522, 0.104528, 0, 0.0800735, -0.761848, -0.642787, -0.0671896, 0.639266, -0.766045, 0, 0.167, 0.254 )
+
+[node name="swish_point" type="Position3D" parent="rot_point"]
+
+[node name="tail" type="MeshInstance" parent="rot_point/swish_point"]
+transform = Transform( 10, 2.98023e-08, 5.96046e-08, 2.98023e-08, 10, 0, 5.96046e-08, 0, 10, -5.40167e-08, -3.85, 1.348 )
+material_override = SubResource( 3 )
+mesh = ExtResource( 3 )
+skin = SubResource( 2 )
+skeleton = NodePath("")

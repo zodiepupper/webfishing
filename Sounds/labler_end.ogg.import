@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/labler_end.ogg-d91158afb96dad39fb59a955db4368eb.oggstr"
+
+[deps]
+
+source_file="res://Sounds/labler_end.ogg"
+dest_files=[ "res://.import/labler_end.ogg-d91158afb96dad39fb59a955db4368eb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=1]
+[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Materials/yellow.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons18.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Models/Cosmetics/sweatshirt.tres" type="ArrayMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.741176, 0.509804, 0.00784314, 1 )
+
+[resource]
+script = ExtResource( 2 )
+name = "Yellow Hoodie"
+desc = "Bundled up!"
+title = ""
+icon = ExtResource( 4 )
+mesh = ExtResource( 5 )
+species_alt_mesh = [  ]
+mesh_skin = ExtResource( 1 )
+material = ExtResource( 3 )
+secondary_material = SubResource( 1 )
+main_color = Color( 0.901961, 0.615686, 0, 1 )
+body_pattern = [  ]
+mirror_face = true
+flip = false
+allow_blink = true
+category = "overshirt"
+cos_internal_id = 0
+in_rotation = false
+chest_reward = true
+cost = 10

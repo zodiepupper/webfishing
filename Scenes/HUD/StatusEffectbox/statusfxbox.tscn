@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/HUD/StatusEffectbox/statusfxbox.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.352941, 0.458824, 0.352941, 1 )
+border_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Panel" type="Panel"]
+anchor_right = 0.022
+anchor_bottom = 0.039
+margin_right = -42.24
+margin_bottom = -42.12
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+
+[node name="TooltipNode" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )

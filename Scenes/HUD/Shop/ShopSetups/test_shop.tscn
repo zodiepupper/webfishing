@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Textures/UI/bait_icons3.png" type="Texture" id=3]
+
+[node name="test_shop" type="Node"]
+script = ExtResource( 2 )
+
+[node name="shop_button9" parent="." instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 64.0
+icon = ExtResource( 3 )
+
+[node name="shop_button16" parent="." instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 64.0
+icon = ExtResource( 3 )
+
+[node name="shop_button8" parent="." instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 64.0
+
+[node name="shop_button10" parent="." instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 64.0
+
+[node name="shop_button11" parent="." instance=ExtResource( 1 )]
+margin_right = 64.0
+margin_bottom = 64.0

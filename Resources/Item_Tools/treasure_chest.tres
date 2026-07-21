@@ -1,0 +1,44 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Items/toolicons4.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ItemMeshes/treasure_chest.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Treasure Chest"
+item_description = "I wonder what's inside!"
+catch_blurb = "Woah! Sunken Treasure!"
+item_is_hidden = false
+icon = ExtResource( 2 )
+show_item = true
+item_scene = ExtResource( 3 )
+show_scene = true
+uses_size = false
+action = "_open_chest"
+action_params = [  ]
+release_action = ""
+prop_code = ""
+help_text = "open chest"
+arm_value = 0.2
+hold_offset = 0.0
+unselectable = true
+unrenamable = false
+category = "tool"
+alive = true
+tier = 0
+catch_difficulty = 2.2
+catch_speed = 120.0
+loot_table = "lake"
+loot_weight = 1.0
+average_size = 60.0
+sell_value = 15
+sell_multiplier = 1.0
+obtain_xp = 50
+generate_worth = true
+can_be_sold = true
+rare = false
+stackable = false
+max_stacks = 99
+show_bait = false
+detect_item = false

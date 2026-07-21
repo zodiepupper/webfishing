@@ -1,0 +1,21 @@
+[gd_resource type="Environment" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Textures/gradient4.png" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=3]
+panorama = ExtResource( 1 )
+
+[resource]
+background_mode = 1
+background_sky = SubResource( 3 )
+background_color = Color( 1, 0.933333, 0.835294, 1 )
+background_energy = 0.25
+ambient_light_color = Color( 1, 0.933333, 0.835294, 1 )
+fog_enabled = true
+fog_color = Color( 1, 0.933333, 0.835294, 1 )
+fog_sun_color = Color( 1, 0.933333, 0.835294, 1 )
+fog_depth_begin = 125.0
+fog_depth_end = 500.0
+fog_height_min = 15.3
+fog_height_max = 49.3
+glow_enabled = true
