@@ -8,7 +8,7 @@ _data = [ Vector2( 0, 1 ), 0.0, -0.535969, 0, 0, Vector2( 0.630208, 0 ), -1.1441
 [sub_resource type="CurveTexture" id=3]
 curve = SubResource( 2 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticleProcessMaterial" id=4]
 lifetime_randomness = 0.13
 direction = Vector3( 0, 0.3, 1 )
 spread = 24.68
@@ -23,13 +23,13 @@ scale = 0.1
 scale_random = 0.05
 scale_curve = SubResource( 3 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="StandardMaterial3D" id=5]
 albedo_color = Color( 1, 0.933333, 0.835294, 1 )
 
 [sub_resource type="SphereMesh" id=6]
 material = SubResource( 5 )
 
-[node name="Spatial" type="Particles"]
+[node name="Node3D" type="Particles"]
 emitting = false
 amount = 3
 lifetime = 2.0

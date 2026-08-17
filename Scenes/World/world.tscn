@@ -3,49 +3,49 @@
 [ext_resource path="res://Scenes/World/world.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Map/main_map.tscn" type="PackedScene" id=2]
 
-[node name="world" type="ViewportContainer" groups=["world"]]
+[node name="world" type="SubViewportContainer" groups=["world"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 stretch = true
 script = ExtResource( 1 )
 
-[node name="Viewport" type="Viewport" parent="." groups=["world_viewport"]]
+[node name="SubViewport" type="SubViewport" parent="." groups=["world_viewport"]]
 size = Vector2( 1920, 1080 )
 handle_input_locally = false
 render_target_update_mode = 3
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 
-[node name="main" type="Spatial" parent="Viewport"]
+[node name="main" type="Node3D" parent="SubViewport"]
 
-[node name="entities" type="Node" parent="Viewport/main"]
+[node name="entities" type="Node" parent="SubViewport/main"]
 
-[node name="map" type="Node" parent="Viewport/main"]
+[node name="map" type="Node" parent="SubViewport/main"]
 
-[node name="main_map" parent="Viewport/main/map" instance=ExtResource( 2 )]
+[node name="main_map" parent="SubViewport/main/map" instance=ExtResource( 2 )]
 
-[node name="track_camera" type="Node" parent="Viewport/main"]
+[node name="track_camera" type="Node" parent="SubViewport/main"]
 
-[node name="Camera" type="Camera" parent="Viewport/main/track_camera"]
-transform = Transform( -0.875987, 0.0960796, 0.472668, 0, 0.979959, -0.199197, -0.482335, -0.174494, -0.858432, 59.662, 4.147, -23.126 )
+[node name="Camera3D" type="Camera3D" parent="SubViewport/main/track_camera"]
+transform = Transform3D( -0.875987, 0.0960796, 0.472668, 0, 0.979959, -0.199197, -0.482335, -0.174494, -0.858432, 59.662, 4.147, -23.126 )
 fov = 35.0
 far = 8192.0
 
-[node name="shader_ignore" type="ViewportContainer" parent="."]
+[node name="shader_ignore" type="SubViewportContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 stretch = true
 
-[node name="Viewport" type="Viewport" parent="shader_ignore" groups=["shader_ignore"]]
+[node name="SubViewport" type="SubViewport" parent="shader_ignore" groups=["shader_ignore"]]
 size = Vector2( 1920, 1080 )
 own_world = true
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Camera" type="Camera" parent="shader_ignore/Viewport"]
+[node name="Camera3D" type="Camera3D" parent="shader_ignore/SubViewport"]
 fov = 50.0
 
 [node name="spawn_timer" type="Timer" parent="."]

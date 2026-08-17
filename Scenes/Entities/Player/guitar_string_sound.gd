@@ -11,7 +11,7 @@ func _ready():
 	for i in 4:
 		var new = AudioStreamPlayer3D.new()
 		new.stream = stream
-		new.unit_db = - 20
+		new.volume_db = - 20
 		new.unit_size = 80
 		new.max_db = - INF
 		new.max_distance = 150
@@ -56,11 +56,11 @@ func _play_at_point(point, fret, hammer_fret, volume):
 	
 	for node in sound_array:
 		if node.max_db != - INF:
-			node.call_deferred("set", "max_db", linear2db(0.0))
+			node.call_deferred("set", "max_db", linear_to_db(0.0))
 		elif node.max_db == - INF and not found_node and not sound_blacklist.has(node):
 			found_node = true
 			node.seek(0.0)
-			node.max_db = linear2db(volume * 0.32)
+			node.max_db = linear_to_db(volume * 0.32)
 			node.play(point)
 			sound_blacklist.append(node)
 			print("NODE TO PLAY IS: ", node, " W VOLUME ", node.max_db, " AT POINT ", point)

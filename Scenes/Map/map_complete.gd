@@ -1,7 +1,7 @@
 extends Node
 
-export (NodePath) var gm
-export var active = true
+@export var gm: NodePath
+@export var active = true
 
 func _run():
 	if not active: return
@@ -16,7 +16,7 @@ func _run():
 	
 	
 	for tile in cells:
-		var cell_id = gridmap.get_cell_item(tile.x, tile.y, tile.z)
+		var cell_id = gridmap.get_cell_item(Vector3i(tile.x, tile.y, tile.z))
 		var empty_sides = []
 		var empty_side_orientations = []
 		
@@ -34,23 +34,23 @@ func _run():
 		for i in empty_sides.size():
 			var side = empty_sides[i]
 			var ori = empty_side_orientations[i]
-			var side_id = gridmap.get_cell_item(side.x, side.y, side.z)
+			var side_id = gridmap.get_cell_item(Vector3i(side.x, side.y, side.z))
 			if side_id == 3:
 				
-				gridmap.set_cell_item(side.x, side.y, side.z, 5, ori)
+				gridmap.set_cell_item(Vector3(side.x, side.y, side.z), 5, ori)
 			else:
-				gridmap.set_cell_item(side.x, side.y, side.z, 3, ori)
+				gridmap.set_cell_item(Vector3(side.x, side.y, side.z), 3, ori)
 	
 	
 	var tree_chance = 0.02
 	for tile in cells:
 		if randf() < tree_chance:
-			var cell_id = gridmap.get_cell_item(tile.x, tile.y, tile.z)
+			var cell_id = gridmap.get_cell_item(Vector3i(tile.x, tile.y, tile.z))
 			if not (cell_id == 7 or cell_id == 11): continue
 			if cells.has(tile + Vector3(0, 1, 0)): continue
 			
-			var tree = load("res://Scenes/Map/Props/tree_" + str(randi() % 3 + 1) + ".tscn").instance()
-			tree.global_transform.origin = gridmap.map_to_world(tile.x, tile.y, tile.z)
+			var tree = load("res://Scenes/Map/Props/tree_" + str(randi() % 3 + 1) + ".tscn").instantiate()
+			tree.global_transform.origin = gridmap.map_to_local(Vector3i(tile.x, tile.y, tile.z))
 			gridmap.add_child(tree)
 	
 	gridmap._replace_floors()

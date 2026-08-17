@@ -1,105 +1,115 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene format=3 uid="uid://cokwgspaeynkw"]
 
-[ext_resource path="res://Assets/Textures/UI/splash2.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Textures/UI/splash1.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Menus/Splash/splash.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Textures/UI/splash_progress.png" type="Texture" id=4]
+[ext_resource type="Texture2D" uid="uid://bpmhkvvnu1byx" path="res://Assets/Textures/UI/splash2.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dsp0lf76t4vk0" path="res://Assets/Textures/UI/splash1.png" id="2"]
+[ext_resource type="Script" uid="uid://xwy3rrdj66uu" path="res://Scenes/Menus/Splash/splash.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://bgssuex31o3xg" path="res://Assets/Textures/UI/splash_progress.png" id="4"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("lame:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("god:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "main"
 length = 6.6
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("lame:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 2.5, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("god:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 4, 4.5, 6, 6.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 4, 4.5, 6, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[node name="splash" type="Control"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_71okn"]
+_data = {
+&"RESET": SubResource("1"),
+&"main": SubResource("2")
+}
+
+[node name="splash" type="Control" unique_id=1613800223]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/main = SubResource( 2 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=325780414]
+libraries/ = SubResource("AnimationLibrary_71okn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1459768643]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+color = Color(0.0627451, 0.109804, 0.192157, 1)
 
-[node name="lame" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+[node name="lame" type="TextureRect" parent="." unique_id=2019932368]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
-expand = true
+texture = ExtResource("2")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="god" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+[node name="god" type="TextureRect" parent="." unique_id=1164962704]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="ProgressBar" type="TextureProgress" parent="."]
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1063114814]
+layout_mode = 0
 anchor_left = 0.996875
 anchor_top = 0.994444
 anchor_right = 0.996875
 anchor_bottom = 0.994444
-margin_left = -200.0
-margin_top = -100.0
-texture_progress = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+offset_left = -200.0
+offset_top = -100.0
+texture_progress = ExtResource("4")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

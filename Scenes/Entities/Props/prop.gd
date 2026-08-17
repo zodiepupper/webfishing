@@ -1,7 +1,7 @@
 extends Actor
 class_name PlayerProp
 
-export var rotation_reset = false
+@export var rotation_reset = false
 
 func _ready():
 	packet_send_cooldown = 32

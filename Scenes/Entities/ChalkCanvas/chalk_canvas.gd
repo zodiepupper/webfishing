@@ -1,14 +1,14 @@
-extends Spatial
+extends Node3D
 
 enum BrushMode{
 	PENCIL, 
 	ERASER, 
 }
 
-export var canvas_size = 9.0
-export var canvas_id = 0
-export (NodePath) var inherit_id
-export var circular = true
+@export var canvas_size = 9.0
+@export var canvas_id = 0
+@export var inherit_id: NodePath
+@export var circular = true
 
 var last_mouse_pos = Vector2()
 var mouse_click_start_pos = Vector2.INF
@@ -24,10 +24,10 @@ var canvas_mid = 0
 
 var send_load = []
 
-onready var vis_node = $VisibilityNotifier
+@onready var vis_node = $VisibleOnScreenNotifier3D
 
 func _ready():
-	$Viewport / TileMap.clear()
+	$SubViewport / TileMap.clear()
 	$GridMap.clear()
 	
 	if inherit_id:
@@ -36,22 +36,22 @@ func _ready():
 	
 	canvas_boundry = canvas_size * 10
 	canvas_mid = 0
-	$Area.scale = Vector3.ONE * canvas_size
+	$Area3D.scale = Vector3.ONE * canvas_size
 	
 	var vis_size = canvas_size * 1.5
 	var vec = Vector3(vis_size, vis_size, vis_size)
 	vis_node.aabb = AABB(vec * - 0.5, vec)
-	vis_node.connect("screen_entered", self, "_screen_entered")
-	vis_node.connect("screen_exited", self, "_screen_exited")
+	vis_node.connect("screen_entered", Callable(self, "_screen_entered"))
+	vis_node.connect("screen_exited", Callable(self, "_screen_exited"))
 	
-	PlayerData.connect("_chalk_draw", self, "_chalk_draw")
-	PlayerData.connect("_chalk_update", self, "_chalk_update")
-	PlayerData.connect("_chalk_send", self, "_chalk_send")
-	PlayerData.connect("_chalk_recieve", self, "_chalk_recieve")
+	PlayerData.connect("_chalk_draw", Callable(self, "_chalk_draw"))
+	PlayerData.connect("_chalk_update", Callable(self, "_chalk_update"))
+	PlayerData.connect("_chalk_send", Callable(self, "_chalk_send"))
+	PlayerData.connect("_chalk_recieve", Callable(self, "_chalk_recieve"))
 	
-	OptionsMenu.connect("_options_update", self, "_options_update")
+	OptionsMenu.connect("_options_update", Callable(self, "_options_update"))
 	
-	Network.connect("_new_player_join", self, "_chalk_send_total")
+	Network.connect("_new_player_join", Callable(self, "_chalk_send_total"))
 
 func _chalk_update(pos):
 	last_mouse_pos = pos
@@ -66,10 +66,10 @@ func _chalk_draw(pos, size, color):
 		last_mouse_pos = global_transform.origin + (diff.normalized() * - canvas_size)
 		return
 	
-	var p = $GridMap.world_to_map(pos - global_transform.origin)
+	var p = $GridMap.local_to_map(pos - global_transform.origin)
 	p = Vector2(p.x, p.z)
 	
-	var p2 = $GridMap.world_to_map(last_mouse_pos - global_transform.origin)
+	var p2 = $GridMap.local_to_map(last_mouse_pos - global_transform.origin)
 	p2 = Vector2(p2.x, p2.z)
 	
 	_add_brush(p, brush_mode, p2)
@@ -89,7 +89,7 @@ func _add_brush(grid_pos, type, from):
 			for y in brush_size:
 				var final = _clamp_cell(pos + Vector2(x, y))
 				
-				$Viewport / TileMap.set_cell(final.x, final.y, color)
+				$SubViewport / TileMap.set_cell(final.x, final.y, color)
 				send_load.append([final, color])
 
 func _chalk_send():
@@ -100,8 +100,8 @@ func _chalk_send():
 func _chalk_send_total(id):
 	if not Network.GAME_MASTER: return
 	var total_load = []
-	for cell in $Viewport / TileMap.get_used_cells():
-		var color = int($Viewport / TileMap.get_cell(cell.x, cell.y))
+	for cell in $SubViewport / TileMap.get_used_cells():
+		var color = int($SubViewport / TileMap.get_cell(cell.x, cell.y))
 		total_load.append([Vector2(cell.x, cell.y), color])
 	
 	if total_load.size() > 0:
@@ -113,7 +113,7 @@ func _chalk_recieve(data, id):
 		var pos = _clamp_cell(d[0], 0)
 		var color = d[1]
 		if not (color is int): color = 0
-		$Viewport / TileMap.set_cell(pos.x, pos.y, color)
+		$SubViewport / TileMap.set_cell(pos.x, pos.y, color)
 
 func _clamp_cell(pos, offset = 100):
 	var grid_offset = 100
@@ -124,10 +124,10 @@ func _clamp_cell(pos, offset = 100):
 
 func _screen_entered():
 	visible = true
-	$Viewport / TileMap.visible = not OptionsMenu.chalk_disabled
+	$SubViewport / TileMap.visible = not OptionsMenu.chalk_disabled
 func _screen_exited():
 	visible = false
-	$Viewport / TileMap.visible = false
+	$SubViewport / TileMap.visible = false
 
 func _options_update():
-	$Viewport / TileMap.visible = not OptionsMenu.chalk_disabled
+	$SubViewport / TileMap.visible = not OptionsMenu.chalk_disabled

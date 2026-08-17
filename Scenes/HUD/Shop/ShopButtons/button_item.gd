@@ -1,8 +1,8 @@
 extends ShopButton
 
-export var item_id = ""
-export var item_no_duplicates = false
-export var max_item_owned = - 1
+@export var item_id = ""
+@export var item_no_duplicates = false
+@export var max_item_owned = - 1
 
 func _setup():
 	var data = Globals.item_data[item_id]["file"]

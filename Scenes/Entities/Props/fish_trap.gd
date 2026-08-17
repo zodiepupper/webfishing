@@ -7,7 +7,7 @@ var blink_cd = 0
 var failed_chances = 0.0
 var progress = 0
 
-export var fish_type = "lake"
+@export var fish_type = "lake"
 
 func _ready():
 	$caught.visible = false
@@ -81,10 +81,10 @@ func _on_Timer_timeout():
 func _physics_process(delta):
 	blink_cd -= 1
 	$idle_fish / main / eyes.visible = blink_cd > 0
-	if blink_cd <= - 15: blink_cd = rand_range(60, 400)
+	if blink_cd <= - 15: blink_cd = randf_range(60, 400)
 	
-	$idle_fish / main.scale.y = 0.995 + sin(OS.get_ticks_msec() * 0.001) * 0.005
-	$caught.translation.y = 2.1 + sin(OS.get_ticks_msec() * 0.002) * 0.1
+	$idle_fish / main.scale.y = 0.995 + sin(Time.get_ticks_msec() * 0.001) * 0.005
+	$caught.position.y = 2.1 + sin(Time.get_ticks_msec() * 0.002) * 0.1
 
 func _send_item():
 	var fish_roll = fish_data[0]

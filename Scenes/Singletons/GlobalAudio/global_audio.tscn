@@ -33,25 +33,25 @@
 [ext_resource path="res://Sounds/request_jingle_allowed.ogg" type="AudioStream" id=31]
 [ext_resource path="res://Sounds/request_jingle.ogg" type="AudioStream" id=32]
 
-[sub_resource type="AudioStreamRandomPitch" id=1]
+[sub_resource type="AudioStreamRandomizer" id=1]
 audio_stream = ExtResource( 2 )
 random_pitch = 1.02
 
-[sub_resource type="AudioStreamRandomPitch" id=2]
+[sub_resource type="AudioStreamRandomizer" id=2]
 audio_stream = ExtResource( 3 )
 
-[sub_resource type="AudioStreamRandomPitch" id=3]
+[sub_resource type="AudioStreamRandomizer" id=3]
 audio_stream = ExtResource( 4 )
 
-[sub_resource type="AudioStreamRandomPitch" id=4]
+[sub_resource type="AudioStreamRandomizer" id=4]
 audio_stream = ExtResource( 9 )
 random_pitch = 1.2
 
-[sub_resource type="AudioStreamRandomPitch" id=5]
+[sub_resource type="AudioStreamRandomizer" id=5]
 audio_stream = ExtResource( 17 )
 random_pitch = 1.2
 
-[sub_resource type="AudioStreamRandomPitch" id=6]
+[sub_resource type="AudioStreamRandomizer" id=6]
 audio_stream = ExtResource( 18 )
 random_pitch = 1.15
 

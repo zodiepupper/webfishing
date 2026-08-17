@@ -10,5 +10,5 @@ script = ExtResource( 1 )
 visible = false
 anchor_right = 0.139
 anchor_bottom = 0.196
-margin_right = -0.880035
-margin_bottom = 0.319992
+offset_right = -0.880035
+offset_bottom = 0.319992

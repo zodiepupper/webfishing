@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4_dog.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4_cat.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons61.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4_dog.png" type="Texture2D" id=2]
+[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4_cat.png" type="Texture2D" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons61.png" type="Texture2D" id=4]
+[ext_resource path="res://Assets/Textures/PlayerPatterns/body_pattern_4.png" type="Texture2D" id=5]
 
 [resource]
 script = ExtResource( 1 )

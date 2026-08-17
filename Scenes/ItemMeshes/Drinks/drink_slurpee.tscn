@@ -6,16 +6,16 @@
 [ext_resource path="res://Assets/Materials/white.tres" type="Material" id=4]
 [ext_resource path="res://Assets/Models/slurpee.obj" type="ArrayMesh" id=5]
 
-[node name="drink_hooklite" type="Spatial"]
+[node name="drink_hooklite" type="Node3D"]
 script = ExtResource( 3 )
-hotspot_node = NodePath("Position3D")
+hotspot_node = NodePath("Marker3D")
 
-[node name="slurpee" type="MeshInstance" parent="."]
-transform = Transform( 0.0570768, 0, 0, 0, 0.0440989, 0, 0, 0, 0.0570768, 0, -0.0862057, 0 )
+[node name="slurpee" type="MeshInstance3D" parent="."]
+transform = Transform3D( 0.0570768, 0, 0, 0, 0.0440989, 0, 0, 0, 0.0570768, 0, -0.0862057, 0 )
 mesh = ExtResource( 5 )
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 1 )
 material/2 = ExtResource( 4 )
 material/3 = ExtResource( 2 )
 
-[node name="Position3D" type="Position3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="."]

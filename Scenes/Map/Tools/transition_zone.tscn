@@ -2,5 +2,5 @@
 
 [ext_resource path="res://Scenes/Map/Tools/transition_zone.gd" type="Script" id=1]
 
-[node name="transition_zone" type="Area"]
+[node name="transition_zone" type="Area3D"]
 script = ExtResource( 1 )

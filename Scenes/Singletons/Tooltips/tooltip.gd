@@ -8,9 +8,9 @@ var current_header = ""
 var current_body = ""
 var current_node = null
 
-onready var panel = $Panel
-onready var header = $Panel / header
-onready var body = $Panel / body
+@onready var panel = $Panel
+@onready var header = $Panel / header
+@onready var body = $Panel / body
 
 func _ready():
 	_update("", "", null)
@@ -19,12 +19,12 @@ func _ready():
 func _process(delta):
 	var screen_offset = Vector2()
 	var screen_size = get_viewport().get_visible_rect().size
-	if ($mouse_ref.get_local_mouse_position() + panel_offset + panel.rect_size).x > screen_size.x:
-		screen_offset.x = - panel.rect_size.x
-	if ($mouse_ref.get_local_mouse_position() + panel_offset + panel.rect_size).y > screen_size.y:
-		screen_offset.y = - panel.rect_size.y
+	if ($mouse_ref.get_local_mouse_position() + panel_offset + panel.size).x > screen_size.x:
+		screen_offset.x = - panel.size.x
+	if ($mouse_ref.get_local_mouse_position() + panel_offset + panel.size).y > screen_size.y:
+		screen_offset.y = - panel.size.y
 	
-	panel.rect_position = $mouse_ref.get_local_mouse_position() + panel_offset + screen_offset
+	panel.position = $mouse_ref.get_local_mouse_position() + panel_offset + screen_offset
 	if hovered_tooltip != null:
 		if not is_instance_valid(hovered_tooltip) or not hovered_tooltip.is_visible_in_tree():
 			_hover_exit(hovered_tooltip)
@@ -52,7 +52,7 @@ func _update(_header, _body, node):
 		var add = s + " "
 		if s.begins_with("$$"):
 			var action = s.substr(2, - 1)
-			add = "[" + InputMap.get_action_list(action)[0].as_text() + "]"
+			add = "[" + InputMap.action_get_events(action)[0].as_text() + "]"
 		final_body = final_body + add
 	
 	current_body = final_body
@@ -61,17 +61,17 @@ func _update(_header, _body, node):
 	_update_visible()
 
 func _update_visible():
-	header.bbcode_text = current_header
-	body.bbcode_text = current_body
+	header.text = current_header
+	body.text = current_body
 	
 	var longest = 0
-	for line in body.bbcode_text.split("\n"):
+	for line in body.text.split("\n"):
 		if line.length() > longest: longest = line.length()
-	if header.bbcode_text.length() > longest: longest = header.bbcode_text.length()
+	if header.text.length() > longest: longest = header.text.length()
 	
-	panel.rect_size.x = clamp(longest * 64, 84, 512)
-	body.rect_size.x = panel.rect_size.x - 16
+	panel.size.x = clamp(longest * 64, 84, 512)
+	body.size.x = panel.size.x - 16
 	
-	yield(get_tree(), "idle_frame")
-	panel.rect_size.y = 0
-	panel.rect_size.y = body.rect_size.y + 64
+	await get_tree().process_frame
+	panel.size.y = 0
+	panel.size.y = body.size.y + 64

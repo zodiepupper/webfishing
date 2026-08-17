@@ -1,9 +1,9 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://due6mry1h7u62"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "shader_type spatial;
 
-uniform vec4 albedo : hint_color;
+uniform vec4 albedo : source_color;
 uniform float wobble_speed = 1.0;
 uniform float wobble_amt = 1.0;
 
@@ -18,7 +18,8 @@ void fragment() {
 }"
 
 [resource]
-shader = SubResource( 1 )
-shader_param/albedo = Color( 0.705882, 0.505882, 0.254902, 1 )
-shader_param/wobble_speed = 0.07
-shader_param/wobble_amt = 0.25
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/albedo = Color(0.705882, 0.505882, 0.254902, 1)
+shader_parameter/wobble_speed = 0.07
+shader_parameter/wobble_amt = 0.25

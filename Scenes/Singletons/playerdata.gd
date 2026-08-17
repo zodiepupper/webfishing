@@ -126,7 +126,7 @@ var new_cosmetics = []
 var inventory = []
 var locked_refs = []
 var hotbar = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0}
-var money = 30 setget _set_cash
+var money = 30: set = _set_cash
 var badge_level = 1
 var badge_xp = 0
 var last_recorded_time = {}
@@ -220,7 +220,7 @@ signal _clear_new
 signal _rain_toggle(toggle)
 signal _prop_update
 signal _place_prop(id)
-signal _aquarium_update
+signal _aquarium_update_signal
 signal _help_update(text)
 signal _float_number
 signal _hide_hud_toggle
@@ -280,7 +280,7 @@ func _reset_save():
 				}
 	bait_unlocked = ["", "worms"]
 	lure_unlocked = [""]
-	last_recorded_time = OS.get_time(true)
+	last_recorded_time = Time.get_time_dict_from_system(true)
 	last_recorded_time["minute"] = floor(last_recorded_time["minute"] / 5.0) * 5
 	last_recorded_time["second"] = 0
 	saved_aqua_fish = {"id": "empty", "size": 1.0, "ref": 0, "quality": ITEM_QUALITIES.NORMAL}
@@ -444,7 +444,7 @@ func _reset_save():
 			lure_unlocked.append(lure)
 		money = 999999
 	
-	yield(get_tree().create_timer(0.25), "timeout")
+	await get_tree().create_timer(0.25).timeout
 	emit_signal("_save_reset")
 
 func _special_player_unlocks(full_reset = true):
@@ -505,7 +505,7 @@ func _add_saved_tag(new_tag):
 
 
 func _unlock_defaults():
-	yield(get_tree().create_timer(0.15), "timeout")
+	await get_tree().create_timer(0.15).timeout
 	
 	
 	
@@ -1091,7 +1091,7 @@ func _refresh_shop():
 func _get_time(shop = true):
 	var ref = REFRESH_TIME if shop else QUEST_REFRESH_TIME
 	
-	var time = OS.get_time(true)
+	var time = Time.get_time_dict_from_system(true)
 	var min_goal = ceil(time["minute"] / ref) * ref
 	var min_diff = min_goal - time["minute"]
 	var sec_diff = 60 - time["second"]
@@ -1199,7 +1199,7 @@ func _refill_bait(type = "", announce = true):
 
 func _refresh_sell():
 	print("Refresh Favored Sell")
-	var time = OS.get_time(true)
+	var time = Time.get_time_dict_from_system(true)
 	
 	var rng = RandomNumberGenerator.new()
 	rng.seed = time["hour"] + time["minute"]
@@ -1247,8 +1247,8 @@ func _refresh_quests():
 		new["goal_item"] = item
 		new["type_based"] = ""
 		new["goal_amt"] = ceil((Globals.item_data[item]["file"].loot_weight * 2.0) * diff)
-		new["reward"] = stepify((22 * (tier + 1)) * diff, 5.0)
-		new["xp"] = stepify((65 * (tier + 1)) * diff, 5.0)
+		new["reward"] = snapped((22 * (tier + 1)) * diff, 5.0)
+		new["xp"] = snapped((65 * (tier + 1)) * diff, 5.0)
 		new["progress"] = 0
 		new["temp"] = true
 		
@@ -1280,7 +1280,7 @@ func _add_quest(title, action, id = "", goal = 5, reward_base = 0.0, rewards = [
 	new["tier"] = 0
 	new["action"] = action
 	new["gold_reward"] = reward_base
-	new["xp_reward"] = stepify(reward_base * 0.3, 5)
+	new["xp_reward"] = snapped(reward_base * 0.3, 5)
 	new["rewards"] = rewards
 	new["goal_id"] = id
 	new["icon"] = icon
@@ -1365,7 +1365,7 @@ func _complete_quest(id):
 	GlobalAudio._play_sound("quest_win")
 
 func _add_xp(amt):
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	emit_signal("_xp_add", amt, badge_level, badge_xp)
 	
 	badge_xp += amt
@@ -1384,29 +1384,19 @@ func _add_xp(amt):
 		for reward in BADGE_LEVEL_DATA[badge_level]["reward"]:
 			_unlock_cosmetic(reward)
 		
-		
-		
-		
 		if badge_level >= 5: Network._unlock_achievement("rank_5")
 		if badge_level >= 25: Network._unlock_achievement("rank_25")
 		if badge_level >= 50: Network._unlock_achievement("rank_50")
 
 func _get_xp_goal(level):
-	return 100 + ((level - 1) * 50) + stepify(level * level * 0.15 * 75, 50)
+	return 100 + ((level - 1) * 50) + snapped(level * level * 0.15 * 75, 50)
 
 func _get_level_data(level):
 	return BADGE_LEVEL_DATA[level]
 
-
-
-
-
 func _send_notification(text, type = 0):
 	emit_signal("_notif_send", text, type)
 	emit_signal("_play_sfx", "notification")
-
-
-
 
 func _aquarium_update(new_fish, update = true):
 	var old_fish = saved_aqua_fish
@@ -1417,10 +1407,6 @@ func _aquarium_update(new_fish, update = true):
 		_remove_item(new_fish["ref"])
 		if old_fish.id != "empty": _add_raw_item(old_fish)
 		_send_notification("fish sent to aquarium!")
-
-
-
-
 
 func _catch_fish():
 	fish_caught += 1

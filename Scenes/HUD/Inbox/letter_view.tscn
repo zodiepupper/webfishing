@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/HUD/Inbox/letter_view.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Textures/UI/letterbgh.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/UI/letterbgh.png" type="Texture2D" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -40,29 +40,29 @@ anchor_bottom = 1.0
 [node name="RichTextLabel" type="Label" parent="Control/Control/Panel"]
 anchor_right = 1.0
 anchor_bottom = 0.3
-margin_left = 16.0
-margin_top = 16.0
-margin_right = -16.0
-margin_bottom = -16.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
 text = "text"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Control/Control/Panel"]
 anchor_top = 0.2
 anchor_right = 1.0
 anchor_bottom = 0.611
-margin_left = 16.0
-margin_top = 16.0
-margin_right = -16.0
-margin_bottom = -16.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
 
 [node name="RichTextLabel2" type="Label" parent="Control/Control/Panel"]
 anchor_top = 0.55
 anchor_right = 1.0
 anchor_bottom = 0.687
-margin_left = 16.0
-margin_top = 16.0
-margin_right = -16.0
-margin_bottom = -16.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
 text = "text"
 align = 2
 
@@ -70,10 +70,10 @@ align = 2
 anchor_top = 0.646
 anchor_right = 1.0
 anchor_bottom = 0.864
-margin_left = 16.0
-margin_top = 16.0
-margin_right = -16.0
-margin_bottom = -16.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
 text = "text"
 autowrap = true
 
@@ -81,14 +81,14 @@ autowrap = true
 anchor_top = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 16.0
-margin_right = -16.0
-margin_bottom = -16.0
-custom_constants/separation = 16
+offset_left = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+theme_override_constants/separation = 16
 
 [node name="Button" type="Button" parent="Control/Control/HBoxContainer"]
-margin_right = 171.0
-margin_bottom = 40.0
+offset_right = 171.0
+offset_bottom = 40.0
 size_flags_horizontal = 3
 text = "CLOSE"
 
@@ -100,17 +100,17 @@ header = "Close Letter"
 body = "stop viewing this letter"
 
 [node name="HSeparator" type="VSeparator" parent="Control/Control/HBoxContainer"]
-margin_left = 187.0
-margin_right = 590.0
-margin_bottom = 40.0
+offset_left = 187.0
+offset_right = 590.0
+offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.34
-custom_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource( 1 )
 
 [node name="Button2" type="Button" parent="Control/Control/HBoxContainer"]
-margin_left = 606.0
-margin_right = 778.0
-margin_bottom = 40.0
+offset_left = 606.0
+offset_right = 778.0
+offset_bottom = 40.0
 size_flags_horizontal = 3
 text = "DENY"
 
@@ -122,9 +122,9 @@ header = "Deny Letter"
 body = "Deny all gifts and delete this letter forever."
 
 [node name="Button3" type="Button" parent="Control/Control/HBoxContainer"]
-margin_left = 794.0
-margin_right = 966.0
-margin_bottom = 40.0
+offset_left = 794.0
+offset_right = 966.0
+offset_bottom = 40.0
 size_flags_horizontal = 3
 text = "ACCEPT"
 

@@ -4,8 +4,8 @@
 code = "shader_type spatial;
 render_mode depth_draw_always; //, unshaded;
 
-uniform vec4 albedo: hint_color;
-uniform vec4 albedo2: hint_color;
+uniform vec4 albedo: source_color;
+uniform vec4 albedo2: source_color;
 uniform float alpha = 1.0;
 uniform float metallic : hint_range(0.0, 1.0) = 0.0;
 uniform float roughness : hint_range(0.0, 1.0) = 0.02;
@@ -33,15 +33,15 @@ uniform vec4 gersner_wave_e = vec4(1.0, 0.0, 0.5, 50.0);
 uniform float ocean_intensity = 1.0;
 uniform float wave_time = 1.0;
 
-uniform vec4 color_deep : hint_color;
-uniform vec4 color_shallow : hint_color;
+uniform vec4 color_deep : source_color;
+uniform vec4 color_shallow : source_color;
 uniform float beers_law = 2.0;
 uniform float depth_offset = -0.75;
 
 uniform float edge_scale = 0.1;
 uniform float near = 1.0;
 uniform float far = 100.0;
-uniform vec4 foam_color : hint_color;
+uniform vec4 foam_color : source_color;
 uniform float foam_amt = 0.15;
 uniform float foam_scale = 1.0;
 uniform float edge_foam = 1.0;
@@ -50,11 +50,11 @@ uniform sampler2D foam_noise;
 uniform float foam_threshold = 0.85;
 
 uniform float upper_wave_mult = 0.7;
-uniform vec4 upper_wave_color : hint_color;
+uniform vec4 upper_wave_color : source_color;
 
 uniform float whitecap_min = 0.7;
 uniform float whitecap_max = 0.7;
-uniform vec4 whitecap_color : hint_color;
+uniform vec4 whitecap_color : source_color;
 
 uniform vec2 player_position;
 uniform bool underwater_vision = false;
@@ -102,7 +102,7 @@ vec3 gerstner_wave(vec4 wave, vec3 vert, vec3 tangent, vec3 binormal) {
 
 
 void vertex() {
-	world_pos = (WORLD_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	
 	vec2 point = world_pos.xz / 40.0;
 	//height = texture(wave_tex, point).r;
@@ -180,6 +180,6 @@ void fragment() {
 	//if (!underwater_vision) { ALPHA = alpha; }
 	METALLIC = metallic;
 	ROUGHNESS = roughness;
-	NORMALMAP = normal_blend;
-	NORMALMAP_DEPTH = normal_scale;
+	NORMAL_MAP = normal_blend;
+	NORMAL_MAP_DEPTH = normal_scale;
 }"

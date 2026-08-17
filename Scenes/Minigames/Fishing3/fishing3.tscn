@@ -1,24 +1,24 @@
 [gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/Minigames/Fishing3/fishing3.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fish_minigame_3.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fish_minigame_6.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/reel.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fish_minigame_4.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yankbutton1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yankbutton2.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yankbutton3.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/bg1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fish_minigame_3.png" type="Texture2D" id=2]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fish_minigame_6.png" type="Texture2D" id=3]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/reel.png" type="Texture2D" id=4]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fish_minigame_4.png" type="Texture2D" id=5]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yankbutton1.png" type="Texture2D" id=6]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yankbutton2.png" type="Texture2D" id=7]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yankbutton3.png" type="Texture2D" id=8]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/bg1.png" type="Texture2D" id=9]
 [ext_resource path="res://Scenes/Minigames/Fishing3/shatter_particle.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/bg2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fade.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/cntdn1.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/cntdn5.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/cntdn4.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/starb.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yank_alt1.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yank_alt3.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yank_alt2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/bg2.png" type="Texture2D" id=11]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/fade.png" type="Texture2D" id=12]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/cntdn1.png" type="Texture2D" id=13]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/cntdn5.png" type="Texture2D" id=14]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/cntdn4.png" type="Texture2D" id=15]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/starb.png" type="Texture2D" id=16]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yank_alt1.png" type="Texture2D" id=17]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yank_alt3.png" type="Texture2D" id=18]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/yank_alt2.png" type="Texture2D" id=19]
 [ext_resource path="res://Sounds/Fishing/minigame_breaka.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Sounds/Fishing/minigame_click.ogg" type="AudioStream" id=21]
 [ext_resource path="res://Sounds/Fishing/minigame_reeling.ogg" type="AudioStream" id=22]
@@ -34,7 +34,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.312236, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=7]
 curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticleProcessMaterial" id=5]
 flag_disable_z = true
 direction = Vector3( 0.4, -1, 0 )
 spread = 82.38
@@ -52,14 +52,14 @@ scale_curve = SubResource( 7 )
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("bars/ColorRect:rect_position")
+tracks/0/path = NodePath("bars/ColorRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Vector2( -1000, 0 ) ]
 }
@@ -68,14 +68,14 @@ tracks/0/keys = {
 resource_name = "start"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("bars/ColorRect:rect_position")
+tracks/0/path = NodePath("bars/ColorRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1000, 0 ), Vector2( 0, 0 ) ]
 }
@@ -96,8 +96,8 @@ mouse_filter = 2
 [node name="ColorRect" type="TextureRect" parent="bars"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1000.0
-margin_right = -1000.0
+offset_left = -1000.0
+offset_right = -1000.0
 mouse_filter = 2
 texture = ExtResource( 12 )
 expand = true
@@ -112,8 +112,8 @@ anchor_left = 0.01
 anchor_top = 0.02
 anchor_right = 0.227729
 anchor_bottom = 0.142778
-margin_right = -0.240002
-margin_bottom = -0.200005
+offset_right = -0.240002
+offset_bottom = -0.200005
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true
@@ -130,18 +130,18 @@ anchor_bottom = 0.95
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="main/CenterContainer"]
-margin_left = 298.0
-margin_top = 185.0
-margin_right = 662.0
-margin_bottom = 841.0
+offset_left = 298.0
+offset_top = 185.0
+offset_right = 662.0
+offset_bottom = 841.0
 mouse_filter = 2
 texture = ExtResource( 5 )
 
 [node name="texmain" type="TextureRect" parent="main/CenterContainer"]
-margin_left = 298.0
-margin_top = 185.0
-margin_right = 662.0
-margin_bottom = 841.0
+offset_left = 298.0
+offset_top = 185.0
+offset_right = 662.0
+offset_bottom = 841.0
 mouse_filter = 2
 texture = ExtResource( 2 )
 
@@ -155,10 +155,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="main/CenterContainer/texmain/pivot"]
-margin_left = -127.492
-margin_top = -561.536
-margin_right = 236.508
-margin_bottom = 94.464
+offset_left = -127.492
+offset_top = -561.536
+offset_right = 236.508
+offset_bottom = 94.464
 mouse_filter = 2
 texture = ExtResource( 3 )
 
@@ -167,8 +167,8 @@ anchor_left = 0.538462
 anchor_top = 0.856707
 anchor_right = 0.538462
 anchor_bottom = 0.857
-margin_right = -1.52588e-05
-margin_bottom = -0.192017
+offset_right = -1.52588e-05
+offset_bottom = -0.192017
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -179,10 +179,10 @@ anchor_left = 0.469747
 anchor_top = 0.532476
 anchor_right = 0.804747
 anchor_bottom = 0.763476
-margin_left = 0.0119934
-margin_top = -0.304016
-margin_right = 0.071991
-margin_bottom = 0.159973
+offset_left = 0.0119934
+offset_top = -0.304016
+offset_right = 0.071991
+offset_bottom = 0.159973
 action_mode = 0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 8 )
@@ -194,10 +194,10 @@ anchor_left = 0.499967
 anchor_top = 0.739793
 anchor_right = 0.845956
 anchor_bottom = 0.993659
-margin_left = 0.0119934
-margin_top = -0.304016
-margin_right = 0.071991
-margin_bottom = 0.159973
+offset_left = 0.0119934
+offset_top = -0.304016
+offset_right = 0.071991
+offset_bottom = 0.159973
 action_mode = 0
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 18 )
@@ -206,17 +206,17 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="scroll" type="TextureProgress" parent="main/CenterContainer/texmain"]
+[node name="scroll" type="TextureProgressBar" parent="main/CenterContainer/texmain"]
 show_behind_parent = true
 anchor_left = 0.78022
 anchor_top = 0.0441098
 anchor_right = 1.33222
 anchor_bottom = 0.937415
-margin_left = -14.0
-margin_top = 0.0640037
-margin_right = 0.071991
-margin_bottom = -32.944
-rect_rotation = 26.0
+offset_left = -14.0
+offset_top = 0.0640037
+offset_right = 0.071991
+offset_bottom = -32.944
+rotation = 26.0
 mouse_filter = 2
 texture_progress = ExtResource( 9 )
 fill_mode = 2
@@ -224,17 +224,17 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="scroll_bad" type="TextureProgress" parent="main/CenterContainer/texmain"]
+[node name="scroll_bad" type="TextureProgressBar" parent="main/CenterContainer/texmain"]
 show_behind_parent = true
 anchor_left = 0.78022
 anchor_top = 0.0441098
 anchor_right = 1.33222
 anchor_bottom = 0.937415
-margin_left = -14.0
-margin_top = 0.0640037
-margin_right = 0.071991
-margin_bottom = -32.944
-rect_rotation = 26.0
+offset_left = -14.0
+offset_top = 0.0640037
+offset_right = 0.071991
+offset_bottom = -32.944
+rotation = 26.0
 mouse_filter = 2
 texture_progress = ExtResource( 11 )
 fill_mode = 2
@@ -247,9 +247,9 @@ anchor_left = 0.700549
 anchor_top = 0.0381098
 anchor_right = 0.980549
 anchor_bottom = 0.809463
-margin_right = 0.0800171
-margin_bottom = 43.992
-rect_rotation = 23.0
+offset_right = 0.0800171
+offset_bottom = 43.992
+rotation = 23.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true
@@ -260,12 +260,12 @@ anchor_left = 0.126857
 anchor_top = 0.745671
 anchor_right = 0.579187
 anchor_bottom = 0.989085
-margin_left = -0.17601
-margin_top = -0.160004
-margin_right = 0.175995
-margin_bottom = 0.159973
+offset_left = -0.17601
+offset_top = -0.160004
+offset_right = 0.175995
+offset_bottom = 0.159973
 mouse_filter = 2
-custom_styles/focus = SubResource( 1 )
+theme_override_styles/focus = SubResource( 1 )
 disabled = true
 flat = true
 __meta__ = {
@@ -277,8 +277,8 @@ anchor_left = 0.291209
 anchor_top = 0.744098
 anchor_right = 0.291209
 anchor_bottom = 0.744098
-margin_top = -0.128021
-margin_bottom = -0.128021
+offset_top = -0.128021
+offset_bottom = -0.128021
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -288,8 +288,8 @@ anchor_left = 0.2375
 anchor_top = 0.682407
 anchor_right = 0.277042
 anchor_bottom = 0.752
-margin_right = -0.920044
-margin_bottom = -0.160034
+offset_right = -0.920044
+offset_bottom = -0.160034
 mouse_filter = 2
 texture = ExtResource( 4 )
 __meta__ = {
@@ -301,8 +301,8 @@ anchor_left = 0.315625
 anchor_top = 0.589815
 anchor_right = 0.452771
 anchor_bottom = 0.746889
-margin_right = 0.679932
-margin_bottom = 0.359985
+offset_right = 0.679932
+offset_bottom = 0.359985
 texture = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -314,8 +314,8 @@ anchor_left = 0.299479
 anchor_top = 0.442593
 anchor_right = 0.436625
 anchor_bottom = 0.599667
-margin_right = 0.679932
-margin_bottom = 0.359985
+offset_right = 0.679932
+offset_bottom = 0.359985
 texture = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -326,8 +326,8 @@ anchor_left = 0.286979
 anchor_top = 0.520371
 anchor_right = 0.424125
 anchor_bottom = 0.677445
-margin_right = 0.679932
-margin_bottom = 0.359985
+offset_right = 0.679932
+offset_bottom = 0.359985
 texture = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -340,75 +340,75 @@ mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="main/countdown"]
 visible = false
-margin_left = 348.0
-margin_top = 428.0
-margin_right = 612.0
-margin_bottom = 598.0
+offset_left = 348.0
+offset_top = 428.0
+offset_right = 612.0
+offset_bottom = 598.0
 mouse_filter = 2
 texture = ExtResource( 13 )
 
 [node name="challenge_points" type="Control" parent="main"]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="1" type="Control" parent="main/challenge_points"]
-margin_left = 350.0
-margin_top = 350.0
-margin_right = 350.0
-margin_bottom = 350.0
+offset_left = 350.0
+offset_top = 350.0
+offset_right = 350.0
+offset_bottom = 350.0
 
 [node name="2" type="Control" parent="main/challenge_points"]
-margin_left = 700.0
-margin_top = 200.0
-margin_right = 700.0
-margin_bottom = 200.0
+offset_left = 700.0
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 200.0
 
 [node name="3" type="Control" parent="main/challenge_points"]
-margin_left = 650.0
-margin_top = 350.0
-margin_right = 650.0
-margin_bottom = 350.0
+offset_left = 650.0
+offset_top = 350.0
+offset_right = 650.0
+offset_bottom = 350.0
 
 [node name="4" type="Control" parent="main/challenge_points"]
-margin_left = 640.0
-margin_top = 500.0
-margin_right = 640.0
-margin_bottom = 500.0
+offset_left = 640.0
+offset_top = 500.0
+offset_right = 640.0
+offset_bottom = 500.0
 
 [node name="5" type="Control" parent="main/challenge_points"]
-margin_left = 550.0
-margin_top = 600.0
-margin_right = 550.0
-margin_bottom = 600.0
+offset_left = 550.0
+offset_top = 600.0
+offset_right = 550.0
+offset_bottom = 600.0
 
 [node name="6" type="Control" parent="main/challenge_points"]
-margin_left = 300.0
-margin_top = 600.0
-margin_right = 300.0
-margin_bottom = 600.0
+offset_left = 300.0
+offset_top = 600.0
+offset_right = 300.0
+offset_bottom = 600.0
 
 [node name="7" type="Control" parent="main/challenge_points"]
-margin_left = 350.0
-margin_top = 500.0
-margin_right = 350.0
-margin_bottom = 500.0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 350.0
+offset_bottom = 500.0
 
 [node name="8" type="Control" parent="main/challenge_points"]
-margin_left = 350.0
-margin_top = 425.0
-margin_right = 350.0
-margin_bottom = 425.0
+offset_left = 350.0
+offset_top = 425.0
+offset_right = 350.0
+offset_bottom = 425.0
 
 [node name="9" type="Control" parent="main/challenge_points"]
-margin_left = 642.0
-margin_top = 432.0
-margin_right = 642.0
-margin_bottom = 432.0
+offset_left = 642.0
+offset_top = 432.0
+offset_right = 642.0
+offset_bottom = 432.0
 
 [node name="shatter_particle" parent="." instance=ExtResource( 10 )]
 position = Vector2( -1040, 220 )
 
-[node name="stars" type="Particles2D" parent="."]
+[node name="stars" type="GPUParticles2D" parent="."]
 position = Vector2( -1059, -117 )
 emitting = false
 amount = 10

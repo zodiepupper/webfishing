@@ -3,14 +3,14 @@ extends PlayerProp
 var state = - 1
 var listening = false
 
-onready var audio = $AudioStreamPlayer3D
+@onready var audio = $AudioStreamPlayer3D
 
 func _ready():
 	custom_valid_actions = ["_set_state"]
 	
 	if not controlled:
 		$Interactable.text = "LISTEN IN"
-		audio.unit_db = linear2db(0.0)
+		audio.volume_db = linear_to_db(0.0)
 
 func _sync_add_state():
 	var new_state = state + 1
@@ -25,7 +25,7 @@ func _set_state(new):
 		if state == - 1: $Interactable.text = "TURN ON"
 		elif state != 4: $Interactable.text = "NEXT SONG"
 		else: $Interactable.text = "TURN OFF"
-		audio.unit_db = 0.0
+		audio.volume_db = 0.0
 	
 	match state:
 		- 1:
@@ -55,9 +55,9 @@ func _on_Interactable__activated():
 func _toggle_listening():
 	listening = not listening
 	if listening:
-		audio.unit_db = linear2db(1.0)
+		audio.volume_db = linear_to_db(1.0)
 	else:
-		audio.unit_db = linear2db(0.0)
+		audio.volume_db = linear_to_db(0.0)
 	
 	if listening:
 		$Interactable.text = "STOP LISTENING"

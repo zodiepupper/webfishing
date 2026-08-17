@@ -3,8 +3,8 @@ extends CanvasLayer
 var hud
 var saved_data
 
-onready var text = $Control / Control / Panel / RichTextLabel
-onready var text_end = $Control / Control / Panel / RichTextLabel2
+@onready var text = $Control / Control / Panel / RichTextLabel
+@onready var text_end = $Control / Control / Panel / RichTextLabel2
 
 signal _finished
 
@@ -22,7 +22,7 @@ func _load_letter(data):
 		print("Letter is Legacy")
 	
 	text.text = str(header) + "\n\n" + "Dear " + str(Network.STEAM_USERNAME) + ", "
-	$Control / Control / Panel / RichTextLabel3.bbcode_text = str(body)
+	$Control / Control / Panel / RichTextLabel3.text = str(body)
 	text_end.text = str(data["closing"]) + str(data["from"])
 	
 	var ib = $Control / Control / Panel / RichTextLabel4

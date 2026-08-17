@@ -23,7 +23,7 @@ signal _slot_saved
 
 func _ready():
 	
-	yield(get_tree().create_timer(2.0), "timeout")
+	await get_tree().create_timer(2.0).timeout
 	
 	var save_exists = _load_general_save()
 	if not save_exists: _reset_general_save()
@@ -41,11 +41,10 @@ func _migration_check():
 	var SAVE_PATH = "user://webfishing_save_slot_0.sav"
 	var BACKUP_PATH = "user://webfishing_backup_save_slot_0.backup"
 	
-	var save = File.new()
-	var save_exists = save.file_exists(SAVE_PATH)
-	var backup_exists = save.file_exists(BACKUP_PATH)
-	var migrate_exists = save.file_exists(OLD_MIGRATED_PATH)
-	var orignal_exists = save.file_exists(OLD_ORIGINAL_PATH)
+	var save_exists = FileAccess.file_exists(SAVE_PATH)
+	var backup_exists = FileAccess.file_exists(BACKUP_PATH)
+	var migrate_exists = FileAccess.file_exists(OLD_MIGRATED_PATH)
+	var orignal_exists = FileAccess.file_exists(OLD_ORIGINAL_PATH)
 	
 	if save_exists or backup_exists:
 		print("Migrated save found.")
@@ -61,13 +60,13 @@ func _migration_check():
 
 
 func _load_general_save():
-	var save = File.new()
-	if not save.file_exists(GENERAL_PATH):
+	var save : FileAccess
+	if not FileAccess.file_exists(GENERAL_PATH):
 		print("No General Save found.")
 		return false
 	print("Loading General Save")
 	
-	save.open(GENERAL_PATH, File.READ)
+	save = FileAccess.open(GENERAL_PATH, FileAccess.READ)
 	stored_general_save = save.get_var()
 	save.close()
 	
@@ -100,12 +99,11 @@ func _save_general_save():
 	}
 	
 	print("Saving General Game")
-	var save = File.new()
-	save.open("user://webfishing_general_data.sav", File.WRITE)
+	var save = FileAccess.open("user://webfishing_general_data.sav", FileAccess.WRITE)
 	save.store_var(new_save)
 	save.close()
 	
-	yield(get_tree().create_timer(0.25), "timeout")
+	await get_tree().create_timer(0.25).timeout
 	general_saving_in_progress = false
 
 func _reset_general_save():
@@ -155,11 +153,11 @@ func _load_save(slot):
 	last_loaded_slot = slot
 	current_loaded_slot = slot
 	
-	var save = File.new()
+	var save : FileAccess
 	
 	
-	var save_exists = save.file_exists(SAVE_PATH)
-	var backup_exists = save.file_exists(BACKUP_PATH)
+	var save_exists = FileAccess.file_exists(SAVE_PATH)
+	var backup_exists = FileAccess.file_exists(BACKUP_PATH)
 	
 	
 	var use_backup = false
@@ -175,8 +173,8 @@ func _load_save(slot):
 			return
 	
 	var loaded_save = {}
-	if not use_backup: save.open(SAVE_PATH, File.READ)
-	else: save.open(BACKUP_PATH, File.READ)
+	if not use_backup: save = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	else: save = FileAccess.open(BACKUP_PATH, FileAccess.READ)
 	loaded_save = save.get_var()
 	save.close()
 	
@@ -186,7 +184,7 @@ func _load_save(slot):
 		print("Save broken.")
 		if not use_backup:
 			print("Attempting Backup.")
-			save.open(BACKUP_PATH, File.READ)
+			save = FileAccess.open(BACKUP_PATH, FileAccess.READ)
 			loaded_save = save.get_var()
 			save.close()
 			
@@ -329,18 +327,17 @@ func _save_slot(slot):
 		"locked_refs": PlayerData.locked_refs, 
 	}
 	
-	var save = File.new()
-	save.open(SAVE_PATH, File.WRITE)
+	var save : FileAccess
+	save = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	save.store_var(new_save)
 	save.close()
 	
 	
-	save = File.new()
-	save.open(BACKUP_PATH, File.WRITE)
+	save = FileAccess.open(BACKUP_PATH, FileAccess.WRITE)
 	save.store_var(new_save)
 	save.close()
 	
-	yield(get_tree().create_timer(0.25), "timeout")
+	await get_tree().create_timer(0.25).timeout
 	saving_in_progress = false
 	call_deferred("emit_signal", "_slot_saved")
 
@@ -349,7 +346,7 @@ func _reset_save_slot(slot):
 	print("Save Slot ", slot, " Reset")
 	last_loaded_slot = slot
 	current_loaded_slot = slot
-	PlayerData.connect("_save_reset", self, "_save_slot", [slot], CONNECT_ONESHOT)
+	PlayerData.connect("_save_reset", Callable(self, "_save_slot").bind(slot), CONNECT_ONE_SHOT)
 	PlayerData._reset_save()
 
 
@@ -358,14 +355,14 @@ func _port_data_to_save(slot, original = false):
 	var SAVE_PATH = "user://webfishing_save_slot_" + str(slot) + ".sav"
 	var save_data = {}
 	
-	var save = File.new()
-	if not original: save.open("user://webfishing_migrated_data.save", File.READ)
-	else: save.open_encrypted_with_pass("user://webfishing_data.save", File.READ, "97C4B57AF4E0F527")
+	var save : FileAccess
+	if not original: save.open("user://webfishing_migrated_data.save", FileAccess.READ)
+	else: save.open_encrypted_with_pass("user://webfishing_data.save", FileAccess.READ, "97C4B57AF4E0F527")
 	save_data = save.get_var()
 	save.close()
 	
-	var save_slot_new = File.new()
-	save_slot_new.open(SAVE_PATH, File.WRITE)
+	var save_slot_new : FileAccess
+	save_slot_new.open(SAVE_PATH, FileAccess.WRITE)
 	save_slot_new.store_var(save_data)
 	save_slot_new.close()
 
@@ -377,15 +374,15 @@ func _quick_save():
 	_save_slot(current_loaded_slot)
 	
 	
-	var save_anim = preload("res://Scenes/Singletons/UserSave/save_animation.tscn").instance()
+	var save_anim = preload("res://Scenes/Singletons/UserSave/save_animation.tscn").instantiate()
 	add_child(save_anim)
 
 func _quick_open(slot):
 	var SAVE_PATH = "user://webfishing_save_slot_" + str(slot) + ".sav"
-	var save = File.new()
+	var save : FileAccess
 	if not save.file_exists(SAVE_PATH): return {}
 	
-	save.open(SAVE_PATH, File.READ)
+	save.open(SAVE_PATH, FileAccess.READ)
 	var data = save.get_var()
 	save.close()
 	

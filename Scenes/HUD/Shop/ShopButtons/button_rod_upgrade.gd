@@ -2,7 +2,7 @@ extends ShopButton
 
 enum TYPE{POWER, SPEED, CHANCE, BAITMAX, BUDDY, BUDDY_SPEED, LUCK}
 
-export (TYPE) var type = TYPE.POWER
+@export var type: TYPE = TYPE.POWER
 
 func _custom_update():
 	var value = [PlayerData.rod_power_level, PlayerData.rod_speed_level, PlayerData.rod_chance_level, floor(PlayerData.max_bait / 5.0) - 1, PlayerData.buddy_level, PlayerData.buddy_speed, PlayerData.rod_luck_level][type]

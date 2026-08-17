@@ -1,7 +1,7 @@
 extends ShopButton
 
-export var max_add = 0
-export var max_req = 0
+@export var max_add = 0
+@export var max_req = 0
 
 func _custom_update():
 	if PlayerData.max_bait < max_req: locked = true

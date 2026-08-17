@@ -1,4 +1,4 @@
-GDRE Tools v2.6.0
+GDRE Tools v2.5.0
 CachyOS Linux #1 SMP PREEMPT_DYNAMIC Wed, 08 Jul 2026 18:34:01 +0000, AMD Radeon 890M Graphics (RADV STRIX1), vulkan
 Opening file: /run/media/zodiepupper/7c189b0f-b38a-416c-ab9d-e066ace4e96d/SteamLibrary/steamapps/common/WEBFISHING/webfishing.exe
 Multiple passing candidates for bytecode version 13:
@@ -9,14 +9,12 @@ Detected Engine Version: 3.5.2
 Detected Bytecode Revision: 3.5.0-stable (a7aad78)
 Verified 4056 files, no errors detected!
 Extracted 4056 files, no errors detected!
-WARNING: Mesh uses old surface format, which is deprecated (and loads slower). Consider re-importing or re-saving the scene. Path: ""
+WARNING: Mesh uses old surface format, which is deprecated (and loads slower). Consider re-importing or re-saving the scene. Path: "res://.import/cardboardbox.obj-e00bd5c5355d0d720df8875bcc34d9be.mesh"
    at: _set (modules/gdsdecomp/compat/fake_mesh.cpp:456)
-WARNING: Mesh uses old surface format, which is deprecated (and loads slower). Consider re-importing or re-saving the scene. Path: "res://.import/player_body.glb-5a145f356ba51ddb00737dc91128608b.scn::1"
-   at: _set (scene/resources/mesh.cpp:1367)
-WARNING: Animation uses old 'transform' track types, which is deprecated (and loads slower). Consider re-importing or re-saving the resource.
-   at: _set (scene/resources/animation.cpp:113)
-WARNING: Skeleton uses old pose format, which is deprecated (and loads slower). Consider re-importing or re-saving the scene.
-   at: _set (scene/3d/skeleton_3d.cpp:112)
+
+Exporting scenes...
+*** Exporting 53 scenes took 2.23s
+
 Saved project config.
 
 
@@ -24,7 +22,7 @@ Saved project config.
 
 Totals:                                 
 Decompiled scripts:                     196
-Scripts not decompiled:                 0
+Failed scripts:                         0
 Imported resources for export session:  1484
 Successfully converted:                 1483
 Lossy:                                  1
@@ -45,8 +43,7 @@ Failed conversions:
 
 ------------------------------------------------------------------------------------
 
-Use Godot editor version 3.5.2 (Steam edition) to edit the project.
-GodotSteam can be found here: https://codeberg.org/GodotSteam/GodotSteam/releases 
+Use Godot editor version 3.5.2 to edit the project.
 
 *******************************************************************************
 

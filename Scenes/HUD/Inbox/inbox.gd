@@ -1,12 +1,12 @@
 extends Control
 
-onready var in_box = $letters / Panel / ScrollContainer / VBoxContainer
+@onready var in_box = $letters / Panel / ScrollContainer / VBoxContainer
 
 signal _create_letter
 signal _read_letter
 
 func _ready():
-	PlayerData.connect("_letter_update", self, "_refresh")
+	PlayerData.connect("_letter_update", Callable(self, "_refresh"))
 	_refresh()
 
 func _refresh():
@@ -15,10 +15,10 @@ func _refresh():
 	$letters / Label2.text = "INBOX (" + str(PlayerData.inbound_mail.size()) + "/50)"
 	
 	for letter in PlayerData.inbound_mail:
-		var l = preload("res://Scenes/HUD/Inbox/letter_entry.tscn").instance()
+		var l = preload("res://Scenes/HUD/Inbox/letter_entry.tscn").instantiate()
 		l._setup(letter, true)
-		l.connect("_accepted", self, "_view_mail", [letter])
-		l.connect("_deleted", self, "_delete_mail", [letter])
+		l.connect("_accepted", Callable(self, "_view_mail").bind(letter))
+		l.connect("_deleted", Callable(self, "_delete_mail").bind(letter))
 		in_box.add_child(l)
 
 func _create_letter():

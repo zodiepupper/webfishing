@@ -1,17 +1,17 @@
-extends Spatial
+extends Node3D
 
 const NORMAL_COLLISION_LAYER = 1;
 
-export (NodePath) var camera
+@export var camera: NodePath
 
 var active = false
 
-onready var view_camera = get_node(camera)
+@onready var view_camera = get_node(camera)
 
 func _raycast():
 	var selected_node = null
 	
-	var space_state = get_world().direct_space_state
+	var space_state = get_world_3d().direct_space_state
 	var world_viewport = get_tree().get_nodes_in_group("world_viewport")[0]
 	
 	var raycast_from = view_camera.project_ray_origin(get_tree().root.get_mouse_position())

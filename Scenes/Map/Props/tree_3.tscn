@@ -8,7 +8,7 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type spatial;
 
-uniform vec4 albedo : hint_color;
+uniform vec4 albedo : source_color;
 uniform float wobble_speed = 1.0;
 uniform float wobble_amt = 1.0;
 
@@ -28,29 +28,29 @@ shader_param/albedo = Color( 0.258824, 0.356863, 0.207843, 1 )
 shader_param/wobble_speed = 0.15
 shader_param/wobble_amt = 0.05
 
-[sub_resource type="CylinderShape" id=3]
+[sub_resource type="CylinderShape3D" id=3]
 
-[node name="tree_3" type="Spatial"]
+[node name="tree_3" type="Node3D"]
 script = ExtResource( 4 )
 cull_max_range = 150
-premade_cull_vis = NodePath("VisibilityNotifier")
+premade_cull_vis = NodePath("VisibleOnScreenNotifier3D")
 nudge = -0.06
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93568, 0 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93568, 0 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
 material/1 = SubResource( 2 )
 
 [node name="shadow" parent="." instance=ExtResource( 5 )]
-transform = Transform( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0.071, 0 )
+transform = Transform3D( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0.071, 0 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 0.54347, 0, 0, 0, 2.10395, 0, 0, 0, 0.54347, 0.0160812, 2.12052, 0 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D( 0.54347, 0, 0, 0, 2.10395, 0, 0, 0, 0.54347, 0.0160812, 2.12052, 0 )
 shape = SubResource( 3 )
 
-[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.66322, 0 )
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.66322, 0 )
 aabb = AABB( -2.04645, -4.97461, -2.21089, 4.0929, 9.94922, 4.42177 )

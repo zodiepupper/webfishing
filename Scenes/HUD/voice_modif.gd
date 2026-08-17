@@ -1,7 +1,7 @@
 extends Control
 
-onready var p_slider = $HBoxContainer / HSlider
-onready var s_slider = $HBoxContainer2 / speed
+@onready var p_slider = $HBoxContainer / HSlider
+@onready var s_slider = $HBoxContainer2 / speed
 
 func _ready():
 	p_slider.min_value = 0.7
@@ -17,8 +17,8 @@ func _ready():
 	_pitch_change(PlayerData.voice_pitch)
 	_speed_change(PlayerData.voice_speed)
 	
-	p_slider.connect("value_changed", self, "_pitch_change")
-	s_slider.connect("value_changed", self, "_speed_change")
+	p_slider.connect("value_changed", Callable(self, "_pitch_change"))
+	s_slider.connect("value_changed", Callable(self, "_speed_change"))
 
 func _pitch_change(new):
 	PlayerData.voice_pitch = new

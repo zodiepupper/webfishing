@@ -3,14 +3,14 @@ extends Control
 var open = false
 var cooldown = 0
 
-onready var gridcont = $Panel / ScrollContainer / VBoxContainer / HBoxContainer / GridContainer
+@onready var gridcont = $Panel / ScrollContainer / VBoxContainer / HBoxContainer / GridContainer
 
 func _ready():
-	PlayerData.connect("_prop_update", self, "_refresh")
+	PlayerData.connect("_prop_update", Callable(self, "_refresh"))
 	_refresh()
 
 func _physics_process(delta):
-	rect_position.y = lerp(rect_position.y, 184 if open else 600, 0.15)
+	position.y = lerp(position.y, 184 if open else 600, 0.15)
 	if cooldown > 0: cooldown -= 1
 	
 	modulate.a = lerp(modulate.a, 1.0 if open else 0.0, 0.2)
@@ -29,12 +29,12 @@ func _refresh():
 		var idata = Globals.item_data[item["id"]]["file"]
 		if idata.category != "furniture": continue
 		
-		var button = preload("res://Scenes/HUD/PropButton/prop_button.tscn").instance()
+		var button = preload("res://Scenes/HUD/PropButton/prop_button.tscn").instantiate()
 		button.icon = idata.icon
 		button.get_node("TooltipNode").header = idata.item_name
 		button.get_node("TooltipNode").body = idata.item_description
 		button.get_node("Panel").visible = ids.has(item["ref"])
-		button.connect("pressed", self, "_place", [item["ref"]])
+		button.connect("pressed", Callable(self, "_place").bind(item["ref"))
 		
 		gridcont.add_child(button)
 

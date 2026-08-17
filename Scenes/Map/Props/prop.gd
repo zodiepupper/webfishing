@@ -1,9 +1,9 @@
 extends PropVis
 
-export var random_rot = true
-export var random_scale = true
-export var scale_min = 1.0
-export var nudge = 0.0
+@export var random_rot = true
+@export var random_scale = true
+@export var scale_min = 1.0
+@export var nudge = 0.0
 
 func _ready():
 	var pos_val = global_transform.origin.x * 100.0 + \
@@ -18,4 +18,4 @@ func _ready():
 		scale = Vector3(new_scale, new_scale, new_scale)
 	
 	if nudge != 0.0:
-		translation.y += nudge
+		position.y += nudge

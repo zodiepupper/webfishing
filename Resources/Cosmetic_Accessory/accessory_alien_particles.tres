@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Particles/CosmeticParticles/alien_particle_cosmetic.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons43.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons43.png" type="Texture2D" id=3]
 
 [resource]
 script = ExtResource( 1 )

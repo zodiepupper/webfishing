@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons48.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons48.png" type="Texture2D" id=3]
 [ext_resource path="res://Assets/Models/Cosmetics/bobber_bomb.tres" type="ArrayMesh" id=4]
 
 [resource]

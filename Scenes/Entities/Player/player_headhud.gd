@@ -1,6 +1,6 @@
-extends MeshInstance
+extends MeshInstance3D
 
-export var offset = Vector3()
+@export var offset = Vector3()
 
 var parent = null
 

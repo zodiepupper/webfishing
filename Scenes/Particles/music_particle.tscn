@@ -9,7 +9,7 @@ _data = [ Vector2( 0, 0.371591 ), 0.0, 3.46364, 0, 0, Vector2( 0.73622, 0.644318
 [sub_resource type="CurveTexture" id=4]
 curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticleProcessMaterial" id=1]
 emission_shape = 5
 emission_ring_radius = 1.2
 emission_ring_inner_radius = 0.8

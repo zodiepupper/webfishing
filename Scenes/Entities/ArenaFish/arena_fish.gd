@@ -36,25 +36,26 @@ func _setup_controlled():
 	
 	arena_origin = global_transform.origin
 	global_transform.origin += Vector3(
-					rand_range( - spawn_range, spawn_range), 
+					randf_range( - spawn_range, spawn_range), 
 					0.3, 
-					rand_range( - spawn_range, spawn_range))
-	direction = Vector3(rand_range( - 1, 1), 0.0, rand_range( - 1, 1))
+					randf_range( - spawn_range, spawn_range))
+	direction = Vector3(randf_range( - 1, 1), 0.0, randf_range( - 1, 1))
 
 func _controlled_process(delta):
-	if get_slide_count() > 0:
-		for s in get_slide_count():
+	if get_slide_collision_count() > 0:
+		for s in get_slide_collision_count():
 			var c = get_slide_collision(s).collider
 			if c == null: continue
 			if c.is_in_group("arena_fish") and c != self:
-				c._hurt(ceil(damage * rand_range(0.8, 1.2)))
+				c._hurt(ceil(damage * randf_range(0.8, 1.2)))
 		
 		var n = get_slide_collision(0).normal
 		direction = direction.bounce(n)
 		direction.y = 0
 	
 	velocity = direction.normalized() * speed
-	move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
 
 func _hurt(amt):
 	if not controlled: return

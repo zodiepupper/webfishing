@@ -13,7 +13,7 @@ var loot_tables = {}
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
-	OS.set_window_title("WEBFISHING v" + str(GAME_VERSION))
+	get_window().set_title("WEBFISHING v" + str(GAME_VERSION))
 	
 	_load_resources()
 	_generate_voice_bank()
@@ -42,13 +42,13 @@ func _load_resources():
 	var resource_count = 0
 	var files = []
 	var subdirectories = []
-	var dir = Directory.new()
 	var path = "res://Resources/"
+	var dir := DirAccess.open(path)
 	
-	if dir.open(path) != OK:
+	if dir:
 		print("Error loading resource directory.")
 		return
-	dir.list_dir_begin(true, true)
+	dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	while true:
 		var file = dir.get_next()
 		if file == "":
@@ -57,10 +57,11 @@ func _load_resources():
 			subdirectories.append(file)
 	
 	for directory in subdirectories:
-		if dir.open(path + directory) != OK:
+		dir = DirAccess.open(path + directory)
+		if dir:
 			print("Error loading resource subdirectory ", directory)
 			break
-		dir.list_dir_begin(true, true)
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		while true:
 			var file = dir.get_next()
 			if file == "":
@@ -111,7 +112,7 @@ func _roll_loot_table(table, max_tier = - 1):
 	
 	for i in 20:
 		print("rollin")
-		var roll = rand_range(0.0, loot_tables[table]["total"])
+		var roll = randf_range(0.0, loot_tables[table]["total"])
 		for item in loot_tables[table]["entries"].keys():
 			if loot_tables[table]["entries"][item] > roll:
 				var data = Globals.item_data[item]["file"]
@@ -132,7 +133,7 @@ func _roll_item_size(item):
 	
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var roll = stepify(rng.randfn(base, deviation), 0.01)
+	var roll = snapped(rng.randfn(base, deviation), 0.01)
 	roll = max(abs(roll), 0.01)
 	return roll
 
@@ -147,7 +148,7 @@ func _enter_game(delay = 0.3):
 func _exit_game():
 	GlobalAudio._play_music("")
 	SceneTransition._change_scene("res://Scenes/Menus/Main Menu/main_menu.tscn")
-	yield(SceneTransition, "_finished")
+	await SceneTransition._finished
 	Network._leave_lobby()
 
 func _item_exists(id): return item_data.keys().has(id)
@@ -165,14 +166,14 @@ func _generate_voice_bank():
 	var resource_count = 0
 	var files = []
 	var subdirectories = []
-	var dir = Directory.new()
 	var path = "res://Sounds/Voice/"
+	var dir := DirAccess.open(path)
 	
-	if dir.open(path) != OK:
+	if dir:
 		print("Error loading voice directory.")
 		return
 	
-	dir.list_dir_begin(true, true)
+	dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	while true:
 		var file = dir.get_next()
 		if file == "":
@@ -182,21 +183,20 @@ func _generate_voice_bank():
 	
 	for directory in subdirectories:
 		voice_bank[directory] = {}
-		
-		if dir.open(path + directory) != OK:
+		dir = DirAccess.open(path + directory)
+		if dir:
 			DebugScreen._add_line("Voice Subdirect error, " + str(directory))
 			print("Error loading voice subdirectory ", directory)
 			break
 		
-		dir.list_dir_begin(true, true)
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		while true:
 			var file = dir.get_next()
 			
 			if file == "":
 				break
 			elif file.ends_with(".ogg.import"):
-				var f = File.new()
-				f.open(path + directory + "/" + file, File.READ)
+				var f = FileAccess.open(path + directory + "/" + file, FileAccess.READ)
 				
 				var read = f.get_as_text()
 				var final_path = ""
@@ -213,7 +213,7 @@ func _generate_voice_bank():
 	dir.list_dir_end()
 
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		_close_game()
 		return
 
@@ -224,7 +224,7 @@ func _close_game(save = false):
 		UserSave._save_general_save()
 		if UserSave.current_loaded_slot != - 1:
 			UserSave._quick_save()
-			yield(UserSave, "_slot_saved")
+			await UserSave._slot_saved
 	
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	get_tree().quit()

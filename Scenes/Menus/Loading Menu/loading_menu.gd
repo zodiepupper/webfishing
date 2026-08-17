@@ -13,18 +13,18 @@ var connection_wait = 0
 var used_tips = []
 var jingle_played = false
 
-onready var label = $CenterContainer / VBoxContainer / main
-onready var tip_label = $CenterContainer / VBoxContainer / tips
+@onready var label = $CenterContainer / VBoxContainer / main
+@onready var tip_label = $CenterContainer / VBoxContainer / tips
 
 func _ready():
 	_set_new_tip()
 	
 	if Network.PLAYING_OFFLINE:
 		_set_label_text("creating world")
-		yield(get_tree().create_timer(2.0), "timeout")
+		await get_tree().create_timer(2.0).timeout
 		_join_world()
 	else:
-		Network.connect("_denied_into_weblobby", self, "_denied")
+		Network.connect("_denied_into_weblobby", Callable(self, "_denied"))
 		_set_label_text("asking to join lobby")
 		waiting = true
 		$cancel.visible = not Network.CREATING_SERVER
@@ -44,7 +44,7 @@ func _on_Timer_timeout():
 	if Network.CREATING_SERVER:
 		waiting = false
 		_set_label_text("creating world")
-		yield(get_tree().create_timer(2.0), "timeout")
+		await get_tree().create_timer(2.0).timeout
 		_join_world()
 		return
 	
@@ -67,7 +67,7 @@ func _on_Timer_timeout():
 		if Network.WEB_LOBBY_MEMBERS.size() > 1:
 			waiting = false
 			_set_label_text("creating world")
-			yield(get_tree().create_timer(2.0), "timeout")
+			await get_tree().create_timer(2.0).timeout
 			_join_world()
 
 func _join_world():
@@ -85,7 +85,7 @@ func _denied(reason):
 		Network.DENY_REASONS.LOBBY_FULL: PopupMessage._show_popup("This lobby is full.")
 	
 	GlobalAudio._play_sound("request_jingle_denied")
-	yield(PopupMessage, "_closed")
+	await PopupMessage._closed
 	Globals._exit_game()
 
 func _set_label_text(new):
@@ -99,7 +99,7 @@ func _on_cancel_pressed():
 func _on_tip_timer_timeout():
 	var tween = get_tree().create_tween()
 	tween.tween_property(tip_label, "modulate:a", 0.0, 1.0)
-	tween.tween_callback(self, "_set_new_tip")
+	tween.tween_callback(Callable(self, "_set_new_tip"))
 	tween.tween_property(tip_label, "modulate:a", 1.0, 1.0)
 
 func _set_new_tip():
@@ -149,4 +149,4 @@ func _set_new_tip():
 	used_tips.append(new_tip)
 	if used_tips.size() > 10: used_tips.clear()
 	
-	tip_label.bbcode_text = "[center]TIP: " + new_tip
+	tip_label.text = "[center]TIP: " + new_tip

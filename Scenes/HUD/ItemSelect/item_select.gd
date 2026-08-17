@@ -25,11 +25,11 @@ func _ready():
 		else:
 			if Globals.item_data[item["id"]]["file"].unrenamable: continue
 		
-		var i = preload("res://Scenes/HUD/inventory_item.tscn").instance()
+		var i = preload("res://Scenes/HUD/inventory_item.tscn").instantiate()
 		box.add_child(i)
 		i._setup_item(item["ref"])
 		i.slot = index
-		i.connect("pressed", self, "_item_pressed", [i, item])
+		i.connect("pressed", Callable(self, "_item_pressed").bind(i, item))
 		index += 1
 	
 	$Control / Label.text = "SELECT ITEMS (0/" + str(max_items) + ")"

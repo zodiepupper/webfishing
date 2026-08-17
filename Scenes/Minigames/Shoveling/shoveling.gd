@@ -5,8 +5,8 @@ var active = false
 
 func _ready():
 	active = true
-	health = ceil(rand_range(6, 12))
-	$main / Panel / TextureProgress.max_value = health
+	health = ceil(randf_range(6, 12))
+	$main / Panel / TextureProgressBar.max_value = health
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("primary_action") and active:
@@ -16,7 +16,7 @@ func _physics_process(delta):
 		active = false
 		_reached_end()
 	
-	$main / Panel / TextureProgress.value = health
+	$main / Panel / TextureProgressBar.value = health
 
 func _reached_end():
 	

@@ -1,7 +1,7 @@
 extends Panel
 
 func _ready():
-	PlayerData.connect("_bait_update", self, "_update")
+	PlayerData.connect("_bait_update", Callable(self, "_update"))
 	_update()
 
 func _update():

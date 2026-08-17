@@ -7,6 +7,6 @@ func _ready():
 		queue_free()
 		return
 	
-	var mat = $MeshInstance.get_surface_material(0).duplicate()
+	var mat = $MeshInstance3D.get_surface_override_material(0).duplicate()
 	mat.albedo_texture = Globals.item_data[item_id]["file"].icon
-	$MeshInstance.set_surface_material(0, mat)
+	$MeshInstance3D.set_surface_override_material(0, mat)

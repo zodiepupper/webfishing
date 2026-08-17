@@ -1,4 +1,4 @@
-extends ViewportContainer
+extends SubViewportContainer
 
 const ACTOR_BANK = {
 	"player": [preload("res://Scenes/Entities/Player/player.tscn"), false, 1], 
@@ -34,7 +34,7 @@ const ACTOR_BANK = {
 	"portable_bait": [preload("res://Scenes/Entities/Props/prop_portable_bait.tscn"), false, 1], 
 }
 
-export var backdrop = false
+@export var backdrop = false
 
 var active_zone = ""
 var active_zone_owner = - 1
@@ -45,23 +45,23 @@ var alien_cooldown = 6
 var ambient_sound_blacklist = ""
 var ambient_sound_cooldown = 5
 
-onready var entities = $Viewport / main / entities
-onready var map = $Viewport / main / map / main_map
-onready var ent_timer = $Viewport / main / ent_spawner
-onready var shader_ignore = $shader_ignore / Viewport
-onready var shader_ignore_cam = $shader_ignore / Viewport / Camera
+@onready var entities = $SubViewport / main / entities
+@onready var map = $SubViewport / main / map / main_map
+@onready var ent_timer = $SubViewport / main / ent_spawner
+@onready var shader_ignore = $shader_ignore / SubViewport
+@onready var shader_ignore_cam = $shader_ignore / SubViewport / Camera3D
 
 signal _zone_change(zone)
 
 func _ready():
-	PlayerData.connect("_hide_hud_toggle", self, "_hide_hud_toggle")
+	PlayerData.connect("_hide_hud_toggle", Callable(self, "_hide_hud_toggle"))
 	PlayerData.emit_signal("_hide_hud_toggle", false)
 	
 	if not backdrop:
-		Network.connect("_instance_actor", self, "_instance_actor")
-		PlayerData.connect("_request_arena_start", self, "_arena_start")
-		PlayerData.connect("_arena_join", self, "_arena_join")
-		PlayerData.connect("_arena_death", self, "_arena_death")
+		Network.connect("_instance_actor", Callable(self, "_instance_actor"))
+		PlayerData.connect("_request_arena_start", Callable(self, "_arena_start"))
+		PlayerData.connect("_arena_join", Callable(self, "_arena_join"))
+		PlayerData.connect("_arena_death", Callable(self, "_arena_death"))
 		
 		Network._request_actors()
 		Network._update_chat("Welcome to GLOBAL chat!")
@@ -83,7 +83,7 @@ func _ready():
 		Network._sync_create_actor("aqua_fish", loc, "aquarium_zone", - 1, Network.STEAM_ID)
 		
 		_enter_zone(zone)
-		rain_chance = rand_range(0.0, 0.02)
+		rain_chance = randf_range(0.0, 0.02)
 		
 		Network._send_P2P_Packet({"type": "new_player_join"}, "peers", 2)
 		
@@ -99,9 +99,9 @@ func _ready():
 		
 	else:
 		GlobalAudio._play_music("music1_loop", 2.0)
-		$Viewport / main / track_camera / Camera.current = true
+		$SubViewport / main / track_camera / Camera3D.current = true
 	
-	get_tree().get_root().connect("size_changed", self, "_viewport_update")
+	get_tree().get_root().connect("size_changed", Callable(self, "_viewport_update"))
 	call_deferred("_viewport_update")
 	
 	
@@ -120,8 +120,8 @@ func _on_lobby_value_update_timeout():
 			PlayerData._send_notification("There is " + str(Network.WEB_LOBBY_JOIN_QUEUE.size()) + " player requesting to join your game... ")
 
 func _viewport_update():
-	var window_size = OS.window_size
-	$Viewport.size = (window_size / Globals.pixelize_amount).ceil()
+	var window_size = get_window().size
+	$SubViewport.size = (window_size / Globals.pixelize_amount).ceil()
 
 func _instance_actor(dict, network_sender = - 1):
 	if not Network._validate_packet_information(dict, ["actor_type", "at", "zone", "actor_id", "creator_id", "rot", "zone_owner"], [TYPE_STRING, TYPE_VECTOR3, TYPE_STRING, TYPE_INT, TYPE_INT, TYPE_VECTOR3, TYPE_INT]):
@@ -157,7 +157,7 @@ func _instance_actor(dict, network_sender = - 1):
 			print("Actor Instance Canceled, too many active of type for owner id.")
 			return
 	
-	var actor = BANK_DATA[0].instance()
+	var actor = BANK_DATA[0].instantiate()
 	actor.visible = false
 	actor.global_transform.origin = pos
 	actor.rotation = rot
@@ -267,7 +267,7 @@ func _spawn_raincloud():
 		return
 	var zone = "main_zone"
 	
-	var pos = Vector3(rand_range( - 100, 150), 42, rand_range( - 150, 100))
+	var pos = Vector3(randf_range( - 100, 150), 42, randf_range( - 150, 100))
 	Network._sync_create_actor("raincloud", pos, zone, - 1, Network.STEAM_ID)
 
 
@@ -285,7 +285,7 @@ func _spawn_metal_spot():
 	if randf() < 0.15:
 		point = get_tree().get_nodes_in_group("shoreline_point")[randi() % get_tree().get_nodes_in_group("shoreline_point").size()]
 	
-	var pos = point.global_transform.origin + Vector3(rand_range( - 0.5, 0.5), 0.0, rand_range( - 0.5, 0.5))
+	var pos = point.global_transform.origin + Vector3(randf_range( - 0.5, 0.5), 0.0, randf_range( - 0.5, 0.5))
 	Network._sync_create_actor("metal_spawn", pos, zone, - 1, Network.STEAM_ID)
 
 func _spawn_void_portal():
@@ -300,7 +300,7 @@ func _spawn_void_portal():
 	var zone = "main_zone"
 	var point = get_tree().get_nodes_in_group("hidden_spot")[randi() % get_tree().get_nodes_in_group("hidden_spot").size()]
 	
-	var pos = point.global_transform.origin + Vector3(rand_range( - 0.5, 0.5), 0.0, rand_range( - 0.5, 0.5))
+	var pos = point.global_transform.origin + Vector3(randf_range( - 0.5, 0.5), 0.0, randf_range( - 0.5, 0.5))
 	Network._sync_create_actor("void_portal", pos, zone, - 1, Network.STEAM_ID)
 
 
@@ -321,14 +321,14 @@ func _spawn_void_portal():
 
 func _import_child(child):
 	child.get_parent().call_deferred("remove_child", child)
-	yield(child, "tree_exited")
+	await child.tree_exited
 	shader_ignore.add_child(child)
 
 func _hide_hud_toggle(on):
 	$shader_ignore.visible = not on
 
 func _process(delta):
-	var cam = $Viewport.get_camera()
+	var cam = $SubViewport.get_camera_3d()
 	shader_ignore_cam.transform = cam.transform
 
 
@@ -354,7 +354,7 @@ func _spawn_bird():
 	
 	print("bird up")
 	for i in count:
-		var pos = point.global_transform.origin + Vector3(rand_range( - 2.5, 2.5), 0.0, rand_range( - 2.5, 2.5))
+		var pos = point.global_transform.origin + Vector3(randf_range( - 2.5, 2.5), 0.0, randf_range( - 2.5, 2.5))
 		Network._sync_create_actor("ambient_bird", pos, zone, - 1, Network.STEAM_ID)
 
 
@@ -380,7 +380,7 @@ func _on_ping_update_timeout():
 	Network._replication_check()
 	
 	for member in Network.LOBBY_MEMBERS:
-		var connection_data = Steam.getSessionConnectionInfo(str(member["steam_id"]), true, true)
+		var connection_data = Steam.getSessionConnectionInfo(member["steam_id"], true, true)
 		var ping = connection_data["ping"]
 		Network.PING_DICTIONARY[member["steam_id"]] = floor(ping)
 	
@@ -434,5 +434,3 @@ func _on_autosave_timer_timeout():
 	
 	print("Autosaving...")
 	UserSave._quick_save()
-
-

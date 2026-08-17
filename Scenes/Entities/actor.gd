@@ -1,18 +1,18 @@
-extends KinematicBody
+extends CharacterBody3D
 class_name Actor
 
 const NETWORK_LERP = 0.3
 
-export var delete_on_owner_disconnect = false
-export var has_shadow = false
-export var dead_actor = false
-export var can_be_hidden = false
-export var decay = false
-export var decay_timer = 600
-export var packet_send_cooldown = - 1
+@export var delete_on_owner_disconnect = false
+@export var has_shadow = false
+@export var dead_actor = false
+@export var _can_be_hidden = false
+@export var decay = false
+@export var decay_timer = 600
+@export var packet_send_cooldown = - 1
 
 var actor_id = - 1
-export var owner_id = - 1 setget _set_owner_id
+@export var owner_id = - 1: set = _set_owner_id
 var controlled = false
 var hidden = false
 var in_zone = true
@@ -37,9 +37,9 @@ signal _clearing
 
 func _ready():
 	add_to_group("actor")
-	Network.connect("_user_disconnected", self, "_user_disconnect")
-	Network.connect("_network_tick", self, "_network_share")
-	PlayerData.connect("_mute_update", self, "_mute_update")
+	Network.connect("_user_disconnected", Callable(self, "_user_disconnect"))
+	Network.connect("_network_tick", Callable(self, "_network_share"))
+	PlayerData.connect("_mute_update", Callable(self, "_mute_update"))
 	controlled = owner_id == Network.STEAM_ID
 	
 	if not dead_actor:
@@ -47,14 +47,14 @@ func _ready():
 		else: _setup_not_controlled()
 	
 	if has_shadow:
-		shadow = preload("res://Scenes/Entities/Shadow/shadow.tscn").instance()
+		shadow = preload("res://Scenes/Entities/Shadow/shadow.tscn").instantiate()
 		add_child(shadow)
-		shadow.translation = Vector3.ZERO
+		shadow.position = Vector3.ZERO
 	
 	if controlled:
 		var zone_sync_timer = Timer.new()
 		zone_sync_timer.wait_time = 5.0
-		zone_sync_timer.connect("timeout", self, "_sync_zone")
+		zone_sync_timer.connect("timeout", Callable(self, "_sync_zone"))
 		add_child(zone_sync_timer)
 		zone_sync_timer.start()
 	
@@ -175,7 +175,7 @@ func _set_zone(zone, zone_owner):
 
 
 func _mute_update():
-	hidden = PlayerData.players_hidden.has(owner_id) and can_be_hidden
+	hidden = PlayerData.players_hidden.has(owner_id) and _can_be_hidden
 
 
 

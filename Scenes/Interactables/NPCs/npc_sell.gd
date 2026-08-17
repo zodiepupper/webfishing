@@ -2,7 +2,7 @@ extends Interactable
 
 func _activate(actor):
 	actor.hud._request_item_choice()
-	var items = yield(actor.hud, "_items_chosen")
+	var items = await actor.hud._items_chosen
 	print("chosen items: ", items)
 	
 	for item in items:

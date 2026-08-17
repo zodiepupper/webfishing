@@ -8,7 +8,7 @@
 [sub_resource type="Shader" id=1]
 code = "shader_type spatial;
 
-uniform vec4 albedo : hint_color;
+uniform vec4 albedo : source_color;
 uniform float wobble_speed = 1.0;
 uniform float wobble_amt = 1.0;
 
@@ -28,27 +28,27 @@ shader_param/albedo = Color( 0.643137, 0.666667, 0.223529, 1 )
 shader_param/wobble_speed = 0.07
 shader_param/wobble_amt = 0.25
 
-[sub_resource type="CylinderShape" id=3]
+[sub_resource type="CylinderShape3D" id=3]
 
-[node name="tree_2" type="MeshInstance"]
+[node name="tree_2" type="MeshInstance3D"]
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
 material/1 = SubResource( 2 )
 material/2 = SubResource( 2 )
 script = ExtResource( 4 )
 cull_max_range = 150
-premade_cull_vis = NodePath("VisibilityNotifier")
+premade_cull_vis = NodePath("VisibleOnScreenNotifier3D")
 nudge = -0.06
 
 [node name="shadow" parent="." instance=ExtResource( 5 )]
-transform = Transform( 3.85743, 0, 0, 0, -1.68613e-07, 3.85743, 0, -3.85743, -1.68613e-07, 0, 0.071, 0 )
+transform = Transform3D( 3.85743, 0, 0, 0, -1.68613e-07, 3.85743, 0, -3.85743, -1.68613e-07, 0, 0.071, 0 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 0.696934, 0, 0, 0, 2.10395, 0, 0, 0, 0.696934, 0.0832821, 2.12052, -0.162387 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D( 0.696934, 0, 0, 0, 2.10395, 0, 0, 0, 0.696934, 0.0832821, 2.12052, -0.162387 )
 shape = SubResource( 3 )
 
-[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.03721, 0 )
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.03721, 0 )
 aabb = AABB( -4.89606, -7.14372, -6.18786, 9.79212, 14.2874, 12.3757 )

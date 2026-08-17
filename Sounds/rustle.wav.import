@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/rustle.wav-26948bbe9905b5900538ecc4f3ddfcea.sample"
+type="AudioStreamWAV"
+uid="uid://vc4h72rufx0y"
+path="res://.godot/imported/rustle.wav-26948bbe9905b5900538ecc4f3ddfcea.sample"
 
 [deps]
 
 source_file="res://Sounds/rustle.wav"
-dest_files=[ "res://.import/rustle.wav-26948bbe9905b5900538ecc4f3ddfcea.sample" ]
+dest_files=["res://.godot/imported/rustle.wav-26948bbe9905b5900538ecc4f3ddfcea.sample"]
 
 [params]
 

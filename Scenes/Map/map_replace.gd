@@ -1,4 +1,4 @@
-tool
+tool 
 extends EditorScript
 
 func _run():
@@ -7,6 +7,6 @@ func _run():
 	
 	var old_tiles = gridmap.get_used_cells()
 	for cell in old_tiles:
-		var item = gridmap.get_cell_item(cell.x, cell.y, cell.z)
+		var item = gridmap.get_cell_item(Vector3i(cell.x, cell.y, cell.z))
 		if item == 3:
-			gridmap.set_cell_item(cell.x, cell.y, cell.z, 1)
+			gridmap.set_cell_item(Vector3(cell.x, cell.y, cell.z), 1)

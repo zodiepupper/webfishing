@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Textures/Items/toolicons59.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Items/toolicons59.png" type="Texture2D" id=1]
 [ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/ItemMeshes/Misc/tool_boxingglove_super.tscn" type="PackedScene" id=3]
 

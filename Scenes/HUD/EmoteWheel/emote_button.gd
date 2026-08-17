@@ -1,8 +1,8 @@
 extends Control
 
-export var emote_id = ""
-export var emotion = ""
-export (Texture) var emote_icon
+@export var emote_id = ""
+@export var emotion = ""
+@export var emote_icon: Texture2D
 
 var des_scale = 1.0
 
@@ -23,8 +23,8 @@ func _highlight(selected):
 	modulate = color
 
 func _physics_process(delta):
-	rect_pivot_offset = rect_size / 2.0
-	rect_scale = lerp(rect_scale, Vector2(des_scale, des_scale), 0.2)
+	pivot_offset = size / 2.0
+	scale = lerp(scale, Vector2(des_scale, des_scale), 0.2)
 
 func _on_Button_pressed():
 	emit_signal("pressed")

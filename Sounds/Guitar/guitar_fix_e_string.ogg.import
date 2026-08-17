@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/guitar_fix_e_string.ogg-5e8bddfb81d8d9c61edd5e4fc67639c6.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://kce6eol36qbd"
+path="res://.godot/imported/guitar_fix_e_string.ogg-5e8bddfb81d8d9c61edd5e4fc67639c6.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Guitar/guitar_fix_e_string.ogg"
-dest_files=[ "res://.import/guitar_fix_e_string.ogg-5e8bddfb81d8d9c61edd5e4fc67639c6.oggstr" ]
+dest_files=["res://.godot/imported/guitar_fix_e_string.ogg-5e8bddfb81d8d9c61edd5e4fc67639c6.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

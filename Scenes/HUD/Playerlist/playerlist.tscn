@@ -18,17 +18,17 @@ text = "PLAYERLIST"
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 88.0
-margin_right = -10.0
-margin_bottom = -10.0
+offset_left = 10.0
+offset_top = 88.0
+offset_right = -10.0
+offset_bottom = -10.0
 scroll_horizontal_enabled = false
 
 [node name="GridContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 1900.0
-rect_min_size = Vector2( 211.68, 0 )
+offset_right = 1900.0
+custom_minimum_size = Vector2( 211.68, 0 )
 size_flags_horizontal = 3
-custom_constants/separation = 0
+theme_override_constants/separation = 0
 
 [node name="Label2" type="Label" parent="."]
 anchor_right = 1.0
@@ -41,8 +41,8 @@ valign = 1
 anchor_left = 0.84
 anchor_right = 1.0
 anchor_bottom = 0.1
-margin_left = 0.319946
-margin_bottom = 0.519997
+offset_left = 0.319946
+offset_bottom = 0.519997
 text = "Invite Players"
 script = ExtResource( 3 )
 

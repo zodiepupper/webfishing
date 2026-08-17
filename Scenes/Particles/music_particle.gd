@@ -1,4 +1,4 @@
-extends Particles
+extends CPUParticles3D
 
 func _ready():
 	material_override = [

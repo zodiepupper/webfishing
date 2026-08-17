@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Textures/UI/radial_wheel_mask.png" type="BitMap" id=1]
-[ext_resource path="res://Assets/Textures/UI/radial_wheel2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/UI/radial_wheel2.png" type="Texture2D" id=2]
 [ext_resource path="res://Scenes/HUD/EmoteWheel/emote_button.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Textures/UI/radial_wheel5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/UI/radial_wheel5.png" type="Texture2D" id=4]
 
 [node name="TextureRect3" type="TextureButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_pivot_offset = Vector2( 960, 540 )
+pivot_offset = Vector2( 960, 540 )
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = ExtResource( 2 )

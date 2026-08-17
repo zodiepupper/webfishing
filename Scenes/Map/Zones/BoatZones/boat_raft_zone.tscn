@@ -16,7 +16,7 @@
 height = 18.0
 radial_segments = 6
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape3D" id=2]
 extents = Vector3( 6, 1, 9 )
 
 [sub_resource type="CylinderMesh" id=9]
@@ -37,8 +37,8 @@ uniform float face_distortion = 0.5;
 uniform vec2 time_scale = vec2(0.3, 0.0);
 uniform vec2 uv_offset_scale = vec2(-0.2, -0.1);
 
-uniform sampler2D uv_offset_texture : hint_black; 
-uniform vec4 color : hint_color;
+uniform sampler2D uv_offset_texture : hint_default_black; 
+uniform vec4 color : source_color;
 
 void vertex(){
 	// Sample Noise
@@ -69,7 +69,7 @@ void fragment(){
 	//ALBEDO = vec3(1.0 - UV.x, 0.0, UV.x); //Display dampening. Red is full dampening, blue is none
 }"
 
-[sub_resource type="OpenSimplexNoise" id=12]
+[sub_resource type="FastNoiseLite" id=12]
 
 [sub_resource type="NoiseTexture" id=8]
 seamless = true
@@ -89,250 +89,250 @@ flip_faces = true
 subdivide_width = 4
 subdivide_depth = 4
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape3D" id=3]
 
-[node name="boat_raft_zone" type="Spatial"]
+[node name="boat_raft_zone" type="Node3D"]
 script = ExtResource( 2 )
 
-[node name="editor_light" type="DirectionalLight" parent="."]
-transform = Transform( 0.947685, -0.0418184, 0.316455, -0.316024, -0.262549, 0.9117, 0.0449591, -0.964012, -0.262029, 0, 33.2939, 0 )
+[node name="editor_light" type="DirectionalLight3D" parent="."]
+transform = Transform3D( 0.947685, -0.0418184, 0.316455, -0.316024, -0.262549, 0.9117, 0.0449591, -0.964012, -0.262029, 0, 33.2939, 0 )
 editor_only = true
 
-[node name="boat" type="Spatial" parent="."]
+[node name="boat" type="Node3D" parent="."]
 
-[node name="log" type="MeshInstance" parent="boat"]
-transform = Transform( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, -3.50042, -0.174224, 2.75339 )
+[node name="log" type="MeshInstance3D" parent="boat"]
+transform = Transform3D( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, -3.50042, -0.174224, 2.75339 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 3 )
 
-[node name="inside" type="MeshInstance" parent="boat/log"]
-transform = Transform( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
+[node name="inside" type="MeshInstance3D" parent="boat/log"]
+transform = Transform3D( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = ExtResource( 1 )
 
-[node name="log2" type="MeshInstance" parent="boat"]
-transform = Transform( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, -2.09896, -0.174224, 2.75339 )
+[node name="log2" type="MeshInstance3D" parent="boat"]
+transform = Transform3D( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, -2.09896, -0.174224, 2.75339 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 10 )
 
-[node name="inside" type="MeshInstance" parent="boat/log2"]
-transform = Transform( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
+[node name="inside" type="MeshInstance3D" parent="boat/log2"]
+transform = Transform3D( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = ExtResource( 1 )
 
-[node name="log3" type="MeshInstance" parent="boat"]
-transform = Transform( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, -0.69988, -0.174224, 2.75339 )
+[node name="log3" type="MeshInstance3D" parent="boat"]
+transform = Transform3D( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, -0.69988, -0.174224, 2.75339 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 3 )
 
-[node name="inside" type="MeshInstance" parent="boat/log3"]
-transform = Transform( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
+[node name="inside" type="MeshInstance3D" parent="boat/log3"]
+transform = Transform3D( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = ExtResource( 1 )
 
-[node name="log4" type="MeshInstance" parent="boat"]
-transform = Transform( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, 0.701585, -0.174224, 2.75339 )
+[node name="log4" type="MeshInstance3D" parent="boat"]
+transform = Transform3D( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, 0.701585, -0.174224, 2.75339 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 10 )
 
-[node name="inside" type="MeshInstance" parent="boat/log4"]
-transform = Transform( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
+[node name="inside" type="MeshInstance3D" parent="boat/log4"]
+transform = Transform3D( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = ExtResource( 1 )
 
-[node name="log5" type="MeshInstance" parent="boat"]
-transform = Transform( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, 2.10066, -0.174224, 2.75339 )
+[node name="log5" type="MeshInstance3D" parent="boat"]
+transform = Transform3D( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, 2.10066, -0.174224, 2.75339 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 3 )
 
-[node name="inside" type="MeshInstance" parent="boat/log5"]
-transform = Transform( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
+[node name="inside" type="MeshInstance3D" parent="boat/log5"]
+transform = Transform3D( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = ExtResource( 1 )
 
-[node name="log6" type="MeshInstance" parent="boat"]
-transform = Transform( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, 3.50213, -0.174224, 2.75339 )
+[node name="log6" type="MeshInstance3D" parent="boat"]
+transform = Transform3D( 0.606335, 1.5302e-08, 0.350068, 0.327074, -2.47629e-08, -0.566509, 0, 0.700136, -3.06039e-08, 3.50213, -0.174224, 2.75339 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 10 )
 
-[node name="inside" type="MeshInstance" parent="boat/log6"]
-transform = Transform( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
+[node name="inside" type="MeshInstance3D" parent="boat/log6"]
+transform = Transform3D( 0.84, 0, 0, 0, 1.003, 6.11247e-09, 0, -7.29858e-09, 0.84, 0, 0, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../..")
 material/0 = ExtResource( 1 )
 
-[node name="StaticBody" type="StaticBody" parent="boat"]
-transform = Transform( 1, 0, 0, 0, 0.934317, 0, 0, 0, 1, 0, -0.174224, 0 )
+[node name="StaticBody3D" type="StaticBody3D" parent="boat"]
+transform = Transform3D( 1, 0, 0, 0, 0.934317, 0, 0, 0, 1, 0, -0.174224, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="boat/StaticBody"]
-transform = Transform( 0.700765, 0, 0, 0, 0.700765, 0, 0, 0, 0.700765, 0, -0.126748, 2.66128 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="boat/StaticBody3D"]
+transform = Transform3D( 0.700765, 0, 0, 0, 0.700765, 0, 0, 0, 0.700765, 0, -0.126748, 2.66128 )
 shape = SubResource( 2 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="boat"]
-transform = Transform( 0.840037, 0, 0, 0, 0.840037, 0, 0, 0, 0.840037, 0, 3.43373, 7.70022 )
+[node name="MeshInstance3" type="MeshInstance3D" parent="boat"]
+transform = Transform3D( 0.840037, 0, 0, 0, 0.840037, 0, 0, 0, 0.840037, 0, 3.43373, 7.70022 )
 mesh = SubResource( 9 )
 material/0 = ExtResource( 8 )
 
-[node name="MeshInstance2" type="MeshInstance" parent="boat/MeshInstance3"]
-transform = Transform( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="boat/MeshInstance3"]
+transform = Transform3D( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
 mesh = SubResource( 10 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 13 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="boat/MeshInstance3"]
-transform = Transform( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
+[node name="MeshInstance3" type="MeshInstance3D" parent="boat/MeshInstance3"]
+transform = Transform3D( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
 mesh = SubResource( 14 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 13 )
 
-[node name="ocean_water" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98986, 0 )
+[node name="ocean_water" type="Node3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98986, 0 )
 
 [node name="water" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, -312.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, -312.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water2" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, -312.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, -312.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water3" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, -312.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, -312.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water4" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, -312.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, -312.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water13" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 259.415, -7.392, -552.664 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, 259.415, -7.392, -552.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water14" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -60.5847, -7.392, -552.664 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, -60.5847, -7.392, -552.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water15" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, -552.664 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, -552.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water16" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, -232.664 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, -232.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water17" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, 87.3364 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, 87.3364 )
 water_replace = ExtResource( 11 )
 
 [node name="water22" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, 407.336 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, -380.585, -7.392, 407.336 )
 water_replace = ExtResource( 11 )
 
 [node name="water23" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -61.5847, -7.392, 406.336 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, -61.5847, -7.392, 406.336 )
 water_replace = ExtResource( 11 )
 
 [node name="water24" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 258.415, -7.392, 406.336 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, 258.415, -7.392, 406.336 )
 water_replace = ExtResource( 11 )
 
 [node name="water25" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, 406.336 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, 406.336 )
 water_replace = ExtResource( 11 )
 
 [node name="water26" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, 86.3364 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, 86.3364 )
 water_replace = ExtResource( 11 )
 
 [node name="water27" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, -233.664 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, -233.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water28" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, -552.664 )
+transform = Transform3D( 2, 0, 0, 0, 1, 0, 0, 0, 2, 577.415, -7.392, -552.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water5" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, -152.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, -152.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water6" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, -152.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, -152.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water7" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, -152.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, -152.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water8" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, -152.664 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, -152.664 )
 water_replace = ExtResource( 11 )
 
 [node name="water9" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, 7.33645 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, 7.33645 )
 water_replace = ExtResource( 11 )
 
 [node name="water10" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, 7.33645 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, 7.33645 )
 water_replace = ExtResource( 11 )
 
 [node name="water11" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, 7.33645 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, 7.33645 )
 water_replace = ExtResource( 11 )
 
 [node name="water12" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, 7.33645 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, 7.33645 )
 water_replace = ExtResource( 11 )
 
 [node name="water18" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, 167.336 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -141.944, -6.88992, 167.336 )
 water_replace = ExtResource( 11 )
 
 [node name="water19" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, 167.336 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0561, -6.88992, 167.336 )
 water_replace = ExtResource( 11 )
 
 [node name="water20" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, 167.336 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.056, -6.88992, 167.336 )
 water_replace = ExtResource( 11 )
 
 [node name="water21" parent="ocean_water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, 167.336 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 338.056, -6.88992, 167.336 )
 water_replace = ExtResource( 11 )
 
 [node name="area_entrance" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.91852 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.91852 )
 entrance_id = "boat_entrance"
 
 [node name="transition_zone" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0129827, 1.68332, 7.72905 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0129827, 1.68332, 7.72905 )
 text = "LEAVE"
 zone_id = "main_zone"
 spawn_id = "boat_exit"
 
-[node name="CollisionShape" type="CollisionShape" parent="transition_zone"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="transition_zone"]
 shape = SubResource( 3 )
 
 [node name="wind_particle_creator" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042, 5, 1.227 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042, 5, 1.227 )
 creation_time = Vector2( 3, 10 )
 _range = Vector3( 30, 3, 30 )
 
 [node name="ocean_1" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( -0.308335, 0, -0.951278, 0, 1, 0, 0.951278, 0, -0.308335, 0, 16.3372, 4.00598 )
+transform = Transform3D( -0.308335, 0, -0.951278, 0, 1, 0, 0.951278, 0, -0.308335, 0, 16.3372, 4.00598 )
 stream = ExtResource( 9 )
-unit_db = 4.548
+volume_db = 4.548
 unit_size = 62.8
 max_db = -22.0
 autoplay = true

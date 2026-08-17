@@ -1,7 +1,7 @@
 extends Sprite3D
 
 func _ready():
-	PlayerData.connect("_quest_update", self, "_quest_update")
+	PlayerData.connect("_quest_update", Callable(self, "_quest_update"))
 	_quest_update()
 
 func _quest_update():
@@ -13,4 +13,4 @@ func _quest_update():
 	visible = show
 
 func _physics_process(delta):
-	offset.y = sin(OS.get_ticks_msec() * 0.005) * 6
+	offset.y = sin(Time.get_ticks_msec() * 0.005) * 6

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Entities/Props/prop.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Map/Props/bush.tscn" type="PackedScene" id=2]
 
-[node name="bush" type="KinematicBody"]
+[node name="bush" type="CharacterBody3D"]
 script = ExtResource( 1 )
 delete_on_owner_disconnect = true
 

@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/fart.wav-b7c447e9467a2d520a674ff554107dbf.sample"
+type="AudioStreamWAV"
+uid="uid://drliyl8k6lh3u"
+path="res://.godot/imported/fart.wav-b7c447e9467a2d520a674ff554107dbf.sample"
 
 [deps]
 
 source_file="res://Sounds/fart.wav"
-dest_files=[ "res://.import/fart.wav-b7c447e9467a2d520a674ff554107dbf.sample" ]
+dest_files=["res://.godot/imported/fart.wav-b7c447e9467a2d520a674ff554107dbf.sample"]
 
 [params]
 

@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dvaa1o1ap1d2b"]
 
-[sub_resource type="Shader" id=9]
+[sub_resource type="Shader" id="9"]
 code = "shader_type spatial;
 
 uniform float sin_frequency : hint_range(0.1, 2.0) = 0.04;  
@@ -17,7 +17,8 @@ void fragment() {
 }"
 
 [resource]
-shader = SubResource( 9 )
-shader_param/sin_frequency = 0.04
-shader_param/sin_offset = 0.0
-shader_param/light_offset = 0.5
+render_priority = 0
+shader = SubResource("9")
+shader_parameter/sin_frequency = 0.04
+shader_parameter/sin_offset = 0.0
+shader_parameter/light_offset = 0.5

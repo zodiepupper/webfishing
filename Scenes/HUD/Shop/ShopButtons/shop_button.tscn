@@ -5,13 +5,13 @@
 [ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=5]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/check.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Textures/lock.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/UI/FishingMinigame/check.png" type="Texture2D" id=6]
+[ext_resource path="res://Assets/Textures/lock.png" type="Texture2D" id=7]
 
 [node name="shop_button" type="Button"]
-margin_right = 92.0
-margin_bottom = 92.0
-rect_min_size = Vector2( 92, 92 )
+offset_right = 92.0
+offset_bottom = 92.0
+custom_minimum_size = Vector2( 92, 92 )
 theme = ExtResource( 2 )
 expand_icon = true
 script = ExtResource( 1 )
@@ -34,9 +34,9 @@ anchor_left = -0.130435
 anchor_top = -0.163043
 anchor_right = -0.130435
 anchor_bottom = -0.163043
-margin_top = -1.0
-margin_right = 48.0
-margin_bottom = 47.0
+offset_top = -1.0
+offset_right = 48.0
+offset_bottom = 47.0
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -47,12 +47,12 @@ anchor_left = 0.499696
 anchor_top = 0.782478
 anchor_right = 1.16304
 anchor_bottom = 1.17422
-margin_left = 0.0279961
-margin_top = 0.012001
-margin_right = 1.0
-margin_bottom = -0.0280075
+offset_left = 0.0279961
+offset_top = 0.012001
+offset_right = 1.0
+offset_bottom = -0.0280075
 theme = ExtResource( 5 )
-custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
 text = "$999"
 align = 1
 valign = 1
@@ -64,9 +64,9 @@ __meta__ = {
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -4.0
-margin_right = 4.0
-custom_styles/panel = ExtResource( 4 )
+offset_left = -4.0
+offset_right = 4.0
+theme_override_styles/panel = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -76,19 +76,19 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -106.0
-margin_top = -104.0
-margin_right = -54.0
-margin_bottom = -62.0
-custom_styles/panel = ExtResource( 4 )
+offset_left = -106.0
+offset_top = -104.0
+offset_right = -54.0
+offset_bottom = -62.0
+theme_override_styles/panel = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="unlocked"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 4

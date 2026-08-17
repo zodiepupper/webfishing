@@ -10,7 +10,7 @@ func _setup(quest_id, alt = false):
 	$Panel / Label.text = str(data.tier + 1)
 	
 	$HBoxContainer / TextureRect.texture = load(data.icon)
-	$HBoxContainer / RichTextLabel.bbcode_text = body
+	$HBoxContainer / RichTextLabel.text = body
 	
 	$HBoxContainer2 / cash / Label.text = "$" + str(data.gold_reward)
 	description = description + "$" + str(data.gold_reward)
@@ -50,9 +50,9 @@ func _setup(quest_id, alt = false):
 	$confim.visible = data.progress >= data.goal_amt
 	
 	if data.hidden:
-		$HBoxContainer / RichTextLabel.bbcode_text = "Catch ???"
+		$HBoxContainer / RichTextLabel.text = "Catch ???"
 		$HBoxContainer / TextureRect.texture = load("res://Assets/Textures/questionmark2.png")
 
 func _process(delta):
-	$ProgressBar / Label.modulate.a = 1.0 if not claim else 0.6 + (sin(OS.get_ticks_msec() * 0.006) * 0.4)
-	$confim.modulate.a = 0.6 + (sin(OS.get_ticks_msec() * 0.006) * 0.4)
+	$ProgressBar / Label.modulate.a = 1.0 if not claim else 0.6 + (sin(Time.get_ticks_msec() * 0.006) * 0.4)
+	$confim.modulate.a = 0.6 + (sin(Time.get_ticks_msec() * 0.006) * 0.4)

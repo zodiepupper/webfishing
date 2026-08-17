@@ -3,19 +3,19 @@
 [ext_resource path="res://Scenes/Entities/Props/prop.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Interactables/NPCs/npc_sell_small.tscn" type="PackedScene" id=2]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape3D" id=1]
 
-[node name="portable_bait" type="KinematicBody"]
+[node name="portable_bait" type="CharacterBody3D"]
 script = ExtResource( 1 )
 delete_on_owner_disconnect = true
 decay = true
 decay_timer = 900
 
 [node name="npc_test" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0 )
+transform = Transform3D( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 shape = SubResource( 1 )
 disabled = true
 

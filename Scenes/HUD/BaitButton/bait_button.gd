@@ -1,9 +1,9 @@
 extends Button
 
-export var bait_id = ""
-export (NodePath) var hudnode
-export var header = ""
-export (String, MULTILINE) var desc = ""
+@export var bait_id = ""
+@export var hudnode: NodePath
+@export var header = ""
+@export var desc = "" # (String, MULTILINE)
 
 var selected = false
 
@@ -11,8 +11,8 @@ func _ready():
 	var hd = "[color=#6a4420]" + header + "\n\n[/color]" + desc
 	if not PlayerData.bait_unlocked.has(bait_id): hd = "[color=#6a4420]LOCKED\n\n[/color]BUY LICENSE TO UNLOCK"
 	
-	connect("mouse_entered", get_node(hudnode), "_bait_hover", [hd])
-	PlayerData.connect("_bait_update", self, "_select")
+	connect("mouse_entered", Callable(get_node(hudnode), "_bait_hover").bind(hd))
+	PlayerData.connect("_bait_update", Callable(self, "_select"))
 	_select()
 
 func _select():

@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/bird_flutter.wav-8a5936b20525a491bd14b8e02ee403c0.sample"
+type="AudioStreamWAV"
+uid="uid://d2ho0qvdgsvk0"
+path="res://.godot/imported/bird_flutter.wav-8a5936b20525a491bd14b8e02ee403c0.sample"
 
 [deps]
 
 source_file="res://Sounds/bird_flutter.wav"
-dest_files=[ "res://.import/bird_flutter.wav-8a5936b20525a491bd14b8e02ee403c0.sample" ]
+dest_files=["res://.godot/imported/bird_flutter.wav-8a5936b20525a491bd14b8e02ee403c0.sample"]
 
 [params]
 

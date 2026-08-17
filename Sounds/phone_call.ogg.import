@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/phone_call.ogg-87759f381d5e03fe391267241b84c772.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bi0h11st0cbat"
+path="res://.godot/imported/phone_call.ogg-87759f381d5e03fe391267241b84c772.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/phone_call.ogg"
-dest_files=[ "res://.import/phone_call.ogg-87759f381d5e03fe391267241b84c772.oggstr" ]
+dest_files=["res://.godot/imported/phone_call.ogg-87759f381d5e03fe391267241b84c772.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

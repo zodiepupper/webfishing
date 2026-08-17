@@ -1,3 +1,3 @@
 extends GenericUIButton
 
-export var lobby_tag = ""
+@export var lobby_tag = ""

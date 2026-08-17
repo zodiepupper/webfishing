@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/webfishing_music1_draft2b_title.ogg-d21a507e3c496ade2a812fb03dfe4a69.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b40kjqmpiljj7"
+path="res://.godot/imported/webfishing_music1_draft2b_title.ogg-d21a507e3c496ade2a812fb03dfe4a69.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Music/webfishing_music1_draft2b_title.ogg"
-dest_files=[ "res://.import/webfishing_music1_draft2b_title.ogg-d21a507e3c496ade2a812fb03dfe4a69.oggstr" ]
+dest_files=["res://.godot/imported/webfishing_music1_draft2b_title.ogg-d21a507e3c496ade2a812fb03dfe4a69.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

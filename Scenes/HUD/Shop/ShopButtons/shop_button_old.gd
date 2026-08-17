@@ -1,15 +1,15 @@
 extends Button
 
-export var item_id = ""
-export var cosmetic_unlock = ""
-export var bait_add = ""
-export var bait_unlock = ""
-export var custom_unlock = ""
-export var upgrade_slot = - 1
+@export var item_id = ""
+@export var cosmetic_unlock = ""
+@export var bait_add = ""
+@export var bait_unlock = ""
+@export var custom_unlock = ""
+@export var upgrade_slot = - 1
 
-export var money_cost = 0
-export (String, "money", "credits") var money_type = "money"
-export (Array, String) var item_require
+@export var money_cost = 0
+@export var money_type = "money" # (String, "money", "credits")
+@export var item_require # (Array, String)
 
 var hud
 var slot_name = ""
@@ -18,7 +18,7 @@ var slot_desc = ""
 var is_selling = false
 var linked_ref = - 1
 
-export var item_no_duplicates = false
+@export var item_no_duplicates = false
 
 func _ready():
 	if item_id != "":
@@ -45,7 +45,7 @@ func _ready():
 	
 	$TooltipNode.header = slot_name
 	$TooltipNode.body = slot_desc
-	PlayerData.connect("_shop_update", self, "_update")
+	PlayerData.connect("_shop_update", Callable(self, "_update"))
 	_update()
 
 func _update():
@@ -101,7 +101,7 @@ func _on_shop_button_pressed():
 		var items_left = item_require.duplicate()
 		
 		hud._request_item_choice(item_require, item_require.size(), item_require.size())
-		var items = yield(hud, "_items_chosen")
+		var items = await hud._items_chosen
 		print("chosen items: ", items)
 		
 		for item in items:
@@ -110,7 +110,7 @@ func _on_shop_button_pressed():
 			if slot != - 1: items_left.remove(slot)
 		
 		print("Item required left: ", items_left)
-		if not items_left.empty(): return
+		if not items_left.is_empty(): return
 		
 		for item in items:
 			PlayerData._remove_item(item)

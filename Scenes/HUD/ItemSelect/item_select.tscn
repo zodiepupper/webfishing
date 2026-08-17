@@ -27,10 +27,10 @@ anchor_bottom = 1.0
 [node name="Label" type="Label" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 17.0
-margin_right = -12.0
-margin_bottom = -12.0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = -12.0
+offset_bottom = -12.0
 text = "SELECT ITEMS"
 align = 1
 
@@ -38,53 +38,53 @@ align = 1
 anchor_top = 0.937
 anchor_right = 1.0
 anchor_bottom = 0.965
-margin_top = -30.0
-margin_bottom = 4.0
-custom_constants/separation = 32
+offset_top = -30.0
+offset_bottom = 4.0
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="cancel" type="Button" parent="Control/HBoxContainer"]
-margin_left = 432.0
-margin_right = 560.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 128, 24 )
+offset_left = 432.0
+offset_right = 560.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 128, 24 )
 text = "CANCEL"
 
 [node name="confirm" type="Button" parent="Control/HBoxContainer"]
-margin_left = 592.0
-margin_right = 720.0
-margin_bottom = 52.0
-rect_min_size = Vector2( 128, 24 )
+offset_left = 592.0
+offset_right = 720.0
+offset_bottom = 52.0
+custom_minimum_size = Vector2( 128, 24 )
 text = "CONFIRM"
 
 [node name="Panel" type="Panel" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 64.0
-margin_right = -12.0
-margin_bottom = -84.0
-custom_styles/panel = ExtResource( 3 )
+offset_left = 12.0
+offset_top = 64.0
+offset_right = -12.0
+offset_bottom = -84.0
+theme_override_styles/panel = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="Control/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="GridContainer" type="GridContainer" parent="Control/Panel/Control/ScrollContainer"]
-margin_right = 1104.0
-margin_bottom = 476.0
+offset_right = 1104.0
+offset_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/vseparation = 24
-custom_constants/hseparation = 24
+theme_override_constants/v_separation = 24
+theme_override_constants/h_separation = 24
 columns = 10
 
 [connection signal="pressed" from="Control/HBoxContainer/cancel" to="." method="_on_cancel_pressed"]

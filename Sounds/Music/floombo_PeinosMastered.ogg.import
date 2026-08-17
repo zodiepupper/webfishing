@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/floombo_PeinosMastered.ogg-46384e35ac2187f2cfc6cb487732509e.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chs780qmc8xt3"
+path="res://.godot/imported/floombo_PeinosMastered.ogg-46384e35ac2187f2cfc6cb487732509e.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Music/floombo_PeinosMastered.ogg"
-dest_files=[ "res://.import/floombo_PeinosMastered.ogg-46384e35ac2187f2cfc6cb487732509e.oggstr" ]
+dest_files=["res://.godot/imported/floombo_PeinosMastered.ogg-46384e35ac2187f2cfc6cb487732509e.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

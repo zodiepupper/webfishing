@@ -24,8 +24,8 @@ var bg_color = Color("#ffeed5")
 var image: Image = null
 var texture: ImageTexture = null
 
-onready var drawing_zone = $Control / Panel / TextureRect
-onready var colors = $Control / Panel / HBoxContainer3
+@onready var drawing_zone = $Control / Panel / TextureRect
+@onready var colors = $Control / Panel / HBoxContainer3
 
 func _ready():
 	_setup_colors()
@@ -34,7 +34,7 @@ func _ready():
 func _setup_colors():
 	var index = 0
 	for color in COLORS:
-		colors.get_child(index).connect("pressed", self, "_change_color", [color])
+		colors.get_child(index).connect("pressed", Callable(self, "_change_color").bind(color))
 		index += 1
 	brush_color = COLORS[0]
 
@@ -43,7 +43,7 @@ func _setup_colors():
 
 
 func _on_create_drawing_pressed():
-	image.lock()
+	false # image.lock() # TODOConverter3To4, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	
 	var test = image.get_data()
 	
@@ -73,11 +73,11 @@ func _on_close_pressed():
 func _reset_image():
 	image = Image.new()
 	image.create(canvas_size, canvas_size, false, Globals.IMAGE_FORMAT)
-	image.lock()
+	false # image.lock() # TODOConverter3To4, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	for x in canvas_size:
 		for y in canvas_size:
 			image.set_pixel(x, y, bg_color)
-	image.unlock()
+	false # image.unlock() # TODOConverter3To4, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	
 	texture = ImageTexture.new()
 	$Control / Panel / TextureRect.texture = texture
@@ -87,7 +87,7 @@ func _reset_image():
 func _process(delta):
 	var mouse_pos = get_viewport().get_mouse_position()
 	
-	var drawing_area_rect = Rect2(drawing_zone.rect_position, drawing_zone.rect_size)
+	var drawing_area_rect = Rect2(drawing_zone.position, drawing_zone.size)
 	is_mouse_in_drawing_area = drawing_area_rect.has_point(mouse_pos)
 	
 	if Input.is_action_pressed("primary_action"):
@@ -103,7 +103,7 @@ func _process(delta):
 
 func _check_if_mouse_is_inside_canvas() -> bool:
 	if mouse_click_start_pos != null:
-		if Rect2(drawing_zone.rect_position, drawing_zone.rect_size).has_point(mouse_click_start_pos):
+		if Rect2(drawing_zone.position, drawing_zone.size).has_point(mouse_click_start_pos):
 			if is_mouse_in_drawing_area: return true
 	return false
 
@@ -112,9 +112,9 @@ func _add_brush(mouse_pos, type, from):
 	if type == BrushMode.ERASER: color = bg_color
 	
 	
-	var scale = drawing_zone.rect_size / canvas_size
-	mouse_pos = (mouse_pos - drawing_zone.rect_global_position) / scale
-	from = (from - drawing_zone.rect_global_position) / scale
+	var scale = drawing_zone.size / canvas_size
+	mouse_pos = (mouse_pos - drawing_zone.global_position) / scale
+	from = (from - drawing_zone.global_position) / scale
 	
 	var steps = 1 + floor(from.distance_to(mouse_pos) / step_size)
 	for s in steps:
@@ -124,20 +124,20 @@ func _add_brush(mouse_pos, type, from):
 		pos.x = clamp(pos.x, 0, canvas_size - 1)
 		pos.y = clamp(pos.y, 0, canvas_size - 1)
 		
-		image.lock()
+		false # image.lock() # TODOConverter3To4, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 		
 		var mid = floor(brush_size / 2.0)
 		for x in brush_size:
 			for y in brush_size:
 				image.set_pixel(pos.x + x - mid, pos.y + y - mid, color)
 		
-		image.unlock()
+		false # image.unlock() # TODOConverter3To4, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	
 	_update_texture()
 
 func _update_texture():
 	var sent = image.duplicate(true)
-	texture.create_from_image(sent, not Texture.FLAG_FILTER)
+	texture.create_from_image(sent) #,not Texture2D.FLAG_FILTER
 
 func _on_Button_pressed():
 	brush_mode = BrushMode.PENCIL

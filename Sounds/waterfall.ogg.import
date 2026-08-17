@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/waterfall.ogg-376ce2b8c32b3b39d42eb0b70f435112.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bx1ct8na745so"
+path="res://.godot/imported/waterfall.ogg-376ce2b8c32b3b39d42eb0b70f435112.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/waterfall.ogg"
-dest_files=[ "res://.import/waterfall.ogg-376ce2b8c32b3b39d42eb0b70f435112.oggstr" ]
+dest_files=["res://.godot/imported/waterfall.ogg-376ce2b8c32b3b39d42eb0b70f435112.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

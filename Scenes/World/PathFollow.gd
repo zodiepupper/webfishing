@@ -1,4 +1,4 @@
-extends PathFollow
+extends PathFollow3D
 
 var reset = false
 var speed = 0.08

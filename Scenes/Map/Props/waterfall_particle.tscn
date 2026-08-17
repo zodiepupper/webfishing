@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/ParticleResources/waterfall_particle.tres" type="Material" id=1]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="StandardMaterial3D" id=4]
 albedo_color = Color( 1, 0.933333, 0.835294, 1 )
 
 [sub_resource type="SphereMesh" id=5]
@@ -10,7 +10,7 @@ material = SubResource( 4 )
 radial_segments = 6
 rings = 3
 
-[node name="waterfall_particle" type="Spatial"]
+[node name="waterfall_particle" type="Node3D"]
 
 [node name="Particles" type="Particles" parent="."]
 amount = 20

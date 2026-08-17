@@ -4,7 +4,7 @@ var speed = 0.0
 var lifetime = 70
 
 func _setup(text, color, dir):
-	$Label.set("custom_colors/font_color", Color(color))
+	$Label.set("theme_override_colors/font_color", Color(color))
 	$Label.text = text
 	
 	speed = dir

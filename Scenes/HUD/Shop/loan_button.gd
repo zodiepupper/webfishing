@@ -8,13 +8,13 @@ var slot_desc = "Pay towards increasing your CAMP TIER, giving you many benefits
 var pay_amt = 10
 
 func _ready():
-	PlayerData.connect("_loan_update", self, "_refresh")
+	PlayerData.connect("_loan_update", Callable(self, "_refresh"))
 	_refresh()
 
 func _refresh():
 	pay_amt = [10, 100, 500, 500][PlayerData.loan_level]
 	
-	$HBoxContainer / RichTextLabel.bbcode_text = "CAMP TIER: " + str(PlayerData.loan_level + 1)
+	$HBoxContainer / RichTextLabel.text = "CAMP TIER: " + str(PlayerData.loan_level + 1)
 	$HBoxContainer2 / cash / Label.text = "Pay $" + str(pay_amt)
 	$ProgressBar.value = PlayerData.LOAN_DATA[PlayerData.loan_level] - PlayerData.loan_left
 	$ProgressBar.max_value = PlayerData.LOAN_DATA[PlayerData.loan_level]
@@ -51,7 +51,7 @@ func _on_Button_pressed():
 			3: Network._unlock_achievement("camp_tier_4")
 		
 		hud._change_menu(0)
-		yield(get_tree().create_timer(0.1), "timeout")
+		await get_tree().create_timer(0.1).timeout
 		
 		GlobalAudio._play_sound("jingle_win")
 		hud.dialogue_text = ["Nice! You've increased your CAMP RANK!\nYou've unlocked a new [color=#e69d00]PRIVATE ISLAND[/color] prop and additional items in the shops have been unlocked!"]
@@ -61,7 +61,7 @@ func _on_Button_pressed():
 		hud.player.lvlparticleb.restart()
 		
 		hud.player.force_cam_look = true
-		yield(get_tree().create_timer(0.1), "timeout")
+		await get_tree().create_timer(0.1).timeout
 		hud.player.cam_follow_node = $catch_cam_position
 	
 	PlayerData.emit_signal("_loan_update")

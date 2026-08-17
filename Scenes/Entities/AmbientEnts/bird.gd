@@ -9,7 +9,7 @@ var auto_startle = 50
 var flight_kill = 180
 var fly_momentum = 0.0
 
-onready var bird = $AnimatedSprite3D
+@onready var bird = $AnimatedSprite3D
 
 func _physics_process(delta):
 	hop_vel = move_toward(hop_vel, 0.0, delta * 250.0)
@@ -17,9 +17,9 @@ func _physics_process(delta):
 	
 	if startled:
 		fly_momentum = lerp(fly_momentum, 0.3, 0.05)
-		bird.translation.y += fly_momentum
-		bird.translation.x += fly_momentum * dir.x * 1.5
-		bird.translation.x += fly_momentum * dir.z * 1.5
+		bird.position.y += fly_momentum
+		bird.position.x += fly_momentum * dir.x * 1.5
+		bird.position.x += fly_momentum * dir.z * 1.5
 		
 		flight_kill -= 1
 		if flight_kill <= 0:
@@ -39,7 +39,7 @@ func _on_hop_timer_timeout():
 	var hop = randf() > 0.5
 	if dip: hop = false
 	
-	$hop_timer.wait_time = rand_range(0.2, 4.0)
+	$hop_timer.wait_time = randf_range(0.2, 4.0)
 	
 	if hop:
 		hop_vel = 42
@@ -47,7 +47,7 @@ func _on_hop_timer_timeout():
 			bird.flip_h = not bird.flip_h
 		
 	elif not dip:
-		$hop_timer.wait_time = rand_range(0.2, 0.5)
+		$hop_timer.wait_time = randf_range(0.2, 0.5)
 		dip = true
 		bird.frame = 1
 	else:
@@ -64,8 +64,8 @@ func _startle():
 	if startled: return
 	
 	$AudioStreamPlayer3D.play()
-	dir.x = rand_range( - 1.0, 1.0)
-	dir.z = rand_range( - 1.0, 1.0)
+	dir.x = randf_range( - 1.0, 1.0)
+	dir.z = randf_range( - 1.0, 1.0)
 	bird.frame = 2
 	startled = true
 	$Timer.start()

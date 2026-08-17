@@ -1,12 +1,12 @@
 extends Minigame
 
-onready var item_icon = $Control / item
+@onready var item_icon = $Control / item
 
 var chosen_item = 0
 
 func _ready():
 	GlobalAudio._play_sound("labeler_open")
-	PlayerData.connect("_return_item_choice", self, "_update_item")
+	PlayerData.connect("_return_item_choice", Callable(self, "_update_item"))
 	item_icon._setup_item(0)
 
 func _on_close_button_pressed():

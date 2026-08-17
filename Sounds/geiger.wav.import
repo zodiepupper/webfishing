@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/geiger.wav-fb72c9bae88674bfe27eb74d4b367aff.sample"
+type="AudioStreamWAV"
+uid="uid://cyqocybnq7v4q"
+path="res://.godot/imported/geiger.wav-fb72c9bae88674bfe27eb74d4b367aff.sample"
 
 [deps]
 
 source_file="res://Sounds/geiger.wav"
-dest_files=[ "res://.import/geiger.wav-fb72c9bae88674bfe27eb74d4b367aff.sample" ]
+dest_files=["res://.godot/imported/geiger.wav-fb72c9bae88674bfe27eb74d4b367aff.sample"]
 
 [params]
 

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/scratching.ogg-dd8d40bafa16e6eb5de5c41b649ac538.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1283ccrd50jy"
+path="res://.godot/imported/scratching.ogg-dd8d40bafa16e6eb5de5c41b649ac538.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/scratching.ogg"
-dest_files=[ "res://.import/scratching.ogg-dd8d40bafa16e6eb5de5c41b649ac538.oggstr" ]
+dest_files=["res://.godot/imported/scratching.ogg-dd8d40bafa16e6eb5de5c41b649ac538.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

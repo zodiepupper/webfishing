@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Minigames/ScratchTicket/scratch_ticket.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/UI/Scratchoff/tiles.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/UI/Scratchoff/tiles.png" type="Texture2D" id=2]
 [ext_resource path="res://Scenes/Minigames/ScratchTicket/scratch_spots.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Textures/UI/Scratchoff/bg1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/UI/Scratchoff/bg1.png" type="Texture2D" id=4]
 [ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=5]
 [ext_resource path="res://Sounds/scratching.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Sounds/lotto_win.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Textures/UI/Scratchoff/bg3.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Textures/UI/Scratchoff/bg2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/UI/Scratchoff/bg3.png" type="Texture2D" id=8]
+[ext_resource path="res://Assets/Textures/UI/Scratchoff/bg2.png" type="Texture2D" id=9]
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -19,8 +19,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 960, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PackedFloat32Array( 960, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("Node2D:position:y")
@@ -29,8 +29,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 540, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PackedFloat32Array( 540, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath("Node2D:rotation_degrees")
@@ -39,8 +39,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
 }
 
 [sub_resource type="Animation" id=5]
@@ -52,8 +52,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 0.8 )
+"points": PackedFloat32Array( 960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.5, 0.8 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("Node2D:position:y")
@@ -62,8 +62,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 1800, -0.25, 0, 0.25, 0, 520, -0.25, 0, 0.25, 0, 540, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 0.8 )
+"points": PackedFloat32Array( 1800, -0.25, 0, 0.25, 0, 520, -0.25, 0, 0.25, 0, 540, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.5, 0.8 )
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath("Node2D:rotation_degrees")
@@ -72,8 +72,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 31.9, -0.25, 0, 0.25, 0, -2.7, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 0.8 )
+"points": PackedFloat32Array( 31.9, -0.25, 0, 0.25, 0, -2.7, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.5, 0.8 )
 }
 
 [sub_resource type="SpriteFrames" id=6]
@@ -85,10 +85,10 @@ animations = [ {
 } ]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
+points = PackedVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
+points = PackedVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
 [sub_resource type="TileSet" id=1]
 0/name = "tiles.png 0"
@@ -145,7 +145,7 @@ anims/intro = SubResource( 5 )
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2( 960, 540 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Node2D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Node2D"]
 frames = SubResource( 6 )
 
 [node name="spots" type="Node2D" parent="Node2D"]
@@ -237,7 +237,7 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 4
 format = 1
-tile_data = PoolIntArray( 2555935, 0, 0 )
+tile_data = PackedInt32Array( 2555935, 0, 0 )
 
 [node name="Control" type="Control" parent="."]
 visible = false

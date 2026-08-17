@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 var default_rot = Vector3(140, 0, - 6)
 var sitting = false
@@ -7,23 +7,23 @@ var motion = 0.0
 var wagging = false
 var wag = 0.0
 
-onready var rot = $rot_point
-onready var swish = $rot_point / swish_point
-onready var tail = $rot_point / swish_point / tail
+@onready var rot = $rot_point
+@onready var swish = $rot_point / swish_point
+@onready var tail = $rot_point / swish_point / tail
 
 func _ready():
-	swish.set_as_toplevel(true)
+	swish.set_as_top_level(true)
 
 func _physics_process(delta):
 	var des_rot = default_rot
-	des_rot.x += sin(OS.get_ticks_msec() * 0.0005) * 8
-	des_rot.x += sin(OS.get_ticks_msec() * 0.01) * 3 * motion
+	des_rot.x += sin(Time.get_ticks_msec() * 0.0005) * 8
+	des_rot.x += sin(Time.get_ticks_msec() * 0.01) * 3 * motion
 	
 	
 	
 	
-	if not wagging: wag = sin(OS.get_ticks_msec() * 0.001) * 0.35
-	else: wag = sin(OS.get_ticks_msec() * 0.014) * 1.0
+	if not wagging: wag = sin(Time.get_ticks_msec() * 0.001) * 0.35
+	else: wag = sin(Time.get_ticks_msec() * 0.014) * 1.0
 	
 	rot.rotation_degrees = des_rot
 	swish.global_transform.origin = rot.global_transform.origin

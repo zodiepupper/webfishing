@@ -1,8 +1,8 @@
 extends Panel
 
-export (Texture) var texture
-export var desc = ""
-export var header = ""
+@export var texture: Texture2D
+@export var desc = ""
+@export var header = ""
 
 var set_tier = 0
 
@@ -18,5 +18,5 @@ func _setup(tier, time):
 	$TooltipNode.body = desc + "\n" + str(floor(time / 3600.0)) + " min"
 
 func _physics_process(delta):
-	if set_tier == 1: modulate.a = (sin(OS.get_ticks_msec() * 0.003) * 0.35) + 0.5
+	if set_tier == 1: modulate.a = (sin(Time.get_ticks_msec() * 0.003) * 0.35) + 0.5
 	else: modulate.a = 1.0

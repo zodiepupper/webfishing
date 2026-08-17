@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/HUD/ItemDisplay/item_display.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/Fish/fish32.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Fish/fish32.png" type="Texture2D" id=2]
 
 [sub_resource type="Shader" id=1]
 code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
@@ -72,7 +72,7 @@ shader_param/inset = -3.5
 
 [node name="item_display" type="TextureRect"]
 material = SubResource( 2 )
-margin_right = 256.0
-margin_bottom = 256.0
+offset_right = 256.0
+offset_bottom = 256.0
 texture = ExtResource( 2 )
 script = ExtResource( 1 )

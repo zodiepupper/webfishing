@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/water_amb.ogg-24dc46c41eff77da903d18c415c9114d.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://yu2hugouicq7"
+path="res://.godot/imported/water_amb.ogg-24dc46c41eff77da903d18c415c9114d.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Old/water_amb.ogg"
-dest_files=[ "res://.import/water_amb.ogg-24dc46c41eff77da903d18c415c9114d.oggstr" ]
+dest_files=["res://.godot/imported/water_amb.ogg-24dc46c41eff77da903d18c415c9114d.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

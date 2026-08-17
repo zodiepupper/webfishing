@@ -1,6 +1,6 @@
 extends Interactable
 
-export var item_id = ""
+@export var item_id = ""
 
 func _activate(actor):
 	for item in PlayerData.inventory:
@@ -13,7 +13,7 @@ func _activate(actor):
 	actor._obtain_item(ref)
 	
 	if not PlayerData.saved_tags.has("spectral"):
-		yield(get_tree().create_timer(5.0), "timeout")
+		await get_tree().create_timer(5.0).timeout
 		PlayerData.saved_tags.append("spectral")
 		PlayerData._send_notification("you feel an otherworldly force beckon you...")
 		Network._update_chat("[color=#008583]" + "you feel an otherworldly force beckon you..." + "[/color]")

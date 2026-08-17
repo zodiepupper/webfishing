@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/Y.ogg-3537909f265a5bf372eb934ed011d795.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://f5thn1ghvi76"
+path="res://.godot/imported/Y.ogg-3537909f265a5bf372eb934ed011d795.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Voice/OldVoice/Y.ogg"
-dest_files=[ "res://.import/Y.ogg-3537909f265a5bf372eb934ed011d795.oggstr" ]
+dest_files=["res://.godot/imported/Y.ogg-3537909f265a5bf372eb934ed011d795.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

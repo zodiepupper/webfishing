@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/campfire.ogg-a2e43a3ba673386988c552040ab3d327.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbf7vigpxcqtr"
+path="res://.godot/imported/campfire.ogg-a2e43a3ba673386988c552040ab3d327.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/campfire.ogg"
-dest_files=[ "res://.import/campfire.ogg-a2e43a3ba673386988c552040ab3d327.oggstr" ]
+dest_files=["res://.godot/imported/campfire.ogg-a2e43a3ba673386988c552040ab3d327.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

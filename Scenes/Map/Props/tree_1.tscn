@@ -6,9 +6,9 @@
 [ext_resource path="res://Scenes/Map/Props/prop_shadow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Shaders/leaf_material.tres" type="Material" id=6]
 
-[sub_resource type="CylinderShape" id=1]
+[sub_resource type="CylinderShape3D" id=1]
 
-[node name="tree_1" type="MeshInstance"]
+[node name="tree_1" type="MeshInstance3D"]
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 6 )
@@ -17,22 +17,22 @@ material/3 = ExtResource( 6 )
 script = ExtResource( 4 )
 cull_max_range = 150
 cull_offset = Vector3( 0, 2, 0 )
-premade_cull_vis = NodePath("VisibilityNotifier")
+premade_cull_vis = NodePath("VisibleOnScreenNotifier3D")
 scale_min = 1.25
 nudge = -0.06
 
 [node name="shadow" parent="." instance=ExtResource( 5 )]
-transform = Transform( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0.0608994, 0 )
+transform = Transform3D( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0.0608994, 0 )
 
-[node name="tree_point" type="Position3D" parent="." groups=["tree_point"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32114, 0.416145 )
+[node name="tree_point" type="Marker3D" parent="." groups=["tree_point"]]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32114, 0.416145 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 0.440477, 0, 0, 0, 2.10395, 0, 0, 0, 0.440477, 0.0832821, 2.12052, 0 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D( 0.440477, 0, 0, 0, 2.10395, 0, 0, 0, 0.440477, 0.0832821, 2.12052, 0 )
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.14984, 0 )
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.14984, 0 )
 aabb = AABB( -4.89606, -5.81701, -4.16591, 9.79212, 11.634, 8.33182 )

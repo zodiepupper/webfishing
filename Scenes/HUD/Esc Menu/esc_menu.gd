@@ -4,16 +4,16 @@ var code_shown = false
 var open = false
 var hovered_button = null
 
-onready var buttonlist = $VBoxContainer
-onready var invite_box = $"%invite_box"
+@onready var buttonlist = $VBoxContainer
+@onready var invite_box = $"%invite_box"
 
 signal _close
 
 func _ready():
 	for child in buttonlist.get_children():
 		if child is Button:
-			child.connect("mouse_entered", self, "_hover_button", [child])
-			child.connect("mouse_exited", self, "_exit_button", [child])
+			child.connect("mouse_entered", Callable(self, "_hover_button").bind(child))
+			child.connect("mouse_exited", Callable(self, "_exit_button").bind(child))
 			child.add_to_group("menu_button")
 	
 	$HBoxContainer / Label.text = "lamedeveloper v" + str(Globals.GAME_VERSION)
@@ -84,7 +84,7 @@ func _invite_friend(steam_id):
 
 
 func _on_fullscreen_pressed():
-	OS.window_fullscreen = not OS.window_fullscreen
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (not ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))) else Window.MODE_WINDOWED
 func _on_HSlider_drag_ended(value_changed):
 	Globals.pixelize_amount = $VBoxContainer / HBoxContainer / HSlider.value
 	get_tree().get_root().emit_signal("size_changed")

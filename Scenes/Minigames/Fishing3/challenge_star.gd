@@ -8,19 +8,19 @@ var des_scale = Vector2()
 signal _expired
 
 func _ready():
-	rect_scale = Vector2(0.1, 0.1)
+	scale = Vector2(0.1, 0.1)
 
 func _physics_process(delta):
 	if active:
 		time_left -= 1
-		$TextureProgress.value = time_left
+		$TextureProgressBar.value = time_left
 	else:
-		$TextureProgress.visible = false
+		$TextureProgressBar.visible = false
 	
-	des_scale.x = (sin(OS.get_ticks_msec() * 0.01) * 0.15) + 1.0
-	des_scale.y = (sin(OS.get_ticks_msec() * 0.01) * 0.15) + 1.0
-	rect_scale = lerp(rect_scale, des_scale, 0.6)
-	rect_rotation = (sin(OS.get_ticks_msec() * 0.005) * 5)
+	des_scale.x = (sin(Time.get_ticks_msec() * 0.01) * 0.15) + 1.0
+	des_scale.y = (sin(Time.get_ticks_msec() * 0.01) * 0.15) + 1.0
+	scale = lerp(scale, des_scale, 0.6)
+	rotation = (sin(Time.get_ticks_msec() * 0.005) * 5)
 	
 	if time_left <= 0:
 		GlobalAudio._play_sound("hort_lose")
@@ -38,4 +38,4 @@ func _on_challenge_star_pressed():
 	self_modulate.a = 0.0
 	$stars.restart()
 	
-	yield(get_tree().create_timer(3.0), "timeout")
+	await get_tree().create_timer(3.0).timeout

@@ -14,5 +14,5 @@ func _setup(quest_id):
 	$ColorRect.visible = data["progress"] >= data["goal_amt"]
 	var c_add = "" if data["progress"] < data["goal_amt"] else "[color=#9ca539]"
 	
-	$RichTextLabel.bbcode_text = "Catch [color=#5a755a]" + str(n) + "[/color]" + c_add + " (" + str(data["progress"]) + "/" + str(data["goal_amt"]) + ") "
+	$RichTextLabel.text = "Catch [color=#5a755a]" + str(n) + "[/color]" + c_add + " (" + str(data["progress"]) + "/" + str(data["goal_amt"]) + ") "
 	$TextureRect.texture = a.icon

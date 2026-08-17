@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/notification.ogg-5f3cf9fbb9084448ed07b639b03aab77.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ufe6j4le8tv6"
+path="res://.godot/imported/notification.ogg-5f3cf9fbb9084448ed07b639b03aab77.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/notification.ogg"
-dest_files=[ "res://.import/notification.ogg-5f3cf9fbb9084448ed07b639b03aab77.oggstr" ]
+dest_files=["res://.godot/imported/notification.ogg-5f3cf9fbb9084448ed07b639b03aab77.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

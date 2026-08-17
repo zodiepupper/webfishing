@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Minigames/HandLabeler/hand_laber_menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/Textures/UI/HandLabeler/handlabelerbg.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/UI/HandLabeler/handlabelerbg.png" type="Texture2D" id=3]
 [ext_resource path="res://Scenes/HUD/inventory_item.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=5]
 
@@ -29,21 +29,21 @@ anchor_bottom = 1.0
 [node name="Panel" type="Panel" parent="Control/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 12.0
-margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
-custom_styles/panel = ExtResource( 5 )
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+theme_override_styles/panel = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Control/Panel"]
 anchor_left = 0.406056
 anchor_top = 0.120941
 anchor_right = 0.918736
 anchor_bottom = 0.317816
-margin_left = 0.111984
-margin_top = -0.0599995
-margin_right = -0.192017
-margin_bottom = -0.0800018
+offset_left = 0.111984
+offset_top = -0.0599995
+offset_right = -0.192017
+offset_bottom = -0.0800018
 text = "Hand Labeler"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -54,10 +54,10 @@ anchor_left = 0.149
 anchor_top = 0.126704
 anchor_right = 0.306
 anchor_bottom = 0.647704
-margin_left = 0.175995
-margin_top = -0.0277309
-margin_right = -0.256012
-margin_bottom = -0.0565262
+offset_left = 0.175995
+offset_top = -0.0277309
+offset_right = -0.256012
+offset_bottom = -0.0565262
 button_mask = 0
 
 [node name="name" type="LineEdit" parent="Control"]
@@ -65,10 +65,10 @@ anchor_left = 0.404097
 anchor_top = 0.336528
 anchor_right = 0.924028
 anchor_bottom = 0.653056
-margin_left = 0.23999
-margin_top = -0.152008
-margin_right = -0.240051
-margin_bottom = 0.151978
+offset_left = 0.23999
+offset_top = -0.152008
+offset_right = -0.240051
+offset_bottom = 0.151978
 max_length = 28
 placeholder_text = "New Name Here"
 __meta__ = {
@@ -80,9 +80,9 @@ anchor_left = 0.109375
 anchor_top = 0.697778
 anchor_right = 0.355889
 anchor_bottom = 0.859352
-margin_top = -0.576004
-margin_right = 0.00799561
-margin_bottom = 5.504
+offset_top = -0.576004
+offset_right = 0.00799561
+offset_bottom = 5.504
 text = "Choose Item"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -93,9 +93,9 @@ anchor_left = 0.597
 anchor_top = 0.697293
 anchor_right = 0.920139
 anchor_bottom = 0.893775
-margin_left = 0.12796
-margin_top = -0.492264
-margin_bottom = -0.444244
+offset_left = 0.12796
+offset_top = -0.492264
+offset_bottom = -0.444244
 text = "Name Item"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -106,9 +106,9 @@ anchor_left = 0.965056
 anchor_top = -0.0723827
 anchor_right = 1.02431
 anchor_bottom = 0.153034
-margin_left = 0.12793
-margin_top = -0.492264
-margin_bottom = -5.44424
+offset_left = 0.12793
+offset_top = -0.492264
+offset_bottom = -5.44424
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -117,10 +117,10 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 40.0
-margin_top = 58.0
-margin_right = 40.0
-margin_bottom = 58.0
+offset_left = 40.0
+offset_top = 58.0
+offset_right = 40.0
+offset_bottom = 58.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true

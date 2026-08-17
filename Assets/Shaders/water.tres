@@ -5,8 +5,8 @@ code = "shader_type spatial;
 render_mode depth_draw_always; // Remove this line if you're not on the transparency pipeline.
 
 // Water color
-uniform vec4 out_color: hint_color = vec4(0.0, 0.2, 1.0, 1.0);
-uniform vec4 depth_color: hint_color = vec4(0.0, 0.2, 1.0, 1.0);
+uniform vec4 out_color: source_color = vec4(0.0, 0.2, 1.0, 1.0);
+uniform vec4 depth_color: source_color = vec4(0.0, 0.2, 1.0, 1.0);
 uniform float amount: hint_range(0.2, 5.0, 0.01) = 0.8;
 uniform float speed: hint_range(0.1, 5.0, 0.1) = 1;
 uniform float beer_factor = 0.2;
@@ -15,9 +15,9 @@ uniform float metallic = 0.6;
 uniform float specular = 0.5;
 uniform float roughness = 0.2;
 
-uniform vec4 intersection_color : hint_color;
+uniform vec4 intersection_color : source_color;
 uniform float intersection_max_threshold = 0.5;
-uniform sampler2D displ_tex : hint_white;
+uniform sampler2D displ_tex : hint_default_white;
 uniform float displ_amount = 0.6;
 uniform float noise_scale = 1.5;
 uniform float near = 0.15;
@@ -28,8 +28,8 @@ uniform float wave_speed = 0.1;
 uniform float wave_amp = 2.5;
 
 uniform sampler2D foam_noise;
-uniform vec4 foam_color : hint_color;
-uniform vec4 foam_white_color : hint_color;
+uniform vec4 foam_color : source_color;
+uniform vec4 foam_white_color : source_color;
 uniform float foam_white_thresh: hint_range(0.0, 1.0, 0.01) = 0.0;
 uniform float foam_scale = 1.0;
 

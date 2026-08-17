@@ -1,6 +1,6 @@
 extends Control
 
-onready var box = $Panel / VBoxContainer
+@onready var box = $Panel / VBoxContainer
 
 func _ready():
 	if UserSave.last_loaded_slot == - 1:
@@ -19,11 +19,11 @@ func _refresh():
 	for child in box.get_children(): child.queue_free()
 	
 	for i in 4:
-		var save_slot = preload("res://Scenes/Menus/Main Menu/SaveSelect/save_select.tscn").instance()
+		var save_slot = preload("res://Scenes/Menus/Main Menu/SaveSelect/save_select.tscn").instantiate()
 		box.add_child(save_slot)
 		save_slot._setup(i)
-		save_slot.connect("_pressed", self, "_save_selected", [i])
-		save_slot.connect("_clear_pressed", self, "_reset_selected", [i])
+		save_slot.connect("_pressed", Callable(self, "_save_selected").bind(i))
+		save_slot.connect("_clear_pressed", Callable(self, "_reset_selected").bind(i))
 
 func _save_selected(slot):
 	UserSave._quick_save()

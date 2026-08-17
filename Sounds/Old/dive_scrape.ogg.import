@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/dive_scrape.ogg-b238e2e13657b0aa921a9c5e8cbf494b.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://40wkuiiqnuqc"
+path="res://.godot/imported/dive_scrape.ogg-b238e2e13657b0aa921a9c5e8cbf494b.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Old/dive_scrape.ogg"
-dest_files=[ "res://.import/dive_scrape.ogg-b238e2e13657b0aa921a9c5e8cbf494b.oggstr" ]
+dest_files=["res://.godot/imported/dive_scrape.ogg-b238e2e13657b0aa921a9c5e8cbf494b.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

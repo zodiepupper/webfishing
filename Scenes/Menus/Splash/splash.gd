@@ -1,6 +1,6 @@
 extends Control
 
-onready var menu_load = preload("res://Scenes/Menus/Main Menu/main_menu.tscn")
+@onready var menu_load = preload("res://Scenes/Menus/Main Menu/main_menu.tscn")
 
 
 var load_progress = 0
@@ -10,19 +10,17 @@ var time = 0
 var loaded = false
 
 func _ready():
-	yield(get_tree().create_timer(0.2), "timeout")
-	
+	#await get_tree().create_timer(0.2).timeout
 	
 	var particles = []
 	
 	print("Loading Particles for Preloading...")
-	var dir = Directory.new()
 	var path = "res://Assets/ParticleResources/"
-	
-	if dir.open(path) != OK:
+	var dir := DirAccess.open(path)
+	if dir:
 		print("Error loading particle directory.")
 		return
-	dir.list_dir_begin(true, true)
+	dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	while true:
 		var file = dir.get_next()
 		if file == "":
@@ -36,8 +34,8 @@ func _ready():
 	$ProgressBar.max_value = load_total
 	
 	for particle in particles:
-		yield(get_tree(), "idle_frame")
-		var instance = Particles.new()
+		await get_tree().idle_frame
+		var instance = CPUParticles3D.new()
 		instance.set_process_material(load(particle))
 		instance.one_shot = true
 		instance.emitting = true
@@ -45,7 +43,7 @@ func _ready():
 		load_progress += 1
 		$ProgressBar.value = load_progress
 	
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	loaded = true
 	$ProgressBar.hide()
 	$AnimationPlayer.play("main")

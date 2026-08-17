@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/HUD/ItemDisplay/item_display.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Textures/Fish/prehistoric_fish1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Fish/prehistoric_fish1.png" type="Texture2D" id=3]
 [ext_resource path="res://Scenes/HUD/BadgePopup/badge_popup.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=5]
 
@@ -21,68 +21,68 @@ expand_margin_right = 2.0
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("Control:rect_position:x")
+tracks/0/path = NodePath("Control:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("Control:rect_position:y")
+tracks/1/path = NodePath("Control:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -300, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PackedFloat32Array( -300, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("Control/Panel:rect_rotation")
+tracks/2/path = NodePath("Control/Panel:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
 }
 
 [sub_resource type="Animation" id=4]
 resource_name = "anim"
 length = 0.7
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("Control:rect_position:x")
+tracks/0/path = NodePath("Control:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3, 0.5, 0.6 )
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.3, 0.5, 0.6 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("Control:rect_position:y")
+tracks/1/path = NodePath("Control:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -300, -0.25, 0, 0.25, 0, 58.0572, -0.25, 0, 0.0664561, 1.11633, -15, -0.101516, 14.6202, 0.0684136, 3.05449, 0, -0.0404522, -8.80841, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3, 0.5, 0.6 )
+"points": PackedFloat32Array( -300, -0.25, 0, 0.25, 0, 58.0572, -0.25, 0, 0.0664561, 1.11633, -15, -0.101516, 14.6202, 0.0684136, 3.05449, 0, -0.0404522, -8.80841, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.3, 0.5, 0.6 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("Control/Panel:rect_rotation")
+tracks/2/path = NodePath("Control/Panel:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( -5, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3, 0.6, 0.7 )
+"points": PackedFloat32Array( -5, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.3, 0.6, 0.7 )
 }
 
 [node name="badge_popup" type="CanvasLayer"]
@@ -92,9 +92,9 @@ script = ExtResource( 4 )
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -300.0
-margin_right = 5760.0
-margin_bottom = 2940.0
+offset_top = -300.0
+offset_right = 5760.0
+offset_bottom = 2940.0
 mouse_filter = 2
 theme = ExtResource( 1 )
 
@@ -103,9 +103,9 @@ anchor_left = 0.25
 anchor_top = 0.02
 anchor_right = 0.75
 anchor_bottom = 0.1
-margin_right = 40.0
-margin_bottom = 0.0399933
-rect_pivot_offset = Vector2( 500, 60 )
+offset_right = 40.0
+offset_bottom = 0.0399933
+pivot_offset = Vector2( 500, 60 )
 mouse_filter = 2
 
 [node name="ProgressBar_prog" type="ProgressBar" parent="Control/Panel"]
@@ -113,9 +113,9 @@ anchor_left = 0.2
 anchor_top = 0.5
 anchor_right = 0.98
 anchor_bottom = 0.875
-margin_bottom = 0.0207977
+offset_bottom = 0.0207977
 mouse_filter = 2
-custom_styles/fg = SubResource( 1 )
+theme_override_styles/fg = SubResource( 1 )
 max_value = 200.0
 percent_visible = false
 
@@ -124,9 +124,9 @@ anchor_left = 0.2
 anchor_top = 0.5
 anchor_right = 0.98
 anchor_bottom = 0.875
-margin_bottom = 0.0207977
+offset_bottom = 0.0207977
 mouse_filter = 2
-custom_styles/bg = SubResource( 2 )
+theme_override_styles/bg = SubResource( 2 )
 max_value = 200.0
 percent_visible = false
 
@@ -137,7 +137,7 @@ anchor_right = 0.98
 anchor_bottom = 0.5
 mouse_filter = 2
 bbcode_enabled = true
-bbcode_text = "CAMP SCOUT"
+text = "CAMP SCOUT"
 text = "CAMP SCOUT"
 scroll_active = false
 
@@ -148,7 +148,7 @@ anchor_right = 0.98
 anchor_bottom = 0.5
 mouse_filter = 2
 bbcode_enabled = true
-bbcode_text = "[right]RANK 1"
+text = "[right]RANK 1"
 text = "RANK 1"
 scroll_active = false
 
@@ -158,9 +158,9 @@ anchor_top = 0.481768
 anchor_right = 0.98
 anchor_bottom = 0.881768
 mouse_filter = 2
-custom_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]"
+text = "[center]"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
@@ -172,9 +172,9 @@ anchor_top = 1.0255
 anchor_right = 0.98
 anchor_bottom = 1.4255
 mouse_filter = 2
-custom_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
 bbcode_enabled = true
-bbcode_text = "+50"
+text = "+50"
 text = "+50"
 scroll_active = false
 __meta__ = {
@@ -185,20 +185,20 @@ __meta__ = {
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -4.0
-margin_top = -4.0
-margin_right = 4.0
-margin_bottom = 4.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
 mouse_filter = 2
-custom_styles/panel = ExtResource( 5 )
+theme_override_styles/panel = ExtResource( 5 )
 
 [node name="item_display" parent="Control" instance=ExtResource( 2 )]
 anchor_left = 0.270833
 anchor_top = 0.00370372
 anchor_right = 0.335667
 anchor_bottom = 0.118852
-margin_right = -0.47998
-margin_bottom = -0.359993
+offset_right = -0.47998
+offset_bottom = -0.359993
 mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true

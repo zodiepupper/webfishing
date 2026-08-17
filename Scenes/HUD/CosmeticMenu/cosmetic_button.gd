@@ -6,7 +6,7 @@ var saved_category = ""
 signal _pressed_right
 
 func _setup(id):
-	PlayerData.connect("_clear_new", self, "_refresh")
+	PlayerData.connect("_clear_new", Callable(self, "_refresh"))
 	
 	var data = Globals.cosmetic_data[id]["file"]
 	saved_id = id
@@ -15,7 +15,7 @@ func _setup(id):
 	if data.category != "title": $TextureRect.texture = data.icon
 	if data.category == "title":
 		text = " " + str(data.name) + " "
-		rect_min_size.y = 24
+		custom_minimum_size.y = 24
 	
 	$TextureRect.self_modulate = data.main_color * 0.98
 	$tooltip_node.header = "[color=#6a4420]" + data.name + "[/color]"
@@ -48,7 +48,7 @@ func _on_Button_mouse_entered():
 
 func _on_Button_gui_input(event):
 	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == BUTTON_RIGHT:
+		if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 			emit_signal("_pressed_right")
 
 func _on_Button_pressed():

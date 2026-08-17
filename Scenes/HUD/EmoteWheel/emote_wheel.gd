@@ -4,7 +4,7 @@ var open = false
 var pressed = false
 var hovered = null
 
-onready var wheel = $wheel
+@onready var wheel = $wheel
 
 signal _play_emote(emote_id, emotion)
 
@@ -13,9 +13,9 @@ func _ready():
 	var i = 0
 	for child in $wheel / GridContainer.get_children():
 		if child.is_in_group("emote_ignore"): continue
-		child.connect("mouse_entered", self, "_highlight", [child])
-		child.connect("mouse_exited", self, "_dehighlight", [child])
-		child.connect("pressed", self, "_pressed", [child])
+		child.connect("mouse_entered", Callable(self, "_highlight").bind(child))
+		child.connect("mouse_exited", Callable(self, "_dehighlight").bind(child))
+		child.connect("pressed", Callable(self, "_pressed").bind(child))
 		
 		i += 1
 
@@ -38,8 +38,8 @@ func _physics_process(delta):
 	visible = modulate.a > 0.02
 	
 	var scale = 1.0 if open else 0.6
-	wheel.rect_scale.x = lerp(wheel.rect_scale.x, scale, 0.4)
-	wheel.rect_scale.y = lerp(wheel.rect_scale.y, scale, 0.4)
+	wheel.scale.x = lerp(wheel.scale.x, scale, 0.4)
+	wheel.scale.y = lerp(wheel.scale.y, scale, 0.4)
 
 func _highlight(button):
 	hovered = button

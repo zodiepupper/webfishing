@@ -1,6 +1,6 @@
 extends ShopButton
 
-export var upgrade_slot = 0
+@export var upgrade_slot = 0
 
 func _setup():
 	var upgrade = PlayerData.shop_upgrades[upgrade_slot]

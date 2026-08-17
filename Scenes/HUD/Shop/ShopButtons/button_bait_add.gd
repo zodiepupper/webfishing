@@ -1,6 +1,6 @@
 extends ShopButton
 
-export var bait_add = ""
+@export var bait_add = ""
 
 func _setup():
 	icon = PlayerData.BAIT_DATA[bait_add].icon

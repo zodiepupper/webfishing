@@ -1,2 +1,2 @@
-extends Viewport
+extends SubViewport
 

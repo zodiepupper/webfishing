@@ -12,11 +12,11 @@ func _on_FileDialog_file_selected(path):
 	$Label2.text = str(selected_file)
 
 func _on_Button_pressed():
-	$FileDialog.mode = FileDialog.MODE_OPEN_DIR
+	$FileDialog.mode = FileDialog.FILE_MODE_OPEN_DIR
 	$FileDialog.show()
 
 func _on_Button2_pressed():
-	$FileDialog.mode = FileDialog.MODE_OPEN_FILE
+	$FileDialog.mode = FileDialog.FILE_MODE_OPEN_FILE
 	$FileDialog.show()
 
 

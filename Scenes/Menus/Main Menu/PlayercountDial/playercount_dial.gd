@@ -8,12 +8,12 @@ var moving_max = false
 var min_set = 0
 var max_set = 12
 
-onready var dials = $dials
-onready var min_dial = $dials / min_players
-onready var max_dial = $dials / max_players
+@onready var dials = $dials
+@onready var min_dial = $dials / min_players
+@onready var max_dial = $dials / max_players
 
-onready var min_dial_lbl = $dials / min_players / Label
-onready var max_dial_lbl = $dials / max_players / Label
+@onready var min_dial_lbl = $dials / min_players / Label
+@onready var max_dial_lbl = $dials / max_players / Label
 
 signal _update(_min, _max)
 
@@ -24,15 +24,15 @@ func _ready():
 	_set_dial_pos(max_dial)
 
 func _physics_process(delta):
-	var max_size = rect_size.x
-	min_dial.rect_position.x = lerp(min_dial.rect_position.x, (max_size / dial_max) * min_set, 0.8)
-	min_dial.rect_scale = lerp(min_dial.rect_scale, Vector2.ONE if not moving_min else Vector2(1.1, 1.1), 0.8)
-	max_dial.rect_position.x = lerp(max_dial.rect_position.x, (max_size / dial_max) * max_set, 0.8)
-	max_dial.rect_scale = lerp(max_dial.rect_scale, Vector2.ONE if not moving_max else Vector2(1.1, 1.1), 0.8)
+	var max_size = size.x
+	min_dial.position.x = lerp(min_dial.position.x, (max_size / dial_max) * min_set, 0.8)
+	min_dial.scale = lerp(min_dial.scale, Vector2.ONE if not moving_min else Vector2(1.1, 1.1), 0.8)
+	max_dial.position.x = lerp(max_dial.position.x, (max_size / dial_max) * max_set, 0.8)
+	max_dial.scale = lerp(max_dial.scale, Vector2.ONE if not moving_max else Vector2(1.1, 1.1), 0.8)
 	
 	if not moving_min and not moving_max: return
 	
-	var pos = rect_global_position.x
+	var pos = global_position.x
 	var mouse = get_global_mouse_position().x
 	
 	var final_pos = (mouse - pos) / max_size
@@ -58,14 +58,14 @@ func _physics_process(delta):
 			moving_min = true
 			moving_max = false
 	
-	if not Input.is_mouse_button_pressed(BUTTON_LEFT):
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		moving_min = false
 		moving_max = false
 		emit_signal("_update", min_set, max_set)
 
 func _set_dial_pos(dial):
-	dial.rect_pivot_offset = dial.rect_size / 2.0
-	dial.rect_scale = Vector2(0.6, 0.6)
+	dial.pivot_offset = dial.size / 2.0
+	dial.scale = Vector2(0.6, 0.6)
 	
 	min_dial_lbl.text = str(min_set + 1)
 	max_dial_lbl.text = str(max_set + 1)

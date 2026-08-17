@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/boat_horn.wav-4e834376d2cad33f498f038cc9f4aa16.sample"
+type="AudioStreamWAV"
+uid="uid://dqt1bp2jtj22v"
+path="res://.godot/imported/boat_horn.wav-4e834376d2cad33f498f038cc9f4aa16.sample"
 
 [deps]
 
 source_file="res://Sounds/boat_horn.wav"
-dest_files=[ "res://.import/boat_horn.wav-4e834376d2cad33f498f038cc9f4aa16.sample" ]
+dest_files=["res://.godot/imported/boat_horn.wav-4e834376d2cad33f498f038cc9f4aa16.sample"]
 
 [params]
 

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/floombo_FuibiMastered.ogg-b4adf8de78c5759209ebd9d864801949.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0qn1uxu1wnrr"
+path="res://.godot/imported/floombo_FuibiMastered.ogg-b4adf8de78c5759209ebd9d864801949.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Music/floombo_FuibiMastered.ogg"
-dest_files=[ "res://.import/floombo_FuibiMastered.ogg-b4adf8de78c5759209ebd9d864801949.oggstr" ]
+dest_files=["res://.godot/imported/floombo_FuibiMastered.ogg-b4adf8de78c5759209ebd9d864801949.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

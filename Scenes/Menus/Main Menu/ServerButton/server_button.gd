@@ -7,10 +7,10 @@ var lobby_dated = false
 
 var label_toggle = true
 
-onready var lobby_label = $Panel / HBoxContainer / Label
-onready var lobby_tag_label = $Panel / HBoxContainer / tags
-onready var playercount = $Panel / HBoxContainer2 / players
-onready var button = $Panel / HBoxContainer2 / Button
+@onready var lobby_label = $Panel / HBoxContainer / Label
+@onready var lobby_tag_label = $Panel / HBoxContainer / tags
+@onready var playercount = $Panel / HBoxContainer2 / players
+@onready var button = $Panel / HBoxContainer2 / Button
 
 signal _pressed
 
@@ -48,7 +48,7 @@ func _setup(lobby_default_name, lobby_name, player_count, player_count_total, pl
 	if tag_text == "":
 		tag_text = "(No Tags)"
 	
-	lobby_tag_label.bbcode_text = str(tag_text)
+	lobby_tag_label.text = str(tag_text)
 	
 	var cap = str(player_limit)
 	if cap == "": cap = str(12)
@@ -90,7 +90,7 @@ func _update_lobby_name():
 		new_name = new_name.left(40)
 		new_name = new_name + "... "
 	
-	lobby_label.bbcode_text = new_name
+	lobby_label.text = new_name
 
 func _disable():
 	$Panel / HBoxContainer2 / Button.disabled = true

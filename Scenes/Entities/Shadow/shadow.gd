@@ -1,13 +1,13 @@
-extends Spatial
+extends Node3D
 
 
 var old_normal = Vector3.ZERO
 
-onready var mesh = $MeshInstance
-onready var ray = $RayCast
+@onready var mesh = $MeshInstance3D
+@onready var ray = $RayCast3D
 
 func _ready():
-	mesh.set_as_toplevel(true)
+	mesh.set_as_top_level(true)
 
 func _process(delta):
 	var dist = 40.0

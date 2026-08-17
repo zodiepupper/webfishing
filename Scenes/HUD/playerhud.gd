@@ -13,24 +13,24 @@ const MINIGAMES = {
 	"hand_labeler": preload("res://Scenes/Minigames/HandLabeler/hand_laber_menu.tscn"), 
 }
 
-onready var overlay = $main / in_game
-onready var tab_container = $main / menu / TabContainer
-onready var esc_menu = $esc_menu
-onready var hotbar = $main / in_game / hotbar
-onready var gamechat = $main / in_game / gamechat / RichTextLabel
-onready var chat_root = $main / in_game / gamechat
-onready var chat = $main / in_game / gamechat / LineEdit
-onready var backpack_anim = $main / backpack / Viewport / Spatial / backpack / AnimationPlayer
-onready var tacklebox_anim = $main / tacklebox / Viewport / Spatial / tacklebox / AnimationPlayer
-onready var buttons = $main / menu / buttons
-onready var tabs = $main / menu / tabs
-onready var shop = $main / shop
-onready var dialogue = $main / dialogue
-onready var bait_show = $main / in_game / bait
-onready var emote_wheel = $main / emote_wheel
-onready var prop_menu = $main / prop_menu
-onready var request_panel = $main / in_game / player_requests
-onready var request_label = $main / in_game / player_requests / Label
+@onready var overlay = $main / in_game
+@onready var tab_container = $main / menu / TabContainer
+@onready var esc_menu = $esc_menu
+@onready var hotbar = $main / in_game / hotbar
+@onready var gamechat = $main / in_game / gamechat / RichTextLabel
+@onready var chat_root = $main / in_game / gamechat
+@onready var chat = $main / in_game / gamechat / LineEdit
+@onready var backpack_anim = $main / backpack / SubViewport / Node3D / backpack / AnimationPlayer
+@onready var tacklebox_anim = $main / tacklebox / SubViewport / Node3D / tacklebox / AnimationPlayer
+@onready var buttons = $main / menu / buttons
+@onready var tabs = $main / menu / tabs
+@onready var shop = $main / shop
+@onready var dialogue = $main / dialogue
+@onready var bait_show = $main / in_game / bait
+@onready var emote_wheel = $main / emote_wheel
+@onready var prop_menu = $main / prop_menu
+@onready var request_panel = $main / in_game / player_requests
+@onready var request_label = $main / in_game / player_requests / Label
 
 var menu = MENUS.DEFAULT
 var prev_menu = MENUS.DEFAULT
@@ -63,16 +63,16 @@ signal _message_sent
 signal _freecam_toggle
 
 func _ready():
-	PlayerData.connect("_hotbar_refresh", self, "_refresh_hotbar")
-	PlayerData.connect("_bait_update", self, "_bait_refresh")
-	PlayerData.connect("_force_menu_close", self, "_abort")
-	PlayerData.connect("_request_item_choice", self, "_request_item_choice")
+	PlayerData.connect("_hotbar_refresh", Callable(self, "_refresh_hotbar"))
+	PlayerData.connect("_bait_update", Callable(self, "_bait_refresh"))
+	PlayerData.connect("_force_menu_close", Callable(self, "_abort"))
+	PlayerData.connect("_request_item_choice", Callable(self, "_request_item_choice"))
 	
-	Network.connect("_chat_update", self, "_chat_update")
-	Network.connect("_new_request_from_weblobby", self, "_new_lobby_request")
-	Network.connect("_weblobby_request_update", self, "_lobby_request_update")
+	Network.connect("_chat_update", Callable(self, "_chat_update"))
+	Network.connect("_new_request_from_weblobby", Callable(self, "_new_lobby_request"))
+	Network.connect("_weblobby_request_update", Callable(self, "_lobby_request_update"))
 	
-	esc_menu.connect("_close", self, "_change_menu", [0])
+	esc_menu.connect("_close", Callable(self, "_change_menu").bind(0))
 	
 	_refresh_hotbar()
 	_change_tab(0)
@@ -84,11 +84,11 @@ func _ready():
 func _process(delta):
 	var cash = (str(round(PlayerData.money))).pad_zeros(9)
 	cash = cash.insert(cash.length() - str(PlayerData.money).length(), "[color=#ffeed5]")
-	$main / menu / Panel4 / cashlabel.bbcode_text = "[center][color=#ffeed5]$ [color=#d5aa73]" + cash
+	$main / menu / Panel4 / cashlabel.text = "[center][color=#ffeed5]$ [color=#d5aa73]" + cash
 	
 	bait_show.visible = show_bait
 	
-	if Rect2(chat_root.rect_global_position, chat_root.rect_size).has_point(chat_root.get_global_mouse_position()) and chat_timer < 30:
+	if Rect2(chat_root.global_position, chat_root.size).has_point(chat_root.get_global_mouse_position()) and chat_timer < 30:
 		chat_timer = 30
 	
 	if chat_timer > 0: chat_timer -= 1
@@ -172,13 +172,13 @@ func _process(delta):
 	$main / in_game / show_chat.visible = chat_hide
 	
 	$main / in_game / freecamwarning.visible = freecamming
-	$main / in_game / freecamwarning.modulate.a = 0.6 + (sin(OS.get_ticks_msec() * 0.004) * 0.4)
+	$main / in_game / freecamwarning.modulate.a = 0.6 + (sin(Time.get_ticks_msec() * 0.004) * 0.4)
 	
-	$main / in_game / player_requests.modulate.a = 0.8 + (sin(OS.get_ticks_msec() * 0.003) * 0.2)
+	$main / in_game / player_requests.modulate.a = 0.8 + (sin(Time.get_ticks_msec() * 0.003) * 0.2)
 	
 	if recent_request > 0:
 		recent_request -= 1
-		request_label.modulate.a = 0.6 + (sin(OS.get_ticks_msec() * 0.004) * 0.4)
+		request_label.modulate.a = 0.6 + (sin(Time.get_ticks_msec() * 0.004) * 0.4)
 	else:
 		request_label.modulate.a = 1.0
 
@@ -192,12 +192,12 @@ func _physics_process(delta):
 	if dialogue_cooldown > 0: dialogue_cooldown -= 1
 	
 	var frame = floor(interact_timer / 7.0)
-	if frame > 3: frame = 3 + ceil(sin(OS.get_ticks_msec() * 0.01))
+	if frame > 3: frame = 3 + ceil(sin(Time.get_ticks_msec() * 0.01))
 	
 	$main / in_game / interact_notif / Label.visible = frame >= 3
 	$main / in_game / interact_notif / TextureRect.texture.set_current_frame(frame)
 	
-	$main / in_game / interact_notif.margin_bottom = 12 + sin(OS.get_ticks_msec() * 0.002) * 12
+	$main / in_game / interact_notif.offset_bottom = 12 + sin(Time.get_ticks_msec() * 0.002) * 12
 	$main / in_game / interact_notif.visible = interact_timer > 0
 	$main / in_game / interact_notif / Label.text = "[E] " + str(int_text)
 	
@@ -241,8 +241,8 @@ func _show_hud():
 
 
 func _change_menu(to):
-	yield(get_tree(), "idle_frame")
-	yield(get_tree(), "idle_frame")
+	await get_tree().idle_frame
+	await get_tree().idle_frame
 	
 	
 	if menu == MENUS.DIALOGUE and dialogue_cooldown > 0: return
@@ -370,8 +370,8 @@ func _bait_refresh():
 		
 		button.expand_icon = true
 		button.align = Button.ALIGN_LEFT
-		button.connect("pressed", self, "_change_bait", [bait])
-		button.connect("mouse_entered", self, "_bait_hover", [bait])
+		button.connect("pressed", Callable(self, "_change_bait").bind(bait))
+		button.connect("mouse_entered", Callable(self, "_bait_hover").bind(bait))
 		bait_list.add_child(button)
 	
 	for lure in PlayerData.LURE_DATA.keys():
@@ -388,8 +388,8 @@ func _bait_refresh():
 		
 		button.expand_icon = true
 		button.align = Button.ALIGN_LEFT
-		button.connect("pressed", self, "_change_lure", [lure])
-		button.connect("mouse_entered", self, "_lure_hover", [lure])
+		button.connect("pressed", Callable(self, "_change_lure").bind(lure))
+		button.connect("mouse_entered", Callable(self, "_lure_hover").bind(lure))
 		lure_list.add_child(button)
 
 func _change_bait(bait):
@@ -399,7 +399,7 @@ func _change_bait(bait):
 func _bait_hover(bait):
 	var title = PlayerData.BAIT_DATA[bait].name
 	var desc = PlayerData.BAIT_DATA[bait].desc
-	$main / bait_menu / Panel3 / bait_info.bbcode_text = "[color=#6a4420]" + title + "[/color]\n" + desc
+	$main / bait_menu / Panel3 / bait_info.text = "[color=#6a4420]" + title + "[/color]\n" + desc
 
 func _change_lure(lure):
 	PlayerData.lure_selected = lure
@@ -408,7 +408,7 @@ func _change_lure(lure):
 func _lure_hover(lure):
 	var title = PlayerData.LURE_DATA[lure].name
 	var desc = PlayerData.LURE_DATA[lure].desc
-	$main / bait_menu / Panel3 / bait_info.bbcode_text = "[color=#6a4420]" + title + "[/color]\n" + desc
+	$main / bait_menu / Panel3 / bait_info.text = "[color=#6a4420]" + title + "[/color]\n" + desc
 
 
 
@@ -429,14 +429,14 @@ func _exit_chat():
 func _refresh_hotbar():
 	var index = 0
 	for child in hotbar.get_children():
-		child.disconnect("pressed", self, "_item_pressed")
+		child.disconnect("pressed", Callable(self, "_item_pressed"))
 		if not PlayerData.hotbar.keys().has(index):
 			index += 1
 			continue
 		
 		var item = PlayerData._find_item_code(PlayerData.hotbar[index])
 		child._setup_item(item["ref"])
-		child.connect("pressed", self, "_item_pressed", [item])
+		child.connect("pressed", Callable(self, "_item_pressed").bind(item))
 		index += 1
 
 func _send_message(text):
@@ -527,7 +527,7 @@ func _send_message(text):
 
 func _chat_update():
 	chat_timer = 210
-	gamechat.bbcode_text = str(Network.GAMECHAT) if not chat_local else str(Network.LOCAL_GAMECHAT)
+	gamechat.text = str(Network.GAMECHAT) if not chat_local else str(Network.LOCAL_GAMECHAT)
 
 func _button_message_send():
 	_send_message(chat.text)
@@ -537,14 +537,14 @@ func _button_message_send():
 func _request_item_choice(filter_id = [], min_items = 1, max_items = 99, tag_filter = "", ignore_specified = true):
 	if popups.has("CHOICE"): return
 	popups.append("CHOICE")
-	var ic = preload("res://Scenes/HUD/ItemSelect/item_select.tscn").instance()
+	var ic = preload("res://Scenes/HUD/ItemSelect/item_select.tscn").instantiate()
 	ic.tag_filter = tag_filter
 	ic.filter = filter_id
 	ic.min_items = min_items
 	ic.max_items = max_items
 	ic.ignore_specified = ignore_specified
 	add_child(ic)
-	ic.connect("_finished", self, "_select_finished")
+	ic.connect("_finished", Callable(self, "_select_finished"))
 
 func _select_finished(items):
 	popups.erase("CHOICE")
@@ -553,7 +553,7 @@ func _select_finished(items):
 
 func _on_Button_pressed():
 	_request_item_choice()
-	var items = yield(self, "_items_chosen")
+	var items = await self._items_chosen
 	print("CHOSEN: ", items)
 
 func _on_inbox__create_letter():
@@ -562,21 +562,21 @@ func _on_inbox__create_letter():
 		return
 	
 	popups.append("LETTER")
-	var p = preload("res://Scenes/HUD/Inbox/letter_popup.tscn").instance()
+	var p = preload("res://Scenes/HUD/Inbox/letter_popup.tscn").instantiate()
 	add_child(p)
 	p.hud = self
-	p.connect("_finished", self, "_letter_finished")
+	p.connect("_finished", Callable(self, "_letter_finished"))
 
 func _letter_finished():
 	popups.erase("LETTER")
 
 func _on_inbox__read_letter(letter):
 	popups.append("LETTER_READ")
-	var p = preload("res://Scenes/HUD/Inbox/letter_view.tscn").instance()
+	var p = preload("res://Scenes/HUD/Inbox/letter_view.tscn").instantiate()
 	add_child(p)
 	p._load_letter(letter)
 	p.hud = self
-	p.connect("_finished", self, "_letter_read_finished")
+	p.connect("_finished", Callable(self, "_letter_read_finished"))
 
 func _letter_read_finished():
 	popups.erase("LETTER_READ")
@@ -593,11 +593,11 @@ func _open_minigame(minigame, params = {}, difficulty = 1.0):
 	
 	_abort()
 	popups.append("MINIGAME_" + str(minigame))
-	var m = MINIGAMES[minigame].instance()
+	var m = MINIGAMES[minigame].instantiate()
 	m.params = params
 	m.difficulty = difficulty
 	add_child(m)
-	var success = yield(m, "_finished")
+	var success = await m._finished
 	emit_signal("_minigame_finished", success)
 	popups.erase("MINIGAME_" + str(minigame))
 
@@ -642,7 +642,7 @@ func _quest_update():
 	
 	for quest in PlayerData.current_quests.keys():
 		if PlayerData.current_quests[quest]["active"]:
-			var entry = preload("res://Scenes/HUD/QuestEntry/quest_entry.tscn").instance()
+			var entry = preload("res://Scenes/HUD/QuestEntry/quest_entry.tscn").instantiate()
 			entry._setup(quest)
 			$"%questbox".add_child(entry)
 

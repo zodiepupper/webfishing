@@ -1,6 +1,6 @@
 extends ShopButton
 
-export var lure_add = ""
+@export var lure_add = ""
 
 func _setup():
 	slot_name = PlayerData.LURE_DATA[lure_add].name

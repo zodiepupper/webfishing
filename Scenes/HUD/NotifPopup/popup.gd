@@ -4,8 +4,8 @@ func _setup(text, type):
 	$RichTextLabel.text = text
 	
 	match type:
-		0: $RichTextLabel / Panel.set("custom_styles/panel", preload("res://Assets/Themes/panel_green.tres"))
-		1: $RichTextLabel / Panel.set("custom_styles/panel", preload("res://Assets/Themes/panel_red.tres"))
+		0: $RichTextLabel / Panel.set("theme_override_styles/panel", preload("res://Assets/Themes/panel_green.tres"))
+		1: $RichTextLabel / Panel.set("theme_override_styles/panel", preload("res://Assets/Themes/panel_red.tres"))
 
 func _ready():
 	$AnimationPlayer.play("play")

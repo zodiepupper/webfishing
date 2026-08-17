@@ -1,20 +1,25 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh"
+uid="uid://ckbnpnpodbamf"
+path="res://.godot/imported/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh"
 
 [deps]
 
-files=[ "res://.import/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh" ]
+files=["res://.godot/imported/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh"]
 
 source_file="res://Assets/Models/couch.obj"
-dest_files=[ "res://.import/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh", "res://.import/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh" ]
+dest_files=["res://.godot/imported/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh", "res://.godot/imported/couch.obj-c2382edbb6bdc60e64c757407d6505e2.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
-optimize_mesh_flags=4286
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

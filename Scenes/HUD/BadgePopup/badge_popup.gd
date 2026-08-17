@@ -8,20 +8,20 @@ var xp_goal = 0
 var wait_cd = 0
 var level = 0
 
-onready var label_1 = $Control / Panel / RichTextLabel
-onready var label_2 = $Control / Panel / RichTextLabel2
-onready var label_3 = $Control / Panel / RichTextLabel3
-onready var label_4 = $Control / Panel / RichTextLabel4
-onready var prog = $Control / Panel / ProgressBar_prog
-onready var bar = $Control / Panel / ProgressBar_main
+@onready var label_1 = $Control / Panel / RichTextLabel
+@onready var label_2 = $Control / Panel / RichTextLabel2
+@onready var label_3 = $Control / Panel / RichTextLabel3
+@onready var label_4 = $Control / Panel / RichTextLabel4
+@onready var prog = $Control / Panel / ProgressBar_prog
+@onready var bar = $Control / Panel / ProgressBar_main
 
 func _ready():
-	PlayerData.connect("_xp_add", self, "_add_xp")
+	PlayerData.connect("_xp_add", Callable(self, "_add_xp"))
 	
-	$Control.margin_bottom = - 300
-	$Control.margin_left = 0
-	$Control.margin_right = 0
-	$Control.margin_top = - 300
+	$Control.offset_bottom = - 300
+	$Control.offset_left = 0
+	$Control.offset_right = 0
+	$Control.offset_top = - 300
 	$AnimationPlayer.play("RESET")
 
 func _add_xp(amt, lvl, total):
@@ -37,7 +37,7 @@ func _add_xp(amt, lvl, total):
 	xp_to_add += amt
 
 func _physics_process(delta):
-	$Control / Panel.rect_position.y = 21.6 + (sin(OS.get_ticks_msec() * 0.015) * shake)
+	$Control / Panel.position.y = 21.6 + (sin(Time.get_ticks_msec() * 0.015) * shake)
 	shake = lerp(shake, 0.0, 0.1)
 	
 	if wait_cd > 0:
@@ -57,8 +57,8 @@ func _physics_process(delta):
 		lowered = false
 		$AnimationPlayer.play_backwards("anim")
 	
-	label_3.bbcode_text = "+" + str(xp_to_add)
-	label_4.bbcode_text = "[center]" + str(xp_amt) + "/" + str(xp_goal)
+	label_3.text = "+" + str(xp_to_add)
+	label_4.text = "[center]" + str(xp_amt) + "/" + str(xp_goal)
 	
 	if xp_amt >= xp_goal:
 		_set_level(level + 1)
@@ -76,6 +76,6 @@ func _set_level(lvl):
 	xp_goal = PlayerData._get_xp_goal(level)
 	bar.max_value = xp_goal
 	prog.max_value = xp_goal
-	label_1.bbcode_text = str(data["title"])
-	label_2.bbcode_text = "[right]RANK " + str(lvl)
+	label_1.text = str(data["title"])
+	label_2.text = "[right]RANK " + str(lvl)
 	$Control / item_display.texture = data["icon"]

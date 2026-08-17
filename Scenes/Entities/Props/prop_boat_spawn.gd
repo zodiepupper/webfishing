@@ -1,7 +1,7 @@
 extends "res://Scenes/Entities/Props/prop.gd"
 
-export var zone_name = "boat_raft_zone"
-export var entrance_name = "boat_entrance"
+@export var zone_name = "boat_raft_zone"
+@export var entrance_name = "boat_entrance"
 
 func _ready():
 	$transition_zone.zone_id = zone_name

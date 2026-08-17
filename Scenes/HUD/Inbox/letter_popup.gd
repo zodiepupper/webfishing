@@ -3,9 +3,9 @@ extends CanvasLayer
 var hud
 var items_to_send = []
 
-onready var options = $Control / Panel / VBoxContainer / OptionButton
-onready var dear_options = $Control / Panel / VBoxContainer / HBoxContainer / OptionButton2
-onready var text = $Control / Panel / VBoxContainer / Panel / TextEdit
+@onready var options = $Control / Panel / VBoxContainer / OptionButton
+@onready var dear_options = $Control / Panel / VBoxContainer / HBoxContainer / OptionButton2
+@onready var text = $Control / Panel / VBoxContainer / Panel / TextEdit
 
 signal _finished
 
@@ -49,7 +49,7 @@ func _on_cancel_pressed():
 
 func _on_Button_pressed():
 	hud._request_item_choice([], 1, 20)
-	var items = yield(hud, "_items_chosen")
+	var items = await hud._items_chosen
 	print("chosen items: ", items)
 	
 	var lbl = $Control / Panel / VBoxContainer / HBoxContainer2 / Button

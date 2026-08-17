@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/shatter.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/shatter.png" type="Texture2D" id=1]
 
 [sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.515924, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0681818 ), -1.39296, 0.0, 0, 0 ]
@@ -8,7 +8,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.515924, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=3]
 curve = SubResource( 2 )
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticleProcessMaterial" id=1]
 emission_shape = 2
 emission_box_extents = Vector3( 1, 1, 1 )
 flag_disable_z = true
@@ -25,7 +25,7 @@ orbit_velocity_random = 0.0
 scale = 2.0
 scale_curve = SubResource( 3 )
 
-[node name="shatter_particle" type="Particles2D"]
+[node name="shatter_particle" type="GPUParticles2D"]
 emitting = false
 amount = 2
 one_shot = true

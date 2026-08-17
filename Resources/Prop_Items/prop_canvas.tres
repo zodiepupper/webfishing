@@ -1,9 +1,9 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Placeholder/cyube.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Placeholder/cyube.png" type="Texture2D" id=2]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="BoxMesh" id=1]
 size = Vector3( 1, 1, 1 )
 
 [resource]

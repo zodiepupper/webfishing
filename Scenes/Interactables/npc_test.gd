@@ -1,8 +1,8 @@
 extends Interactable
 
-export var shop_id = "rotated_shop"
-export (NodePath) var cam_offset
-export var required_tag = ""
+@export var shop_id = "rotated_shop"
+@export var cam_offset: NodePath
+@export var required_tag = ""
 
 signal _open
 signal _close
@@ -15,7 +15,7 @@ func _activate(actor):
 	actor.hud.shop_id = shop_id
 	actor.hud._change_menu(5)
 	actor.cam_follow_node = get_node(cam_offset)
-	actor.connect("_menu_closed", self, "_closed", [], CONNECT_ONESHOT)
+	actor.connect("_menu_closed", Callable(self, "_closed").bind(), CONNECT_ONE_SHOT)
 	emit_signal("_open")
 
 func _closed():

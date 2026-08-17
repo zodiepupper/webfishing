@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons23.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons23.png" type="Texture2D" id=2]
 [ext_resource path="res://Assets/Models/Cosmetics/tail_dog_short.tres" type="ArrayMesh" id=3]
 
 [resource]

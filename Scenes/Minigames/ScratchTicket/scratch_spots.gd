@@ -1,6 +1,6 @@
 extends Node2D
 
-export var winning = false
+@export var winning = false
 
 var written_words = [
 	"ZRO", 
@@ -75,8 +75,8 @@ func _setup(type):
 				break
 		
 		prize_amt = [10, 25, 50, 100, 200, 500, 1000, 5000, 10000][price]
-		if type == 1: prize_amt = stepify(prize_amt * 2.5, 5)
-		if type == 2: prize_amt = stepify(prize_amt * 10, 5)
+		if type == 1: prize_amt = snapped(prize_amt * 2.5, 5)
+		if type == 2: prize_amt = snapped(prize_amt * 10, 5)
 		_set_price(prize_amt)
 
 func _on_Area2D_body_exited(body):
@@ -94,7 +94,7 @@ func _set_price(val):
 	if val < 1000: $Label3.text = $Label3.text + ".00"
 
 func _win_ping():
-	$Label.set("custom_colors/font_color", Color("#a4aa39"))
-	$Label2.set("custom_colors/font_color", Color("#a4aa39"))
-	$Label3.set("custom_colors/font_color", Color("#a4aa39"))
+	$Label.set("theme_override_colors/font_color", Color("#a4aa39"))
+	$Label2.set("theme_override_colors/font_color", Color("#a4aa39"))
+	$Label3.set("theme_override_colors/font_color", Color("#a4aa39"))
 	$stars.restart()

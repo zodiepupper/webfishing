@@ -5,8 +5,8 @@ var clear_count = 0
 signal _pressed
 signal _clear_pressed
 
-onready var label = $Button / HBoxContainer / Label
-onready var ico = $Button / HBoxContainer / TextureRect
+@onready var label = $Button / HBoxContainer / Label
+@onready var ico = $Button / HBoxContainer / TextureRect
 
 func _setup(slot):
 	var save_data = UserSave._quick_open(slot)
@@ -14,7 +14,7 @@ func _setup(slot):
 	_update_reset()
 	
 	label.text = "Save Slot " + str(slot + 1)
-	if save_data.empty():
+	if save_data.is_empty():
 		label.text = label.text + "\nEmpty Save"
 		ico.visible = false
 		$arrow.visible = false
@@ -32,7 +32,7 @@ func _setup(slot):
 	ico.modulate = Color(color)
 
 func _physics_process(delta):
-	$arrow.modulate.a = 0.5 + (sin(OS.get_ticks_msec() * 0.01) * 0.25)
+	$arrow.modulate.a = 0.5 + (sin(Time.get_ticks_msec() * 0.01) * 0.25)
 
 func _on_Button_pressed():
 	emit_signal("_pressed")

@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Models/soda_can.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Assets/Textures/soda_uv5.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/soda_uv5.png" type="Texture2D" id=2]
 [ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=3]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="StandardMaterial3D" id=1]
 albedo_texture = ExtResource( 2 )
 
-[node name="drink_hooklite" type="Spatial"]
+[node name="drink_hooklite" type="Node3D"]
 script = ExtResource( 3 )
-hotspot_node = NodePath("Position3D")
+hotspot_node = NodePath("Marker3D")
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -2.62268e-09, 0, 0.06, 0, 0.06, 0, -0.06, 0, -2.62268e-09, 0, 0, 0 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( -2.62268e-09, 0, 0.06, 0, 0.06, 0, -0.06, 0, -2.62268e-09, 0, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
 
-[node name="Position3D" type="Position3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="."]

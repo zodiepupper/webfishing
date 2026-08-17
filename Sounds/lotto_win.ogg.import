@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/lotto_win.ogg-935e1547d29326354e6fed2f8b7d0c86.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://begyb2xcnka0p"
+path="res://.godot/imported/lotto_win.ogg-935e1547d29326354e6fed2f8b7d0c86.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/lotto_win.ogg"
-dest_files=[ "res://.import/lotto_win.ogg-935e1547d29326354e6fed2f8b7d0c86.oggstr" ]
+dest_files=["res://.godot/imported/lotto_win.ogg-935e1547d29326354e6fed2f8b7d0c86.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

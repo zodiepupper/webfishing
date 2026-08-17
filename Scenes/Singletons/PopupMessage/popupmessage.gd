@@ -7,7 +7,7 @@ func _ready():
 	visible = false
 
 func _show_popup(text, delay = 0.0, choices = false):
-	if delay > 0.0: yield(get_tree().create_timer(delay), "timeout")
+	if delay > 0.0: await get_tree().create_timer(delay).timeout
 	
 	$Control / Panel / Label.text = text
 	$Control / Panel / Label.visible = not choices

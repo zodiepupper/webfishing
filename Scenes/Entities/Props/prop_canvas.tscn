@@ -7,13 +7,13 @@
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 5, 5 )
 
-[node name="canvas" type="KinematicBody"]
+[node name="canvas" type="CharacterBody3D"]
 script = ExtResource( 1 )
 delete_on_owner_disconnect = true
 rotation_reset = true
 
-[node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.008, 0.1 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.008, 0.1 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 material/0 = ExtResource( 3 )

@@ -1,7 +1,7 @@
-extends Area
+extends Area3D
 class_name Interactable
 
-export var text = "INTERACT"
+@export var text = "INTERACT"
 
 func _ready():
 	monitoring = false

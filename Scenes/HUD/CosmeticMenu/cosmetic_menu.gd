@@ -7,25 +7,25 @@ var selected_cosmetic = ""
 var selected_category = ""
 var selected_style = 0
 
-onready var grid = $Panel4 / Control / GridContainer
-onready var categories = $Panel4 / Control / categories
-onready var label = $Panel4 / Control / Label
+@onready var grid = $Panel4 / Control / GridContainer
+@onready var categories = $Panel4 / Control / categories
+@onready var label = $Panel4 / Control / Label
 
 signal _cosmetic_update
 
 func _ready():
-	$"%next_style".connect("pressed", self, "_change_style", [1])
-	$"%prev_style".connect("pressed", self, "_change_style", [ - 1])
+	$"%next_style".connect("pressed", Callable(self, "_change_style").bind(1))
+	$"%prev_style".connect("pressed", Callable(self, "_change_style").bind(- 1))
 	
-	PlayerData.connect("_clear_new", self, "_update_new")
+	PlayerData.connect("_clear_new", Callable(self, "_update_new"))
 	
 	_refresh()
 	_change_tab("body")
 	
-	model = preload("res://Scenes/Entities/Player/player.tscn").instance()
+	model = preload("res://Scenes/Entities/Player/player.tscn").instantiate()
 	model.dead_actor = true
 	model.delete_on_owner_disconnect = false
-	$Panel3 / player_view / Viewport.add_child(model)
+	$Panel3 / player_view / SubViewport.add_child(model)
 	model.call_deferred("_change_cosmetics")
 
 func _change_tab(tab):
@@ -71,17 +71,17 @@ func _refresh():
 		var data = Globals.cosmetic_data[cosm]["file"]
 		if not griddata.keys().has(data.category): continue
 		
-		var button = preload("res://Scenes/HUD/CosmeticMenu/cosmetic_button.tscn").instance()
+		var button = preload("res://Scenes/HUD/CosmeticMenu/cosmetic_button.tscn").instantiate()
 		
 		button._setup(cosm)
-		button.connect("pressed", self, "_cosmetic_select", [data.category, cosm])
-		connect("_cosmetic_update", button, "_refresh")
+		button.connect("pressed", Callable(self, "_cosmetic_select").bind(data.category, cosm))
+		connect("_cosmetic_update", Callable(button, "_refresh"))
 		griddata[data.category].add_child(button)
 		
 		bulk += 1
 		if bulk > 8:
 			bulk = 0
-			yield(get_tree(), "idle_frame")
+			await get_tree().idle_frame
 	
 	_update_new()
 

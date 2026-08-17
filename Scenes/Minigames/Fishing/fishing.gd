@@ -23,16 +23,16 @@ var attempts = 0
 
 var shake = 0
 
-onready var cursor = $Control / bar
-onready var bar_top = $Control / frame / bartop
-onready var bar_bot = $Control / frame / barbot
-onready var dead_line = $Control / frame / red
-onready var root = $Control
-onready var bar_wipe = $Control / frame / bar_wipe
-onready var hp_bar = $Control / TextureRect / TextureProgress
-onready var hp_prog = $Control / TextureRect / prog
-onready var bg = $Control / frame / bg
-onready var hplabel = $Control / TextureRect / Label
+@onready var cursor = $Control / bar
+@onready var bar_top = $Control / frame / bartop
+@onready var bar_bot = $Control / frame / barbot
+@onready var dead_line = $Control / frame / red
+@onready var root = $Control
+@onready var bar_wipe = $Control / frame / bar_wipe
+@onready var hp_bar = $Control / TextureRect / TextureProgressBar
+@onready var hp_prog = $Control / TextureRect / prog
+@onready var bg = $Control / frame / bg
+@onready var hplabel = $Control / TextureRect / Label
 
 
 
@@ -59,13 +59,13 @@ func _ready():
 	mode = 0
 	bar_mash = 3
 	
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown1.png")
-	yield(get_tree().create_timer(0.7), "timeout")
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown2.png")
-	yield(get_tree().create_timer(0.7), "timeout")
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown3.png")
-	yield(get_tree().create_timer(0.7), "timeout")
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown4.png")
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown1.png")
+	await get_tree().create_timer(0.7).timeout
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown2.png")
+	await get_tree().create_timer(0.7).timeout
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown3.png")
+	await get_tree().create_timer(0.7).timeout
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown4.png")
 	mode = 1
 
 func _set_diff():
@@ -87,13 +87,13 @@ func _reset():
 	tween.parallel().tween_property(self, "bar_pos", 32.0, 1.0)
 	tween.parallel().tween_property(self, "cursor_pos", 16.0, 1.0)
 	tween.parallel().tween_property(self, "bar_mash", 3.0, 0.5)
-	yield(get_tree().create_timer(1.5), "timeout")
+	await get_tree().create_timer(1.5).timeout
 	mode = 1
 
 func _physics_process(delta):
 	if mode != 0:
 		$Control2.modulate.a = lerp($Control2.modulate.a, 0.0, 0.08)
-		$Control2 / Panel.rect_position.x = lerp($Control2 / Panel.rect_position.x, - 100, 0.08)
+		$Control2 / Panel.position.x = lerp($Control2 / Panel.position.x, - 100, 0.08)
 	
 	if mode == 1:
 		
@@ -107,20 +107,20 @@ func _physics_process(delta):
 		
 		
 		var leeway = 6
-		bg.material.set_shader_param("offset", Vector2(0, bar_pos))
+		bg.material.set_shader_parameter("offset", Vector2(0, bar_pos))
 		
 		var in_zone = cursor_pos > (bar_pos - leeway) and cursor_pos < (bar_pos + bar_size + leeway)
 		
 		if cur_pull <= 0:
 			if in_zone:
-				bg.material.set_shader_param("motion", Vector2( - 32, - 32))
+				bg.material.set_shader_parameter("motion", Vector2( - 32, - 32))
 				bar_pos += pl_speed
 			else:
-				bg.material.set_shader_param("motion", Vector2(16, 16))
+				bg.material.set_shader_parameter("motion", Vector2(16, 16))
 				bar_pos -= 1.2
 			
 			if randf() <= (dif_chance + (dif_chance * (bar_pos / 495))) and dead_zone > 0.0:
-				cur_pull = rand_range(5, dif_length)
+				cur_pull = randf_range(5, dif_length)
 		
 		else:
 			bar_pos -= dif_speed if in_zone else dif_speed * 0.5
@@ -147,10 +147,10 @@ func _physics_process(delta):
 	if dead_zone - 10 > bar_pos:
 		_dead()
 	
-	cursor.margin_top = 272 + cursor_pos
-	bar_top.rect_size.y = 15 + bar_pos
-	bar_bot.rect_size.y = 505 - bar_pos - bar_size
-	bar_bot.rect_position.y = 15 + bar_pos + bar_size
+	cursor.offset_top = 272 + cursor_pos
+	bar_top.size.y = 15 + bar_pos
+	bar_bot.size.y = 505 - bar_pos - bar_size
+	bar_bot.position.y = 15 + bar_pos + bar_size
 	dead_line.value = dead_zone
 	bar_wipe.anchor_left = lerp(bar_wipe.anchor_left, (float(bar_mash) / 3.0), 0.8)
 	hp_bar.value = health
@@ -158,7 +158,7 @@ func _physics_process(delta):
 	
 	hplabel.text = str(ceil(health))
 	
-	root.rect_position.x = sin(OS.get_ticks_msec() * 0.02) * shake
+	root.position.x = sin(Time.get_ticks_msec() * 0.02) * shake
 	shake = lerp(shake, 0.0, 0.2)
 
 func _reached_end():
@@ -168,12 +168,12 @@ func _reached_end():
 		shake = 15.0
 		$Panel.show()
 		$Panel / TextureRect.texture = preload("res://Assets/Textures/UI/winmsg1.png")
-		yield(get_tree().create_timer(1.0), "timeout")
+		await get_tree().create_timer(1.0).timeout
 		_end(true)
 		return
 	
 	shake = 15.0
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	attempts += 1
 	_set_diff()
 	_reset()
@@ -184,5 +184,5 @@ func _dead():
 	
 	$Panel.show()
 	$Panel / TextureRect.texture = preload("res://Assets/Textures/UI/winmsg2.png")
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	_end(false)

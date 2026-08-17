@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/drink.ogg-7fa37d61467a2edbc5a92ec4c3fb488a.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djd6l8u4q26bf"
+path="res://.godot/imported/drink.ogg-7fa37d61467a2edbc5a92ec4c3fb488a.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/drink.ogg"
-dest_files=[ "res://.import/drink.ogg-7fa37d61467a2edbc5a92ec4c3fb488a.oggstr" ]
+dest_files=["res://.godot/imported/drink.ogg-7fa37d61467a2edbc5a92ec4c3fb488a.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

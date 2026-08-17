@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/Q.ogg-256d6d54fd9723b149e6186eb36a7efc.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://w845ymjwx0ax"
+path="res://.godot/imported/Q.ogg-256d6d54fd9723b149e6186eb36a7efc.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Voice/NewVoice/Q.ogg"
-dest_files=[ "res://.import/Q.ogg-256d6d54fd9723b149e6186eb36a7efc.oggstr" ]
+dest_files=["res://.godot/imported/Q.ogg-256d6d54fd9723b149e6186eb36a7efc.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

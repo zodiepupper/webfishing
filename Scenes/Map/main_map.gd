@@ -1,7 +1,7 @@
-extends Spatial
+extends Node3D
 
-onready var spawn_position = $spawn_position
-onready var tutorial_spawn_position = $tutorial_spawn_position
+@onready var spawn_position = $spawn_position
+@onready var tutorial_spawn_position = $tutorial_spawn_position
 
 func _set_zone(id):
 	for child in $zones.get_children():

@@ -6,20 +6,20 @@
 [ext_resource path="res://Assets/Themes/button_tan_normal.tres" type="StyleBox" id=4]
 [ext_resource path="res://Assets/Themes/button_tan_pressed.tres" type="StyleBox" id=5]
 [ext_resource path="res://Assets/Themes/button_tan_hover.tres" type="StyleBox" id=6]
-[ext_resource path="res://Assets/Themes/accid___.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Assets/Textures/UI/lamdev.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Themes/accid___.ttf" type="FontFile" id=7]
+[ext_resource path="res://Assets/Textures/UI/lamdev.png" type="Texture2D" id=8]
 [ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=9]
 
 [sub_resource type="Gradient" id=2]
 interpolation_mode = 2
-offsets = PoolRealArray( 0, 0.597668 )
-colors = PoolColorArray( 1, 0.933333, 0.835294, 1, 1, 1, 1, 0 )
+offsets = PackedFloat32Array( 0, 0.597668 )
+colors = PackedColorArray( 1, 0.933333, 0.835294, 1, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture2D" id=3]
 gradient = SubResource( 2 )
 fill_to = Vector2( 0, 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="FontFile" id=4]
 size = 34
 font_data = ExtResource( 7 )
 
@@ -54,20 +54,20 @@ anchor_bottom = 0.72
 alignment = 1
 
 [node name="resume" type="Button" parent="VBoxContainer"]
-margin_right = 460.0
-margin_bottom = 52.0
+offset_right = 460.0
+offset_bottom = 52.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Resume"
 script = ExtResource( 9 )
 
@@ -79,21 +79,21 @@ header = "[color=#6a4420]Resume"
 body = "Unpause the game!"
 
 [node name="code_show" type="Button" parent="VBoxContainer"]
-margin_top = 56.0
-margin_right = 460.0
-margin_bottom = 109.0
+offset_top = 56.0
+offset_right = 460.0
+offset_bottom = 109.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Show Lobby Code"
 script = ExtResource( 9 )
 
@@ -106,15 +106,15 @@ body = "Shows the current game's code, allowing you to send to friends to join!"
 
 [node name="code_display" type="HBoxContainer" parent="VBoxContainer"]
 visible = false
-margin_top = 65.0
-margin_right = 384.0
-margin_bottom = 127.0
+offset_top = 65.0
+offset_right = 384.0
+offset_bottom = 127.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="VBoxContainer/code_display"]
-margin_right = 292.0
-margin_bottom = 62.0
+offset_right = 292.0
+offset_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -126,22 +126,22 @@ align = 1
 valign = 1
 
 [node name="copy_paste" type="Button" parent="VBoxContainer/code_display"]
-margin_left = 296.0
-margin_right = 384.0
-margin_bottom = 62.0
+offset_left = 296.0
+offset_right = 384.0
+offset_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Copy"
 script = ExtResource( 9 )
 
@@ -153,21 +153,21 @@ header = "Copy Lobby Code"
 body = "Copies the lobby code to your clipboard."
 
 [node name="invite_friends" type="Button" parent="VBoxContainer"]
-margin_top = 113.0
-margin_right = 460.0
-margin_bottom = 166.0
+offset_top = 113.0
+offset_right = 460.0
+offset_bottom = 166.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Invite Friends"
 script = ExtResource( 9 )
 
@@ -179,21 +179,21 @@ header = "Invite Friends"
 body = "Open the Steam Invitation menu to invite your friends to the game!"
 
 [node name="spawn" type="Button" parent="VBoxContainer"]
-margin_top = 170.0
-margin_right = 460.0
-margin_bottom = 223.0
+offset_top = 170.0
+offset_right = 460.0
+offset_bottom = 223.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Return to Spawn"
 script = ExtResource( 9 )
 
@@ -205,21 +205,21 @@ header = "Return to Spawn"
 body = "Sends you back to the Hub at spawn."
 
 [node name="settings" type="Button" parent="VBoxContainer"]
-margin_top = 227.0
-margin_right = 460.0
-margin_bottom = 280.0
+offset_top = 227.0
+offset_right = 460.0
+offset_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Settings"
 script = ExtResource( 9 )
 
@@ -231,28 +231,28 @@ header = "Settings"
 body = "Tweak game settings to your liking!"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-margin_top = 284.0
-margin_right = 460.0
-margin_bottom = 304.0
-custom_constants/separation = 20
-custom_styles/separator = SubResource( 5 )
+offset_top = 284.0
+offset_right = 460.0
+offset_bottom = 304.0
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource( 5 )
 
 [node name="save" type="Button" parent="VBoxContainer"]
-margin_top = 308.0
-margin_right = 460.0
-margin_bottom = 361.0
+offset_top = 308.0
+offset_right = 460.0
+offset_bottom = 361.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Save Game"
 script = ExtResource( 9 )
 
@@ -264,21 +264,21 @@ header = "Save Game"
 body = "Forcefully save the game. (Game automatically saves every 5 minutes while playing.)"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
-margin_top = 365.0
-margin_right = 460.0
-margin_bottom = 418.0
+offset_top = 365.0
+offset_right = 460.0
+offset_bottom = 418.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Save and Quit To Main Menu"
 script = ExtResource( 9 )
 
@@ -290,21 +290,21 @@ header = "Save and Quit To Menu"
 body = "Save the game, and return to the main menu."
 
 [node name="quit_total" type="Button" parent="VBoxContainer"]
-margin_top = 422.0
-margin_right = 460.0
-margin_bottom = 475.0
+offset_top = 422.0
+offset_right = 460.0
+offset_bottom = 475.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color_disabled = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_focus = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-custom_colors/font_color_hover = Color( 1, 0.933333, 0.835294, 1 )
-custom_colors/font_color_pressed = Color( 1, 0.933333, 0.835294, 1 )
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/disabled = ExtResource( 5 )
-custom_styles/normal = ExtResource( 4 )
+theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_fonts/font = SubResource( 4 )
+theme_override_styles/hover = ExtResource( 6 )
+theme_override_styles/pressed = ExtResource( 5 )
+theme_override_styles/disabled = ExtResource( 5 )
+theme_override_styles/normal = ExtResource( 4 )
 text = "Save and Quit To Desktop"
 script = ExtResource( 9 )
 
@@ -320,27 +320,27 @@ anchor_left = 0.753646
 anchor_top = 0.946296
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -16.0
-margin_bottom = -16.0
+offset_right = -16.0
+offset_bottom = -16.0
 alignment = 2
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-margin_left = 252.0
-margin_top = 4.0
-margin_right = 410.0
-margin_bottom = 38.0
-custom_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+offset_left = 252.0
+offset_top = 4.0
+offset_right = 410.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
 text = "lamedeveloper"
 align = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-margin_left = 414.0
-margin_right = 456.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 42, 42 )
+offset_left = 414.0
+offset_right = 456.0
+offset_bottom = 42.0
+custom_minimum_size = Vector2( 42, 42 )
 texture = ExtResource( 8 )
 expand = true
 stretch_mode = 6

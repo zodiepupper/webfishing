@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/ambience.wav-d9b0b5f5d6af4766d0cc28dd6c0e40dd.sample"
+type="AudioStreamWAV"
+uid="uid://c24ibg1vvew6q"
+path="res://.godot/imported/ambience.wav-d9b0b5f5d6af4766d0cc28dd6c0e40dd.sample"
 
 [deps]
 
 source_file="res://Sounds/Old/ambience.wav"
-dest_files=[ "res://.import/ambience.wav-d9b0b5f5d6af4766d0cc28dd6c0e40dd.sample" ]
+dest_files=["res://.godot/imported/ambience.wav-d9b0b5f5d6af4766d0cc28dd6c0e40dd.sample"]
 
 [params]
 

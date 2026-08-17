@@ -25,11 +25,11 @@ func _setup_controlled():
 	offs = randi() % 2000
 	anchor = global_transform.origin
 	global_transform.origin = anchor + Vector3(
-			rand_range( - wander_x, wander_x), 
-			rand_range( - wander_y, wander_y), 
-			rand_range( - wander_x, wander_x))
-	PlayerData.connect("_aquarium_update", self, "_host_change_id")
-	Network.connect("_new_player_join", self, "_host_change_id")
+			randf_range( - wander_x, wander_x), 
+			randf_range( - wander_y, wander_y), 
+			randf_range( - wander_x, wander_x))
+	PlayerData.connect("_aquarium_update", Callable(self, "_host_change_id"))
+	Network.connect("_new_player_join", Callable(self, "_host_change_id"))
 
 func _host_change_id():
 	if not controlled: return
@@ -37,7 +37,7 @@ func _host_change_id():
 	_change_id(PlayerData.saved_aqua_fish)
 
 func _change_id(new):
-	if new == {} or new.empty():
+	if new == {} or new.is_empty():
 		new["id"] = "empty"
 		new["quality"] = 0
 	
@@ -77,15 +77,15 @@ func _process_movement(delta):
 	if cooldown <= 0:
 		cooldown = randi() % 700 + 30
 		destination = anchor + Vector3(
-			rand_range( - wander_x, wander_x), 
-			rand_range( - wander_y, wander_y), 
-			rand_range( - wander_x, wander_x))
+			randf_range( - wander_x, wander_x), 
+			randf_range( - wander_y, wander_y), 
+			randf_range( - wander_x, wander_x))
 		flip = randf() < 0.5
 		offs = randi() % 2000
 	
 	if alive:
-		var t = OS.get_ticks_msec() + offs
-		var t2 = OS.get_ticks_msec() + offs + 1000
+		var t = Time.get_ticks_msec() + offs
+		var t2 = Time.get_ticks_msec() + offs + 1000
 		
 		mult = lerp(mult, global_transform.origin.distance_to(destination) * 0.2, 0.7)
 		global_transform.origin = global_transform.origin.move_toward(destination, delta * speed * mult)

@@ -2,8 +2,8 @@ extends Control
 
 var held_data = []
 
-onready var player_name = $Panel / HBoxContainer / RichTextLabel
-onready var ping_label = $Panel / HBoxContainer / member / ping
+@onready var player_name = $Panel / HBoxContainer / RichTextLabel
+@onready var ping_label = $Panel / HBoxContainer / member / ping
 
 func _setup(data, type = 0):
 	held_data = data

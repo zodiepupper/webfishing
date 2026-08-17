@@ -1,8 +1,8 @@
 extends Button
 
-export var force_hotkey = - 1
-export var dim_when_unequipped = false
-export var refresh_on_resize = false
+@export var force_hotkey = - 1
+@export var dim_when_unequipped = false
+@export var refresh_on_resize = false
 
 var slot = 0
 var highlighted = false
@@ -11,18 +11,18 @@ var new_ref = 0
 var saved_ref = 0
 var last_equipped = 0
 
-onready var hotkey_node = $root / Panel / hotkey
-onready var hotkey_panel = $root / Panel
-onready var star = $root / locked
+@onready var hotkey_node = $root / Panel / hotkey
+@onready var hotkey_panel = $root / Panel
+@onready var star = $root / locked
 
 signal _right_click
 
 func _ready():
 	_highlight(false)
-	PlayerData.connect("_hotbar_refresh", self, "_update")
-	PlayerData.connect("_inventory_refresh", self, "_update")
-	PlayerData.connect("_item_equip", self, "_equip_update")
-	if refresh_on_resize: get_tree().get_root().connect("size_changed", self, "_equip_refresh")
+	PlayerData.connect("_hotbar_refresh", Callable(self, "_update"))
+	PlayerData.connect("_inventory_refresh", Callable(self, "_update"))
+	PlayerData.connect("_item_equip", Callable(self, "_equip_update"))
+	if refresh_on_resize: get_tree().get_root().connect("size_changed", Callable(self, "_equip_refresh"))
 
 func _setup_item(ref):
 	saved_ref = ref
@@ -54,7 +54,7 @@ func _update():
 	
 	$root / tooltip_node.body = desc + sizetext + worthtext
 	
-	var mat = $root / quality.get("custom_styles/panel")
+	var mat = $root / quality.get("theme_override_styles/panel")
 	mat.border_color = PlayerData.QUALITY_DATA[idata["quality"]].color
 	$root / quality.visible = idata["quality"] > 0
 	
@@ -85,11 +85,11 @@ func _equip_update(ref):
 	_equip_refresh()
 
 func _equip_refresh():
-	yield(get_tree(), "idle_frame")
+	await get_tree().idle_frame
 	$root / ColorRect.visible = saved_ref == new_ref
 	var t = 0.9 if dim_when_unequipped and saved_ref != new_ref else 1.0
-	rect_scale.x = 0.8 if dim_when_unequipped and saved_ref != new_ref else 1.0
-	rect_scale.y = 0.8 if dim_when_unequipped and saved_ref != new_ref else 1.0
+	scale.x = 0.8 if dim_when_unequipped and saved_ref != new_ref else 1.0
+	scale.y = 0.8 if dim_when_unequipped and saved_ref != new_ref else 1.0
 
 func _highlight(toggle):
 	$root / ColorRect.visible = toggle

@@ -1,7 +1,7 @@
 extends Minigame
 
-onready var tilemap = $Node2D / TileMap
-onready var root = $Node2D
+@onready var tilemap = $Node2D / TileMap
+@onready var root = $Node2D
 
 var brush_size = 3
 var step_size = 3
@@ -15,7 +15,7 @@ var won = false
 var scratching = 0
 
 func _ready():
-	$Node2D / Sprite.frame = params["type"]
+	$Node2D / Sprite2D.frame = params["type"]
 	
 	GlobalAudio._play_sound("ui_open")
 	print("CREATING LOTTO TICKET")
@@ -51,22 +51,22 @@ func _ready():
 		child._setup(params["type"])
 	
 	for scratch in get_tree().get_nodes_in_group("scratch_spot"):
-		scratch.connect("_scratched", self, "_slot_scratched")
+		scratch.connect("_scratched", Callable(self, "_slot_scratched"))
 	
 	$AnimationPlayer.play("intro")
 
 func _physics_process(delta):
 	if Input.is_action_pressed("primary_action"):
 		if last_pos == Vector2.INF: return
-		var pos = tilemap.world_to_map(root.get_global_mouse_position() - tilemap.global_position)
+		var pos = tilemap.local_to_map(root.get_global_mouse_position() - tilemap.global_position)
 		_scratch(pos, last_pos)
 		last_pos = pos
 	else:
-		var pos = tilemap.world_to_map(root.get_global_mouse_position() - tilemap.global_position)
+		var pos = tilemap.local_to_map(root.get_global_mouse_position() - tilemap.global_position)
 		last_pos = pos
 	
 	if scratching > 0: scratching -= 1
-	$scratching.volume_db = lerp($scratching.volume_db, linear2db(0.2 if scratching > 0 else 0.01), 0.2)
+	$scratching.volume_db = lerp($scratching.volume_db, linear_to_db(0.2 if scratching > 0 else 0.01), 0.2)
 	if not $scratching.playing and $scratching.volume_db > - 30: $scratching.playing = true
 	if $scratching.playing and $scratching.volume_db < - 30: $scratching.playing = false
 
@@ -97,7 +97,7 @@ func _slot_scratched():
 				won = true
 				scratch._win_ping()
 				GlobalAudio._play_sound("short_win")
-				yield(get_tree().create_timer(0.4), "timeout")
+				await get_tree().create_timer(0.4).timeout
 		
 		if not won:
 			PlayerData._send_notification("You didnt win anything! Better luck next time...", 1)

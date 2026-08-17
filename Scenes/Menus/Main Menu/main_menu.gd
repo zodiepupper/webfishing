@@ -12,25 +12,25 @@ var lobby_search_sort = LOBBY_SORT.PLAYER_HIGH
 var lobby_filters_shown = false
 var lobby_names_shown = true
 
-onready var code = $lobby_browser / Panel / code_join / HBoxContainer / serv_options
-onready var dial = $lobby_browser / Panel / lobbies / TextureRect / Control / dial
-onready var playercount_dial = $lobby_browser / Panel / filters / ScrollContainer / HBoxContainer / VBoxContainer / playercount_filters / dial
+@onready var code = $lobby_browser / Panel / code_join / HBoxContainer / serv_options
+@onready var dial = $lobby_browser / Panel / lobbies / TextureRect / Control / dial
+@onready var playercount_dial = $lobby_browser / Panel / filters / ScrollContainer / HBoxContainer / VBoxContainer / playercount_filters / dial
 
 signal _name_toggle(toggle)
 signal _button_disable
 
 func _ready():
 	Network.set_rich_presence("#menu")
-	Network.connect("_webfishing_lobbies_returned", self, "_lobby_list_returned")
-	Network.connect("_menu_button_disable", self, "_disable_buttons")
+	Network.connect("_webfishing_lobbies_returned", Callable(self, "_lobby_list_returned"))
+	Network.connect("_menu_button_disable", Callable(self, "_disable_buttons"))
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	$HBoxContainer / Label.text = "lamedeveloper v" + str(Globals.GAME_VERSION)
 	
 	for child in $VBoxContainer.get_children():
 		if child is Button:
-			child.connect("mouse_entered", self, "_hover_button", [child])
-			child.connect("mouse_exited", self, "_exit_button", [child])
+			child.connect("mouse_entered", Callable(self, "_hover_button").bind(child))
+			child.connect("mouse_exited", Callable(self, "_exit_button").bind(child))
 			child.add_to_group("menu_button")
 	
 	for lobby_type in Network.LOBBY_TYPE_DATA.keys():
@@ -49,12 +49,12 @@ func _ready():
 	_close_create_screen()
 	_close_tag_menu()
 	
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	Network._lobby_join_prompted(Network.JOIN_ID_PROMPT)
 
 func _process(delta):
-	$TextureRect.margin_top = sin(OS.get_ticks_msec() * 0.001) * 8
-	$TextureRect.margin_bottom = sin(OS.get_ticks_msec() * 0.001) * 8
+	$TextureRect.offset_top = sin(Time.get_ticks_msec() * 0.001) * 8
+	$TextureRect.offset_bottom = sin(Time.get_ticks_msec() * 0.001) * 8
 	
 	
 	
@@ -126,7 +126,7 @@ func _refresh_lobbies():
 	var lob = $lobby_browser / Panel / lobbies / ScrollContainer / VBoxContainer
 	for child in lob.get_children(): child.queue_free()
 	
-	yield(get_tree().create_timer(0.2), "timeout")
+	await get_tree().create_timer(0.2).timeout
 	print("Requesting a lobby list")
 	
 	dial.show()
@@ -173,9 +173,9 @@ func _lobby_list_returned(lobbies):
 	var sorted_list = validated_list.duplicate()
 	
 	match lobby_search_sort:
-		LOBBY_SORT.PLAYER_HIGH: sorted_list.sort_custom(self, "_lobby_sort_high")
-		LOBBY_SORT.PLAYER_LOW: sorted_list.sort_custom(self, "_lobby_sort_low")
-		LOBBY_SORT.RANDOM: sorted_list.sort_custom(self, "_lobby_sort_random")
+		LOBBY_SORT.PLAYER_HIGH: sorted_list.sort_custom(Callable(self, "_lobby_sort_high"))
+		LOBBY_SORT.PLAYER_LOW: sorted_list.sort_custom(Callable(self, "_lobby_sort_low"))
+		LOBBY_SORT.RANDOM: sorted_list.sort_custom(Callable(self, "_lobby_sort_random"))
 	
 	for entry in sorted_list:
 		var lobby = entry[0]
@@ -198,14 +198,14 @@ func _lobby_list_returned(lobbies):
 		
 		if int(lobby_cap) > 12: lobby_tags.append("modded")
 		
-		var lb = preload("res://Scenes/Menus/Main Menu/ServerButton/server_button.tscn").instance()
+		var lb = preload("res://Scenes/Menus/Main Menu/ServerButton/server_button.tscn").instantiate()
 		lb.label_toggle = lobby_names_shown
 		lb._setup(lobby_name, lobby_custom_name, lobby_num_members, lobby_num_members_total, lobby_cap, lobby_tags, dated, lobb_request)
 		lob.add_child(lb)
-		lb.connect("_pressed", self, "_join_lobby", [lobby])
-		connect("_button_disable", lb, "_disable")
+		lb.connect("_pressed", Callable(self, "_join_lobby").bind(lobby))
+		connect("_button_disable", Callable(lb, "_disable"))
 		
-		connect("_name_toggle", lb, "_label_toggle")
+		connect("_name_toggle", Callable(lb, "_label_toggle"))
 	
 	print(lobbies.size(), " found.")
 	dial.hide()
@@ -238,11 +238,11 @@ func _join_lobby(id):
 	
 	if is_mature:
 		PopupMessage._show_popup("The lobby you're attempting to join has been marked as 'Mature'. By clicking 'Accept' you are aware this lobby's discussions could contain adult topics.", 0.0, true)
-		var choice = yield(PopupMessage, "_choice_made")
+		var choice = await PopupMessage._choice_made
 		if not choice: return
 	if is_modded:
 		PopupMessage._show_popup("The lobby you're attempting to join has been marked as 'Modded'. By clicking 'Accept' you are aware this lobby's gameplay could not be accurate to a typical, intended gameplay experience.", 0.0, true)
-		var choice = yield(PopupMessage, "_choice_made")
+		var choice = await PopupMessage._choice_made
 		if not choice: return
 	
 	Network._connect_to_lobby(id)
@@ -296,12 +296,12 @@ func _on_filter_mature_pressed():
 	if not $"%filter_mature".pressed: return
 	
 	PopupMessage._show_popup("By enabling this you accept that lobbies shown may contain adult topics.", 0.0, true)
-	var accepted = yield(PopupMessage, "_choice_made")
-	if not accepted: $"%filter_mature".pressed = false
+	var accepted = await PopupMessage._choice_made
+	if not accepted: $"%filter_mature".button_pressed = false
 
 func _on_filter_modded_pressed():
 	if not $"%filter_modded".pressed: return
 	
 	PopupMessage._show_popup("By enabling this you accept that lobbies shown may not work properly on your device.", 0.0, true)
-	var accepted = yield(PopupMessage, "_choice_made")
-	if not accepted: $"%filter_modded".pressed = false
+	var accepted = await PopupMessage._choice_made
+	if not accepted: $"%filter_modded".button_pressed = false

@@ -1,15 +1,15 @@
-extends Spatial
+extends Node3D
 class_name WaterMain
 
-export (Material) var water_replace
-onready var water = $main
-onready var vis_notif = $VisibilityNotifier
+@export var water_replace: Material
+@onready var water = $main
+@onready var vis_notif = $VisibleOnScreenNotifier3D
 
 func _ready():
-	vis_notif.connect("screen_entered", self, "_screen_entered")
-	vis_notif.connect("screen_exited", self, "_screen_exited")
+	vis_notif.connect("screen_entered", Callable(self, "_screen_entered"))
+	vis_notif.connect("screen_exited", Callable(self, "_screen_exited"))
 	
-	OptionsMenu.connect("_options_update", self, "_mat_check")
+	OptionsMenu.connect("_options_update", Callable(self, "_mat_check"))
 	_mat_check()
 
 func _mat_check():

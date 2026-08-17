@@ -11,8 +11,8 @@ var default_fog = 125
 var default_fog_end = 500
 
 func _ready():
-	PlayerData.connect("_rain_toggle", self, "_rain_env")
-	OptionsMenu.connect("_options_update", self, "_dist_update")
+	PlayerData.connect("_rain_toggle", Callable(self, "_rain_env"))
+	OptionsMenu.connect("_options_update", Callable(self, "_dist_update"))
 	_dist_update()
 
 func _physics_process(delta):
@@ -25,7 +25,7 @@ func _physics_process(delta):
 	environment.ambient_light_color = lerp(environment.ambient_light_color, des_color, lerp_val)
 	environment.fog_color = lerp(environment.fog_color, des_color, lerp_val)
 	
-	$DirectionalLight.light_energy = lerp($DirectionalLight.light_energy, des_light, lerp_val)
+	$DirectionalLight3D.light_energy = lerp($DirectionalLight3D.light_energy, des_light, lerp_val)
 
 func _rain_env(toggle, force = false):
 	if toggle == rain and not force: return

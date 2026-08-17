@@ -10,6 +10,6 @@ func _controlled_process(delta):
 		_deinstantiate(true)
 
 func _physics_process(delta):
-	$MeshInstance.visible = lifetime > 1500
+	$MeshInstance3D.visible = lifetime > 1500
 	$MeshInstance2.visible = lifetime > 500 and lifetime <= 1500
 	$MeshInstance3.visible = lifetime <= 500

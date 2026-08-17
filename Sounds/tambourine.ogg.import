@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/tambourine.ogg-1e81ae7e9e549a448d95115e941ca693.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buhtlcyc6ence"
+path="res://.godot/imported/tambourine.ogg-1e81ae7e9e549a448d95115e941ca693.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/tambourine.ogg"
-dest_files=[ "res://.import/tambourine.ogg-1e81ae7e9e549a448d95115e941ca693.oggstr" ]
+dest_files=["res://.godot/imported/tambourine.ogg-1e81ae7e9e549a448d95115e941ca693.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

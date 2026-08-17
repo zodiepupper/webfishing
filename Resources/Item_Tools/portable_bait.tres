@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Textures/Items/toolicons63.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Items/toolicons63.png" type="Texture2D" id=1]
 [ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=2]
 
 [resource]

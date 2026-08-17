@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 var emoting = false
 
@@ -19,7 +19,7 @@ var emote_time = 0
 var reset_time = 60
 var used_mouths = []
 
-onready var blink_texture = preload("res://Assets/Textures/Face/eyes_base2.png")
+@onready var blink_texture = preload("res://Assets/Textures/Face/eyes_base2.png")
 
 func _physics_process(delta):
 	if reset_time > 0:
@@ -94,7 +94,7 @@ func _setup_face(data):
 	_update_mouth()
 
 func _on_blink_timer_timeout():
-	$blink_timer.wait_time = rand_range(2.0, 10.0)
+	$blink_timer.wait_time = randf_range(2.0, 10.0)
 	if not eye_blink: return
 	
 	var double = false

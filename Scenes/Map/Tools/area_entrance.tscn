@@ -2,5 +2,5 @@
 
 [ext_resource path="res://Scenes/Map/Tools/area_entrance.gd" type="Script" id=1]
 
-[node name="area_entrance" type="Position3D"]
+[node name="area_entrance" type="Marker3D"]
 script = ExtResource( 1 )

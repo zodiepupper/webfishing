@@ -13,7 +13,7 @@ const SETUPS = {
 	"boat": preload("res://Scenes/HUD/Shop/ShopSetups/boat_shop.tscn"), 
 }
 
-export (NodePath) var hud
+@export var hud: NodePath
 
 var cash_lerp = 0
 var shown = false
@@ -24,16 +24,16 @@ var refresh_type = 0
 var main_setup = null
 var dialogue_voice = null
 
-onready var category_holder = $"%VBoxContainer"
-onready var cash = $Panel2 / HBoxContainer / cash
-onready var timer = $Panel2 / HBoxContainer / timer
-onready var dialogue_box = $dialogue / RichTextLabel
+@onready var category_holder = $"%VBoxContainer"
+@onready var cash = $Panel2 / HBoxContainer / cash
+@onready var timer = $Panel2 / HBoxContainer / timer
+@onready var dialogue_box = $dialogue / RichTextLabel
 
 func _ready():
-	PlayerData.connect("_shop_refresh", self, "_force_refresh")
-	PlayerData.connect("_quest_update", self, "_force_quest_refresh")
-	PlayerData.connect("_upgrade_update", self, "_upgrade_refresh")
-	PlayerData.connect("_float_number", self, "_float_number")
+	PlayerData.connect("_shop_refresh", Callable(self, "_force_refresh"))
+	PlayerData.connect("_quest_update", Callable(self, "_force_quest_refresh"))
+	PlayerData.connect("_upgrade_update", Callable(self, "_upgrade_refresh"))
+	PlayerData.connect("_float_number", Callable(self, "_float_number"))
 
 func _open(id):
 	shown = true
@@ -55,13 +55,13 @@ func _process(delta):
 	cash_lerp = lerp(cash_lerp, PlayerData.money, 0.2)
 	var cash = (str(round(cash_lerp))).pad_zeros(9)
 	cash = cash.insert(cash.length() - str(PlayerData.money).length(), "[color=#ffeed5]")
-	$Panel2 / HBoxContainer2 / cash / Label.bbcode_text = "[right][color=#ffeed5]$ [color=#d5aa73]" + cash
+	$Panel2 / HBoxContainer2 / cash / Label.text = "[right][color=#ffeed5]$ [color=#d5aa73]" + cash
 	
-	var mod = 0.6 + (sin(OS.get_ticks_msec() * 0.005) * 0.4)
+	var mod = 0.6 + (sin(Time.get_ticks_msec() * 0.005) * 0.4)
 	$scroll_down.self_modulate.a = mod
 	$scroll_up.self_modulate.a = mod
 	
-	var scrollV_max = max(0, $"%HBoxContainer".rect_size.y - $"%ScrollContainer".rect_size.y)
+	var scrollV_max = max(0, $"%HBoxContainer".size.y - $"%ScrollContainer".size.y)
 	var scroll = $"%ScrollContainer".scroll_vertical
 	$scroll_down.visible = scroll < scrollV_max
 	$scroll_up.visible = scroll > 0
@@ -83,7 +83,7 @@ func _setup_shop(id):
 		main_setup = null
 	
 	
-	var setup = SETUPS[id].instance()
+	var setup = SETUPS[id].instantiate()
 	add_child(setup)
 	
 	main_setup = setup
@@ -112,10 +112,10 @@ func _add_category(node):
 		var lbl = $category_template / sublabel.duplicate()
 		
 		if node.include_sell_all:
-			var hbox = preload("res://Scenes/HUD/Shop/sell_all_button.tscn").instance()
+			var hbox = preload("res://Scenes/HUD/Shop/sell_all_button.tscn").instantiate()
 			hbox.add_child(lbl)
 			hbox.move_child(lbl, 0)
-			hbox.connect("_sell_all", self, "_sell_all")
+			hbox.connect("_sell_all", Callable(self, "_sell_all"))
 			category_holder.add_child(hbox)
 		else:
 			category_holder.add_child(lbl)
@@ -153,19 +153,19 @@ func _add_category(node):
 				node.remove_child(child)
 				grid.add_child(child)
 				child.hud = get_node(hud)
-				child.connect("mouse_entered", self, "_item_entered", [child])
-				child.connect("_used", self, "_slot_used")
+				child.connect("mouse_entered", Callable(self, "_item_entered").bind(child))
+				child.connect("_used", Callable(self, "_slot_used"))
 		
 		1:
 			for item in PlayerData.current_shop:
-				var button = preload("res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn").instance()
+				var button = preload("res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn").instantiate()
 				button.set_script(preload("res://Scenes/HUD/Shop/ShopButtons/button_cosmetic_unlock.gd"))
 				button.cosmetic_unlock = item
 				button.cost = Globals.cosmetic_data[item]["file"].cost
 				grid.add_child(button)
 				button.hud = get_node(hud)
-				button.connect("mouse_entered", self, "_item_entered", [button])
-				button.connect("_used", self, "_slot_used")
+				button.connect("mouse_entered", Callable(self, "_item_entered").bind(button))
+				button.connect("_used", Callable(self, "_slot_used"))
 		
 		2:
 			print("Sell Setup")
@@ -183,23 +183,23 @@ func _add_category(node):
 			
 			for quest in final_order:
 				var data = PlayerData.current_quests[quest]
-				var button = preload("res://Scenes/HUD/Shop/quest_button.tscn").instance()
+				var button = preload("res://Scenes/HUD/Shop/quest_button.tscn").instantiate()
 				button._setup(quest, alt)
-				button.connect("pressed", self, "_quest_pressed", [quest])
+				button.connect("pressed", Callable(self, "_quest_pressed").bind(quest))
 				grid.add_child(button)
 				alt = not alt
 		
 		4:
 			for bait in PlayerData.bait_unlocked:
 				if bait == "": continue
-				var button = preload("res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn").instance()
+				var button = preload("res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn").instantiate()
 				button.set_script(preload("res://Scenes/HUD/Shop/ShopButtons/button_bait_add.gd"))
 				button.bait_add = bait
 				
 				grid.add_child(button)
 				button.hud = get_node(hud)
-				button.connect("mouse_entered", self, "_item_entered", [button])
-				button.connect("_used", self, "_slot_used")
+				button.connect("mouse_entered", Callable(self, "_item_entered").bind(button))
+				button.connect("_used", Callable(self, "_slot_used"))
 	
 	
 	var sep = $category_template / HSeparator.duplicate()
@@ -209,8 +209,8 @@ func _add_category(node):
 
 func _item_entered(node):
 	$Panel5 / item_display._setup_nonitem(node.icon)
-	$Panel3 / header.bbcode_text = str(node.slot_name)
-	$Panel3 / body.bbcode_text = str(node.slot_desc)
+	$Panel3 / header.text = str(node.slot_name)
+	$Panel3 / body.text = str(node.slot_desc)
 
 
 
@@ -234,7 +234,7 @@ func _on_Button_pressed():
 
 
 func _float_number(text, color, dir, pos):
-	var fn = preload("res://Scenes/HUD/Shop/FloatNumber/float_number.tscn").instance()
+	var fn = preload("res://Scenes/HUD/Shop/FloatNumber/float_number.tscn").instantiate()
 	add_child(fn)
 	fn.global_position = pos
 	fn._setup(text, color, dir)
@@ -248,18 +248,18 @@ func _slot_used():
 
 func _set_dialogue(text):
 	dialogue_box.visible_characters = 0
-	dialogue_box.bbcode_text = text
+	dialogue_box.text = text
 
 func _dialogue_update():
 	dialogue_box.visible_characters += 1
-	if dialogue_box.visible_characters <= dialogue_box.bbcode_text.length() and dialogue_voice:
-		var letter = dialogue_box.bbcode_text[dialogue_box.visible_characters - 1]
+	if dialogue_box.visible_characters <= dialogue_box.text.length() and dialogue_voice:
+		var letter = dialogue_box.text[dialogue_box.visible_characters - 1]
 		if letter == "" or letter == "." or letter == " " or letter == ",": return
 		
 		var audio = AudioStreamPlayer.new()
 		add_child(audio)
 		audio.stream = dialogue_voice
-		audio.connect("finished", audio, "queue_free")
+		audio.connect("finished", Callable(audio, "queue_free"))
 		audio.play()
 
 

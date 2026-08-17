@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Heartbreaking.mp3-b338fff2fd2b56d6032507cedefbeda2.mp3str"
+uid="uid://dtxpgmf8uof7b"
+path="res://.godot/imported/Heartbreaking.mp3-b338fff2fd2b56d6032507cedefbeda2.mp3str"
 
 [deps]
 
 source_file="res://Sounds/Heartbreaking.mp3"
-dest_files=[ "res://.import/Heartbreaking.mp3-b338fff2fd2b56d6032507cedefbeda2.mp3str" ]
+dest_files=["res://.godot/imported/Heartbreaking.mp3-b338fff2fd2b56d6032507cedefbeda2.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

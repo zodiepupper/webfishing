@@ -21,11 +21,11 @@ anchor_left = 0.017
 anchor_top = 0.025
 anchor_right = 0.341
 anchor_bottom = 0.884
-margin_left = -0.128
-margin_top = -0.200001
-margin_right = -0.32
-margin_bottom = -0.176003
-custom_styles/panel = ExtResource( 3 )
+offset_left = -0.128
+offset_top = -0.200001
+offset_right = -0.32
+offset_bottom = -0.176003
+theme_override_styles/panel = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -33,14 +33,14 @@ __meta__ = {
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 16.0
-margin_right = -16.0
-margin_bottom = -16.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel/ScrollContainer"]
-margin_right = 341.056
-margin_bottom = 339.112
+offset_right = 341.056
+offset_bottom = 339.112
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -49,8 +49,8 @@ anchor_left = 0.0173611
 anchor_top = 0.895062
 anchor_right = 0.341424
 anchor_bottom = 0.971753
-margin_right = -0.32
-margin_bottom = 0.304001
+offset_right = -0.32
+offset_bottom = 0.304001
 text = "Register Fish Fighter"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -61,8 +61,8 @@ anchor_left = 0.756076
 anchor_top = 0.895062
 anchor_right = 0.984653
 anchor_bottom = 0.97484
-margin_right = -0.32
-margin_bottom = 0.304001
+offset_right = -0.32
+offset_bottom = 0.304001
 text = "Join Next Fight"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -73,8 +73,8 @@ anchor_left = 0.756076
 anchor_top = 0.808642
 anchor_right = 0.984653
 anchor_bottom = 0.88842
-margin_right = -0.32
-margin_bottom = 0.304001
+offset_right = -0.32
+offset_bottom = 0.304001
 text = "Add $10 Bet: $0"
 __meta__ = {
 "_edit_use_anchors_": true

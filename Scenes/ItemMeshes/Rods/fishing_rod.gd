@@ -1,6 +1,6 @@
 extends ItemMesh
 
-onready var anim_tree = $AnimationTree
+@onready var anim_tree = $AnimationTree
 
 func _ready():
 	anim_tree.tree_root = anim_tree.tree_root.duplicate(true)

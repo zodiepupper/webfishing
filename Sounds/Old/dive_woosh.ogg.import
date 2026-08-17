@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/dive_woosh.ogg-2852487bf4556b60935af9bac85104ed.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b4rs1cjbg1n2i"
+path="res://.godot/imported/dive_woosh.ogg-2852487bf4556b60935af9bac85104ed.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Old/dive_woosh.ogg"
-dest_files=[ "res://.import/dive_woosh.ogg-2852487bf4556b60935af9bac85104ed.oggstr" ]
+dest_files=["res://.godot/imported/dive_woosh.ogg-2852487bf4556b60935af9bac85104ed.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/cash2.ogg-c32877f0a6b92976c8f63c6a98906e0f.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://id3yi6ymhlel"
+path="res://.godot/imported/cash2.ogg-c32877f0a6b92976c8f63c6a98906e0f.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/cash2.ogg"
-dest_files=[ "res://.import/cash2.ogg-c32877f0a6b92976c8f63c6a98906e0f.oggstr" ]
+dest_files=["res://.godot/imported/cash2.ogg-c32877f0a6b92976c8f63c6a98906e0f.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/minigame_breakc.ogg-b79ad6c16a0e9e7849b1f98f640414b4.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://50y664ja1ynx"
+path="res://.godot/imported/minigame_breakc.ogg-b79ad6c16a0e9e7849b1f98f640414b4.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/Fishing/minigame_breakc.ogg"
-dest_files=[ "res://.import/minigame_breakc.ogg-b79ad6c16a0e9e7849b1f98f640414b4.oggstr" ]
+dest_files=["res://.godot/imported/minigame_breakc.ogg-b79ad6c16a0e9e7849b1f98f640414b4.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -12,7 +12,7 @@ enum CHANNELS{
 enum LOBBY_TYPES{
 	PUBLIC, CODE_ONLY, FRIENDS_ONLY, PRIVATE, OFFLINE
 }
-const LOBBY_TYPE_DATA = {
+var LOBBY_TYPE_DATA = {
 	0: {"name": "Public", "lobby_type": Steam.LOBBY_TYPE_PUBLIC, "code_button": true, "browser_visible": true, "offline": false}, 
 	1: {"name": "Unlisted", "lobby_type": Steam.LOBBY_TYPE_PUBLIC, "code_button": true, "browser_visible": false, "offline": false}, 
 	2: {"name": "Private", "lobby_type": Steam.LOBBY_TYPE_PRIVATE, "code_button": false, "browser_visible": false, "offline": false}, 
@@ -45,7 +45,7 @@ const MAX_PACKET_TIMEOUT_LIMIT = 1500
 const MAX_MAJOR_PACKET_TIMEOUT_LIMIT = 3000
 const PACKET_READ_LIMIT = 42
 const TICKRATE = 16.0
-const COMPRESSION_TYPE = File.COMPRESSION_GZIP
+const COMPRESSION_TYPE = FileAccess.COMPRESSION_GZIP
 const LOBBY_TAGS = ["talkative", "quiet", "grinding", "chill", "silly", "hardcore", "mature", "modded"]
 
 
@@ -127,7 +127,7 @@ signal _new_player_join_empty
 signal _webfishing_lobbies_returned(lobbies)
 signal _menu_button_disable
 
-signal _denied_into_weblobby
+signal _denied_into_weblobby_signal
 signal _new_request_from_weblobby(id)
 signal _weblobby_request_update
 
@@ -142,7 +142,7 @@ func _init():
 
 func _ready():
 	if not STEAM_ENABLED: return
-	var INIT = Steam.steamInit()
+	var INIT = Steam.steamInitEx()
 	
 	if INIT["status"] != 1:
 		print("Failed to initialize Steam. Shutting down. %s" % INIT["status"])
@@ -159,13 +159,13 @@ func _ready():
 		print("User does not own game.")
 		get_tree().quit()
 	
-	Steam.connect("lobby_created", self, "_on_Lobby_Created")
-	Steam.connect("lobby_joined", self, "_on_Lobby_Joined")
-	Steam.connect("join_requested", self, "_on_Lobby_Join_Requested")
-	Steam.connect("p2p_session_request", self, "_on_P2P_Session_Request")
-	Steam.connect("lobby_chat_update", self, "_on_Lobby_Chat_Update")
-	Steam.connect("network_messages_session_request", self, "_session_request")
-	Steam.connect("lobby_message", self, "_steam_lobby_message")
+	Steam.connect("lobby_created", Callable(self, "_on_Lobby_Created"))
+	Steam.connect("lobby_joined", Callable(self, "_on_Lobby_Joined"))
+	Steam.connect("join_requested", Callable(self, "_on_Lobby_Join_Requested"))
+	Steam.connect("p2p_session_request", Callable(self, "_on_P2P_Session_Request"))
+	Steam.connect("lobby_chat_update", Callable(self, "_on_Lobby_Chat_Update"))
+	Steam.connect("network_messages_session_request", Callable(self, "_session_request"))
+	Steam.connect("lobby_message", Callable(self, "_steam_lobby_message"))
 	
 	Steam.initRelayNetworkAccess()
 	_reset_network_socket()
@@ -175,19 +175,19 @@ func _ready():
 	NETWORK_TIMER = Timer.new()
 	add_child(NETWORK_TIMER)
 	NETWORK_TIMER.wait_time = 1.0 / TICKRATE
-	NETWORK_TIMER.connect("timeout", self, "emit_signal", ["_network_tick"])
+	NETWORK_TIMER.connect("timeout", Callable(self, "emit_signal").bind("_network_tick"))
 	NETWORK_TIMER.start()
 	
 	var PACKET_FLUSH_TIMER = Timer.new()
 	add_child(PACKET_FLUSH_TIMER)
 	PACKET_FLUSH_TIMER.wait_time = 5.0
-	PACKET_FLUSH_TIMER.connect("timeout", self, "_packet_flush")
+	PACKET_FLUSH_TIMER.connect("timeout", Callable(self, "_packet_flush"))
 	PACKET_FLUSH_TIMER.start()
 	
 	var MESSAGE_COUNT_TIMER = Timer.new()
 	add_child(MESSAGE_COUNT_TIMER)
 	MESSAGE_COUNT_TIMER.wait_time = 1.5
-	MESSAGE_COUNT_TIMER.connect("timeout", self, "_message_flush")
+	MESSAGE_COUNT_TIMER.connect("timeout", Callable(self, "_message_flush"))
 	MESSAGE_COUNT_TIMER.start()
 
 
@@ -328,7 +328,7 @@ func _wipe_chat():
 func _reset_network_socket():
 	print("Network Socket Reset")
 	Steam.closeListenSocket(NETWORK_SOCKET)
-	NETWORK_SOCKET = Steam.createListenSocketP2P(VIRTUAL_PORT, [])
+	NETWORK_SOCKET = Steam.createListenSocketP2P(VIRTUAL_PORT, {})
 
 
 
@@ -480,7 +480,7 @@ func _accepted_into_weblobby():
 
 func _denied_into_weblobby(reason = DENY_REASONS.DENIED):
 	print("Denied into WEBLOBBY")
-	emit_signal("_denied_into_weblobby", reason)
+	emit_signal("_denied_into_weblobby_signal", reason)
 
 func _send_weblobby():
 	if STEAM_ID != Steam.getLobbyOwner(STEAM_LOBBY_ID): return
@@ -508,7 +508,7 @@ func _create_custom_lobby(type, player_limit, tags, display_name, request = fals
 	else:
 		PLAYING_OFFLINE = false
 		_create_Lobby(type, player_limit, tags, display_name)
-		yield(self, "_connected_to_lobby")
+		await self._connected_to_lobby
 	
 	Globals._enter_game()
 	print("Creating Lobby")
@@ -579,13 +579,13 @@ func _on_Lobby_Created(connect, lobby_id):
 
 
 func _join_Lobby(lobby_id):
-	var in_lobby = _leave_lobby()
+	var in_lobby = await _leave_lobby()
 	if not in_lobby: _reset_network_socket()
 	_reset_lobby_status()
 	_clear_weblobby()
 	
 	STEAM_LOBBY_ID = lobby_id
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	Steam.joinLobby(lobby_id)
 
 func _connect_to_lobby(id):
@@ -626,7 +626,7 @@ func _leave_lobby():
 	if STEAM_LOBBY_ID > 0:
 		if GAME_MASTER:
 			_host_left_lobby()
-			yield(get_tree().create_timer(1.0), "timeout")
+			await get_tree().create_timer(1.0).timeout
 		
 		_close_all_connections()
 		_reset_network_socket()
@@ -686,7 +686,7 @@ func _on_Lobby_Chat_Update(lobby_id, changed_id, making_change_id, chat_state):
 	_get_lobby_members()
 
 func _delayed_chat_update_message(user_id, message, delay):
-	yield(get_tree().create_timer(delay), "timeout")
+	await get_tree().create_timer(delay).timeout
 	_recieve_safe_message(user_id, "ffeed5", message, false)
 
 
@@ -720,7 +720,7 @@ func _connect_to_all_lobby_members():
 	for member in LOBBY_MEMBERS:
 		_connect_to_lobby_member(member["steam_id"])
 	
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	_make_P2P_handshake()
 
 func _connect_to_lobby_member(steam_id, follow_weblobby = false):
@@ -730,7 +730,7 @@ func _connect_to_lobby_member(steam_id, follow_weblobby = false):
 	_create_identity(steam_id)
 	
 	var player_id = PLAYER_NICKNAME_PREFIX + str(steam_id)
-	var status = Steam.connectP2P(player_id, VIRTUAL_PORT, [])
+	var status = Steam.connectP2P(player_id, VIRTUAL_PORT, {})
 	print("P2P Connection Status w user ", player_id, ": ", status)
 	
 	OPEN_CONNECTIONS.append(steam_id)
@@ -748,12 +748,12 @@ func _create_identity(steam_id):
 	if steam_id == STEAM_ID: return
 	
 	var player_id = PLAYER_NICKNAME_PREFIX + str(steam_id)
-	if Steam.addIdentity(player_id):
-		Steam.setIdentitySteamID64(player_id, steam_id)
-		_make_P2P_handshake()
-		print("Identity created for ", steam_id)
-	else:
-		print("Identity failed to create for ", steam_id)
+	#if Steam.addIdentity(player_id):
+		#Steam.setIdentitySteamID64(player_id, steam_id)
+		#_make_P2P_handshake()
+		#print("Identity created for ", steam_id)
+	#else:
+		#print("Identity failed to create for ", steam_id)
 
 func _session_request(identity):
 	print("SESSION REQUEST FROM ", identity)
@@ -790,19 +790,13 @@ func _close_session(steam_id):
 	print("Closing Session with ", steam_id)
 	var identity = PLAYER_NICKNAME_PREFIX + str(steam_id)
 	Steam.closeSessionWithUser(identity)
-	Steam.clearIdentity(identity)
+	#Steam.clearIdentity(identity)
 	OPEN_CONNECTIONS.erase(steam_id)
 
 func _make_P2P_handshake(target = "all", attempts = 8):
 	for i in attempts:
 		_send_P2P_Packet({"type": "handshake"}, target, 0, CHANNELS.GAME_STATE)
-		yield(get_tree().create_timer(0.1), "timeout")
-
-
-
-
-
-
+		await get_tree().create_timer(0.1).timeout
 
 func _find_all_webfishing_lobbies(tags = [], must_match = false):
 	var total_lobbies = []
@@ -828,12 +822,11 @@ func _find_all_webfishing_lobbies(tags = [], must_match = false):
 		search_filter -= 1
 		if search_filter != - 1: Steam.addRequestLobbyListStringFilter("server_browser_value", str(search_filter), Steam.LOBBY_COMPARISON_EQUAL)
 		
-		
 		var goal = Time.get_unix_time_from_system() - 20.0
 		Steam.addRequestLobbyListNumericalFilter("timestamp", goal, Steam.LOBBY_COMPARISON_EQUAL_TO_GREATER_THAN)
 		
 		Steam.requestLobbyList()
-		var lobbies = yield(Steam, "lobby_match_list")
+		var lobbies = await Steam.lobby_match_list
 		print(lobbies.size(), " Lobbies found for Filter ", search_filter)
 		
 		if lobbies.size() <= 0:
@@ -846,7 +839,6 @@ func _find_all_webfishing_lobbies(tags = [], must_match = false):
 	emit_signal("_webfishing_lobbies_returned", total_lobbies)
 	return total_lobbies
 
-
 func _search_for_lobby(code):
 	var lobby_found = - 1
 	
@@ -854,14 +846,14 @@ func _search_for_lobby(code):
 	Steam.addRequestLobbyListDistanceFilter(Steam.LOBBY_DISTANCE_FILTER_WORLDWIDE)
 	Steam.addRequestLobbyListStringFilter("code", str(code), Steam.LOBBY_COMPARISON_EQUAL)
 	Steam.requestLobbyList()
-	var lobbies = yield(Steam, "lobby_match_list")
+	var lobbies = await Steam.lobby_match_list
 	
 	var sanitized_list = []
 	for lobby in lobbies:
 		var players = Steam.getNumLobbyMembers(lobby)
 		sanitized_list.append([lobby, players])
-	sanitized_list.sort_custom(self, "_lobby_sort_random")
-	sanitized_list.sort_custom(self, "_lobby_sort_high")
+	sanitized_list.sort_custom(Callable(self, "_lobby_sort_random"))
+	sanitized_list.sort_custom(Callable(self, "_lobby_sort_high"))
 	
 	if sanitized_list.size() > 0:
 		var LOBBY = sanitized_list[0][0]
@@ -906,7 +898,7 @@ func _kick_player(id):
 	_send_P2P_Packet({"type": "client_was_kicked"}, str(id), 2, CHANNELS.GAME_STATE)
 	_send_P2P_Packet({"type": "peer_was_kicked", "user_id": id}, "all", 2, CHANNELS.GAME_STATE)
 	
-	yield(get_tree().create_timer(0.2), "timeout")
+	await get_tree().create_timer(0.2).timeout
 	_user_left_weblobby(id, DC_REASONS.USER_KICK)
 	PlayerData._send_notification("Player kicked.")
 
@@ -914,7 +906,7 @@ func _ban_player(id):
 	_send_P2P_Packet({"type": "client_was_banned"}, str(id), 2, CHANNELS.GAME_STATE)
 	_send_P2P_Packet({"type": "peer_was_banned", "user_id": id}, "all", 2, CHANNELS.GAME_STATE)
 	
-	yield(get_tree().create_timer(0.2), "timeout")
+	await get_tree().create_timer(0.2).timeout
 	_user_left_weblobby(id, DC_REASONS.USER_BAN)
 	PlayerData._send_notification("Player banned.")
 	WEB_LOBBY_REJECTS.append(id)
@@ -1005,14 +997,14 @@ func _send_P2P_Packet(packet_data, target = "all", type = 0, channel = 0):
 	if PLAYING_OFFLINE or STEAM_LOBBY_ID <= 0: return
 	
 	var CHANNEL: int = channel
-	var PACKET_DATA: PoolByteArray = []
+	var PACKET_DATA: PackedByteArray = []
 	
 	var SEND_TYPE: int = type
 	match type:
 		0: SEND_TYPE = Steam.NETWORKING_SEND_UNRELIABLE
 		2: SEND_TYPE = Steam.NETWORKING_SEND_RELIABLE
 	
-	PACKET_DATA.append_array(var2bytes(packet_data).compress(COMPRESSION_TYPE))
+	PACKET_DATA.append_array(var_to_bytes(packet_data).compress(COMPRESSION_TYPE))
 	
 	if target == "all":
 		for MEMBER in WEB_LOBBY_MEMBERS:
@@ -1057,14 +1049,14 @@ func _read_P2P_Packet(message_data = {}):
 			print("Packet Disregarded! This freak aint supposed to be here!")
 			return
 		
-		if not PACKET_TIMEOUTS.empty() and PACKET_TIMEOUTS.has(PACKET_SENDER):
+		if not PACKET_TIMEOUTS.is_empty() and PACKET_TIMEOUTS.has(PACKET_SENDER):
 			print("Packet Disregarded! User is in timeout babyjail!")
 			return
 		
-		if PACKET.empty(): print("Error! Empty Packet!")
+		if PACKET.is_empty(): print("Error! Empty Packet!")
 		
 		var decomp = PACKET.payload.decompress_dynamic( - 1, COMPRESSION_TYPE)
-		var DATA = bytes2var(decomp)
+		var DATA = bytes_to_var(decomp)
 		var type: String = DATA["type"]
 		
 		var from_host = Steam.getLobbyOwner(STEAM_LOBBY_ID) == PACKET_SENDER
@@ -1140,7 +1132,7 @@ func _read_P2P_Packet(message_data = {}):
 				ACTOR_DATA[DATA["actor_id"]] = {"pos": DATA["pos"], "rot": DATA["rot"]}
 			"actor_animation_update":
 				if not _validate_packet_information(DATA, ["actor_id", "data"], [TYPE_INT, TYPE_ARRAY]): return
-				if not _validate_array(DATA["data"], true, [TYPE_VECTOR3, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_STRING, TYPE_DICTIONARY, TYPE_INT, TYPE_INT, TYPE_REAL, TYPE_REAL, TYPE_REAL, TYPE_REAL, TYPE_REAL, TYPE_REAL, TYPE_REAL, TYPE_REAL, TYPE_INT, TYPE_INT, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL]): return
+				if not _validate_array(DATA["data"], true, [TYPE_VECTOR3, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_STRING, TYPE_DICTIONARY, TYPE_INT, TYPE_INT, TYPE_FLOAT, TYPE_FLOAT, TYPE_FLOAT, TYPE_FLOAT, TYPE_FLOAT, TYPE_FLOAT, TYPE_FLOAT, TYPE_FLOAT, TYPE_INT, TYPE_INT, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL, TYPE_BOOL]): return
 				ACTOR_ANIMATION_DATA[DATA["actor_id"]] = DATA["data"]
 			"actor_action":
 				if not _validate_packet_information(DATA, ["actor_id", "action", "params"], [TYPE_INT, TYPE_STRING, TYPE_ARRAY]): return

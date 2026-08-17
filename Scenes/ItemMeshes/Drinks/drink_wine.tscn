@@ -6,15 +6,15 @@
 [ext_resource path="res://Assets/Materials/maroon.tres" type="Material" id=4]
 [ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=5]
 
-[node name="drink_hooklite" type="Spatial"]
+[node name="drink_hooklite" type="Node3D"]
 script = ExtResource( 3 )
-hotspot_node = NodePath("Position3D")
+hotspot_node = NodePath("Marker3D")
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -5.93285e-09, 0, 0.135728, 0, 0.135728, 0, -0.135728, 0, -5.93285e-09, 0, -0.104406, 0 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( -5.93285e-09, 0, 0.135728, 0, 0.135728, 0, -0.135728, 0, -5.93285e-09, 0, -0.104406, 0 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 5 )
 material/1 = ExtResource( 4 )
 material/2 = ExtResource( 2 )
 
-[node name="Position3D" type="Position3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="."]

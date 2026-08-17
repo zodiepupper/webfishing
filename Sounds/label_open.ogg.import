@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/label_open.ogg-e5724fdfb49c4683f84e86424a056cc2.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0xf0iqtklokv"
+path="res://.godot/imported/label_open.ogg-e5724fdfb49c4683f84e86424a056cc2.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/label_open.ogg"
-dest_files=[ "res://.import/label_open.ogg-e5724fdfb49c4683f84e86424a056cc2.oggstr" ]
+dest_files=["res://.godot/imported/label_open.ogg-e5724fdfb49c4683f84e86424a056cc2.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

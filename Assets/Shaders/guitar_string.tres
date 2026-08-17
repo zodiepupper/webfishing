@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d3efjubixj7xx"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;
 
 uniform float stretch = 0.0;
@@ -16,6 +16,6 @@ void vertex() {
 }"
 
 [resource]
-shader = SubResource( 1 )
-shader_param/stretch = 0.0
-shader_param/flip = false
+shader = SubResource("1")
+shader_parameter/stretch = 0.0
+shader_parameter/flip = false

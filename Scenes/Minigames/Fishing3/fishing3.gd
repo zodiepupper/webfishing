@@ -34,26 +34,26 @@ var challenge_star_timer = 0
 var challenge_star_worth = 0
 var challenge_stars_active = false
 
-onready var reel_button = $main / CenterContainer / texmain / reel_button
-onready var reel = $main / reel
-onready var reel_pivot = $main / CenterContainer / texmain / pivot
-onready var reel_point = $main / CenterContainer / texmain / pivot / TextureRect / reelpoint
-onready var center = $main / CenterContainer
-onready var scroll = $main / CenterContainer / texmain / scroll
-onready var scroll_bad = $main / CenterContainer / texmain / scroll_bad
-onready var main = $main
-onready var anim = $AnimationPlayer
-onready var cntdn = $main / countdown / TextureRect
-onready var yank_warning = $main / yank_warning
-onready var reel_warning = $main / reel_warning
+@onready var reel_button = $main / CenterContainer / texmain / reel_button
+@onready var reel = $main / reel
+@onready var reel_pivot = $main / CenterContainer / texmain / pivot
+@onready var reel_point = $main / CenterContainer / texmain / pivot / TextureRect / reelpoint
+@onready var center = $main / CenterContainer
+@onready var scroll = $main / CenterContainer / texmain / scroll
+@onready var scroll_bad = $main / CenterContainer / texmain / scroll_bad
+@onready var main = $main
+@onready var anim = $AnimationPlayer
+@onready var cntdn = $main / countdown / TextureRect
+@onready var yank_warning = $main / yank_warning
+@onready var reel_warning = $main / reel_warning
 
-onready var shatter_particle = preload("res://Scenes/Minigames/Fishing3/shatter_particle.tscn")
-onready var shatter_particle_solo = preload("res://Scenes/Minigames/Fishing3/shatter_particle_solo.tscn")
+@onready var shatter_particle = preload("res://Scenes/Minigames/Fishing3/shatter_particle.tscn")
+@onready var shatter_particle_solo = preload("res://Scenes/Minigames/Fishing3/shatter_particle_solo.tscn")
 
 signal _player_click
 
 func _ready():
-	$bars / ColorRect.rect_size = Vector2(1920, 1080)
+	$bars / ColorRect.size = Vector2(1920, 1080)
 	
 	
 	
@@ -63,14 +63,14 @@ func _ready():
 	
 	randomize()
 	main_offset = - 1000.0
-	main.rect_position.x = - 1000.0
+	main.position.x = - 1000.0
 	reel.visible = false
-	reel.set_as_toplevel(true)
+	reel.set_as_top_level(true)
 	
 	center.modulate = Color("#747474")
 	cntdn.visible = false
 	
-	yield(get_tree().create_timer(0.3), "timeout")
+	await get_tree().create_timer(0.3).timeout
 	reel.visible = true
 	main.visible = true
 	offset_active = true
@@ -81,14 +81,14 @@ func _ready():
 	print("DIFFICULTY: ", diff, " ______________________________________")
 	
 	var yank_spots = min(floor(diff / 2.2) + 1, 5)
-	yank_spots = clamp(ceil(rand_range(1, yank_spots)), 1, 6)
+	yank_spots = clamp(ceil(randf_range(1, yank_spots)), 1, 6)
 	var total_hp = ceil((diff * diff * 0.35) * 2)
 	
 	var last_spot = 0
 	for i in yank_spots:
 		last_spot += 10 + randi() % int(60 / yank_spots)
 		last_spot = clamp(last_spot, 5, 75)
-		var health = ceil(rand_range(0.5, 1.2) * (total_hp / yank_spots))
+		var health = ceil(randf_range(0.5, 1.2) * (total_hp / yank_spots))
 		_create_yank_spot(last_spot, health)
 	
 	var rod_speed_mult = params["reel_mult"] + params["speed"]
@@ -126,21 +126,21 @@ func _ready():
 	challenge_star_worth = ceil(value * 0.04)
 	challenge_star_timer = randi() % 120 + 60
 	
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	cntdn.visible = true
 	
 	challenge_stars_active = rod_type == "challenge"
 	
 	if rod_type == "patient":
 		cntdn.texture = preload("res://Assets/Textures/UI/Fishing3Minigame/cntdn6.png")
-		yield(self, "_player_click")
+		await self._player_click
 	
 	cntdn.texture = preload("res://Assets/Textures/UI/Fishing3Minigame/cntdn1.png")
-	yield(get_tree().create_timer(0.4), "timeout")
+	await get_tree().create_timer(0.4).timeout
 	cntdn.texture = preload("res://Assets/Textures/UI/Fishing3Minigame/cntdn2.png")
-	yield(get_tree().create_timer(0.4), "timeout")
+	await get_tree().create_timer(0.4).timeout
 	cntdn.texture = preload("res://Assets/Textures/UI/Fishing3Minigame/cntdn3.png")
-	yield(get_tree().create_timer(0.4), "timeout")
+	await get_tree().create_timer(0.4).timeout
 	cntdn.visible = false
 	
 	center.modulate = Color("#ffffff")
@@ -170,7 +170,7 @@ func _physics_process(delta):
 			at_yank = true
 			
 			var ys = $main / CenterContainer / texmain / yankzones.get_child(0)
-			yank_warning.rect_global_position = ys.rect_global_position + Vector2(96, - 76)
+			yank_warning.global_position = ys.global_position + Vector2(96, - 76)
 			
 		else:
 			_yank( - 1)
@@ -192,7 +192,7 @@ func _physics_process(delta):
 			_kill()
 			_reached_end(false)
 	
-	$sfx / reeling.volume_db = lerp($sfx / reeling.volume_db, linear2db(0.14 if reel_sound else 0.01), 0.1)
+	$sfx / reeling.volume_db = lerp($sfx / reeling.volume_db, linear_to_db(0.14 if reel_sound else 0.01), 0.1)
 	if not $sfx / reeling.playing and $sfx / reeling.volume_db > - 38: $sfx / reeling.playing = true
 	if $sfx / reeling.playing and $sfx / reeling.volume_db <= - 38: $sfx / reeling.playing = false
 	
@@ -227,37 +227,37 @@ func _physics_process(delta):
 		if challenge_star_timer <= 0:
 			challenge_star_timer = randi() % 180 + 60
 			
-			var star = preload("res://Scenes/Minigames/Fishing3/challenge_star.tscn").instance()
+			var star = preload("res://Scenes/Minigames/Fishing3/challenge_star.tscn").instantiate()
 			star.value = challenge_star_worth
-			star.rect_global_position = $main / challenge_points.get_children()[randi() % $main / challenge_points.get_child_count()].rect_global_position - Vector2(64, 64)
+			star.global_position = $main / challenge_points.get_children()[randi() % $main / challenge_points.get_child_count()].global_position - Vector2(64, 64)
 			
 			
 			
 			add_child(star)
-			star.connect("_expired", self, "_star_expire")
+			star.connect("_expired", Callable(self, "_star_expire"))
 	
 	main_progress = clamp(main_progress, 0.0, end_goal)
 	
 	
-	if reeling: reel_pivot.rect_rotation += 12
-	reel.rect_global_position = reel_point.rect_global_position - Vector2(36, 38)
+	if reeling: reel_pivot.rotation += 12
+	reel.global_position = reel_point.global_position - Vector2(36, 38)
 	vibrate_amt = lerp(vibrate_amt, 0.0, 0.1)
 	scroll.value = main_progress
 	scroll_bad.value = bad_progress
-	if at_yank: $main / CenterContainer / texmain / yank_button.modulate.a = 0.7 + sin(OS.get_ticks_msec() * 0.008) * 0.3
+	if at_yank: $main / CenterContainer / texmain / yank_button.modulate.a = 0.7 + sin(Time.get_ticks_msec() * 0.008) * 0.3
 	else: $main / CenterContainer / texmain / yank_button.modulate.a = 1.0
 	
-	center.rect_pivot_offset.x = center.rect_size.x / 2.0
+	center.pivot_offset.x = center.size.x / 2.0
 	if killed:
-		center.rect_pivot_offset.y = (center.rect_size.y / 2.0)
-		center.rect_global_position = $flop_body.global_position + (Vector2.ONE * sin(OS.get_ticks_msec() * 0.04) * vibrate_amt)
-		center.rect_rotation += kill_torque
+		center.pivot_offset.y = (center.size.y / 2.0)
+		center.global_position = $flop_body.global_position + (Vector2.ONE * sin(Time.get_ticks_msec() * 0.04) * vibrate_amt)
+		center.rotation += kill_torque
 	else:
-		center.rect_pivot_offset.y = (center.rect_size.y / 2.0) + (center.rect_size.y * 0.25)
-		center.rect_position.x = lerp(center.rect_position.x, sin(OS.get_ticks_msec() * 0.04) * vibrate_amt, 0.9)
-		center.rect_rotation = lerp(center.rect_rotation, 0.0, 0.2)
+		center.pivot_offset.y = (center.size.y / 2.0) + (center.size.y * 0.25)
+		center.position.x = lerp(center.position.x, sin(Time.get_ticks_msec() * 0.04) * vibrate_amt, 0.9)
+		center.rotation = lerp(center.rotation, 0.0, 0.2)
 	
-	main.rect_position.x = lerp(main.rect_position.x, main_offset, 0.08)
+	main.position.x = lerp(main.position.x, main_offset, 0.08)
 	if offset_active: main_offset = 0
 	
 	
@@ -265,32 +265,32 @@ func _physics_process(delta):
 	recent_yank -= 1
 	reel_warning.visible = active and thrash_timer <= 0 and not at_yank and recent_reel <= 0
 	yank_warning.visible = active and (thrash_timer > 0 or at_yank) and recent_yank <= 0
-	reel_warning.modulate.a = 0.6 + (sin(OS.get_ticks_msec() * 0.01) * 0.4)
-	yank_warning.modulate.a = 0.6 + (sin(OS.get_ticks_msec() * 0.01) * 0.4)
+	reel_warning.modulate.a = 0.6 + (sin(Time.get_ticks_msec() * 0.01) * 0.4)
+	yank_warning.modulate.a = 0.6 + (sin(Time.get_ticks_msec() * 0.01) * 0.4)
 
 func _create_yank_spot(pos, health):
-	var tr = preload("res://Scenes/Minigames/Fishing3/yank_bar.tscn").instance()
+	var tr = preload("res://Scenes/Minigames/Fishing3/yank_bar.tscn").instantiate()
 	$main / CenterContainer / texmain / yankzones.add_child(tr)
 	
 	var val = (pos / 100.0)
 	
-	tr.rect_position.x = 34 - (30 * val)
-	tr.rect_size.x = 28.0 + (64 * val)
-	tr.rect_size.y = 4 + clamp(ceil(health * 0.7), 8, 26)
-	tr.rect_position.y = 550.0 * val
+	tr.position.x = 34 - (30 * val)
+	tr.size.x = 28.0 + (64 * val)
+	tr.size.y = 4 + clamp(ceil(health * 0.7), 8, 26)
+	tr.position.y = 550.0 * val
 	
 	tr.max_health = float(health)
 	tr.health = tr.max_health
 	
 	yank_spots.append(pos)
 	
-	var hp = preload("res://Scenes/Minigames/Fishing3/yank_hp.tscn").instance()
+	var hp = preload("res://Scenes/Minigames/Fishing3/yank_hp.tscn").instantiate()
 	hp.pairing = tr
 	$main / CenterContainer / texmain.add_child(hp)
 
 func _yank(amt):
 	if killed: return
-	center.rect_rotation += amt
+	center.rotation += amt
 
 func _on_Button_pressed(manual = true):
 	if not at_yank: return
@@ -309,9 +309,9 @@ func _on_Button_pressed(manual = true):
 		yank_spots.remove(0)
 		at_yank = false
 		
-		var particle = shatter_particle.instance()
+		var particle = shatter_particle.instantiate()
 		add_child(particle)
-		particle.global_position = ys.rect_global_position + ys.rect_size / 2.0
+		particle.global_position = ys.global_position + ys.size / 2.0
 		particle.emitting = true
 		ys.queue_free()
 	
@@ -320,9 +320,9 @@ func _on_Button_pressed(manual = true):
 		$sfx / click.pitch_scale = 0.3 + ((1.0 - hp_amt) * 2.0)
 		$sfx / click.play()
 		
-		var particle = shatter_particle_solo.instance()
+		var particle = shatter_particle_solo.instantiate()
 		add_child(particle)
-		particle.global_position = ys.rect_global_position + ys.rect_size / 2.0
+		particle.global_position = ys.global_position + ys.size / 2.0
 		particle.emitting = true
 	
 	recent_yank = 45
@@ -336,11 +336,11 @@ func _thrash_end():
 	scroll.texture_progress = preload("res://Assets/Textures/UI/Fishing3Minigame/bg1.png")
 
 func _kill():
-	$flop_body.global_position = center.rect_global_position
+	$flop_body.global_position = center.global_position
 	$flop_body.mode = RigidBody2D.MODE_RIGID
-	$flop_body.apply_central_impulse(Vector2(rand_range( - 40, 40), rand_range( - 600, - 400)))
+	$flop_body.apply_central_impulse(Vector2(randf_range( - 40, 40), randf_range( - 600, - 400)))
 	vibrate_amt = 8.0
-	kill_torque = rand_range( - 3.4, - 2.6)
+	kill_torque = randf_range( - 3.4, - 2.6)
 	killed = true
 
 func _reached_end(win):
@@ -348,7 +348,7 @@ func _reached_end(win):
 	over = true
 	
 	if win:
-		$stars.global_position = $main / CenterContainer / texmain / starpoint.rect_global_position
+		$stars.global_position = $main / CenterContainer / texmain / starpoint.global_position
 		$stars.emitting = true
 		$sfx / win.play()
 	else:
@@ -357,15 +357,15 @@ func _reached_end(win):
 		
 	
 	anim.play_backwards("start")
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	if win:
 		offset_active = false
 		main_offset = - 1000.0
 	
 	offset_active = false
 	active = false
-	if win: yield(get_tree().create_timer(0.5), "timeout")
-	else: yield(get_tree().create_timer(1.3), "timeout")
+	if win: await get_tree().create_timer(0.5).timeout
+	else: await get_tree().create_timer(1.3).timeout
 	_end(win)
 
 

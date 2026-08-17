@@ -10,13 +10,13 @@ var run_speed = 5.5
 var accel = 64.0
 var velocity = Vector3()
 var direction = Vector3()
-var gravity_vec = Vector3()
+var gravity_direction = Vector3()
 var snapped = false
 var scared = false
 var state_timer = 30
 var bump_cd = 0
 
-onready var ray = $RayCast
+@onready var ray = $RayCast3D
 
 func _ready():
 	custom_saved_data["bug_id"] = bug_id
@@ -29,17 +29,17 @@ func _controlled_process(delta):
 
 func _process_movement(delta):
 	if is_on_floor():
-		gravity_vec = get_floor_normal() * - 1.0
+		gravity_direction = get_floor_normal() * - 1.0
 		snapped = true
 	elif snapped:
-		gravity_vec = Vector3.ZERO
+		gravity_direction = Vector3.ZERO
 		snapped = false
 	else:
 		var grav = GRAVITY * Vector3.DOWN * delta
-		gravity_vec += grav
+		gravity_direction += grav
 	
 	if immobile:
-		gravity_vec = Vector3.ZERO
+		gravity_direction = Vector3.ZERO
 		direction = Vector3(0, 1, 0)
 		speed = 0
 	
@@ -50,11 +50,13 @@ func _process_movement(delta):
 		scale = scale.move_toward(Vector3.ZERO, delta)
 	
 	velocity = velocity.move_toward(direction.normalized() * _speed, delta * _accel)
-	move_and_slide(velocity + gravity_vec, Vector3.UP)
+	set_velocity(velocity + gravity_direction)
+	set_up_direction(Vector3.UP)
+	move_and_slide()
 	
 	bump_cd -= 1
-	ray.cast_to = direction * 1.5
-	ray.cast_to.y = 0
+	ray.target_position = direction * 1.5
+	ray.target_position.y = 0
 	if ray.is_colliding() and bump_cd <= 0:
 		direction = - direction.normalized()
 		bump_cd = 5
@@ -63,8 +65,8 @@ func _update_state():
 	state_timer -= 1
 	if state_timer <= 0 and not scared:
 		if randf() < 0.4:
-			direction.x = rand_range( - 1.0, 1.0)
-			direction.z = rand_range( - 1.0, 1.0)
+			direction.x = randf_range( - 1.0, 1.0)
+			direction.z = randf_range( - 1.0, 1.0)
 			direction = direction.normalized()
 		else:
 			direction = Vector3.ZERO

@@ -1,13 +1,13 @@
-extends Spatial
+extends Node3D
 
-export var end_anchor = Vector3( - 2, 0, 0)
-export var y_drop = 0.25
+@export var end_anchor = Vector3( - 2, 0, 0)
+@export var y_drop = 0.25
 
 var line_scale = 1.0
 
 var active = false
 
-onready var points = $points
+@onready var points = $points
 
 func _physics_process(delta):
 	if not active: return

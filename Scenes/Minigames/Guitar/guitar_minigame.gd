@@ -1,6 +1,6 @@
 extends Minigame
 
-onready var neck = $fret_main / neck
+@onready var neck = $fret_main / neck
 
 var string_frets = [0, 0, 0, 0, 0, 0]
 
@@ -26,8 +26,8 @@ func _ready():
 	_select_shape(0)
 	_select_shape_page(0)
 	
-	$fret_main.rect_size = Vector2(1920, 1080)
-	$ColorRect.rect_size = Vector2(1920, 1080)
+	$fret_main.size = Vector2(1920, 1080)
+	$ColorRect.size = Vector2(1920, 1080)
 	
 	$AnimationPlayer.play("intro")
 
@@ -59,39 +59,39 @@ func _process(delta):
 
 func _setup_guitar():
 	for fret in 16:
-		var hbox = preload("res://Scenes/Minigames/Guitar/fret_container.tscn").instance()
+		var hbox = preload("res://Scenes/Minigames/Guitar/fret_container.tscn").instantiate()
 		neck.add_child(hbox)
 		
-		var sep = preload("res://Scenes/Minigames/Guitar/fret_texture.tscn").instance()
+		var sep = preload("res://Scenes/Minigames/Guitar/fret_texture.tscn").instantiate()
 		neck.add_child(sep)
 		
 		for s in 6:
-			var button = preload("res://Scenes/Minigames/Guitar/fret_button.tscn").instance()
+			var button = preload("res://Scenes/Minigames/Guitar/fret_button.tscn").instantiate()
 			button.fret = fret
 			button.string = s
-			connect("_fret_update", button, "_set_marker")
-			button.connect("pressed", self, "_select_fret", [s, fret])
+			connect("_fret_update", Callable(button, "_set_marker"))
+			button.connect("pressed", Callable(self, "_select_fret").bind(s, fret))
 			hbox.add_child(button)
 	
 	var index = 0
 	for string in $strings_main / strings.get_children():
-		string.connect("_pluck", self, "_strum_string", [index])
+		string.connect("_pluck", Callable(self, "_strum_string").bind(index))
 		index += 1
 	
 	index = 0
 	for i in $"%shapes".get_children():
 		i.text = str(index + 1)
-		i.connect("pressed", self, "_select_shape", [index])
+		i.connect("pressed", Callable(self, "_select_shape").bind(index))
 		index += 1
 	
 	index = 0
 	for i in $fret_main / capos.get_children():
-		i.connect("pressed", self, "_set_capo", [index])
+		i.connect("pressed", Callable(self, "_set_capo").bind(index))
 		index += 1
 	
 	index = 0
 	for i in $"%tabs".get_children():
-		i.connect("pressed", self, "_select_shape_page", [index])
+		i.connect("pressed", Callable(self, "_select_shape_page").bind(index))
 		index += 1
 
 func _select_shape_page(page):

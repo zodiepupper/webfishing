@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/strum.ogg-f7d38e2806543d28e611f9675cac6783.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pya2rdcv1odd"
+path="res://.godot/imported/strum.ogg-f7d38e2806543d28e611f9675cac6783.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/strum.ogg"
-dest_files=[ "res://.import/strum.ogg-f7d38e2806543d28e611f9675cac6783.oggstr" ]
+dest_files=["res://.godot/imported/strum.ogg-f7d38e2806543d28e611f9675cac6783.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

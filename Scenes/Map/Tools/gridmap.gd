@@ -48,14 +48,14 @@ const collision = {
 	"diag": "coll_ground_diag", 
 }
 
-export var set_seed = 123123
-export (Array, Texture) var multimeshes
-export var multimesh_ratio = 0.25
+@export var set_seed = 123123
+@export var multimeshes # (Array, Texture2D)
+@export var multimesh_ratio = 0.25
 
 var mmm_bank = []
 
-onready var coll = $coll
-onready var invis_coll = $inviswallcoll
+@onready var coll = $coll
+@onready var invis_coll = $inviswallcoll
 
 func _ready():
 	coll.clear()
@@ -83,27 +83,27 @@ func _get_id_from_string(string):
 func _generate_collisions():
 	coll.clear()
 	for cell in get_used_cells():
-		var cell_id = get_cell_item(cell.x, cell.y, cell.z)
+		var cell_id = get_cell_item(Vector3i(cell.x, cell.y, cell.z))
 		var group = _get_id_group(cell_id)
 		var is_floor = group == "floor"
 		
 		if group == "": continue
 		
 		if (is_floor and cell.y > 0) or ( not is_floor and cell.y == 0):
-			var rot = get_cell_item_orientation(cell.x, cell.y, cell.z)
+			var rot = get_cell_item_orientation(Vector3i(cell.x, cell.y, cell.z))
 			
 			if is_floor:
 				print(_get_id_from_string(collision["floor"]))
-				coll.set_cell_item(cell.x, cell.y, cell.z, _get_id_from_string(collision["floor"]), rot)
+				coll.set_cell_item(Vector3(cell.x, cell.y, cell.z), _get_id_from_string(collision["floor"]), rot)
 			else:
-				invis_coll.set_cell_item(cell.x, cell.y, cell.z, _get_id_from_string(collision[group]), rot)
+				invis_coll.set_cell_item(Vector3(cell.x, cell.y, cell.z), _get_id_from_string(collision[group]), rot)
 	
 	print("Map Gridmap Collisions Generated")
 
 func _replace_floors():
 	seed(set_seed)
 	for cell in get_used_cells():
-		var cell_id = get_cell_item(cell.x, cell.y, cell.z)
+		var cell_id = get_cell_item(Vector3i(cell.x, cell.y, cell.z))
 		var iden = mesh_library.get_item_name(cell_id)
 		
 		var replace_bank
@@ -129,21 +129,21 @@ func _replace_floors():
 		if is_replacing:
 			var new_id = replace_bank[int(cell.y)][0]
 			if randf() < 0.25: new_id = replace_bank[int(cell.y)][randi() % replace_bank[int(cell.y)].size()]
-			var rot = get_cell_item_orientation(cell.x, cell.y, cell.z)
-			set_cell_item(cell.x, cell.y, cell.z, _get_id_from_string(new_id), rot)
+			var rot = get_cell_item_orientation(Vector3i(cell.x, cell.y, cell.z))
+			set_cell_item(Vector3(cell.x, cell.y, cell.z), _get_id_from_string(new_id), rot)
 
 func _generate_multimeshes():
 	seed(set_seed)
 	var valid_floor_cells = []
 	for cell in get_used_cells():
-		var cell_id = get_cell_item(cell.x, cell.y, cell.z)
+		var cell_id = get_cell_item(Vector3i(cell.x, cell.y, cell.z))
 		var is_floor = _is_id_group(cell_id, "floor")
 		if is_floor: valid_floor_cells.append(cell)
 	
 	var mm_count = floor(multimesh_ratio * valid_floor_cells.size())
 	for mesh in multimeshes:
 		var count = ceil(mm_count / multimeshes.size())
-		var new = preload("res://Scenes/Map/Tools/multimesh.tscn").instance()
+		var new = preload("res://Scenes/Map/Tools/multimesh.tscn").instantiate()
 		add_child(new)
 		new.material_override = new.material_override.duplicate(true)
 		new.material_override.albedo_texture = mesh
@@ -152,7 +152,7 @@ func _generate_multimeshes():
 		
 		for id in count:
 			var i = randi() % valid_floor_cells.size()
-			var pos = global_transform.origin + (valid_floor_cells[i] * cell_size) + Vector3(rand_range(0.0, 2.0), 1.0, rand_range(0.0, 2.0))
-			var trans = Transform(Basis(), pos)
+			var pos = global_transform.origin + (valid_floor_cells[i] * cell_size) + Vector3(randf_range(0.0, 2.0), 1.0, randf_range(0.0, 2.0))
+			var trans = Transform3D(Basis(), pos)
 			new.multimesh.set_instance_transform(id, trans)
 			

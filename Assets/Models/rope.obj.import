@@ -1,20 +1,25 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh"
+uid="uid://b1ma271urmea3"
+path="res://.godot/imported/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh"
 
 [deps]
 
-files=[ "res://.import/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh" ]
+files=["res://.godot/imported/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh"]
 
 source_file="res://Assets/Models/rope.obj"
-dest_files=[ "res://.import/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh", "res://.import/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh" ]
+dest_files=["res://.godot/imported/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh", "res://.godot/imported/rope.obj-115fb4e6a062df816196725fa7ff98ec.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
-optimize_mesh_flags=4286
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

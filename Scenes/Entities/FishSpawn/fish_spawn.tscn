@@ -2,16 +2,16 @@
 
 [ext_resource path="res://Scenes/Entities/FishSpawn/fish_spawn.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Entities/Player/fish_zone.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Placeholder/ripple3.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Placeholder/wake.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Placeholder/ripple2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Placeholder/ripple1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Placeholder/ripple4.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Placeholder/ripple5.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Placeholder/ripple3.png" type="Texture2D" id=3]
+[ext_resource path="res://Assets/Placeholder/wake.png" type="Texture2D" id=4]
+[ext_resource path="res://Assets/Placeholder/ripple2.png" type="Texture2D" id=5]
+[ext_resource path="res://Assets/Placeholder/ripple1.png" type="Texture2D" id=6]
+[ext_resource path="res://Assets/Placeholder/ripple4.png" type="Texture2D" id=7]
+[ext_resource path="res://Assets/Placeholder/ripple5.png" type="Texture2D" id=8]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="BoxMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="StandardMaterial3D" id=6]
 albedo_color = Color( 0.290196, 0.172549, 0.290196, 1 )
 
 [sub_resource type="PrismMesh" id=2]
@@ -19,14 +19,14 @@ albedo_color = Color( 0.290196, 0.172549, 0.290196, 1 )
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("body:translation")
+tracks/0/path = NodePath("body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0.991199 ) ]
 }
@@ -37,8 +37,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Vector3( 0, 90, 0 ) ]
 }
@@ -46,14 +46,14 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "intro"
 tracks/0/type = "value"
-tracks/0/path = NodePath("body:translation")
+tracks/0/path = NodePath("body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4, 0.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( -0.623647, -1.15574, 0.991199 ), Vector3( -0.34647, -0.251088, 0.991199 ), Vector3( 0, 0, 0.991199 ) ]
 }
@@ -64,13 +64,13 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4, 0.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( -33.95, 90, 2.91224e-06 ), Vector3( -21.6891, 90, 1.84759e-06 ), Vector3( 0, 90, 0 ) ]
 }
 
-[sub_resource type="CylinderShape" id=5]
+[sub_resource type="CylinderShape3D" id=5]
 radius = 2.96385
 
 [sub_resource type="SpriteFrames" id=7]
@@ -86,50 +86,50 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="fish_spawn" type="KinematicBody"]
+[node name="fish_spawn" type="CharacterBody3D"]
 script = ExtResource( 1 )
 delete_on_owner_disconnect = true
 decay = true
 decay_timer = 4800
 packet_send_cooldown = 32
 
-[node name="pivot" type="Spatial" parent="."]
+[node name="pivot" type="Node3D" parent="."]
 
-[node name="body" type="Spatial" parent="pivot"]
-transform = Transform( -6.09717e-08, 0, 1.39487, 0, 1.39487, 0, -1.39487, 0, -6.09717e-08, 0, 0, 0.991199 )
+[node name="body" type="Node3D" parent="pivot"]
+transform = Transform3D( -6.09717e-08, 0, 1.39487, 0, 1.39487, 0, -1.39487, 0, -6.09717e-08, 0, 0, 0.991199 )
 
-[node name="tier0" type="Spatial" parent="pivot/body"]
+[node name="tier0" type="Node3D" parent="pivot/body"]
 
-[node name="MeshInstance" type="MeshInstance" parent="pivot/body/tier0"]
-transform = Transform( 0.0765108, 0, 0, 0, 0.0765108, 0, 0, 0, 0.256132, 0, 0, 0.104586 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot/body/tier0"]
+transform = Transform3D( 0.0765108, 0, 0, 0, 0.0765108, 0, 0, 0, 0.256132, 0, 0, 0.104586 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../../..")
 material/0 = SubResource( 6 )
 
-[node name="MeshInstance2" type="MeshInstance" parent="pivot/body/tier0"]
-transform = Transform( 1.2718e-09, 0, 0.069954, 0.0765108, -3.34439e-09, -1.86265e-09, 5.75118e-09, 0.131572, 0, 0, 0, -0.214116 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="pivot/body/tier0"]
+transform = Transform3D( 1.2718e-09, 0, 0.069954, 0.0765108, -3.34439e-09, -1.86265e-09, 5.75118e-09, 0.131572, 0, 0, 0, -0.214116 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../../..")
 material/0 = SubResource( 6 )
 
-[node name="tier1" type="Spatial" parent="pivot/body"]
-transform = Transform( 1.60041, 0, -1.42109e-14, 0, 2.07015, 0, 1.42109e-14, 0, 1.60041, 0, 0, 0 )
+[node name="tier1" type="Node3D" parent="pivot/body"]
+transform = Transform3D( 1.60041, 0, -1.42109e-14, 0, 2.07015, 0, 1.42109e-14, 0, 1.60041, 0, 0, 0 )
 visible = false
 
-[node name="MeshInstance" type="MeshInstance" parent="pivot/body/tier1"]
-transform = Transform( 0.0765108, 0, 0, 0, 0.0765108, 0, 0, 0, 0.256132, 0, 0, 0.104586 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot/body/tier1"]
+transform = Transform3D( 0.0765108, 0, 0, 0, 0.0765108, 0, 0, 0, 0.256132, 0, 0, 0.104586 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../../../..")
 material/0 = SubResource( 6 )
 
-[node name="MeshInstance2" type="MeshInstance" parent="pivot/body/tier1"]
-transform = Transform( 1.2718e-09, 0, 0.069954, 0.0765108, -3.34439e-09, -1.86265e-09, 5.75118e-09, 0.131572, 0, 0, 0, -0.214116 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="pivot/body/tier1"]
+transform = Transform3D( 1.2718e-09, 0, 0.069954, 0.0765108, -3.34439e-09, -1.86265e-09, 5.75118e-09, 0.131572, 0, 0, 0, -0.214116 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../../..")
 material/0 = SubResource( 6 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="pivot/body/tier1"]
-transform = Transform( -6.20004e-09, -9.93338e-09, 0.069954, 1.10178e-09, 0.101717, 4.08298e-09, -0.0989676, -1.42517e-09, -2.87203e-09, 2.98023e-08, 0.128354, 0.13148 )
+[node name="MeshInstance3" type="MeshInstance3D" parent="pivot/body/tier1"]
+transform = Transform3D( -6.20004e-09, -9.93338e-09, 0.069954, 1.10178e-09, 0.101717, 4.08298e-09, -0.0989676, -1.42517e-09, -2.87203e-09, 2.98023e-08, 0.128354, 0.13148 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../../..")
 material/0 = SubResource( 6 )
@@ -138,17 +138,17 @@ material/0 = SubResource( 6 )
 anims/RESET = SubResource( 3 )
 anims/intro = SubResource( 4 )
 
-[node name="Area" type="Area" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
 script = ExtResource( 2 )
 chance_boost = 25.0
 fish_type = ""
 quality_boost = 1.5
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource( 5 )
 
 [node name="ripples" type="AnimatedSprite3D" parent="."]
-transform = Transform( -8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 0, 0.638, 0 )
+transform = Transform3D( -8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 0, 0.638, 0 )
 shaded = true
 alpha_cut = 2
 frames = SubResource( 7 )

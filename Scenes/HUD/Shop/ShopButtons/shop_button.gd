@@ -1,31 +1,31 @@
 extends Button
 class_name ShopButton
 
-export (String, "money", "credits", "none") var cost_type = "money"
-export var cost = 0
-export (Array, String) var item_require
-export var level_require = - 1
-export var loan_level_require = - 1
-export var hide_on_loan_lock = true
-export var creature_require = ""
-export var creature_require_amount = 0
-export var custom_warning = ""
-export var tag_require = ""
-export var tag_warning = ""
+@export var cost_type = "money" # (String, "money", "credits", "none")
+@export var cost = 0
+@export var item_require # (Array, String)
+@export var level_require = - 1
+@export var loan_level_require = - 1
+@export var hide_on_loan_lock = true
+@export var creature_require = ""
+@export var creature_require_amount = 0
+@export var custom_warning = ""
+@export var tag_require = ""
+@export var tag_warning = ""
 
 var hud
 
-export var slot_name = ""
-export var slot_desc = ""
+@export var slot_name = ""
+@export var slot_desc = ""
 var saved_desc = ""
 var owned = false
 var locked = false
 var purchase_text = "purchased!"
 
-onready var tooltip = $TooltipNode
-onready var price_label = $Label
-onready var unlocked = $unlocked
-onready var mod_icon = $mod_icon
+@onready var tooltip = $TooltipNode
+@onready var price_label = $Label
+@onready var unlocked = $unlocked
+@onready var mod_icon = $mod_icon
 
 signal _used
 
@@ -35,7 +35,7 @@ func _ready():
 	tooltip.header = slot_name
 	tooltip.body = slot_desc
 	saved_desc = slot_desc
-	PlayerData.connect("_shop_update", self, "_update")
+	PlayerData.connect("_shop_update", Callable(self, "_update"))
 	_update()
 
 func _update():
@@ -121,7 +121,7 @@ func _on_shop_button_pressed():
 		var items_left = item_require.duplicate()
 		
 		hud._request_item_choice(item_require, item_require.size(), item_require.size())
-		var items = yield(hud, "_items_chosen")
+		var items = await hud._items_chosen
 		print("chosen items: ", items)
 		
 		for item in items:
@@ -130,7 +130,7 @@ func _on_shop_button_pressed():
 			if slot != - 1: items_left.remove(slot)
 		
 		print("Item required left: ", items_left)
-		if not items_left.empty(): return
+		if not items_left.is_empty(): return
 		
 		for item in items:
 			PlayerData._remove_item(item)

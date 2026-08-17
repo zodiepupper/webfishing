@@ -5,5 +5,5 @@
 
 [node name="chalk_black" instance=ExtResource( 1 )]
 
-[node name="MeshInstance" parent="." index="0"]
+[node name="MeshInstance3D" parent="." index="0"]
 material/0 = ExtResource( 2 )

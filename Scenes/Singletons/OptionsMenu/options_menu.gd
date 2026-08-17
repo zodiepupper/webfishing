@@ -43,8 +43,8 @@ var chat_filter = false
 var mail_close = false
 var autoclick = false
 
-onready var buttons = $Control / Panel / buttons
-onready var tabmain = $Control / Panel / tabs_main
+@onready var buttons = $Control / Panel / buttons
+@onready var tabmain = $Control / Panel / tabs_main
 
 signal _options_update
 signal _rebinding_key(action)
@@ -117,7 +117,7 @@ func _physics_process(delta):
 	fade_audio_cur = lerp(fade_audio_cur, fade_audio_des, 0.1)
 	
 	var index = AudioServer.get_bus_index("FadeBus")
-	var final = linear2db(stepify(fade_audio_cur, 0.1))
+	var final = linear_to_db(snapped(fade_audio_cur, 0.1))
 	AudioServer.set_bus_volume_db(index, final)
 
 
@@ -149,7 +149,7 @@ func _set_selections_to_save():
 		for button in get_tree().get_nodes_in_group("input_remap"):
 			if button.action == remap[0]:
 				var ek = InputEventKey.new()
-				ek.scancode = remap[1]
+				ek.keycode = remap[1]
 				button.queued_action = ek
 	get_tree().call_group("input_remap", "_remap_key")
 
@@ -223,53 +223,53 @@ func _apply_selections(deny = false):
 	PlayerData.player_options.key_rebindings.clear()
 	
 	get_tree().call_group("input_remap", "_remap_key")
-	yield(get_tree().create_timer(0.1), "timeout")
+	await get_tree().create_timer(0.1).timeout
 	for button in get_tree().get_nodes_in_group("input_remap"):
 		if button.set_action != button.default_action:
-			PlayerData.player_options.key_rebindings.append([button.action, button.set_action.scancode])
+			PlayerData.player_options.key_rebindings.append([button.action, button.set_action.keycode])
 	print("Remapped Keys: ", PlayerData.player_options.key_rebindings)
 	
 	_update_options()
 	$Control / Label.visible = restart_required
 	
-	yield(get_tree().create_timer(0.2), "timeout")
+	await get_tree().create_timer(0.2).timeout
 	UserSave._save_general_save()
 
 
 
 func _update_options():
 	var res = PlayerData.player_options.res
-	OS.window_size = res
+	get_window().size = res
 	
-	OS.window_fullscreen = PlayerData.player_options.fullscreen == 2
-	OS.window_borderless = PlayerData.player_options.fullscreen == 1
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (PlayerData.player_options.fullscreen == 2) else Window.MODE_WINDOWED
+	get_window().borderless = PlayerData.player_options.fullscreen == 1
 	if PlayerData.player_options.fullscreen == 1:
-		OS.window_size = OS.window_size + Vector2(0, 1)
-		OS.set_window_position(Vector2(0, 0))
-		OS.window_maximized = true
+		get_window().size = get_window().size + Vector2i(0, 1)
+		get_window().set_position(Vector2(0, 0))
+		get_window().mode = Window.MODE_MAXIMIZED if (true) else Window.MODE_WINDOWED
 	if PlayerData.player_options.fullscreen == 0:
-		OS.window_size = OS.window_size + Vector2(0, 1)
+		get_window().size = get_window().size + Vector2i(0, 1)
 	
-	OS.window_resizable = PlayerData.player_options.resizeable == 1
+	get_window().unresizable = not (PlayerData.player_options.resizeable == 1)
 	
 	Globals.pixelize_amount = [1.0, 2.25, 6.0, 16.0][PlayerData.player_options.pixel]
 	
-	Engine.target_fps = PlayerData.player_options.fps_limit
+	Engine.max_fps = PlayerData.player_options.fps_limit
 	
-	OS.vsync_enabled = bool(PlayerData.player_options.vsync)
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (bool(PlayerData.player_options.vsync)) else DisplayServer.VSYNC_DISABLED)
 	
 	var index = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(index, linear2db(PlayerData.player_options.main_vol))
+	AudioServer.set_bus_volume_db(index, linear_to_db(PlayerData.player_options.main_vol))
 	
 	index = AudioServer.get_bus_index("SFX")
-	AudioServer.set_bus_volume_db(index, linear2db(PlayerData.player_options.sfx_vol))
+	AudioServer.set_bus_volume_db(index, linear_to_db(PlayerData.player_options.sfx_vol))
 	index = AudioServer.get_bus_index("FadeBypass")
-	AudioServer.set_bus_volume_db(index, linear2db(PlayerData.player_options.sfx_vol))
+	AudioServer.set_bus_volume_db(index, linear_to_db(PlayerData.player_options.sfx_vol))
 	
 	index = AudioServer.get_bus_index("Music")
-	AudioServer.set_bus_volume_db(index, linear2db(PlayerData.player_options.music_vol))
+	AudioServer.set_bus_volume_db(index, linear_to_db(PlayerData.player_options.music_vol))
 	index = AudioServer.get_bus_index("Guitar")
-	AudioServer.set_bus_volume_db(index, linear2db(PlayerData.player_options.instrument_vol))
+	AudioServer.set_bus_volume_db(index, linear_to_db(PlayerData.player_options.instrument_vol))
 	
 	mouse_sens = PlayerData.player_options.mouse_sens
 	mouse_invert = PlayerData.player_options.mouse_invert
@@ -334,4 +334,3 @@ func _con_res():
 	if not resolution_confirm: return
 	resolution_confirm = false
 	$confirm_screen.hide()
-

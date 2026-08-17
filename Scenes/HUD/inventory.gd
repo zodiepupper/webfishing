@@ -6,23 +6,23 @@ var page = 0
 var items_per_page = 24
 var tab_type = "tool"
 
-onready var item_grid = $Panel / items
-onready var prev_page = $Panel / HBoxContainer / prev_page
-onready var next_page = $Panel / HBoxContainer / next_page
+@onready var item_grid = $Panel / items
+@onready var prev_page = $Panel / HBoxContainer / prev_page
+@onready var next_page = $Panel / HBoxContainer / next_page
 
 func _ready():
-	PlayerData.connect("_inventory_refresh", self, "_refresh")
-	prev_page.connect("pressed", self, "_prev_page")
-	next_page.connect("pressed", self, "_next_page")
+	PlayerData.connect("_inventory_refresh", Callable(self, "_refresh"))
+	prev_page.connect("pressed", Callable(self, "_prev_page"))
+	next_page.connect("pressed", Callable(self, "_next_page"))
 	
-	$tabs / tab_tool.connect("pressed", self, "_change_tab", ["tool"])
-	$tabs / tab_creatures.connect("pressed", self, "_change_tab", ["fish"])
+	$tabs / tab_tool.connect("pressed", Callable(self, "_change_tab").bind("tool"))
+	$tabs / tab_creatures.connect("pressed", Callable(self, "_change_tab").bind("fish"))
 	
 	_change_tab("tool")
 	
 	$Panel2 / item_display.texture = null
-	$Panel3 / header.bbcode_text = ""
-	$Panel3 / body.bbcode_text = ""
+	$Panel3 / header.text = ""
+	$Panel3 / body.text = ""
 
 func _process(delta):
 	if is_instance_valid(hovered_slot) and is_visible_in_tree():
@@ -66,14 +66,14 @@ func _refresh(to_page = - 1):
 			i += 1
 			continue
 		
-		var button = preload("res://Scenes/HUD/inventory_item.tscn").instance()
+		var button = preload("res://Scenes/HUD/inventory_item.tscn").instantiate()
 		item_grid.add_child(button)
 		button._setup_item(item["ref"])
 		button.slot = PlayerData.inventory.find(item)
-		button.connect("pressed", owner, "_item_pressed", [item])
-		button.connect("_right_click", self, "_item_locked", [item["ref"]])
-		button.connect("mouse_entered", self, "_item_entered", [button, item])
-		button.connect("mouse_exited", self, "_item_exited", [button])
+		button.connect("pressed", Callable(owner, "_item_pressed").bind(item))
+		button.connect("_right_click", Callable(self, "_item_locked").bind(item["ref"))
+		button.connect("mouse_entered", Callable(self, "_item_entered").bind(button, item))
+		button.connect("mouse_exited", Callable(self, "_item_exited").bind(button))
 		
 		total_items += 1
 		if total_items >= items_per_page: break
@@ -103,15 +103,15 @@ func _item_entered(button, item):
 	
 	
 	
-	var scene_root = $Panel2 / ViewportContainer / inv_preview / root / item / scene
-	var sprite = $Panel2 / ViewportContainer / inv_preview / root / item / Sprite3D
-	var root = $Panel2 / ViewportContainer / inv_preview / root
+	var scene_root = $Panel2 / SubViewportContainer / inv_preview / root / item / scene
+	var sprite = $Panel2 / SubViewportContainer / inv_preview / root / item / Sprite3D
+	var root = $Panel2 / SubViewportContainer / inv_preview / root
 	
 	for child in scene_root.get_children(): child.queue_free()
 	sprite.texture = null
 	
 	if data.show_scene:
-		var new = data.item_scene.instance()
+		var new = data.item_scene.instantiate()
 		scene_root.add_child(new)
 		
 		
@@ -128,21 +128,21 @@ func _item_entered(button, item):
 	root.des_cam = 3.4 * item_scale
 	root.des_height = 1.5 * item_scale
 	
-	var podium = $Panel2 / ViewportContainer / inv_preview / root / MeshInstance
-	podium.translation.y = 0.9 if item_scale < 2.2 else - 0.5
+	var podium = $Panel2 / SubViewportContainer / inv_preview / root / MeshInstance3D
+	podium.position.y = 0.9 if item_scale < 2.2 else - 0.5
 	
-	var quality = $Panel2 / ViewportContainer / inv_preview / root / item / Sprite3D / quality
+	var quality = $Panel2 / SubViewportContainer / inv_preview / root / item / Sprite3D / quality
 	for child in quality.get_children(): child.emitting = false
 	if PlayerData.QUALITY_DATA.has(item["quality"]):
 		sprite.modulate = Color(PlayerData.QUALITY_DATA[item["quality"]]["mod"])
 		sprite.opacity = PlayerData.QUALITY_DATA[item["quality"]]["op"]
 		if PlayerData.QUALITY_DATA[item["quality"]]["particle"] > - 1: quality.get_child(PlayerData.QUALITY_DATA[item["quality"]]["particle"]).emitting = true
 	
-	$Panel3 / header.bbcode_text = "[color=#6a4420]" + str(data.item_name) + "[/color]"
+	$Panel3 / header.text = "[color=#6a4420]" + str(data.item_name) + "[/color]"
 	var desc = str(data.item_description) + "\n" + str(data.catch_blurb)
 	if data.uses_size:
 		desc = desc + "\n" + str(item["size"]) + "cm "
-	$Panel3 / body.bbcode_text = desc
+	$Panel3 / body.text = desc
 
 func _item_exited(item):
 	if hovered_slot == item: hovered_slot = null

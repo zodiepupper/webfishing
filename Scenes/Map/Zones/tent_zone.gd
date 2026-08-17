@@ -1,6 +1,6 @@
 extends Zone
 
-onready var tent_object = preload("res://Scenes/Entities/Tent/tent_object.tscn")
+@onready var tent_object = preload("res://Scenes/Entities/Tent/tent_object.tscn")
 
 func _tent_update(id, old_zone, old_id):
 	$area_entrance.entrance_owner = id
@@ -14,7 +14,7 @@ func _tent_objects(new):
 	for object in new[0]:
 		var data = Globals.item_data[object["id"]]["file"]
 		if data.mesh:
-			var m = tent_object.instance()
+			var m = tent_object.instantiate()
 			m.mesh = data.mesh
 			m.ref = object["ref"]
 			$objects.add_child(m)

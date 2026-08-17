@@ -1,6 +1,6 @@
 extends Control
 
-export (NodePath) var hud_node
+@export var hud_node: NodePath
 
 var entered_fight = false
 var entered_fight_began = false
@@ -9,12 +9,12 @@ var selected_fish = {}
 var bet_amount = 0
 var sent_fish = - 1
 
-onready var hud = get_node(hud_node)
+@onready var hud = get_node(hud_node)
 
 func _ready():
-	PlayerData.connect("_arena_start", self, "_arena_start")
-	PlayerData.connect("_arena_over", self, "_arena_over")
-	PlayerData.connect("_arena_cashout", self, "_arena_cashout")
+	PlayerData.connect("_arena_start", Callable(self, "_arena_start"))
+	PlayerData.connect("_arena_over", Callable(self, "_arena_over"))
+	PlayerData.connect("_arena_cashout", Callable(self, "_arena_cashout"))
 
 func _open():
 	visible = true
@@ -23,7 +23,7 @@ func _close(): visible = false
 
 func _on_Button_pressed():
 	hud._request_item_choice([], 1, 1, "arena")
-	var items = yield(hud, "_items_chosen")
+	var items = await hud._items_chosen
 	print("chosen items: ", items)
 	
 	for item in items:
@@ -39,14 +39,14 @@ func _refresh_fish():
 	for fish in PlayerData.arena_fish:
 		var button = Button.new()
 		button.text = str(fish)
-		button.connect("pressed", self, "_select_fish", [fish])
+		button.connect("pressed", Callable(self, "_select_fish").bind(fish))
 		box.add_child(button)
 
 func _select_fish(data):
 	selected_fish = data
 
 func _on_Button2_pressed():
-	if selected_fish.empty():
+	if selected_fish.is_empty():
 		PlayerData._send_notification("select a fish first!", 1)
 		return
 	if entered_fight_began:

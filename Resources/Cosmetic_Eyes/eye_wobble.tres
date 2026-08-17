@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/Face/eyes_base27.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Textures/Face/eyes_base25.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Textures/Face/eyes_base24.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Textures/Face/eyes_base26.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Face/eyes_base27.png" type="Texture2D" id=2]
+[ext_resource path="res://Assets/Textures/Face/eyes_base25.png" type="Texture2D" id=3]
+[ext_resource path="res://Assets/Textures/Face/eyes_base24.png" type="Texture2D" id=4]
+[ext_resource path="res://Assets/Textures/Face/eyes_base26.png" type="Texture2D" id=5]
 
 [sub_resource type="AnimatedTexture" id=1]
 flags = 2

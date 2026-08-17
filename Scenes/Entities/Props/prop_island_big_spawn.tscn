@@ -23,8 +23,8 @@ uniform float face_distortion = 0.5;
 uniform vec2 time_scale = vec2(0.3, 0.0);
 uniform vec2 uv_offset_scale = vec2(-0.2, -0.1);
 
-uniform sampler2D uv_offset_texture : hint_black; 
-uniform vec4 color : hint_color;
+uniform sampler2D uv_offset_texture : hint_default_black; 
+uniform vec4 color : source_color;
 
 void vertex(){
 	// Sample Noise
@@ -55,7 +55,7 @@ void fragment(){
 	//ALBEDO = vec3(1.0 - UV.x, 0.0, UV.x); //Display dampening. Red is full dampening, blue is none
 }"
 
-[sub_resource type="OpenSimplexNoise" id=7]
+[sub_resource type="FastNoiseLite" id=7]
 
 [sub_resource type="NoiseTexture" id=12]
 seamless = true
@@ -75,28 +75,28 @@ flip_faces = true
 subdivide_width = 4
 subdivide_depth = 4
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape3D" id=3]
 extents = Vector3( 0.6, 0.7, 0.567352 )
 
-[node name="boatraft" type="KinematicBody"]
+[node name="boatraft" type="CharacterBody3D"]
 script = ExtResource( 4 )
 delete_on_owner_disconnect = true
 zone_name = "island_big_zone"
 entrance_name = "island_big_entrance"
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 1.258, 0 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 1.258, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
-[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance"]
-transform = Transform( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
 mesh = SubResource( 9 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 5 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="MeshInstance"]
-transform = Transform( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
+[node name="MeshInstance3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1.3399, -1.3399, 3.4328e-08, 0, -8.28291e-08, -1.11063, 1.3399, 1.3399, -3.4328e-08, 1.35991, 2.7845, 1.35991 )
 mesh = SubResource( 10 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 5 )
@@ -106,10 +106,10 @@ text = "TRAVEL"
 zone_id = "boat_raft_zone"
 spawn_id = "boat_entrance"
 
-[node name="CollisionShape" type="CollisionShape" parent="transition_zone"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712637, -0.00460571 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="transition_zone"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712637, -0.00460571 )
 shape = SubResource( 3 )
 
 [node name="area_entrance" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007, 1.257, 0.015 )
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007, 1.257, 0.015 )
 entrance_id = "boat_exit"

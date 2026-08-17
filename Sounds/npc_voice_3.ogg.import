@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/npc_voice_3.ogg-e07c13ff842b8a512a4056f4b805f158.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dehhdvia6j27x"
+path="res://.godot/imported/npc_voice_3.ogg-e07c13ff842b8a512a4056f4b805f158.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/npc_voice_3.ogg"
-dest_files=[ "res://.import/npc_voice_3.ogg-e07c13ff842b8a512a4056f4b805f158.oggstr" ]
+dest_files=["res://.godot/imported/npc_voice_3.ogg-e07c13ff842b8a512a4056f4b805f158.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

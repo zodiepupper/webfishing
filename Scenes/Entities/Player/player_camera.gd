@@ -1,8 +1,8 @@
-extends Camera
+extends Camera3D
 
 
 func _ready():
-	OptionsMenu.connect("_options_update", self, "_dist_update")
+	OptionsMenu.connect("_options_update", Callable(self, "_dist_update"))
 	_dist_update()
 
 func _dist_update():

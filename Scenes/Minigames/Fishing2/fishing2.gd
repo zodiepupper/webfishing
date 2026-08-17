@@ -22,21 +22,21 @@ var active = true
 func _ready():
 	$Control2 / Panel2.hide()
 	active = false
-	pull_timer = rand_range(45, 200)
+	pull_timer = randf_range(45, 200)
 
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown1.png")
-	yield(get_tree().create_timer(0.7), "timeout")
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown2.png")
-	yield(get_tree().create_timer(0.7), "timeout")
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown3.png")
-	yield(get_tree().create_timer(0.7), "timeout")
-	$Control2 / Panel / AnimatedSprite.texture = preload("res://Assets/Textures/UI/countdown4.png")
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown1.png")
+	await get_tree().create_timer(0.7).timeout
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown2.png")
+	await get_tree().create_timer(0.7).timeout
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown3.png")
+	await get_tree().create_timer(0.7).timeout
+	$Control2 / Panel / AnimatedSprite2D.texture = preload("res://Assets/Textures/UI/countdown4.png")
 	active = true
 
 func _physics_process(delta):
 	if active:
 		$Control2.modulate.a = lerp($Control2.modulate.a, 0.0, 0.08)
-		$Control2 / Panel.rect_position.x = lerp($Control2 / Panel.rect_position.x, - 100, 0.08)
+		$Control2 / Panel.position.x = lerp($Control2 / Panel.position.x, - 100, 0.08)
 	
 	var total = 0.0
 	
@@ -45,10 +45,10 @@ func _physics_process(delta):
 		if pull_timer <= 0:
 			if randf() < fake_chance:
 				pulling = 2
-				pull_timer = rand_range(45, 200) + pull_length
+				pull_timer = randf_range(45, 200) + pull_length
 			else:
 				pulling = pull_length
-				pull_timer = rand_range(45, 200) + pull_length
+				pull_timer = randf_range(45, 200) + pull_length
 		
 		turn = lerp(turn, float(pulling > 0), turn_speed)
 		
@@ -75,16 +75,16 @@ func _physics_process(delta):
 		_reached_end(false)
 	
 	
-	$"%fish".rect_rotation = turn * 180.0
-	$"%fish".rect_position.y = - 46 + (492 * (progress * 0.01))
+	$"%fish".rotation = turn * 180.0
+	$"%fish".position.y = - 46 + (492 * (progress * 0.01))
 	$"%tension".value = tension
 	$"%progress".value = progress
 	$"%reel".play("default", total < 0)
 
 func _reached_end(win):
-	$Control2 / Panel2 / .show()
+	$Control2 / Panel2 / super.show()
 	if win: $Control2 / Panel2 / TextureRect.texture = preload("res://Assets/Textures/UI/winmsg1.png")
 	else: $Control2 / Panel2 / TextureRect.texture = preload("res://Assets/Textures/UI/winmsg2.png")
 	active = false
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	_end(win)

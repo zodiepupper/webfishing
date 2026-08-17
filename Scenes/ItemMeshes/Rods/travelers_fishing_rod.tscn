@@ -31,12 +31,12 @@ node_connections = [ "pole_bend", 0, "Animation 3", "pole_bend", 1, "Animation 2
 
 [node name="traveler_fishing_rod" instance=ExtResource( 1 )]
 
-[node name="Cylinder" parent="fishing_rod_main/Armature/Skeleton" index="0"]
+[node name="Cylinder" parent="fishing_rod_main/Armature/Skeleton3D" index="0"]
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 3 )
 
-[node name="BoneAttachment" parent="fishing_rod_main/Armature/Skeleton" index="1"]
-transform = Transform( 1, -1.30146e-13, -2.38419e-07, -1.39792e-09, 0.999984, -0.0058661, 2.38414e-07, 0.00586673, 0.999983, -5.39158e-12, 41.8483, -0.240431 )
+[node name="BoneAttachment3D" parent="fishing_rod_main/Armature/Skeleton3D" index="1"]
+transform = Transform3D( 1, -1.30146e-13, -2.38419e-07, -1.39792e-09, 0.999984, -0.0058661, 2.38414e-07, 0.00586673, 0.999983, -5.39158e-12, 41.8483, -0.240431 )
 
 [node name="AnimationTree" parent="." index="1"]
 tree_root = SubResource( 11 )

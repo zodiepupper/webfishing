@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/cat_hiss.ogg-efafbdf07e727acc56d08b48ce79094a.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pr8tka4dxxnn"
+path="res://.godot/imported/cat_hiss.ogg-efafbdf07e727acc56d08b48ce79094a.oggvorbisstr"
 
 [deps]
 
 source_file="res://Sounds/cat_hiss.ogg"
-dest_files=[ "res://.import/cat_hiss.ogg-efafbdf07e727acc56d08b48ce79094a.oggstr" ]
+dest_files=["res://.godot/imported/cat_hiss.ogg-efafbdf07e727acc56d08b48ce79094a.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

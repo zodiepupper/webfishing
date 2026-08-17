@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Scenes/Entities/ArenaFish/arena_fish.gd" type="Script" id=1]
 
-[sub_resource type="CylinderShape" id=1]
+[sub_resource type="CylinderShape3D" id=1]
 height = 0.6
 radius = 0.4
 
-[node name="arena_fish" type="KinematicBody"]
+[node name="arena_fish" type="CharacterBody3D"]
 script = ExtResource( 1 )
 has_shadow = true
 
@@ -15,7 +15,7 @@ billboard = 2
 shaded = true
 alpha_cut = 2
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]

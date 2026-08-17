@@ -1,6 +1,6 @@
 extends ShopButton
 
-export var cosmetic_unlock = ""
+@export var cosmetic_unlock = ""
 
 func _setup():
 	var data = Globals.cosmetic_data[cosmetic_unlock]["file"]

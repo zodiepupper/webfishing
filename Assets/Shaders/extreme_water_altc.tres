@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Shaders/extreme_water.tres" type="Shader" id=1]
-[ext_resource path="res://Assets/Textures/foam_ref.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/foam_ref.png" type="Texture2D" id=2]
 
-[sub_resource type="OpenSimplexNoise" id=307]
+[sub_resource type="FastNoiseLite" id=307]
 period = 45.0
 lacunarity = 3.0
 
@@ -12,7 +12,7 @@ seamless = true
 as_normalmap = true
 noise = SubResource( 307 )
 
-[sub_resource type="OpenSimplexNoise" id=309]
+[sub_resource type="FastNoiseLite" id=309]
 seed = 100
 period = 12.0
 persistence = 0.1

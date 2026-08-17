@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=2]
 [ext_resource path="res://Assets/Materials/dark_blue.tres" type="Material" id=3]
 [ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons27.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons27.png" type="Texture2D" id=5]
 [ext_resource path="res://Assets/Models/Cosmetics/cowboy_hat.tres" type="ArrayMesh" id=6]
 
 [resource]

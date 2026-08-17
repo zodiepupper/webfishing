@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 func _open():
 	$AnimationPlayer.stop()
@@ -9,5 +9,5 @@ func _close():
 	$AnimationPlayer.play_backwards("in")
 
 func _physics_process(delta):
-	$Spatial.translation.y = sin(OS.get_ticks_msec() * 0.0007) * 0.02
+	$Node3D.position.y = sin(Time.get_ticks_msec() * 0.0007) * 0.02
 

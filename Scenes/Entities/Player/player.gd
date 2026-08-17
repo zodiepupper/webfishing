@@ -24,19 +24,19 @@ const PARTICLE_DATA = {
 	"kiss": preload("res://Scenes/Particles/kiss.tscn"), 
 }
 
-export (NodePath) var hand_sprite_node
-export (NodePath) var hand_bone_node
-export var NPC_body = false
-export var NPC_cosmetics = {"species": "species_cat", "pattern": "pattern_none", "primary_color": "pcolor_white", "secondary_color": "scolor_tan", "hat": "hat_none", "undershirt": "shirt_none", "overshirt": "overshirt_none", "title": "title_rank_1", "bobber": "bobber_default", "eye": "eye_halfclosed", "nose": "nose_cat", "mouth": "mouth_default", "accessory": [], "tail": "tail_cat"}
-export var NPC_name = "NPC Test"
-export var NPC_title = "npc title here"
+@export var hand_sprite_node: NodePath
+@export var hand_bone_node: NodePath
+@export var NPC_body = false
+@export var NPC_cosmetics = {"species": "species_cat", "pattern": "pattern_none", "primary_color": "pcolor_white", "secondary_color": "scolor_tan", "hat": "hat_none", "undershirt": "shirt_none", "overshirt": "overshirt_none", "title": "title_rank_1", "bobber": "bobber_default", "eye": "eye_halfclosed", "nose": "nose_cat", "mouth": "mouth_default", "accessory": [], "tail": "tail_cat"}
+@export var NPC_name = "NPC Test"
+@export var NPC_title = "npc title here"
 
 var camera_zoom = 5.0
 
 var direction = Vector3()
-var gravity_vec = Vector3()
+var gravity_direction = Vector3()
 var dive_vec = Vector3()
-var velocity = Vector3()
+#var velocity = Vector3()
 var player_scale = 1.0
 
 var cam_orbit_node = null
@@ -179,44 +179,44 @@ var prop_ids = []
 var cam_move = false
 var freecamming = false
 
-onready var cam_base = $cam_base
-onready var cam_pivot = $cam_base / cam_pivot
-onready var camera = $Camera
-onready var camera_point = $cam_base / cam_pivot / SpringArm / camera_point
-onready var cam_arm = $cam_base / cam_pivot / SpringArm
-onready var body = $body
-onready var body_mesh = $body / player_body / Armature / Skeleton / body_main
-onready var rot_help = $rot_help
-onready var interact_range = $interact_range
-onready var anim_tree = $body / AnimationTree
-onready var skeleton = $body / player_body / Armature / Skeleton
-onready var title = $Viewport / player_label
-onready var item_sprite = get_node(hand_sprite_node)
-onready var hand_bone = get_node(hand_bone_node)
-onready var sound_emit = $sound_emit
-onready var face = $body / player_body / Armature / Skeleton / face / player_face
-onready var tail = $body / player_body / Armature / Skeleton / tail / holder / tail
-onready var freecam_anchor = $camera_freecam_anchor
-onready var sound_manager = $sound_manager
+@onready var cam_base = $cam_base
+@onready var cam_pivot = $cam_base / cam_pivot
+@onready var camera = $Camera3D
+@onready var camera_point = $cam_base / cam_pivot / SpringArm3D / camera_point
+@onready var cam_arm = $cam_base / cam_pivot / SpringArm3D
+@onready var body = $body
+@onready var body_mesh = $body / player_body / Armature / Skeleton3D / body_main
+@onready var rot_help = $rot_help
+@onready var interact_range = $interact_range
+@onready var anim_tree = $body / AnimationTree
+@onready var skeleton = $body / player_body / Armature / Skeleton3D
+@onready var title = $SubViewport / player_label
+@onready var item_sprite = get_node(hand_sprite_node)
+@onready var hand_bone = get_node(hand_bone_node)
+@onready var sound_emit = $sound_emit
+@onready var face = $body / player_body / Armature / Skeleton3D / face / player_face
+@onready var tail = $body / player_body / Armature / Skeleton3D / tail / holder / tail
+@onready var freecam_anchor = $camera_freecam_anchor
+@onready var sound_manager = $sound_manager
 
-onready var fish_detect = $detection_zones / fishing_detect
-onready var fishing_update = $detection_zones / fishing_update
-onready var fishing_area = $detection_zones / fishing_detect / fishing_area
-onready var fish_timer = $fish_catch_timer
-onready var bobber_preview = $bobber_preview
-onready var bobber = $bobber
-onready var bobber_mesh = $bobber / bobber_mesh
-onready var bobber_line = $bobber / line
-onready var ripples = $bobber / ripples
-onready var caught_fish = $bobber / caught_item
+@onready var fish_detect = $detection_zones / fishing_detect
+@onready var fishing_update = $detection_zones / fishing_update
+@onready var fishing_area = $detection_zones / fishing_detect / fishing_area
+@onready var fish_timer = $fish_catch_timer
+@onready var bobber_preview = $bobber_preview
+@onready var bobber = $bobber
+@onready var bobber_mesh = $bobber / bobber_mesh
+@onready var bobber_line = $bobber / line
+@onready var ripples = $bobber / ripples
+@onready var caught_fish = $bobber / caught_item
 
-onready var shovel_area = $detection_zones / shovel_detect
-onready var net_area = $detection_zones / net_detect
+@onready var shovel_area = $detection_zones / shovel_detect
+@onready var net_area = $detection_zones / net_detect
 
-onready var safe_check = $safe_check
+@onready var safe_check = $safe_check
 
-onready var lvlparticle = $emotion_particles / lvl_particles
-onready var lvlparticleb = $emotion_particles / lvl_particles2
+@onready var lvlparticle = $emotion_particles / lvl_particles
+@onready var lvlparticleb = $emotion_particles / lvl_particles2
 
 signal _animation_finished
 signal _primary_release
@@ -244,10 +244,10 @@ func _ready():
 	]
 	
 	add_to_group("player")
-	rot_help.set_as_toplevel(true)
-	cam_base.set_as_toplevel(true)
-	camera.set_as_toplevel(true)
-	freecam_anchor.set_as_toplevel(true)
+	rot_help.set_as_top_level(true)
+	cam_base.set_as_top_level(true)
+	camera.set_as_top_level(true)
+	freecam_anchor.set_as_top_level(true)
 	anim_tree.tree_root = anim_tree.tree_root.duplicate(true)
 	_update_cosmetics(cosmetic_data)
 	title.visible = not dead_actor
@@ -256,12 +256,12 @@ func _ready():
 		camera.queue_free()
 		remove_from_group("player")
 		
-		yield(get_tree(), "idle_frame")
+		await get_tree().idle_frame
 		var new = NPC_cosmetics
 		Network._send_actor_action(actor_id, "_update_cosmetics", [new])
 		_update_cosmetics(new)
 		
-		yield(get_tree(), "idle_frame")
+		await get_tree().idle_frame
 		title.visible = true
 		title.label = NPC_name
 		title.title = NPC_title
@@ -270,36 +270,36 @@ func _setup_controlled():
 	if NPC_body: return
 	
 	add_to_group("controlled_player")
-	camera = $Camera
+	camera = $Camera3D
 	camera.current = true
-	hud = load("res://Scenes/HUD/playerhud.tscn").instance()
+	hud = load("res://Scenes/HUD/playerhud.tscn").instantiate()
 	hud.player = self
-	hud.connect("_player_sit", self, "_toggle_sit")
-	hud.connect("_play_emote", self, "_play_emote")
-	hud.connect("_menu_entered", self, "_hud_menu_entered")
-	hud.connect("_message_sent", self, "_message_sent")
-	hud.connect("_freecam_toggle", self, "_toggle_freecam")
+	hud.connect("_player_sit", Callable(self, "_toggle_sit"))
+	hud.connect("_play_emote", Callable(self, "_play_emote"))
+	hud.connect("_menu_entered", Callable(self, "_hud_menu_entered"))
+	hud.connect("_message_sent", Callable(self, "_message_sent"))
+	hud.connect("_freecam_toggle", Callable(self, "_toggle_freecam"))
 	get_tree().get_root().add_child(hud)
 	
-	PlayerData.connect("_clear_all_props", self, "_clear_all_props")
-	PlayerData.connect("_place_prop", self, "_create_prop")
-	PlayerData.connect("_play_sfx", self, "_play_sfx")
-	PlayerData.connect("_play_guitar", self, "_strum_guitar")
-	PlayerData.connect("_hammer_guitar", self, "_hammer_string")
-	PlayerData.connect("_return_to_spawn", self, "_return_to_spawn")
-	PlayerData.connect("_punched", self, "_punched")
-	PlayerData.connect("_item_removal", self, "_item_removal")
-	PlayerData.connect("_update_props", self, "_refresh_props")
-	var delayed_update = get_tree().create_timer(1.0).connect("timeout", self, "_change_cosmetics")
+	PlayerData.connect("_clear_all_props", Callable(self, "_clear_all_props"))
+	PlayerData.connect("_place_prop", Callable(self, "_create_prop"))
+	PlayerData.connect("_play_sfx", Callable(self, "_play_sfx"))
+	PlayerData.connect("_play_guitar", Callable(self, "_strum_guitar"))
+	PlayerData.connect("_hammer_guitar", Callable(self, "_hammer_string"))
+	PlayerData.connect("_return_to_spawn", Callable(self, "_return_to_spawn"))
+	PlayerData.connect("_punched", Callable(self, "_punched"))
+	PlayerData.connect("_item_removal", Callable(self, "_item_removal"))
+	PlayerData.connect("_update_props", Callable(self, "_refresh_props"))
+	var delayed_update = get_tree().create_timer(1.0).connect("timeout", Callable(self, "_change_cosmetics"))
 	
-	PlayerData.connect("_wag_toggle", self, "_wag")
-	PlayerData.connect("_kiss", self, "_kiss")
+	PlayerData.connect("_wag_toggle", Callable(self, "_wag"))
+	PlayerData.connect("_kiss", Callable(self, "_kiss"))
 	
-	Network.connect("_user_connected", self, "_refresh_cosmetics")
-	Network.connect("_network_tick", self, "_share_animation_data")
+	Network.connect("_user_connected", Callable(self, "_refresh_cosmetics"))
+	Network.connect("_network_tick", Callable(self, "_share_animation_data"))
 
 func _setup_not_controlled():
-	camera = $Camera
+	camera = $Camera3D
 	camera.queue_free()
 	
 	$bobber_preview.visible = false
@@ -326,8 +326,8 @@ func _physics_process(delta):
 	_process_animation()
 	_process_sounds()
 	
-	if ( not in_zone != $CollisionShape.disabled):
-		$CollisionShape.disabled = not in_zone
+	if ( not in_zone != $CollisionShape3D.disabled):
+		$CollisionShape3D.disabled = not in_zone
 
 func _process(delta):
 	if controlled: $paint_node._paint_process(delta)
@@ -345,8 +345,8 @@ func _controlled_process(delta):
 	current_zone = world.active_zone
 	current_zone_owner = world.active_zone_owner
 	
-	fish_detect.translation.z = - rod_cast_dist
-	bobber_preview.translation.z = - clamp(primary_hold_timer * 0.06, 1.5, 9.0)
+	fish_detect.position.z = - rod_cast_dist
+	bobber_preview.position.z = - clamp(primary_hold_timer * 0.06, 1.5, 9.0)
 	if bobber_preview.is_colliding(): $"%bobber_prev_mesh".global_transform.origin = bobber_preview.get_collision_point() + Vector3(0, 0.05, 0)
 	bobber_preview.visible = state == STATES.FISHING_CHARGE
 	
@@ -489,7 +489,7 @@ func _get_input():
 	else:
 		if Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			Input.warp_mouse_position(PlayerData.original_mouse_position)
+			Input.warp_mouse(PlayerData.original_mouse_position)
 	
 	if Input.is_action_just_released("zoom_in"):
 		camera_zoom -= 0.5
@@ -520,8 +520,11 @@ func _get_input():
 		var mouse_pos = get_tree().get_nodes_in_group("world_viewport")[0].get_mouse_position() / Globals.pixelize_amount
 		var from = camera_cam.project_ray_origin(mouse_pos)
 		var to = from + camera_cam.project_ray_normal(mouse_pos) * ray_length
-		var space_state = get_world().get_direct_space_state()
-		var result = space_state.intersect_ray(from, to, [])
+		var space_state = get_world_3d().get_direct_space_state()
+		var ray_parameters : PhysicsRayQueryParameters3D
+		ray_parameters.from = from
+		ray_parameters.to = to
+		var result = space_state.intersect_ray(ray_parameters)
 		if result.has("position"):
 			mouse_world_pos = result["position"]
 			mouse_world_pos.y = global_transform.origin.y
@@ -587,27 +590,27 @@ func _process_movement(delta):
 	var y_slow = 0.02
 	
 	if is_on_floor() and in_air:
-		if gravity_vec.y <= - 12.0 and not diving and jump_bonus <= 1.0:
+		if gravity_direction.y <= - 12.0 and not diving and jump_bonus <= 1.0:
 			diving = true
-			dive_vec = gravity_vec.length() * - transform.basis.z * 0.2
+			dive_vec = gravity_direction.length() * - transform.basis.z * 0.2
 		in_air = false
 		_sync_particle("dust_land", Vector3(0, - 1, 0))
 		_sync_sfx("land")
 		animation_data["land"] = 0.3
-	elif gravity_vec.y < - 6.0:
+	elif gravity_direction.y < - 6.0:
 		in_air = true
 	
 	if is_on_floor() and ignore_snap <= 0:
 		y_slow = 0.2
-		gravity_vec = get_floor_normal() * - 1.0
+		gravity_direction = get_floor_normal() * - 1.0
 		snapped = true
 	elif snapped and ignore_snap <= 0:
-		gravity_vec = Vector3.ZERO
+		gravity_direction = Vector3.ZERO
 		snapped = false
 	else:
 		snap_vec = Vector3.ZERO
 		var grav = GRAVITY * Vector3.DOWN * delta
-		gravity_vec += grav
+		gravity_direction += grav
 	
 	if request_jump:
 		request_jump = false
@@ -617,16 +620,16 @@ func _process_movement(delta):
 			if jump_bonus > 1.0: _sync_sfx("jump_big")
 			snapped = false
 			diving = false
-			gravity_vec = Vector3(0, jump_height * jump_bonus, 0)
+			gravity_direction = Vector3(0, jump_height * jump_bonus, 0)
 			if sprinting and jump_leap > 0.0:
-				gravity_vec += - transform.basis.z.normalized() * jump_leap
+				gravity_direction += - transform.basis.z.normalized() * jump_leap
 		elif not diving:
 			_sync_sfx("dive_woosh")
 			snapped = false
 			diving = true
 			dive_vec = - transform.basis.z.normalized() * dive_distance * dive_bonus
 			dive_vec.y = 0
-			gravity_vec += Vector3(0, jump_height * 0.5 * dive_bonus, 0)
+			gravity_direction += Vector3(0, jump_height * 0.5 * dive_bonus, 0)
 		_toggle_sit(true)
 	
 	if ignore_snap > 0:
@@ -651,10 +654,13 @@ func _process_movement(delta):
 	speed_mult = clamp(speed_mult - ((held_item_weight / 25.0) * 0.05), 0.15, 1.0)
 	
 	if diving: speed_mult = 0.0
-	if gravity_disable: gravity_vec = Vector3.ZERO
+	if gravity_disable: gravity_direction = Vector3.ZERO
 	
 	velocity = velocity.move_toward(direction.normalized() * _speed * speed_mult, delta * _accel)
-	move_and_slide_with_snap(velocity + gravity_vec + dive_vec, snap_vec, Vector3.UP)
+	set_velocity(velocity + gravity_direction + dive_vec)
+	# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `snap_vec`
+	set_up_direction(Vector3.UP)
+	move_and_slide()
 	
 	dive_vec = dive_vec.move_toward(Vector3.ZERO, delta * _accel * y_slow)
 	if not diving: dive_vec = Vector3.ZERO
@@ -681,13 +687,13 @@ func _process_movement(delta):
 		
 		animation_data["dive_scrape"] = true
 		
-		if Engine.get_idle_frames() % 4 == 0:
+		if Engine.get_process_frames() % 4 == 0:
 			_sync_particle("dust_run", Vector3(0, - 0.8, 0))
 	else:
 		
 		animation_data["dive_scrape"] = false
 	
-	if gravity_vec.y < - 250:
+	if gravity_direction.y < - 250:
 		_kill()
 
 
@@ -860,11 +866,11 @@ func _obtain_item(ref, bonus_text = [], journal_check = true):
 	hud._change_menu(6)
 	
 	force_cam_look = true
-	yield(get_tree().create_timer(0.1), "timeout")
+	await get_tree().create_timer(0.1).timeout
 	cam_follow_node = $catch_cam_position
 
 func _level_up():
-	yield(get_tree().create_timer(0.4), "timeout")
+	await get_tree().create_timer(0.4).timeout
 	var bubble = title._create_level_bubble()
 	Network._send_actor_action(actor_id, "_sync_level_bubble", [], false)
 	GlobalAudio._play_sound("jingle_win")
@@ -903,7 +909,7 @@ func _equip_item(item_data, skip_anim = false, forced = false, set_prev = true):
 		_sync_sfx("equip")
 		_enter_state(STATES.BUSY)
 		_enter_animation("equip", false, false, STATES.DEFAULT, false)
-		yield(self, "_animation_finished")
+		await self._animation_finished
 
 	
 	var held_data = item_data.duplicate()
@@ -920,13 +926,13 @@ func _equip_item(item_data, skip_anim = false, forced = false, set_prev = true):
 func _use_item():
 	if not controlled: return
 	
-	if held_item.empty(): return
+	if held_item.is_empty(): return
 	var item_data = Globals.item_data[held_item["id"]]["file"]
 	if has_method(item_data.action) and item_data.action != "":
 		callv(item_data.action, item_data.action_params)
 
 func _release_item():
-	if held_item.empty(): return
+	if held_item.is_empty(): return
 	var item_data = Globals.item_data[held_item["id"]]["file"]
 	if has_method(item_data.release_action) and item_data.release_action != "":
 		call(item_data.release_action)
@@ -948,13 +954,13 @@ func _cast_fishing_rod():
 	
 	_enter_state(STATES.FISHING_CHARGE)
 	_enter_animation("rod_wind", true, false, - 1, false)
-	yield(self, "_primary_release")
+	await self._primary_release
 	if state != STATES.FISHING_CHARGE: return
 	_enter_state(STATES.FISHING_CAST)
 	_sync_sfx("woosh", null, 1.0, 0.4)
 	var strength = clamp(primary_hold_timer * 0.06, 1.5, 9.0)
 	rod_cast_dist = strength
-	fish_detect.translation.z = - strength
+	fish_detect.position.z = - strength
 	
 	var is_valid_fishing_spot = false
 	if bobber_preview.is_colliding() and bobber_preview.get_collider().is_in_group("valid_water"):
@@ -977,13 +983,13 @@ func _cast_fishing_rod():
 		retract_splash = false
 		_enter_animation("rod_cast", false, true, STATES.FISHING_CANCEL)
 	
-	yield(get_tree().create_timer(0.4), "timeout")
+	await get_tree().create_timer(0.4).timeout
 	animation_data["item_bend"] = - 0.2
 
 func _on_fish_catch_timer_timeout():
 	if not controlled: return
 	
-	fish_timer.wait_time = rand_range(2.0, 3.0)
+	fish_timer.wait_time = randf_range(2.0, 3.0)
 	fish_timer.start()
 	
 	if state != STATES.FISHING: return
@@ -1154,13 +1160,13 @@ func _on_fish_catch_timer_timeout():
 	
 	_enter_state(STATES.FISHING_STRUGGLE)
 	animation_data["alert"] = true
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	
 	animation_data["alert"] = false
 	
 	var delay_time = 0
 	while hud.using_chat:
-		yield(get_tree().create_timer(0.15), "timeout")
+		await get_tree().create_timer(0.15).timeout
 		delay_time += 1
 		
 		if delay_time > 200:
@@ -1168,12 +1174,12 @@ func _on_fish_catch_timer_timeout():
 			return
 	
 	hud._open_minigame("fishing3", {"fish": fish_roll, "rod_type": rod_cast_data, "reel_mult": catch_drink_reel, "quality": quality, "damage": rod_damage, "speed": rod_spd}, difficulty)
-	var success = yield(hud, "_minigame_finished")
+	var success = await hud._minigame_finished
 	print("SUCCESS: ", success)
 	if success:
 		animation_data["caught_item"] = {"id": fish_roll, "size": size}
 		_enter_state(STATES.FISHING_CANCEL)
-		yield(self, "_state_change")
+		await self._state_change
 		
 		var ref
 		var catches = 1
@@ -1207,7 +1213,7 @@ func _on_fish_catch_timer_timeout():
 		
 		if rod_cast_data == "lucky":
 			var worth = PlayerData._get_item_worth(ref)
-			var gold = max(1, ceil(worth * rand_range(0.01, 0.1)))
+			var gold = max(1, ceil(worth * randf_range(0.01, 0.1)))
 			PlayerData.money += gold
 			PlayerData._send_notification("Your Lucky Lure got you $" + str(gold) + "!")
 		
@@ -1225,13 +1231,13 @@ func _on_fish_catch_timer_timeout():
 				PlayerData._send_notification("You've summoned a raincloud!")
 		
 		if catch_drink_gold_add != Vector2(0, 0):
-			var gold = max(1, ceil(rand_range(catch_drink_gold_add.x, catch_drink_gold_add.y)))
+			var gold = max(1, ceil(randf_range(catch_drink_gold_add.x, catch_drink_gold_add.y)))
 			PlayerData.money += gold
 			PlayerData._send_notification("Your Catcher's Luck got you $" + str(gold) + "!")
 		
 		if catch_drink_gold_percent > 0.0:
 			var worth = PlayerData._get_item_worth(ref)
-			var gold = max(1, ceil(rand_range(worth * 0.1, worth * catch_drink_gold_percent)))
+			var gold = max(1, ceil(randf_range(worth * 0.1, worth * catch_drink_gold_percent)))
 			PlayerData.money += gold
 			PlayerData._send_notification("Your Catcher's Luck Ultra got you $" + str(gold) + "!")
 		
@@ -1266,11 +1272,11 @@ func _shovel_check():
 	if mound:
 		_enter_animation("shovel_struggle", true, true)
 		hud._open_minigame("shoveling", {"damage": 5.0})
-		var success = yield(hud, "_minigame_finished")
+		var success = await hud._minigame_finished
 		print("SUCCESS: ", success)
 		if success:
 			_enter_state(STATES.SHOVEL_CANCEL)
-			yield(self, "_state_change")
+			await self._state_change
 			var ref = PlayerData._add_item("spider")
 			
 			
@@ -1304,11 +1310,11 @@ func _net_check():
 	if bug:
 		_enter_animation("net_struggle", true, true)
 		hud._open_minigame("shoveling", {"damage": 5.0})
-		var success = yield(hud, "_minigame_finished")
+		var success = await hud._minigame_finished
 		print("SUCCESS: ", success)
 		if success:
 			_enter_state(STATES.NET_CANCEL)
-			yield(self, "_state_change")
+			await self._state_change
 			var size = Globals._roll_item_size(bug_id)
 			var ref = PlayerData._add_item(bug_id, - 1, size)
 			
@@ -1405,7 +1411,7 @@ func _create_prop(ref, offset = Vector3(0, 1, 0), restrict_to_one = false):
 	var ver_offset = Vector3(0, 1.0, 0) * (1.0 - player_scale)
 	print(ver_offset)
 	var pos = global_transform.origin + (global_transform.basis.z * - 2.0) - offset + ver_offset
-	var rot = rotation + Vector3(0, deg2rad(180), 0)
+	var rot = rotation + Vector3(0, deg_to_rad(180), 0)
 	var prop_code = data.prop_code
 	
 	
@@ -1528,7 +1534,7 @@ func _update_animation_data():
 		animation_data["bobber_position"] = Vector3(bobber_hpos.x, bobber_vpos, bobber_hpos.z)
 	else:
 		var pos = global_transform.origin + ( - rod_cast_dist * global_transform.basis.z)
-		pos.y = bobber_vpos + sin(OS.get_ticks_msec() * 0.002) * 0.05
+		pos.y = bobber_vpos + sin(Time.get_ticks_msec() * 0.002) * 0.05
 		animation_data["bobber_position"] = lerp(animation_data["bobber_position"], pos, 0.2)
 
 func _process_animation():
@@ -1623,7 +1629,7 @@ func _process_animation():
 		pose = pose.rotated(Vector3(1, 0, 0), animation_data["back_bend"])
 		skeleton.set_bone_custom_pose(1, pose)
 	else:
-		skeleton.set_bone_custom_pose(1, Transform())
+		skeleton.set_bone_custom_pose(1, Transform3D())
 
 func _share_animation_data():
 	if not controlled: return
@@ -1632,7 +1638,7 @@ func _share_animation_data():
 	shared_animation_data = animation_data.values()
 	
 	var vec = shared_animation_data[0]
-	shared_animation_data[0] = Vector3(stepify(vec.x, 0.01), stepify(vec.y, 0.01), stepify(vec.z, 0.01))
+	shared_animation_data[0] = Vector3(snapped(vec.x, 0.01), snapped(vec.y, 0.01), snapped(vec.z, 0.01))
 	
 	
 	Network._send_actor_animation_update(actor_id, shared_animation_data)
@@ -1660,7 +1666,7 @@ func _exit_animation():
 	animation_data["emote"] = ""
 
 func _update_held_item(new):
-	if new.empty() or held_item == new: return
+	if new.is_empty() or held_item == new: return
 	
 	held_item = new
 	var item_data = Globals.item_data[new["id"]]["file"]
@@ -1674,7 +1680,7 @@ func _update_held_item(new):
 	if is_instance_valid(item_scene): item_scene.queue_free()
 	item_scene = null
 	if item_data.show_scene and item_data.item_scene:
-		item_scene = item_data.item_scene.instance()
+		item_scene = item_data.item_scene.instantiate()
 		hand_bone.add_child(item_scene)
 	
 	var final_size = clamp(new["size"], 0.01, 12000.0)
@@ -1692,13 +1698,13 @@ func _update_held_item(new):
 		offs = clamp(item_scale * item_scale, 0.0, 16.0)
 		back_bend = clamp(item_scale * item_scale, 0.0, 55.0)
 	
-	item_sprite.translation.y = y
+	item_sprite.position.y = y
 	item_sprite.offset.y = item_data.hold_offset + offs
 	
 	
-	$body / player_body / Armature / Skeleton / BoneAttachment / Spatial.rotation_degrees = Vector3(0.0, 0.0, back_bend * 0.7)
+	$body / player_body / Armature / Skeleton3D / BoneAttachment3D / Node3D.rotation_degrees = Vector3(0.0, 0.0, back_bend * 0.7)
 	
-	item_sprite.translation.z = 0.0
+	item_sprite.position.z = 0.0
 	item_sprite.vel = 0.0
 	item_sprite.mult = clamp(item_scale * 3.5, 0.0, 1.2) if item_data.category == "fish" and item_data.alive else 0.0
 	
@@ -1712,13 +1718,13 @@ func _update_held_item(new):
 		if PlayerData.QUALITY_DATA[new["quality"]]["particle"] > - 1: item_sprite.get_child(PlayerData.QUALITY_DATA[new["quality"]]["particle"]).emitting = true
 	
 	animation_data["arm_value"] = item_data.arm_value
-	animation_data["back_bend"] = deg2rad( - back_bend)
+	animation_data["back_bend"] = deg_to_rad( - back_bend)
 
 func _update_caught_item(new):
 	if typeof(new) != TYPE_DICTIONARY:
 		new = PlayerData.FALLBACK_ITEM
 	
-	if new.empty():
+	if new.is_empty():
 		caught_fish.texture = null
 		return
 	caught_item = new
@@ -1738,7 +1744,7 @@ func _bobber_cast(dist, end, splash):
 	
 	bobber_hpos = global_transform.origin
 	bobber_vpos = global_transform.origin.y
-	yield(get_tree().create_timer(0.4), "timeout")
+	await get_tree().create_timer(0.4).timeout
 	
 	var tween = get_tree().create_tween()
 	
@@ -1748,7 +1754,7 @@ func _bobber_cast(dist, end, splash):
 	tween.set_ease(0)
 	tween.tween_property(self, "bobber_vpos", end.y - (height * 0.2), dist * 0.05)
 	if splash:
-		tween.tween_callback(self, "_bobber_splash")
+		tween.tween_callback(Callable(self, "_bobber_splash"))
 	
 	
 	tween.set_trans(1)
@@ -1769,7 +1775,7 @@ func _bobber_cast(dist, end, splash):
 	htween.tween_property(self, "bobber_hpos", end + (global_transform.basis.z * 0.2), dist * 0.15)
 	htween.tween_property(self, "bobber_hpos", end, dist * 0.1)
 	
-	yield(htween, "finished")
+	await htween.finished
 	bobber_control = true
 
 func _bobber_retract():
@@ -1777,7 +1783,7 @@ func _bobber_retract():
 	bobber_hpos = bobber.global_transform.origin
 	bobber_vpos = bobber.global_transform.origin.y
 	
-	yield(get_tree().create_timer(0.4), "timeout")
+	await get_tree().create_timer(0.4).timeout
 	
 	if retract_splash: _bobber_splash("splashb")
 	var tween = get_tree().create_tween()
@@ -1840,7 +1846,7 @@ func _update_cosmetics(data):
 					valid = false
 	
 	if not valid: data = PlayerData.FALLBACK_COSM.duplicate()
-	if data.empty(): return
+	if data.is_empty(): return
 	
 	var username = str(Network._get_username_from_id(owner_id))
 	if username == "null": username = "Player"
@@ -1887,12 +1893,12 @@ func _update_cosmetics(data):
 	
 	
 	var pattern = Globals.cosmetic_data[data["pattern"]]["file"]
-	body_mesh.material_override.set_shader_param("texture_albedo", pattern.body_pattern[0])
+	body_mesh.material_override.set_shader_parameter("texture_albedo", pattern.body_pattern[0])
 	
 	var primary_color = Globals.cosmetic_data[data["primary_color"]]["file"]
 	var secondary_color = Globals.cosmetic_data[data["secondary_color"]]["file"] if pattern.body_pattern[0] else Globals.cosmetic_data[data["primary_color"]]["file"]
-	body_mesh.material_override.set_shader_param("albedo", primary_color.main_color)
-	body_mesh.material_override.set_shader_param("albedo_secondary", secondary_color.main_color)
+	body_mesh.material_override.set_shader_parameter("albedo", primary_color.main_color)
+	body_mesh.material_override.set_shader_parameter("albedo_secondary", secondary_color.main_color)
 	
 	
 	var tail_data = Globals.cosmetic_data[data["tail"]]["file"]
@@ -1905,22 +1911,22 @@ func _update_cosmetics(data):
 		
 		match data["species"]:
 			"species_cat":
-				species.set_surface_material(0, preload("res://Assets/Shaders/player_skins.tres").duplicate())
-				species.get_surface_material(0).set_shader_param("albedo", primary_color.main_color)
-				species.get_surface_material(0).set_shader_param("albedo_secondary", secondary_color.main_color)
-				species.get_surface_material(0).set_shader_param("texture_albedo", pattern.body_pattern[1])
+				species.set_surface_override_material(0, preload("res://Assets/Shaders/player_skins.tres").duplicate())
+				species.get_surface_override_material(0).set_shader_parameter("albedo", primary_color.main_color)
+				species.get_surface_override_material(0).set_shader_parameter("albedo_secondary", secondary_color.main_color)
+				species.get_surface_override_material(0).set_shader_parameter("texture_albedo", pattern.body_pattern[1])
 			"species_dog":
-				species.set_surface_material(0, preload("res://Assets/Shaders/player_skins.tres").duplicate())
-				species.get_surface_material(0).set_shader_param("albedo", primary_color.main_color)
-				species.get_surface_material(0).set_shader_param("albedo_secondary", secondary_color.main_color)
-				species.get_surface_material(0).set_shader_param("texture_albedo", pattern.body_pattern[2])
+				species.set_surface_override_material(0, preload("res://Assets/Shaders/player_skins.tres").duplicate())
+				species.get_surface_override_material(0).set_shader_parameter("albedo", primary_color.main_color)
+				species.get_surface_override_material(0).set_shader_parameter("albedo_secondary", secondary_color.main_color)
+				species.get_surface_override_material(0).set_shader_parameter("texture_albedo", pattern.body_pattern[2])
 	
 	if not data.keys().has("bobber") or data["bobber"] == "": data["bobber"] = "bobber_default"
 	var bobber_file = Globals.cosmetic_data[data["bobber"]]["file"]
 	bobber_mesh.mesh = bobber_file.mesh
-	bobber_mesh.set_surface_material(0, bobber_file.material)
-	if bobber_file.secondary_material: bobber_mesh.set_surface_material(1, bobber_file.secondary_material)
-	if bobber_file.third_material: bobber_mesh.set_surface_material(2, bobber_file.third_material)
+	bobber_mesh.set_surface_override_material(0, bobber_file.material)
+	if bobber_file.secondary_material: bobber_mesh.set_surface_override_material(1, bobber_file.secondary_material)
+	if bobber_file.third_material: bobber_mesh.set_surface_override_material(2, bobber_file.third_material)
 
 func _create_cosmetic(id, species_id = 0):
 	if id == "": return
@@ -1931,16 +1937,16 @@ func _create_cosmetic(id, species_id = 0):
 	var data = Globals.cosmetic_data[id]["file"]
 	
 	if data.scene_replace:
-		var bone_attach = BoneAttachment.new()
+		var bone_attach = BoneAttachment3D.new()
 		skeleton.add_child(bone_attach)
 		bone_attach.bone_name = "pelvis"
 		bone_attach.add_to_group("cosmetic")
 		
-		var cosm = data.scene_replace.instance()
+		var cosm = data.scene_replace.instantiate()
 		bone_attach.add_child(cosm)
 		return cosm
 	
-	var cosm = preload("res://Scenes/Entities/Player/cosmetic_node.tscn").instance()
+	var cosm = preload("res://Scenes/Entities/Player/cosmetic_node.tscn").instantiate()
 	cosm.mesh = data.mesh
 	if data.species_alt_mesh.size() > 0:
 		cosm.mesh = data.species_alt_mesh[species_id]
@@ -1949,14 +1955,14 @@ func _create_cosmetic(id, species_id = 0):
 	
 	if not data.material:
 		cosm.material_override = preload("res://Assets/Shaders/player_skins.tres").duplicate()
-		cosm.material_override.set_shader_param("albedo", data.main_color)
-		cosm.material_override.set_shader_param("albedo_secondary", data.main_color)
-		cosm.material_override.set_shader_param("texture_albedo", null)
+		cosm.material_override.set_shader_parameter("albedo", data.main_color)
+		cosm.material_override.set_shader_parameter("albedo_secondary", data.main_color)
+		cosm.material_override.set_shader_parameter("texture_albedo", null)
 	else:
 		
 		cosm.material_override = null
-		cosm.set_surface_material(0, data.material)
-		if data.secondary_material: cosm.set_surface_material(1, data.secondary_material)
+		cosm.set_surface_override_material(0, data.material)
+		if data.secondary_material: cosm.set_surface_override_material(1, data.secondary_material)
 	
 	cosm.skeleton = skeleton.get_path()
 	skeleton.add_child(cosm)
@@ -1986,9 +1992,9 @@ func _on_step_timer_timeout():
 	if randf() < 0.03 * drunk_tier and drunk_wander_length <= 0:
 		drunk_wander_length = randi() % 25 + 5
 		drunk_wander_dir = Vector3(
-			rand_range( - 1, 1), 
+			randf_range( - 1, 1), 
 			0.0, 
-			rand_range( - 1, 1))
+			randf_range( - 1, 1))
 	
 	
 	if drunk_tier == 4 and randf() < 0.01:
@@ -1997,7 +2003,7 @@ func _on_step_timer_timeout():
 			diving = true
 			dive_vec = - transform.basis.z.normalized() * dive_distance * dive_bonus * 0.35
 			dive_vec.y = 0
-			gravity_vec += Vector3(0, jump_height * 0.5 * dive_bonus, 0)
+			gravity_direction += Vector3(0, jump_height * 0.5 * dive_bonus, 0)
 		else:
 			var emote = randi() % 6
 			match emote:
@@ -2013,7 +2019,7 @@ func _on_step_timer_timeout():
 		_sync_particle("small_splash", bobber.global_transform.origin, true)
 	
 	if recent_reel > 0 and state == STATES.FISHING:
-		fishing_update.translation.z = - rod_cast_dist
+		fishing_update.position.z = - rod_cast_dist
 		fishing_update.force_raycast_update()
 		if fishing_update.is_colliding() and not fishing_update.get_collider().is_in_group("valid_water"):
 				_enter_state(STATES.FISHING_CANCEL)
@@ -2049,7 +2055,7 @@ func _message_sent(text):
 			"O.o", "!?!?", "?!?!", ":o", ":O": _sync_face_emote("surprised")
 	
 	var bubble = title._create_speech_bubble(text, PlayerData.voice_speed)
-	bubble.connect("_letter_said", self, "_sync_talk")
+	bubble.connect("_letter_said", Callable(self, "_sync_talk"))
 	Network._send_actor_action(actor_id, "_sync_create_bubble", [text], false)
 
 func _sync_talk(letter):
@@ -2100,18 +2106,18 @@ func _play_particle(id, offset, global):
 	if not PARTICLE_DATA.keys().has(id): return
 	if get_tree().get_nodes_in_group(str(owner_id) + "_particle").size() > 20: return
 	
-	var p = PARTICLE_DATA[id].instance()
+	var p = PARTICLE_DATA[id].instantiate()
 	add_child(p)
 	p.add_to_group(str(owner_id) + "_particle")
 	
 	if not global:
-		p.translation = offset
+		p.position = offset
 	else:
-		p.set_as_toplevel(true)
+		p.set_as_top_level(true)
 		p.global_transform.origin = offset
 	
 	p.emitting = true
-	yield(get_tree().create_timer(p.lifetime + 0.1), "timeout")
+	await get_tree().create_timer(p.lifetime + 0.1).timeout
 	p.queue_free()
 
 
@@ -2161,14 +2167,14 @@ func _kill(skip_anim = false):
 			_sync_particle("splash", global_transform.origin, true)
 	
 	SceneTransition._fake_scene_change()
-	yield(SceneTransition, "_finished")
+	await SceneTransition._finished
 	
 	if send_to_zone == "":
 		global_transform.origin = last_valid_pos + Vector3(0, 0.5, 0)
 	else:
 		_enter_zone(send_to_zone, send_to_zone_spawn_id)
 	
-	yield(get_tree().create_timer(0.3), "timeout")
+	await get_tree().create_timer(0.3).timeout
 	gravity_disable = false
 	_enter_state(0)
 	_exit_animation()
@@ -2275,8 +2281,8 @@ func _open_ringbox():
 func _scratch_off(type):
 	_enter_state(STATES.GUITAR)
 	hud._open_minigame("scratch_off", {"type": type})
-	var _win = yield(hud, "_minigame_finished")
-	yield(get_tree().create_timer(0.15), "timeout")
+	var _win = await hud._minigame_finished
+	await get_tree().create_timer(0.15).timeout
 	_enter_state(STATES.DEFAULT)
 	
 	consume_on_state_change = held_item["ref"]
@@ -2292,8 +2298,8 @@ func _scratch_off(type):
 func _open_labeler():
 	_enter_state(STATES.GUITAR)
 	hud._open_minigame("hand_labeler")
-	var _win = yield(hud, "_minigame_finished")
-	yield(get_tree().create_timer(0.15), "timeout")
+	var _win = await hud._minigame_finished
+	await get_tree().create_timer(0.15).timeout
 	_enter_state(STATES.DEFAULT)
 
 
@@ -2305,10 +2311,10 @@ func _mushroom_bounce():
 	ignore_snap = 10
 	var bounce_horz = 16.0 if direction != Vector3.ZERO else 0.0
 	var bounce_vert = 32.0
-	gravity_vec = Vector3.ZERO
-	gravity_vec.x += (direction.normalized() * bounce_horz).x
-	gravity_vec.z += (direction.normalized() * bounce_horz).z
-	gravity_vec.y += bounce_vert
+	gravity_direction = Vector3.ZERO
+	gravity_direction.x += (direction.normalized() * bounce_horz).x
+	gravity_direction.z += (direction.normalized() * bounce_horz).z
+	gravity_direction.y += bounce_vert
 	animation_data["mushroom"] = true
 
 
@@ -2318,7 +2324,7 @@ func _mushroom_bounce():
 func _sync_sfx(id, position = null, pitch = 1.0, delay = 0.0):
 	if not controlled: return
 	
-	if delay > 0.0: yield(get_tree().create_timer(delay), "timeout")
+	if delay > 0.0: await get_tree().create_timer(delay).timeout
 	
 	_play_sfx(id, position, pitch)
 	Network._send_actor_action(actor_id, "_play_sfx", [id, position, pitch], false)
@@ -2368,7 +2374,7 @@ func _paint(size, color):
 	if not controlled: return
 	
 	var in_zone = false
-	for area in $paint_node / Area.get_overlapping_areas():
+	for area in $paint_node / Area3D.get_overlapping_areas():
 		if area.is_in_group("canvas"): in_zone = true
 	if not in_zone: PlayerData._send_notification("mouse must be on a drawing zone!", 1)
 	
@@ -2445,8 +2451,8 @@ func _real_step(run = false):
 func _play_guitar():
 	_enter_state(STATES.GUITAR)
 	hud._open_minigame("guitar")
-	var _win = yield(hud, "_minigame_finished")
-	yield(get_tree().create_timer(0.15), "timeout")
+	var _win = await hud._minigame_finished
+	await get_tree().create_timer(0.15).timeout
 	_enter_state(STATES.DEFAULT)
 
 func _strum_guitar(string, fret, volume):
@@ -2545,10 +2551,10 @@ func _punched(from, type):
 			bounce_horz = 12.0
 			bounce_vert = 24.0
 	
-	gravity_vec = Vector3.ZERO
-	gravity_vec.x += (dir.normalized() * bounce_horz).x
-	gravity_vec.z += (dir.normalized() * bounce_horz).z
-	gravity_vec.y += bounce_vert
+	gravity_direction = Vector3.ZERO
+	gravity_direction.x += (dir.normalized() * bounce_horz).x
+	gravity_direction.z += (dir.normalized() * bounce_horz).z
+	gravity_direction.y += bounce_vert
 	
 	_sync_face_emote("angry")
 
@@ -2568,7 +2574,7 @@ func _on_cosmetic_refresh_timeout():
 
 func _refresh_cosmetics():
 	if not controlled: return
-	yield(get_tree().create_timer(1.0), "timeout")
+	await get_tree().create_timer(1.0).timeout
 	var new = PlayerData.cosmetics_equipped.duplicate()
 	if not dead_actor: Network._send_actor_action(actor_id, "_update_cosmetics", [new])
 

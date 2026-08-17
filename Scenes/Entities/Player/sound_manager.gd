@@ -1,6 +1,6 @@
-extends Spatial
+extends Node3D
 
-onready var voice_audio = preload("res://Scenes/Entities/Player/SpeechBubble/voice_audio.tscn")
+@onready var voice_audio = preload("res://Scenes/Entities/Player/SpeechBubble/voice_audio.tscn")
 
 func _play_sound(id, position = null, pitch = 1.0):
 	if id == null: return
@@ -15,7 +15,7 @@ func _play_sound(id, position = null, pitch = 1.0):
 
 
 func _construct_voice(letter, voice, pitch):
-	var new = voice_audio.instance()
+	var new = voice_audio.instantiate()
 	new.stream = Globals.voice_bank[voice][letter.to_upper()]
 	new.pitch_scale = pitch
 	add_child(new)

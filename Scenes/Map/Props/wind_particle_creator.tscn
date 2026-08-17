@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Map/Props/wind_particle_creator.gd" type="Script" id=1]
 
-[node name="wind_particle_creator" type="Spatial"]
+[node name="wind_particle_creator" type="Node3D"]
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]

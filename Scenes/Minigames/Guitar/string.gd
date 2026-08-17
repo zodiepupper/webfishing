@@ -1,7 +1,7 @@
 extends Control
 
-export var height = 0.0
-export var height_bot = 1.0
+@export var height = 0.0
+@export var height_bot = 1.0
 
 var inside = false
 var old_mouse_pos = Vector2.INF
@@ -29,7 +29,7 @@ func _process(delta):
 			var rect_check = Rect2(Vector2(0, 0), get_global_rect().size)
 			if rect_check.has_point(new_pos):
 				_inside = true
-				mouse_distance = clamp(stepify(abs(rect_check.get_center().y - new_pos.y) / 200.0, 0.01), 0.0, 0.9)
+				mouse_distance = clamp(snapped(abs(rect_check.get_center().y - new_pos.y) / 200.0, 0.01), 0.0, 0.9)
 		
 		if _inside and Input.is_action_pressed("primary_action"):
 			if not inside:
@@ -41,8 +41,8 @@ func _process(delta):
 	old_mouse_pos = get_local_mouse_position()
 
 func _physics_process(delta):
-	var stretch = sin(OS.get_ticks_msec() * 0.08) * wobble
+	var stretch = sin(Time.get_ticks_msec() * 0.08) * wobble
 	wobble = lerp(wobble, 0.0, 0.12)
 	
-	$VBoxContainer / string_1.material.set_shader_param("stretch", stretch)
-	$VBoxContainer / string_2.material.set_shader_param("stretch", stretch)
+	$VBoxContainer / string_1.material.set_shader_parameter("stretch", stretch)
+	$VBoxContainer / string_2.material.set_shader_parameter("stretch", stretch)

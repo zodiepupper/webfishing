@@ -4,7 +4,7 @@ var journal_category = "fish"
 var journal_index = 0
 var scroll_index = 0
 
-onready var box = $Panel / MarginContainer / HScrollBar / GridContainer
+@onready var box = $Panel / MarginContainer / HScrollBar / GridContainer
 
 func _ready():
 	
@@ -19,13 +19,13 @@ func _ready():
 		button.text = str(category[0]).to_upper()
 		button.size_flags_horizontal = SIZE_EXPAND_FILL
 		button.size_flags_vertical = SIZE_EXPAND_FILL
-		button.connect("pressed", self, "_change_category", [category[1], index])
+		button.connect("pressed", Callable(self, "_change_category").bind(category[1], index))
 		$journal_buttons.add_child(button)
 		
 		index += 1
 	
 	_change_category(["lake"], 0)
-	PlayerData.connect("_journal_update", self, "_refresh")
+	PlayerData.connect("_journal_update", Callable(self, "_refresh"))
 
 func _refresh():
 	_change_category(journal_category, journal_index)
@@ -49,10 +49,10 @@ func _change_category(categories, index):
 		for key in PlayerData.journal_logs[cat].keys():
 			var data = PlayerData.journal_logs[cat][key]
 			
-			var entry = preload("res://Scenes/HUD/JournalEntry/journal_entry.tscn").instance()
+			var entry = preload("res://Scenes/HUD/JournalEntry/journal_entry.tscn").instantiate()
 			box.add_child(entry)
 			entry._setup(key, data["record"], data["count"], data["quality"])
-			entry.connect("mouse_entered", self, "_item_entered", [entry, key, data])
+			entry.connect("mouse_entered", Callable(self, "_item_entered").bind(entry, key, data))
 			
 			count += 1
 			quality_count.append_array(data["quality"])
@@ -77,10 +77,10 @@ func _item_entered(button, item, entry):
 	$Panel2 / item_display._setup_nonitem(data.icon, button.hidden)
 	
 	var n = str(data.item_name) if not button.hidden else "UNKNOWN"
-	$Panel3 / header.bbcode_text = "[color=#6a4420]" + n + "[/color]"
+	$Panel3 / header.text = "[color=#6a4420]" + n + "[/color]"
 	
 	var desc = "[color=#b48141]" + str(data.item_description) + "[/color]\n" + str(data.catch_blurb) + "\n[color=#6a4420]Tier:[/color] " + str(data.tier + 1) + "\n[color=#6a4420]Caught:[/color] " + str(entry["count"]) + "\n[color=#6a4420]Record Size:[/color] " + str(entry["record"])
-	$Panel3 / body.bbcode_text = desc if not button.hidden else "CATCH THIS CREATURE TO LEARN MORE ABOUT IT"
+	$Panel3 / body.text = desc if not button.hidden else "CATCH THIS CREATURE TO LEARN MORE ABOUT IT"
 
 func _on_Timer_timeout():
 	scroll_index += 1

@@ -1,22 +1,22 @@
 extends Button
 
-export var action = "move_forward"
+@export var action = "move_forward"
 
 var default_action
 var set_action
 var queued_action
 
 func _ready():
-	OptionsMenu.connect("_rebinding_key", self, "_input_check")
+	OptionsMenu.connect("_rebinding_key", Callable(self, "_input_check"))
 	
-	default_action = InputMap.get_action_list(action)[0]
+	default_action = InputMap.action_get_events(action)[0]
 	
 	add_to_group("input_remap")
 	set_process_unhandled_key_input(false)
 	_display_key()
 
 func _display_key():
-	text = _get_text(InputMap.get_action_list(action)[0])
+	text = _get_text(InputMap.action_get_events(action)[0])
 
 func _get_text(action):
 	var new = "%s" % action.as_text()
@@ -34,17 +34,17 @@ func _on_input_forward_toggled(button_pressed):
 		_display_key()
 
 func _unhandled_key_input(event):
-	if event is InputEventKey and event.scancode == KEY_ESCAPE:
-		pressed = false
+	if event is InputEventKey and event.keycode == KEY_ESCAPE:
+		button_pressed = false
 		return
 	
 	for button in get_tree().get_nodes_in_group("input_remap"):
 		if button != self:
 			var valid = true
-			if button.set_action and button.set_action.scancode == event.scancode: valid = false
-			if button.queued_action and button.queued_action.scancode == event.scancode: valid = false
+			if button.set_action and button.set_action.keycode == event.keycode: valid = false
+			if button.queued_action and button.queued_action.keycode == event.keycode: valid = false
 			if not valid:
-				if button.default_action.scancode != event.scancode:
+				if button.default_action.keycode != event.keycode:
 					button.queued_action = button.default_action
 				else:
 					button.queued_action = set_action
@@ -53,11 +53,11 @@ func _unhandled_key_input(event):
 	
 	queued_action = event
 	
-	pressed = false
+	button_pressed = false
 
 func _input_check(new_action):
 	if action == new_action: return
-	pressed = false
+	button_pressed = false
 
 func _set_queued(event):
 	queued_action = event
