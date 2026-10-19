@@ -6,3 +6,6 @@
 2. use the peer to peer networking system from barkvr to make it ~free to host
 3. document the codebase
 4. make the codebase modular enough to be expanded by artists and other devs through PRs
+
+
+genai is not allowed in this project
