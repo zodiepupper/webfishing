@@ -1,12 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene format=3 uid="uid://47l6fix4jnws"]
 
-[ext_resource path="res://Assets/Shaders/waterfall.tres" type="Material" id=1]
+[sub_resource type="BoxMesh" id="1"]
+size = Vector3(5, 5, 1)
 
-[sub_resource type="BoxMesh" id=1]
-size = Vector3( 5, 5, 1 )
+[node name="waterfall" type="Node3D" unique_id=1875854777]
 
-[node name="waterfall" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource( 1 )
-material/0 = ExtResource( 1 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1907939200]
+mesh = SubResource("1")

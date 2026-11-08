@@ -1,27 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene format=3 uid="uid://c4pwyx4cocwth"]
 
-[ext_resource path="res://Sounds/npc_voice_1.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=5]
+[ext_resource type="Script" uid="uid://c1itdgq3ynf24" path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" id="2"]
+[ext_resource type="Script" uid="uid://dkjdk0ow8wojj" path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" id="5"]
 
-[sub_resource type="AudioStreamRandomizer" id=1]
-audio_stream = ExtResource( 1 )
+[sub_resource type="AudioStreamRandomizer" id="1"]
 
-[node name="test_shop" type="Node"]
-script = ExtResource( 2 )
+[node name="test_shop" type="Node" unique_id=1136375575]
+script = ExtResource("2")
 shop_title = "bait + sell depot"
 dialogue = true
-dialogue_open = [ "...", "...", "...............", "...", "..." ]
-dialogue_buy = [ "...", "...", "... thanks...", "...", "..." ]
-dialogue_voice = SubResource( 1 )
+dialogue_open = ["...", "...", "...............", "...", "..."]
+dialogue_buy = ["...", "...", "... thanks...", "...", "..."]
+dialogue_voice = SubResource("1")
 
-[node name="bait" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="bait" type="Node" parent="." unique_id=737811910]
+script = ExtResource("5")
 category_title = "bait restock"
 replace = 4
 
-[node name="sell" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="sell" type="Node" parent="." unique_id=104811473]
+script = ExtResource("5")
 category_title = "sell your items"
 replace = 2
 box_type = 3

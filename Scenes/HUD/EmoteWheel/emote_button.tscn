@@ -1,28 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene format=3 uid="uid://dqf83s0653kh4"]
 
-[ext_resource path="res://Assets/Textures/UI/radial_wheel_mask.png" type="BitMap" id=1]
-[ext_resource path="res://Assets/Textures/UI/radial_wheel2.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/HUD/EmoteWheel/emote_button.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Textures/UI/radial_wheel5.png" type="Texture2D" id=4]
+[ext_resource type="BitMap" uid="uid://by8inc1d2104l" path="res://Assets/Textures/UI/radial_wheel_mask.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://v1xxcsxo43xw" path="res://Assets/Textures/UI/radial_wheel2.png" id="2"]
+[ext_resource type="Script" uid="uid://dny75cjb0d3eg" path="res://Scenes/HUD/EmoteWheel/emote_button.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cnldwb2wf6e4e" path="res://Assets/Textures/UI/radial_wheel5.png" id="4"]
 
-[node name="TextureRect3" type="TextureButton"]
+[node name="TextureRect3" type="TextureButton" unique_id=2067850632]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 960, 540 )
+pivot_offset = Vector2(960, 540)
 size_flags_horizontal = 5
 size_flags_vertical = 5
-texture_normal = ExtResource( 2 )
-texture_click_mask = ExtResource( 1 )
-expand = true
+texture_normal = ExtResource("2")
+texture_click_mask = ExtResource("1")
 stretch_mode = 5
-script = ExtResource( 3 )
+script = ExtResource("3")
 emote_id = "emote_wave"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=149882110]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-texture = ExtResource( 4 )
+texture = ExtResource("4")
 stretch_mode = 6

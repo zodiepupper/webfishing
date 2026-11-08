@@ -1,40 +1,45 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene format=3 uid="uid://1efpilj82sal"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/HUD/Inbox/letter_popup.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=3]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Textures/UI/letterbgh.png" type="Texture2D" id=5]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="Script" uid="uid://b6vr2vx4y3prb" path="res://Scenes/HUD/Inbox/letter_popup.gd" id="2"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_med.tres" id="3"]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bxnw21h7m17y2" path="res://Assets/Textures/UI/letterbgh.png" id="5"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[node name="letter_popup" type="CanvasLayer"]
+[node name="letter_popup" type="CanvasLayer" unique_id=1288111193]
 layer = 3
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=27897072]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.784314 )
+color = Color(0, 0, 0, 0.784314)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1070480219]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
-expand = true
+texture = ExtResource("5")
+expand_mode = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1312451090]
+layout_mode = 3
 anchor_left = 0.24
 anchor_top = 0.24
 anchor_right = 0.76
 anchor_bottom = 0.76
-theme = ExtResource( 1 )
+theme = ExtResource("1")
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Control" unique_id=1130529086]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=104059516]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
@@ -42,130 +47,110 @@ offset_top = 12.0
 offset_right = -12.0
 offset_bottom = -12.0
 
-[node name="LineEdit" type="LineEdit" parent="Control/Panel/VBoxContainer"]
-offset_right = 974.0
-offset_bottom = 34.0
-max_length = 32
+[node name="LineEdit" type="LineEdit" parent="Control/Panel/VBoxContainer" unique_id=1159567536]
+layout_mode = 2
 placeholder_text = " Letter Subject Here"
+max_length = 32
 
-[node name="OptionButton" type="OptionButton" parent="Control/Panel/VBoxContainer"]
-offset_top = 38.0
-offset_right = 974.0
-offset_bottom = 72.0
+[node name="OptionButton" type="OptionButton" parent="Control/Panel/VBoxContainer" unique_id=381025579]
+layout_mode = 2
 
-[node name="dear_label" type="Label" parent="Control/Panel/VBoxContainer"]
-offset_top = 76.0
-offset_right = 974.0
-offset_bottom = 140.0
-custom_minimum_size = Vector2( 0, 64 )
+[node name="dear_label" type="Label" parent="Control/Panel/VBoxContainer" unique_id=1287472613]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
 text = "Dear,"
-valign = 2
+vertical_alignment = 2
 
-[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer"]
-offset_top = 144.0
-offset_right = 974.0
-offset_bottom = 431.0
+[node name="Panel" type="Panel" parent="Control/Panel/VBoxContainer" unique_id=1790479741]
+layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 
-[node name="TextEdit" type="TextEdit" parent="Control/Panel/VBoxContainer/Panel"]
+[node name="TextEdit" type="TextEdit" parent="Control/Panel/VBoxContainer/Panel" unique_id=1440436749]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
 offset_top = 12.0
 offset_right = -12.0
 offset_bottom = -12.0
-custom_minimum_size = Vector2( 0, 128 )
 size_flags_vertical = 3
 context_menu_enabled = false
-middle_mouse_paste_enabled = false
 drag_and_drop_selection_enabled = false
-wrap_enabled = true
+middle_mouse_paste_enabled = false
 caret_blink = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
-offset_top = 435.0
-offset_right = 974.0
-offset_bottom = 499.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=30176700]
+layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="VSeparator" type="VSeparator" parent="Control/Panel/VBoxContainer/HBoxContainer"]
-offset_right = 700.0
-offset_bottom = 64.0
+[node name="VSeparator" type="VSeparator" parent="Control/Panel/VBoxContainer/HBoxContainer" unique_id=20701975]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.5
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="OptionButton2" type="OptionButton" parent="Control/Panel/VBoxContainer/HBoxContainer"]
-offset_left = 712.0
-offset_right = 908.0
-offset_bottom = 64.0
+[node name="OptionButton2" type="OptionButton" parent="Control/Panel/VBoxContainer/HBoxContainer" unique_id=636140933]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.7
 
-[node name="namelb" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer"]
-offset_left = 920.0
-offset_right = 974.0
-offset_bottom = 64.0
-custom_minimum_size = Vector2( 0, 64 )
+[node name="namelb" type="Label" parent="Control/Panel/VBoxContainer/HBoxContainer" unique_id=2101850611]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
 text = "NAME"
-valign = 1
+vertical_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
-offset_top = 503.0
-offset_right = 974.0
-offset_bottom = 537.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Panel/VBoxContainer" unique_id=2036414931]
+layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="cancel" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer2"]
-offset_right = 107.0
-offset_bottom = 34.0
+[node name="cancel" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer2" unique_id=704089371]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 text = "Cancel"
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer2/cancel"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer2/cancel" unique_id=2005753854]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
+script = ExtResource("4")
 header = "Cancel Letter"
 body = "stops the writing of this letter"
 
-[node name="VSeparator" type="VSeparator" parent="Control/Panel/VBoxContainer/HBoxContainer2"]
-offset_left = 119.0
-offset_right = 654.0
-offset_bottom = 34.0
+[node name="VSeparator" type="VSeparator" parent="Control/Panel/VBoxContainer/HBoxContainer2" unique_id=555777496]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.5
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="Button" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer2"]
-offset_left = 666.0
-offset_right = 794.0
-offset_bottom = 34.0
+[node name="Button" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer2" unique_id=62257264]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.6
 text = "Add Gifts"
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer2/Button"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer2/Button" unique_id=1124560198]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
+script = ExtResource("4")
 header = "Add Gifts"
 body = "send items in this letter\\n letters are NOT returned if denied, so be sure you want to send them!"
 
-[node name="send" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer2"]
-offset_left = 806.0
-offset_right = 974.0
-offset_bottom = 34.0
+[node name="send" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer2" unique_id=1013702277]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.78
 text = "Send Letter!"
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer2/send"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/VBoxContainer/HBoxContainer2/send" unique_id=1720865824]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
+script = ExtResource("4")
 header = "Send Letter"
 body = "send the letter!"
 

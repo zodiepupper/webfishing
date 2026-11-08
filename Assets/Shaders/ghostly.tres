@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bvdjobif0y36v"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "shader_type spatial;
 render_mode depth_prepass_alpha, unshaded;
 
@@ -23,10 +23,11 @@ void vertex() {
 }"
 
 [resource]
-shader = SubResource( 1 )
-shader_param/speed = 2.0
-shader_param/base = 0.4
-shader_param/flex = 0.15
-shader_param/vert = 0.04
-shader_param/vert_time = 0.1
-shader_param/color = Color( 0.054902, 0.678431, 0.501961, 1 )
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/speed = 2.0
+shader_parameter/base = 0.4
+shader_parameter/flex = 0.15
+shader_parameter/vert = 0.04
+shader_parameter/vert_time = 0.1
+shader_parameter/color = Color(0.054902, 0.678431, 0.501961, 1)

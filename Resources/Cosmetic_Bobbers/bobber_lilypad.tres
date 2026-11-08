@@ -1,25 +1,25 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://bui8xrvd7lysu"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Materials/yellow.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons47.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Materials/green_c.tres" type="Material" id=4]
-[ext_resource path="res://Assets/Materials/pink_dark.tres" type="Material" id=5]
-[ext_resource path="res://Assets/Models/Cosmetics/bobber_lilypad.tres" type="ArrayMesh" id=6]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Material" uid="uid://c84n5fittqqmn" path="res://Assets/Materials/yellow.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://bnv6ogo3khg0" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons47.png" id="3"]
+[ext_resource type="Material" uid="uid://fhk32hvjgp4v" path="res://Assets/Materials/green_c.tres" id="4"]
+[ext_resource type="Material" uid="uid://j1hx01hrlhga" path="res://Assets/Materials/pink_dark.tres" id="5"]
+[ext_resource type="ArrayMesh" uid="uid://c0d883mghai6g" path="res://Assets/Models/Cosmetics/bobber_lilypad.tres" id="6"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Lilypad Bobber"
 desc = "Ribbit!"
 title = ""
-icon = ExtResource( 3 )
-mesh = ExtResource( 6 )
-species_alt_mesh = [  ]
-material = ExtResource( 4 )
-secondary_material = ExtResource( 5 )
-third_material = ExtResource( 2 )
-main_color = Color( 1, 1, 1, 1 )
-body_pattern = [  ]
+icon = ExtResource("3")
+mesh = ExtResource("6")
+species_alt_mesh = []
+material = ExtResource("4")
+secondary_material = ExtResource("5")
+third_material = ExtResource("2")
+main_color = Color(1, 1, 1, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

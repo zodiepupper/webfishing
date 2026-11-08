@@ -1,18 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene format=3 uid="uid://cefp87rbpbqso"]
 
-[ext_resource path="res://Assets/Materials/brown.tres" type="Material" id=1]
-[ext_resource path="res://Assets/Materials/yellow.tres" type="Material" id=2]
-[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Models/chest.obj" type="ArrayMesh" id=4]
+[ext_resource type="Script" uid="uid://8wam0bbecndl" path="res://Scenes/ItemMeshes/item_mesh.gd" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://d0gvsq106b23k" path="res://Assets/Models/chest.obj" id="4"]
 
-[node name="treasure_chest" type="Node3D"]
-script = ExtResource( 3 )
+[node name="treasure_chest" type="Node3D" unique_id=955587355]
+script = ExtResource("3")
 hotspot_node = NodePath("Marker3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1.05697e-08, 0.14, 6.11959e-09, 0, -6.11959e-09, 0.14, 0.14, -1.05697e-08, -4.62017e-16, 0.035, 0.068, 0 )
-mesh = ExtResource( 4 )
-material/0 = ExtResource( 1 )
-material/1 = ExtResource( 2 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=880141756]
+transform = Transform3D(1.05697e-08, 0.14, 6.11959e-09, 0, -6.11959e-09, 0.14, 0.14, -1.05697e-08, -4.62017e-16, 0.035, 0.068, 0)
+mesh = ExtResource("4")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=314225757]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene format=3 uid="uid://b6y48heqryiya"]
 
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/sell_shop.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sounds/npc_voice_5.ogg" type="AudioStream" id=2]
+[ext_resource type="PackedScene" uid="uid://c4pwyx4cocwth" path="res://Scenes/HUD/Shop/ShopSetups/sell_shop.tscn" id="1"]
+[ext_resource type="AudioStream" uid="uid://cthj7d7e1tce1" path="res://Sounds/npc_voice_5.ogg" id="2"]
 
-[node name="test_shop" instance=ExtResource( 1 )]
-dialogue_open = [ "hi", "hello", "you called for a worm?", "you called?", "sup?" ]
-dialogue_buy = [ "awesome", "sick", "epic", "awesome sauce" ]
-dialogue_voice = ExtResource( 2 )
+[node name="test_shop" unique_id=1535607317 instance=ExtResource("1")]
+dialogue_open = ["hi", "hello", "you called for a worm?", "you called?", "sup?"]
+dialogue_buy = ["awesome", "sick", "epic", "awesome sauce"]
+dialogue_voice = ExtResource("2")

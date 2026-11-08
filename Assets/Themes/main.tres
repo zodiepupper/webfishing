@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://dwxjtek5l8mec"]
 
-[ext_resource type="FontFile" path="res://Assets/Themes/main_font.tres" id="1"]
+[ext_resource type="FontFile" uid="uid://pbwkih0mqemv" path="res://Assets/Themes/main_font.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://ct6mpvrhr3d05" path="res://Assets/Textures/UI/scrollbar.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://ci363r24occoh" path="res://Assets/Textures/UI/checkbox_ui2.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://dsinhyrj3dybm" path="res://Assets/Textures/UI/checkbox_ui3.png" id="4"]

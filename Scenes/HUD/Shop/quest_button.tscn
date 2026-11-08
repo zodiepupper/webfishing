@@ -1,78 +1,87 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene format=3 uid="uid://be0aawdmqn3np"]
 
-[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/Textures/Fish/fish4.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/HUD/Shop/quest_button.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons1.png" type="Texture2D" id=4]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=6]
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=7]
-[ext_resource path="res://Assets/Themes/coolvetica condensed rg.otf" type="FontFile" id=8]
+[ext_resource type="Theme" uid="uid://dk4lixgcevj1v" path="res://Assets/Themes/secondary.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://b3dhgoqytloi" path="res://Assets/Textures/Fish/fish4.png" id="2"]
+[ext_resource type="Script" uid="uid://fbjd7bnnmfns" path="res://Scenes/HUD/Shop/quest_button.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cmq11n4s4y60d" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons1.png" id="4"]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="5"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_green.tres" id="6"]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="7"]
+[ext_resource type="FontFile" uid="uid://dud1a31x684is" path="res://Assets/Themes/coolvetica condensed rg.otf" id="8"]
 
-[sub_resource type="FontFile" id=1]
-size = 22
-font_data = ExtResource( 8 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("8")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" unique_id=360248634]
+custom_minimum_size = Vector2(300, 72)
 offset_right = 92.0
 offset_bottom = 92.0
-custom_minimum_size = Vector2( 300, 72 )
 size_flags_horizontal = 3
-theme = ExtResource( 1 )
-script = ExtResource( 3 )
+theme = ExtResource("1")
+script = ExtResource("3")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=880152161]
+layout_mode = 0
 anchor_left = -0.0133333
 anchor_top = -0.0869565
 anchor_right = -0.013
 anchor_bottom = 0.369957
 offset_right = 41.9001
 offset_bottom = -0.0360088
-theme_override_styles/panel = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+theme_override_styles/panel = ExtResource("6")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel" unique_id=1185178884]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 7 )
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme = ExtResource("7")
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "9"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1038296782]
+layout_mode = 0
 anchor_right = 0.929
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-offset_right = 71.0
-offset_bottom = 92.0
-custom_minimum_size = Vector2( 42, 42 )
-mouse_filter = 2
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1667439550]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
-texture = ExtResource( 2 )
-expand = true
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
-offset_left = 75.0
-offset_right = 278.0
-offset_bottom = 92.0
-mouse_filter = 2
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=749243411]
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_fonts/normal_font = SubResource( 1 )
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_fonts/normal_font = SubResource("1")
 bbcode_enabled = true
-text = "Catch LAKE Fish (0/25)
-Reward: $25"
 text = "Catch LAKE Fish (0/25)
 Reward: $25"
 scroll_active = false
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=560373344]
+layout_mode = 0
 anchor_left = 0.77
 anchor_top = 0.413044
 anchor_right = 0.987333
@@ -80,47 +89,38 @@ anchor_bottom = 0.869784
 offset_right = 0.100006
 offset_bottom = -0.0199966
 alignment = 2
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="cash" type="Panel" parent="HBoxContainer2"]
-offset_right = 100.0
-offset_bottom = 42.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="cash" type="Panel" parent="HBoxContainer2" unique_id=1539197063]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("6")
 
-[node name="Label" type="Label" parent="HBoxContainer2/cash"]
+[node name="Label" type="Label" parent="HBoxContainer2/cash" unique_id=1326591258]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 7 )
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme = ExtResource("7")
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "$999"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="cosmetic" type="Panel" parent="HBoxContainer2"]
-offset_left = 104.0
-offset_right = 104.0
-offset_bottom = 42.0
+[node name="cosmetic" type="Panel" parent="HBoxContainer2" unique_id=890677662]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
-theme_override_styles/panel = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+theme_override_styles/panel = ExtResource("6")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/cosmetic"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/cosmetic" unique_id=159256678]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
+texture = ExtResource("4")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1722902992]
+layout_mode = 0
 anchor_left = 0.247
 anchor_top = 0.435
 anchor_right = 0.72
@@ -129,31 +129,30 @@ offset_left = -0.100006
 offset_top = -0.0200043
 offset_right = 0.0999756
 offset_bottom = -0.012001
-percent_visible = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Label" type="Label" parent="ProgressBar"]
+[node name="Label" type="Label" parent="ProgressBar" unique_id=2112315856]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
-align = 1
-valign = 1
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="confim" type="Panel" parent="."]
+[node name="confim" type="Panel" parent="." unique_id=1980359354]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_styles/panel = ExtResource( 6 )
+theme_override_styles/panel = ExtResource("6")
 
-[node name="TooltipNode" type="Control" parent="."]
+[node name="TooltipNode" type="Control" parent="." unique_id=91899651]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
+script = ExtResource("5")
 header = "beepis"
 body = "bonkus"

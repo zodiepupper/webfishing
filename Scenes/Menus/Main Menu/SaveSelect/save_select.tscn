@@ -1,29 +1,33 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene format=3 uid="uid://c1getek3vry0u"]
 
-[ext_resource path="res://Scenes/Menus/Main Menu/SaveSelect/save_select.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons4.png" type="Texture2D" id=3]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Textures/UI/garbage_can.png" type="Texture2D" id=5]
-[ext_resource path="res://Assets/Textures/UI/save_arrow.png" type="Texture2D" id=6]
+[ext_resource type="Script" uid="uid://dpbvxpyb4db1j" path="res://Scenes/Menus/Main Menu/SaveSelect/save_select.gd" id="1"]
+[ext_resource type="Script" uid="uid://cd5dpm1u0dx44" path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b7mk4dxr781eq" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons4.png" id="3"]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://dnnj71flnb5tk" path="res://Assets/Textures/UI/garbage_can.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://q3g64ecgxjx" path="res://Assets/Textures/UI/save_arrow.png" id="6"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[node name="save_select" type="Control"]
+[node name="save_select" type="Control" unique_id=2037955203]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 350.0
 offset_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=748440194]
+layout_mode = 0
 anchor_right = 0.85
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Button"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Button" unique_id=279657858]
+layout_mode = 0
 anchor_left = 0.01
 anchor_top = 0.01
 anchor_right = 0.99
@@ -34,76 +38,74 @@ offset_right = -2.0
 offset_bottom = -2.0
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="Button/HBoxContainer"]
-offset_top = 5.0
-offset_right = 125.0
-offset_bottom = 53.0
+[node name="Label" type="Label" parent="Button/HBoxContainer" unique_id=1116313198]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "Save Slot 0
 9999 Fish Caught
 00:00 Time Played"
 
-[node name="VSeparator" type="VSeparator" parent="Button/HBoxContainer"]
-offset_left = 129.0
-offset_right = 254.0
-offset_bottom = 58.0
-mouse_filter = 2
+[node name="VSeparator" type="VSeparator" parent="Button/HBoxContainer" unique_id=56971309]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/separator = SubResource( 1 )
-
-[node name="TextureRect" type="TextureRect" parent="Button/HBoxContainer"]
-offset_left = 258.0
-offset_right = 287.0
-offset_bottom = 58.0
 mouse_filter = 2
+theme_override_styles/separator = SubResource("1")
+
+[node name="TextureRect" type="TextureRect" parent="Button/HBoxContainer" unique_id=1449510061]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.23
-texture = ExtResource( 3 )
-expand = true
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="TooltipNode" type="Control" parent="Button"]
+[node name="TooltipNode" type="Control" parent="Button" unique_id=727800932]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
+script = ExtResource("4")
 header = "Load Save"
 body = "Loads the selected save file."
 
-[node name="reset" type="Button" parent="."]
+[node name="reset" type="Button" parent="." unique_id=152806113]
+layout_mode = 0
 anchor_left = 0.86
 anchor_right = 1.0
 anchor_bottom = 1.0
-icon = ExtResource( 5 )
+icon = ExtResource("5")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="TooltipNode" type="Control" parent="reset"]
+[node name="TooltipNode" type="Control" parent="reset" unique_id=524664132]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
+script = ExtResource("4")
 header = "Reset Save"
 body = "Permanantly resets the selected save file's data."
 
-[node name="warning" type="Label" parent="reset"]
+[node name="warning" type="Label" parent="reset" unique_id=1491226087]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "Clear in 10"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="arrow" type="TextureRect" parent="."]
+[node name="arrow" type="TextureRect" parent="." unique_id=1329248786]
+layout_mode = 0
 anchor_bottom = 1.0
 offset_left = -70.0
 offset_right = -32.0
-texture = ExtResource( 6 )
-expand = true
+texture = ExtResource("6")
+expand_mode = 1
 stretch_mode = 6
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

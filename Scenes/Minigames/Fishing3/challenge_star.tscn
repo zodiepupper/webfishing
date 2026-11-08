@@ -1,60 +1,55 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene format=3 uid="uid://ctmi8wt8pqdga"]
 
-[ext_resource path="res://Assets/Textures/UI/stars.png" type="Texture2D" id=1]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/challenge_star1.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/Minigames/Fishing3/challenge_star.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/challenge_star2.png" type="Texture2D" id=4]
+[ext_resource type="Texture2D" uid="uid://pd1vbudnxm4j" path="res://Assets/Textures/UI/stars.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c5idgag40jd81" path="res://Assets/Textures/UI/Fishing3Minigame/challenge_star1.png" id="2"]
+[ext_resource type="Script" uid="uid://b2yvt7k5v7c57" path="res://Scenes/Minigames/Fishing3/challenge_star.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://tsr51wr47mtl" path="res://Assets/Textures/UI/Fishing3Minigame/challenge_star2.png" id="4"]
 
-[sub_resource type="StyleBoxEmpty" id=10]
+[sub_resource type="StyleBoxEmpty" id="10"]
 
-[sub_resource type="Curve" id=8]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.312236, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.797468, 0 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.312236, 1), 0.0, 0.0, 0, 0, Vector2(0.797468, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id="7"]
+curve = SubResource("8")
 
-[sub_resource type="ParticleProcessMaterial" id=9]
-flag_disable_z = true
-direction = Vector3( 0.4, -1, 0 )
+[sub_resource type="ParticleProcessMaterial" id="9"]
+direction = Vector3(0.4, -1, 0)
 spread = 82.38
-gravity = Vector3( 0, 98, 0 )
-initial_velocity = 209.36
-initial_velocity_random = 0.55
-angular_velocity = 210.67
-angular_velocity_random = 0.91
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 7 )
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("7")
 
-[node name="challenge_star" type="Button"]
+[node name="challenge_star" type="Button" unique_id=539595035]
 offset_right = 128.0
 offset_bottom = 128.0
-pivot_offset = Vector2( 64, 64 )
-theme_override_styles/hover = SubResource( 10 )
-theme_override_styles/focus = SubResource( 10 )
-icon = ExtResource( 2 )
+pivot_offset = Vector2(64, 64)
+theme_override_styles/hover = SubResource("10")
+theme_override_styles/focus = SubResource("10")
+icon = ExtResource("2")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource( 3 )
+script = ExtResource("3")
 
-[node name="stars" type="GPUParticles2D" parent="."]
-position = Vector2( 72, 68 )
+[node name="stars" type="GPUParticles2D" parent="." unique_id=478945973]
+position = Vector2(72, 68)
 emitting = false
 amount = 6
+texture = ExtResource("1")
 lifetime = 3.0
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
-process_material = SubResource( 9 )
-texture = ExtResource( 1 )
+process_material = SubResource("9")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=275345264]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 max_value = 120.0
 value = 120.0
-texture_progress = ExtResource( 4 )
 fill_mode = 5
+texture_progress = ExtResource("4")
 
 [connection signal="pressed" from="." to="." method="_on_challenge_star_pressed"]

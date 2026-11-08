@@ -1,109 +1,43 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene format=3 uid="uid://bxvdvk1iob1dn"]
 
-[ext_resource path="res://Assets/Shaders/water.tres" type="Shader" id=1]
-[ext_resource path="res://Assets/Textures/YhNiKlc.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Textures/sand.png" type="Texture2D" id=3]
-
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 750, 750 )
+[sub_resource type="PlaneMesh" id="1"]
+size = Vector2(750, 750)
 subdivide_width = 75
 subdivide_depth = 75
 
-[sub_resource type="FastNoiseLite" id=303]
-period = 8.0
-persistence = 0.9
-lacunarity = 3.36
+[sub_resource type="PlaneMesh" id="7"]
+size = Vector2(50, 50)
 
-[sub_resource type="NoiseTexture" id=304]
-seamless = true
-noise = SubResource( 303 )
+[sub_resource type="BoxShape3D" id="305"]
+size = Vector3(750, 4, 750)
 
-[sub_resource type="FastNoiseLite" id=5]
-fractal_octaves = 2
-period = 83.0
-persistence = 0.424
-lacunarity = 0.68
+[node name="water" type="Node3D" unique_id=1072800575]
 
-[sub_resource type="NoiseTexture" id=6]
-seamless = true
-noise = SubResource( 5 )
+[node name="main" type="MeshInstance3D" parent="." unique_id=1490968967]
+mesh = SubResource("1")
 
-[sub_resource type="ShaderMaterial" id=4]
-resource_local_to_scene = true
-shader = ExtResource( 1 )
-shader_param/out_color = Color( 0, 0.521569, 0.513726, 1 )
-shader_param/depth_color = Color( 0.12549, 0.843137, 0.67451, 1 )
-shader_param/amount = 0.2
-shader_param/speed = 2.0
-shader_param/beer_factor = 0.5
-shader_param/min_alpha = 0.7
-shader_param/metallic = 0.0
-shader_param/specular = 0.0
-shader_param/roughness = 0.0
-shader_param/intersection_color = Color( 1, 0.933333, 0.835294, 1 )
-shader_param/intersection_max_threshold = 1.4
-shader_param/displ_amount = 0.33
-shader_param/noise_scale = 2.1
-shader_param/near = 0.13
-shader_param/far = 300.0
-shader_param/wave_speed = 0.04
-shader_param/wave_amp = 3.0
-shader_param/foam_color = Color( 0.0745098, 0.498039, 0.435294, 1 )
-shader_param/foam_white_color = Color( 0.545098, 0.870588, 0.796078, 0.364706 )
-shader_param/foam_white_thresh = 0.4
-shader_param/foam_scale = 0.125
-shader_param/displ_tex = ExtResource( 2 )
-shader_param/wave_noise = SubResource( 6 )
-shader_param/foam_noise = SubResource( 304 )
+[node name="fade" type="MeshInstance3D" parent="." unique_id=1985251032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+mesh = SubResource("7")
 
-[sub_resource type="PlaneMesh" id=7]
-size = Vector2( 50, 50 )
+[node name="fade2" type="MeshInstance3D" parent="." unique_id=1303866487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("7")
 
-[sub_resource type="StandardMaterial3D" id=8]
-flags_transparent = true
-albedo_color = Color( 0.109804, 0.509804, 0.0666667, 0.129412 )
+[node name="fade3" type="MeshInstance3D" parent="." unique_id=618900857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+mesh = SubResource("7")
 
-[sub_resource type="StandardMaterial3D" id=302]
-albedo_texture = ExtResource( 3 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
+[node name="fade4" type="MeshInstance3D" parent="." unique_id=1854470271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+mesh = SubResource("7")
 
-[sub_resource type="BoxShape3D" id=305]
-extents = Vector3( 375, 2, 375 )
+[node name="sand" type="MeshInstance3D" parent="." unique_id=755365867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.25396, 0)
+mesh = SubResource("7")
 
-[node name="water" type="Node3D"]
+[node name="Area3D" type="Area3D" parent="." unique_id=385436333 groups=["water"]]
 
-[node name="main" type="MeshInstance3D" parent="."]
-mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
-
-[node name="fade" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
-mesh = SubResource( 7 )
-material/0 = SubResource( 8 )
-
-[node name="fade2" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0 )
-mesh = SubResource( 7 )
-material/0 = SubResource( 8 )
-
-[node name="fade3" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0 )
-mesh = SubResource( 7 )
-material/0 = SubResource( 8 )
-
-[node name="fade4" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0 )
-mesh = SubResource( 7 )
-material/0 = SubResource( 8 )
-
-[node name="sand" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.25396, 0 )
-mesh = SubResource( 7 )
-material/0 = SubResource( 302 )
-
-[node name="Area3D" type="Area3D" parent="." groups=["water"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 305 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2132872143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("305")

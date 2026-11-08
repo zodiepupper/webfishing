@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://ck6ymvl6go200"]
 
-[ext_resource path="res://Assets/Models/Cosmetics/tanktop.tres" type="ArrayMesh" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons17.png" type="Texture2D" id=3]
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=4]
+[ext_resource type="ArrayMesh" uid="uid://nklimvfsgbge" path="res://Assets/Models/Cosmetics/tanktop.tres" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://car6lcv13n5nc" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons17.png" id="3"]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="4"]
 
 [resource]
-script = ExtResource( 4 )
+script = ExtResource("4")
 name = "Tan Tank-Top"
 desc = "Sleeveless!"
 title = ""
-icon = ExtResource( 3 )
-mesh = ExtResource( 1 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-main_color = Color( 0.835294, 0.666667, 0.45098, 1 )
-body_pattern = [  ]
+icon = ExtResource("3")
+mesh = ExtResource("1")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+main_color = Color(0.835294, 0.666667, 0.45098, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "undershirt"

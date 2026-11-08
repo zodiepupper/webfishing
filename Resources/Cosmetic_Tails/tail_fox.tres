@@ -1,19 +1,19 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://cclxhriaxn2l5"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons22.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Models/Cosmetics/tail_fox.tres" type="ArrayMesh" id=3]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c5ebstwh2kg8j" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons22.png" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://dtt1fxjl0kh1k" path="res://Assets/Models/Cosmetics/tail_fox.tres" id="3"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Fox Tail"
 desc = "Swish!"
 title = ""
-icon = ExtResource( 2 )
-mesh = ExtResource( 3 )
-species_alt_mesh = [  ]
-main_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-body_pattern = [  ]
+icon = ExtResource("2")
+mesh = ExtResource("3")
+species_alt_mesh = []
+main_color = Color(0.0627451, 0.109804, 0.192157, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "tail"

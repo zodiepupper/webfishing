@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://c4myrrwa44lsi"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Assets/Models/shirt_update.tres" type="ArrayMesh" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons1.png" type="Texture2D" id=4]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://clbpfy7bax1yo" path="res://Assets/Models/shirt_update.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://cmq11n4s4y60d" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons1.png" id="4"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Grey T-Shirt"
 desc = "Simple yet sweet!"
 title = ""
-icon = ExtResource( 4 )
-mesh = ExtResource( 3 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-main_color = Color( 0.643137, 0.458824, 0.415686, 1 )
-body_pattern = [  ]
+icon = ExtResource("4")
+mesh = ExtResource("3")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+main_color = Color(0.643137, 0.458824, 0.415686, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "undershirt"

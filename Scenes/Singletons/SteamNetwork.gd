@@ -144,9 +144,9 @@ func _ready():
 	if not STEAM_ENABLED: return
 	var INIT = Steam.steamInitEx()
 	
-	if INIT["status"] != 1:
-		print("Failed to initialize Steam. Shutting down. %s" % INIT["status"])
-		get_tree().quit()
+	#if INIT["status"] != 1:
+		#print("Failed to initialize Steam. Shutting down. %s" % INIT["status"])
+		#get_tree().quit()
 	
 	IS_OWNED = Steam.isSubscribed()
 	IS_ONLINE = Steam.loggedOn()
@@ -155,9 +155,9 @@ func _ready():
 	
 	print("Steam Active under username: ", STEAM_USERNAME, " ID: ", STEAM_ID)
 	
-	if IS_OWNED == false:
-		print("User does not own game.")
-		get_tree().quit()
+	#if IS_OWNED == false:
+		#print("User does not own game.")
+		#get_tree().quit()
 	
 	Steam.connect("lobby_created", Callable(self, "_on_Lobby_Created"))
 	Steam.connect("lobby_joined", Callable(self, "_on_Lobby_Joined"))

@@ -1,52 +1,49 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene format=3 uid="uid://ff0kp5y1brrh"]
 
-[ext_resource path="res://Assets/Textures/circle_fade.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://b4ecdw1ctrw0s" path="res://Assets/Textures/circle_fade.png" id="1"]
 
-[sub_resource type="Gradient" id=1]
-offsets = PackedFloat32Array( 0.145594, 1 )
-colors = PackedColorArray( 0.946903, 1, 0, 1, 0.643137, 0.666667, 0.223529, 0 )
+[sub_resource type="Gradient" id="1"]
+offsets = PackedFloat32Array(0.145594, 1)
+colors = PackedColorArray(0.946903, 1, 0, 1, 0.643137, 0.666667, 0.223529, 0)
 
-[sub_resource type="GradientTexture2D" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture2D" id="2"]
+gradient = SubResource("1")
 
-[sub_resource type="Curve" id=6]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.496479, 0.271591 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0522727 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.496479, 0.271591), 0.0, 0.0, 0, 0, Vector2(1, 0.0522727), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 6 )
+[sub_resource type="CurveTexture" id="7"]
+curve = SubResource("6")
 
-[sub_resource type="ParticleProcessMaterial" id=3]
+[sub_resource type="ParticleProcessMaterial" id="3"]
 emission_shape = 2
-emission_box_extents = Vector3( 1, 1.2, 1 )
+emission_sphere_radius = 1.0
 spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 0.1
-initial_velocity_random = 0.49
-scale = 0.2
-scale_random = 0.6
-scale_curve = SubResource( 7 )
-color_ramp = SubResource( 2 )
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.0
+scale_curve = SubResource("7")
+color_ramp = SubResource("2")
 
-[sub_resource type="StandardMaterial3D" id=4]
-flags_transparent = true
+[sub_resource type="StandardMaterial3D" id="4"]
+transparency = 4
 vertex_color_use_as_albedo = true
-params_depth_draw_mode = 3
-params_billboard_mode = 3
+albedo_texture = ExtResource("1")
+billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-albedo_texture = ExtResource( 1 )
 
-[sub_resource type="QuadMesh" id=5]
-material = SubResource( 4 )
+[sub_resource type="QuadMesh" id="5"]
+material = SubResource("4")
 
-[node name="alien_particle_cosmetic" type="Node3D"]
+[node name="alien_particle_cosmetic" type="Node3D" unique_id=856826566]
 
-[node name="Particles" type="Particles" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+[node name="Particles" type="GPUParticles3D" parent="." unique_id=1451131056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 amount = 11
 lifetime = 5.0
 preprocess = 2.0
-local_coords = false
-process_material = SubResource( 3 )
-draw_pass_1 = SubResource( 5 )
+process_material = SubResource("3")
+draw_pass_1 = SubResource("5")

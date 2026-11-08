@@ -1,24 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene format=3 uid="uid://4s5ckhx3gojw"]
 
-[ext_resource path="res://Scenes/Entities/Props/prop.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Entities/ChalkCanvas/chalk_canvas.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Materials/concrete.tres" type="Material" id=3]
+[ext_resource type="Script" uid="uid://cxywq4teu3to8" path="res://Scenes/Entities/Props/prop.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bgywib42n5ovb" path="res://Scenes/Entities/ChalkCanvas/chalk_canvas.tscn" id="2"]
 
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 5, 5 )
+[sub_resource type="PlaneMesh" id="1"]
+size = Vector2(5, 5)
 
-[node name="canvas" type="CharacterBody3D"]
-script = ExtResource( 1 )
-delete_on_owner_disconnect = true
+[node name="canvas" type="CharacterBody3D" unique_id=774095118]
+script = ExtResource("1")
 rotation_reset = true
+delete_on_owner_disconnect = true
 
-[node name="MeshInstance2" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.008, 0.1 )
-mesh = SubResource( 1 )
-skeleton = NodePath("")
-material/0 = ExtResource( 3 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="." unique_id=1722749374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.008, 0.1)
+mesh = SubResource("1")
 
-[node name="chalk_canvas" parent="." instance=ExtResource( 2 )]
+[node name="chalk_canvas" parent="." unique_id=310497057 instance=ExtResource("2")]
 canvas_size = 2.4
 inherit_id = NodePath("..")
 circular = false

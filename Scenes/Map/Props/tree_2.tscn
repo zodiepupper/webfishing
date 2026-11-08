@@ -1,54 +1,27 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene format=3 uid="uid://cmyef01v5jat8"]
 
-[ext_resource path="res://Assets/Placeholder/tree_2.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Assets/Materials/dark_brown.tres" type="Material" id=2]
-[ext_resource path="res://Scenes/Map/Props/prop.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Map/Props/prop_shadow.tscn" type="PackedScene" id=5]
+[ext_resource type="ArrayMesh" uid="uid://chvoxafrdk0wg" path="res://Assets/Placeholder/tree_2.obj" id="1"]
+[ext_resource type="Script" uid="uid://dermtwlpxd54j" path="res://Scenes/Map/Props/prop.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://24bd7p6mug3n" path="res://Scenes/Map/Props/prop_shadow.tscn" id="5"]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type spatial;
+[sub_resource type="CylinderShape3D" id="3"]
 
-uniform vec4 albedo : source_color;
-uniform float wobble_speed = 1.0;
-uniform float wobble_amt = 1.0;
-
-void vertex() {
-	VERTEX.x += sin(TIME * VERTEX.x * wobble_speed) * wobble_amt;
-	VERTEX.y += sin(TIME * VERTEX.y * wobble_speed) * wobble_amt;
-	VERTEX.z += sin(TIME * VERTEX.z * wobble_speed) * wobble_amt;
-}
-
-void fragment() {
-	ALBEDO = albedo.rgb;
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/albedo = Color( 0.643137, 0.666667, 0.223529, 1 )
-shader_param/wobble_speed = 0.07
-shader_param/wobble_amt = 0.25
-
-[sub_resource type="CylinderShape3D" id=3]
-
-[node name="tree_2" type="MeshInstance3D"]
-mesh = ExtResource( 1 )
-material/0 = ExtResource( 2 )
-material/1 = SubResource( 2 )
-material/2 = SubResource( 2 )
-script = ExtResource( 4 )
+[node name="tree_2" type="MeshInstance3D" unique_id=1199716878]
+mesh = ExtResource("1")
+script = ExtResource("4")
+nudge = -0.06
 cull_max_range = 150
 premade_cull_vis = NodePath("VisibleOnScreenNotifier3D")
-nudge = -0.06
 
-[node name="shadow" parent="." instance=ExtResource( 5 )]
-transform = Transform3D( 3.85743, 0, 0, 0, -1.68613e-07, 3.85743, 0, -3.85743, -1.68613e-07, 0, 0.071, 0 )
+[node name="shadow" parent="." unique_id=88497768 instance=ExtResource("5")]
+transform = Transform3D(3.85743, 0, 0, 0, -1.68613e-07, 3.85743, 0, -3.85743, -1.68613e-07, 0, 0.071, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1013235676]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D( 0.696934, 0, 0, 0, 2.10395, 0, 0, 0, 0.696934, 0.0832821, 2.12052, -0.162387 )
-shape = SubResource( 3 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=387959939]
+transform = Transform3D(0.696934, 0, 0, 0, 2.10395, 0, 0, 0, 0.696934, 0.0832821, 2.12052, -0.162387)
+shape = SubResource("3")
 
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.03721, 0 )
-aabb = AABB( -4.89606, -7.14372, -6.18786, 9.79212, 14.2874, 12.3757 )
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=772992270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.03721, 0)
+aabb = AABB(-4.89606, -7.14372, -6.18786, 9.79212, 14.2874, 12.3757)

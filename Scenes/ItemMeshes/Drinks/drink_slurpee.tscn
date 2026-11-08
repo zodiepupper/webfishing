@@ -1,21 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene format=3 uid="uid://d0mw74ulhlosm"]
 
-[ext_resource path="res://Assets/Materials/brown.tres" type="Material" id=1]
-[ext_resource path="res://Assets/Materials/green.tres" type="Material" id=2]
-[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Materials/white.tres" type="Material" id=4]
-[ext_resource path="res://Assets/Models/slurpee.obj" type="ArrayMesh" id=5]
+[ext_resource type="Script" uid="uid://8wam0bbecndl" path="res://Scenes/ItemMeshes/item_mesh.gd" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://bjfcy1gctmbym" path="res://Assets/Models/slurpee.obj" id="5"]
 
-[node name="drink_hooklite" type="Node3D"]
-script = ExtResource( 3 )
+[node name="drink_hooklite" type="Node3D" unique_id=728019285]
+script = ExtResource("3")
 hotspot_node = NodePath("Marker3D")
 
-[node name="slurpee" type="MeshInstance3D" parent="."]
-transform = Transform3D( 0.0570768, 0, 0, 0, 0.0440989, 0, 0, 0, 0.0570768, 0, -0.0862057, 0 )
-mesh = ExtResource( 5 )
-material/0 = ExtResource( 2 )
-material/1 = ExtResource( 1 )
-material/2 = ExtResource( 4 )
-material/3 = ExtResource( 2 )
+[node name="slurpee" type="MeshInstance3D" parent="." unique_id=1289070771]
+transform = Transform3D(0.0570768, 0, 0, 0, 0.0440989, 0, 0, 0, 0.0570768, 0, -0.0862057, 0)
+mesh = ExtResource("5")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=235888164]

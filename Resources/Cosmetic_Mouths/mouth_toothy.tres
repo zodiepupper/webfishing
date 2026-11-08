@@ -1,16 +1,16 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://d4arp0x6m8cn6"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/Face/mouth_base4.png" type="Texture2D" id=2]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dosf12cnoewo6" path="res://Assets/Textures/Face/mouth_base4.png" id="2"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Toothy"
 desc = "Snaggletooth!"
 title = ""
-icon = ExtResource( 2 )
-main_color = Color( 1, 1, 1, 1 )
-body_pattern = [  ]
+icon = ExtResource("2")
+main_color = Color(1, 1, 1, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "mouth"

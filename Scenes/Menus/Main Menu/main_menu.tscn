@@ -1,55 +1,65 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene format=3 uid="uid://bj7skqf71ajnk"]
 
-[ext_resource path="res://Scenes/Menus/Main Menu/main_menu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
-[ext_resource path="res://Scenes/World/world.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Textures/UI/logo2.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/Themes/button_tan_normal.tres" type="StyleBox" id=5]
-[ext_resource path="res://Assets/Themes/button_tan_pressed.tres" type="StyleBox" id=6]
-[ext_resource path="res://Assets/Themes/button_tan_hover.tres" type="StyleBox" id=7]
-[ext_resource path="res://Assets/Themes/accid___.ttf" type="FontFile" id=8]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Textures/UI/lamdev.png" type="Texture2D" id=10]
-[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=11]
-[ext_resource path="res://Assets/Textures/UI/knot_sep2.png" type="Texture2D" id=12]
-[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=13]
-[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Textures/UI/loading_dial.png" type="Texture2D" id=15]
-[ext_resource path="res://Scenes/Menus/Main Menu/save_select.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/Menus/Main Menu/PlayercountDial/playercount_dial.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Assets/Textures/UI/player_options5.png" type="Texture2D" id=18]
-[ext_resource path="res://Scenes/Menus/Main Menu/lobby_tag.gd" type="Script" id=19]
-[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=20]
+[ext_resource type="Script" uid="uid://dut3quurpcum5" path="res://Scenes/Menus/Main Menu/main_menu.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/World/world.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://tod6dq2np85q" path="res://Assets/Textures/UI/logo2.png" id="4"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/button_tan_normal.tres" id="5"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/button_tan_pressed.tres" id="6"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/button_tan_hover.tres" id="7"]
+[ext_resource type="FontFile" uid="uid://56et5yqitr50" path="res://Assets/Themes/accid___.ttf" id="8"]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://dgvvll144ptam" path="res://Assets/Textures/UI/lamdev.png" id="10"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_med.tres" id="11"]
+[ext_resource type="Texture2D" uid="uid://87duhtu5vjcc" path="res://Assets/Textures/UI/knot_sep2.png" id="12"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_green.tres" id="13"]
+[ext_resource type="Script" uid="uid://cd5dpm1u0dx44" path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" id="14"]
+[ext_resource type="Texture2D" uid="uid://c3tcvwc0y8y0g" path="res://Assets/Textures/UI/loading_dial.png" id="15"]
+[ext_resource type="Script" uid="uid://m5bjxk27yq2" path="res://Scenes/Menus/Main Menu/save_select.gd" id="16"]
+[ext_resource type="PackedScene" path="res://Scenes/Menus/Main Menu/PlayercountDial/playercount_dial.tscn" id="17"]
+[ext_resource type="Texture2D" uid="uid://djuclkqhqy832" path="res://Assets/Textures/UI/player_options5.png" id="18"]
+[ext_resource type="Script" uid="uid://mq7u0dstqp7m" path="res://Scenes/Menus/Main Menu/lobby_tag.gd" id="19"]
+[ext_resource type="Theme" uid="uid://dk4lixgcevj1v" path="res://Assets/Themes/secondary.tres" id="20"]
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id="4"]
 interpolation_mode = 2
-offsets = PackedFloat32Array( 0, 0.597668 )
-colors = PackedColorArray( 1, 0.933333, 0.835294, 1, 1, 1, 1, 0 )
+offsets = PackedFloat32Array(0, 0.597668)
+colors = PackedColorArray(1, 0.933333, 0.835294, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture2D" id=3]
-gradient = SubResource( 4 )
-fill_to = Vector2( 0, 1 )
+[sub_resource type="GradientTexture2D" id="3"]
+gradient = SubResource("4")
+fill_to = Vector2(0, 1)
 
-[sub_resource type="FontFile" id=1]
-size = 34
-font_data = ExtResource( 8 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("8")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.803922, 0.0156863, 0.384314, 1 )
-border_color = Color( 0.835294, 0.666667, 0.45098, 1 )
+[sub_resource type="StyleBoxFlat" id="8"]
+bg_color = Color(0.67451, 0, 0.160784, 1)
+border_color = Color(0.415686, 0.266667, 0.12549, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
-corner_detail = 5
-expand_margin_left = 3.0
-expand_margin_right = 3.0
-expand_margin_top = 1.0
-expand_margin_bottom = 1.0
+expand_margin_left = 2.0
+expand_margin_right = 2.0
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.67451, 0, 0.160784, 1 )
-border_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0.67451, 0, 0.160784, 1)
+border_color = Color(0.415686, 0.266667, 0.12549, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -58,63 +68,72 @@ corner_detail = 5
 expand_margin_left = 2.0
 expand_margin_right = 2.0
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.803922, 0.0156863, 0.384314, 1 )
-border_color = Color( 0.835294, 0.666667, 0.45098, 1 )
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.803922, 0.0156863, 0.384314, 1)
+border_color = Color(0.835294, 0.666667, 0.45098, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 corner_detail = 5
 expand_margin_left = 3.0
-expand_margin_right = 3.0
 expand_margin_top = 1.0
+expand_margin_right = 3.0
 expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.67451, 0, 0.160784, 1 )
-border_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+[sub_resource type="StyleBoxFlat" id="7"]
+bg_color = Color(0.803922, 0.0156863, 0.384314, 1)
+border_color = Color(0.835294, 0.666667, 0.45098, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
-expand_margin_left = 2.0
-expand_margin_right = 2.0
+corner_detail = 5
+expand_margin_left = 3.0
+expand_margin_top = 1.0
+expand_margin_right = 3.0
+expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxEmpty" id=10]
+[sub_resource type="StyleBoxEmpty" id="10"]
 
-[sub_resource type="StyleBoxEmpty" id=11]
+[sub_resource type="StyleBoxEmpty" id="11"]
 
-[sub_resource type="StyleBoxEmpty" id=9]
+[sub_resource type="StyleBoxEmpty" id="9"]
 
-[node name="main_menu" type="Control"]
+[node name="main_menu" type="Control" unique_id=321047389]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
-script = ExtResource( 1 )
+theme = ExtResource("2")
+script = ExtResource("1")
 
-[node name="world" parent="." instance=ExtResource( 3 )]
+[node name="world" parent="." unique_id=926720113 instance=ExtResource("3")]
+layout_mode = 0
 backdrop = true
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0.164706 )
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1822924819]
+modulate = Color(1, 1, 1, 0.164706)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 3 )
-expand = true
+texture = SubResource("3")
+expand_mode = 1
 stretch_mode = 1
 flip_v = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1335139239]
+layout_mode = 0
 anchor_left = 0.25
 anchor_top = 0.1
 anchor_right = 0.75
 anchor_bottom = 0.441
-texture = ExtResource( 4 )
-expand = true
+texture = ExtResource("4")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=373147992]
+layout_mode = 0
 anchor_left = 0.4
 anchor_top = 0.61
 anchor_right = 0.6
@@ -122,110 +141,108 @@ anchor_bottom = 0.825
 theme_override_constants/separation = 8
 alignment = 2
 
-[node name="create_game" type="Button" parent="VBoxContainer"]
-offset_right = 384.0
-offset_bottom = 52.0
+[node name="create_game" type="Button" parent="VBoxContainer" unique_id=150783475]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_fonts/font = SubResource( 1 )
-theme_override_styles/hover = ExtResource( 7 )
-theme_override_styles/pressed = ExtResource( 6 )
-theme_override_styles/disabled = ExtResource( 6 )
-theme_override_styles/normal = ExtResource( 5 )
+theme_override_colors/font_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_focus_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_hover_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_fonts/font = SubResource("1")
+theme_override_styles/normal = ExtResource("5")
+theme_override_styles/pressed = ExtResource("6")
+theme_override_styles/hover = ExtResource("7")
+theme_override_styles/disabled = ExtResource("6")
 text = "Create Game"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="VBoxContainer/create_game"]
+[node name="TooltipNode" type="Control" parent="VBoxContainer/create_game" unique_id=1447450712]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "[color=#6a4420]Create Game"
 body = "Create your own lobby!"
 
-[node name="join_game" type="Button" parent="VBoxContainer"]
-offset_top = 60.0
-offset_right = 384.0
-offset_bottom = 112.0
+[node name="join_game" type="Button" parent="VBoxContainer" unique_id=569333809]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_fonts/font = SubResource( 1 )
-theme_override_styles/hover = ExtResource( 7 )
-theme_override_styles/pressed = ExtResource( 6 )
-theme_override_styles/disabled = ExtResource( 6 )
-theme_override_styles/normal = ExtResource( 5 )
+theme_override_colors/font_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_focus_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_hover_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_fonts/font = SubResource("1")
+theme_override_styles/normal = ExtResource("5")
+theme_override_styles/pressed = ExtResource("6")
+theme_override_styles/hover = ExtResource("7")
+theme_override_styles/disabled = ExtResource("6")
 text = "Join Game"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="VBoxContainer/join_game"]
+[node name="TooltipNode" type="Control" parent="VBoxContainer/join_game" unique_id=684838561]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "[color=#6a4420]Join Game"
 body = "Join someone else's lobby!"
 
-[node name="settings" type="Button" parent="VBoxContainer"]
-offset_top = 120.0
-offset_right = 384.0
-offset_bottom = 172.0
+[node name="settings" type="Button" parent="VBoxContainer" unique_id=2056094480]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_fonts/font = SubResource( 1 )
-theme_override_styles/hover = ExtResource( 7 )
-theme_override_styles/pressed = ExtResource( 6 )
-theme_override_styles/disabled = ExtResource( 6 )
-theme_override_styles/normal = ExtResource( 5 )
+theme_override_colors/font_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_focus_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_hover_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_fonts/font = SubResource("1")
+theme_override_styles/normal = ExtResource("5")
+theme_override_styles/pressed = ExtResource("6")
+theme_override_styles/hover = ExtResource("7")
+theme_override_styles/disabled = ExtResource("6")
 text = "Settings"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="VBoxContainer/settings"]
+[node name="TooltipNode" type="Control" parent="VBoxContainer/settings" unique_id=2010158338]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "[color=#6a4420]Settings"
 body = "Tweak stuff to your liking!"
 
-[node name="quit" type="Button" parent="VBoxContainer"]
-offset_top = 180.0
-offset_right = 384.0
-offset_bottom = 232.0
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=1543921086]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_focus_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_colors/font_hover_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_pressed_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_fonts/font = SubResource( 1 )
-theme_override_styles/hover = ExtResource( 7 )
-theme_override_styles/pressed = ExtResource( 6 )
-theme_override_styles/disabled = ExtResource( 6 )
-theme_override_styles/normal = ExtResource( 5 )
+theme_override_colors/font_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_focus_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_hover_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_fonts/font = SubResource("1")
+theme_override_styles/normal = ExtResource("5")
+theme_override_styles/pressed = ExtResource("6")
+theme_override_styles/hover = ExtResource("7")
+theme_override_styles/disabled = ExtResource("6")
 text = "Quit"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="VBoxContainer/quit"]
+[node name="TooltipNode" type="Control" parent="VBoxContainer/quit" unique_id=1219754122]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "[color=#6a4420]Quit"
 body = "it's fine. yeah, no- you can leave. i dont care. go on then. go."
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=182239743]
+layout_mode = 0
 anchor_left = 0.753646
 anchor_top = 0.946296
 anchor_right = 1.0
@@ -233,66 +250,61 @@ anchor_bottom = 1.0
 offset_right = -16.0
 offset_bottom = -16.0
 alignment = 2
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Label" type="Label" parent="HBoxContainer"]
-offset_left = 252.0
-offset_top = 4.0
-offset_right = 410.0
-offset_bottom = 38.0
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=805126876]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "lamedeveloper"
-align = 2
+horizontal_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-offset_left = 414.0
-offset_right = 456.0
-offset_bottom = 42.0
-custom_minimum_size = Vector2( 42, 42 )
-texture = ExtResource( 10 )
-expand = true
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1480715343]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+texture = ExtResource("10")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="save_select_button" type="Button" parent="."]
+[node name="save_select_button" type="Button" parent="." unique_id=1579444603]
+layout_mode = 0
 anchor_left = 0.95
 anchor_top = 0.0222222
 anchor_right = 0.989
 anchor_bottom = 0.0882222
 offset_right = -2.88
 offset_bottom = 0.720001
-icon = ExtResource( 18 )
+icon = ExtResource("18")
 icon_alignment = 1
 expand_icon = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="TooltipNode" type="Control" parent="save_select_button"]
+[node name="TooltipNode" type="Control" parent="save_select_button" unique_id=1101562803]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Change Save"
 body = "Change & manage your loaded save files."
 
-[node name="create_lobby_menu" type="Control" parent="."]
+[node name="create_lobby_menu" type="Control" parent="." unique_id=1015824571]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="create_lobby_menu"]
+[node name="ColorRect" type="ColorRect" parent="create_lobby_menu" unique_id=715448517]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+color = Color(0.0627451, 0.109804, 0.192157, 0.431373)
 
-[node name="Panel" type="Panel" parent="create_lobby_menu"]
+[node name="Panel" type="Panel" parent="create_lobby_menu" unique_id=410349575]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.34
 anchor_right = 0.8
 anchor_bottom = 0.66
 
-[node name="close" type="Button" parent="create_lobby_menu/Panel"]
+[node name="close" type="Button" parent="create_lobby_menu/Panel" unique_id=2110389974]
+layout_mode = 0
 anchor_left = 0.974826
 anchor_top = -0.0360082
 anchor_right = 1.01653
@@ -300,9 +312,10 @@ anchor_bottom = 0.085
 offset_right = -0.0402832
 offset_bottom = 2.952
 text = "X"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="Label" type="Label" parent="create_lobby_menu/Panel"]
+[node name="Label" type="Label" parent="create_lobby_menu/Panel" unique_id=2053495234]
+layout_mode = 0
 anchor_left = 0.014
 anchor_top = 0.0337449
 anchor_right = 1.0
@@ -312,28 +325,31 @@ offset_right = -0.000244141
 offset_bottom = 7.84772
 text = "Create Game"
 
-[node name="sep" type="TextureRect" parent="create_lobby_menu/Panel"]
+[node name="sep" type="TextureRect" parent="create_lobby_menu/Panel" unique_id=17292916]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
 anchor_top = 0.0380659
 anchor_right = 1.0
 anchor_bottom = 0.12037
 offset_top = 3.47736
 offset_bottom = 7.42798
-custom_minimum_size = Vector2( 0, 32 )
 size_flags_horizontal = 3
-texture = ExtResource( 12 )
-expand = true
+texture = ExtResource("12")
+expand_mode = 1
 stretch_mode = 4
 
-[node name="Panel" type="Panel" parent="create_lobby_menu/Panel"]
+[node name="Panel" type="Panel" parent="create_lobby_menu/Panel" unique_id=309190394]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
 offset_top = 64.0
 offset_right = -24.0
 offset_bottom = -24.0
-theme_override_styles/panel = ExtResource( 11 )
+theme_override_styles/panel = ExtResource("11")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="create_lobby_menu/Panel/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="create_lobby_menu/Panel/Panel" unique_id=887964262]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
@@ -342,53 +358,48 @@ offset_right = -16.0
 offset_bottom = -16.0
 theme_override_constants/separation = 12
 
-[node name="display_name" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
-offset_right = 1072.0
-offset_bottom = 34.0
+[node name="display_name" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer" unique_id=338163953]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name"]
-offset_right = 258.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name" unique_id=1083623811]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 text = "Lobby Display Name: "
-valign = 1
+vertical_alignment = 1
 
-[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name/Label"]
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name/Label" unique_id=494739744]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Lobby Display Name"
 body = "Set the lobby name that all players can visually see!"
 
-[node name="lobbyname" type="LineEdit" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name"]
+[node name="lobbyname" type="LineEdit" parent="create_lobby_menu/Panel/Panel/VBoxContainer/display_name" unique_id=1608473381]
 unique_name_in_owner = true
-offset_left = 262.0
-offset_right = 1072.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 12.5
-max_length = 40
 placeholder_text = "[player lobby name]"
-script = ExtResource( 14 )
+max_length = 40
+script = ExtResource("14")
 
-[node name="lobby_type" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
-offset_top = 46.0
-offset_right = 1072.0
-offset_bottom = 80.0
+[node name="lobby_type" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer" unique_id=801350823]
+layout_mode = 2
 
-[node name="type" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type"]
-offset_right = 799.0
-offset_bottom = 34.0
+[node name="type" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type" unique_id=1442023089]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.16
 text = "Type: "
-valign = 1
+vertical_alignment = 1
 
-[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type/type"]
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type/type" unique_id=360288582]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Lobby Type"
 body = "Choose how the lobby operates.
 [color=#6a4420]PUBLIC[/color]: Public and visible in the Game Browser for all to join.
@@ -396,103 +407,90 @@ body = "Choose how the lobby operates.
 [color=#6a4420]PRIVATE[/color]: Private lobby, only players directly invited may join.
 [color=#6a4420]OFFLINE[/color]: Start a game alone, with players unable to join you."
 
-[node name="serv_options" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type"]
+[node name="serv_options" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/lobby_type" unique_id=767756033]
 unique_name_in_owner = true
-offset_left = 803.0
-offset_right = 1072.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.39
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="max_players" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
-offset_top = 92.0
-offset_right = 1072.0
-offset_bottom = 126.0
+[node name="max_players" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer" unique_id=1891813347]
+layout_mode = 2
 
-[node name="maxplayerslabel" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players"]
-offset_right = 796.0
-offset_bottom = 34.0
+[node name="maxplayerslabel" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players" unique_id=851647436]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.94
 text = "Max Players: "
-valign = 1
+vertical_alignment = 1
 
-[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players/maxplayerslabel"]
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players/maxplayerslabel" unique_id=1970343915]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Max Players"
 body = "Maximum player count for your lobby."
 
-[node name="max_players" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players"]
+[node name="max_players" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/max_players" unique_id=491857978]
 unique_name_in_owner = true
-offset_left = 800.0
-offset_right = 1072.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="players_request" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
-offset_top = 138.0
-offset_right = 1072.0
-offset_bottom = 172.0
+[node name="players_request" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer" unique_id=1995436429]
+layout_mode = 2
 
-[node name="players_request" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request"]
-offset_right = 796.0
-offset_bottom = 34.0
+[node name="players_request" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request" unique_id=1049872005]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.94
 text = "Request To Join: "
-valign = 1
+vertical_alignment = 1
 
-[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request/players_request"]
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request/players_request" unique_id=69252635]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Request To Join"
 body = "Choose whether or not players must request your permission to enter your lobby.
 [color=#6a4420]AUTOMATIC:[/color] Players are automatically accepted into your lobby, unless banned or blocked.
 [color=#6a4420]MANUAL:[/color] Players send you a request to join, and you may accept or deny this before they enter."
 
-[node name="players_request2" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request"]
+[node name="players_request2" type="OptionButton" parent="create_lobby_menu/Panel/Panel/VBoxContainer/players_request" unique_id=1970911914]
 unique_name_in_owner = true
-offset_left = 800.0
-offset_right = 1072.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="social_tags" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer"]
-offset_top = 184.0
-offset_right = 1072.0
-offset_bottom = 218.0
+[node name="social_tags" type="HBoxContainer" parent="create_lobby_menu/Panel/Panel/VBoxContainer" unique_id=1980331775]
+layout_mode = 2
 
-[node name="tags" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags"]
-offset_right = 796.0
-offset_bottom = 34.0
+[node name="tags" type="Label" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags" unique_id=276548630]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.94
 text = "Social Tags: "
-valign = 1
+vertical_alignment = 1
 
-[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags/tags"]
+[node name="TooltipNode" type="Control" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags/tags" unique_id=695747981]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Social Tags"
 body = "Optional tags for your lobby to assist with filtering."
 
-[node name="Button" type="Button" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags"]
-offset_left = 800.0
-offset_right = 1072.0
-offset_bottom = 34.0
+[node name="Button" type="Button" parent="create_lobby_menu/Panel/Panel/VBoxContainer/social_tags" unique_id=1274417304]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "0 Tags Selected"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="Button" type="Button" parent="create_lobby_menu/Panel/Panel"]
+[node name="Button" type="Button" parent="create_lobby_menu/Panel/Panel" unique_id=1791568618]
+layout_mode = 0
 anchor_left = 0.818384
 anchor_top = 0.943198
 anchor_right = 1.03308
@@ -502,220 +500,206 @@ offset_top = -0.0216827
 offset_right = -0.52002
 offset_bottom = -0.0495911
 text = "Create Game"
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("14")
 
-[node name="create_lobby_tag_menu" type="Control" parent="."]
+[node name="create_lobby_tag_menu" type="Control" parent="." unique_id=151266336]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="create_lobby_tag_menu"]
+[node name="ColorRect" type="ColorRect" parent="create_lobby_tag_menu" unique_id=172777468]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+color = Color(0.0627451, 0.109804, 0.192157, 0.431373)
 
-[node name="Panel" type="Panel" parent="create_lobby_tag_menu"]
+[node name="Panel" type="Panel" parent="create_lobby_tag_menu" unique_id=1610051198]
+layout_mode = 0
 anchor_left = 0.32
 anchor_top = 0.34
 anchor_right = 0.68
 anchor_bottom = 0.66
 
-[node name="Label" type="Label" parent="create_lobby_tag_menu/Panel"]
+[node name="Label" type="Label" parent="create_lobby_tag_menu/Panel" unique_id=527382822]
+layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 71.0
 text = "Select \"Social Tags\" for your lobby. "
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="create_lobby_tag_menu/Panel"]
+[node name="Panel" type="Panel" parent="create_lobby_tag_menu/Panel" unique_id=1753333421]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
 offset_top = 64.0
 offset_right = -24.0
 offset_bottom = -24.0
-theme_override_styles/panel = ExtResource( 11 )
+theme_override_styles/panel = ExtResource("11")
 
-[node name="tagbox" type="GridContainer" parent="create_lobby_tag_menu/Panel/Panel"]
+[node name="tagbox" type="GridContainer" parent="create_lobby_tag_menu/Panel/Panel" unique_id=1874356750]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_constants/v_separation = 16
 theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 16
 columns = 2
 
-[node name="tag_talktive" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_right = 294.0
-offset_bottom = 45.0
+[node name="tag_talktive" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=1501512779 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Talkative"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "talkative"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_talktive"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_talktive" unique_id=1538013253]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Talkative"
 body = "This tag affects nothing gameplay-wise, and simply affects filtering."
 
-[node name="tag_quiet" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_left = 318.0
-offset_right = 611.0
-offset_bottom = 45.0
+[node name="tag_quiet" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=438779386 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Quiet"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "quiet"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_quiet"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_quiet" unique_id=1246064414]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Quiet"
 body = "This tag affects nothing gameplay-wise, and simply affects filtering."
 
-[node name="tag_grinding" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_top = 61.0
-offset_right = 294.0
-offset_bottom = 105.0
+[node name="tag_grinding" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=1277233493 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Grinding"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "grinding"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_grinding"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_grinding" unique_id=1322433307]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Grinding"
 body = "This tag affects nothing gameplay-wise, and simply affects filtering."
 
-[node name="tag_chill" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_left = 318.0
-offset_top = 61.0
-offset_right = 611.0
-offset_bottom = 105.0
+[node name="tag_chill" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=1076307638 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Chill"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "chill"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_chill"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_chill" unique_id=55934777]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Chill"
 body = "This tag affects nothing gameplay-wise, and simply affects filtering."
 
-[node name="tag_silly" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_top = 121.0
-offset_right = 294.0
-offset_bottom = 165.0
+[node name="tag_silly" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=374645851 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Silly"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "silly"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_silly"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_silly" unique_id=1787567977]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Silly"
 body = "This tag affects nothing gameplay-wise, and simply affects filtering."
 
-[node name="tag_hardcore" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_left = 318.0
-offset_top = 121.0
-offset_right = 611.0
-offset_bottom = 165.0
+[node name="tag_hardcore" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=84170609 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Hardcore"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "hardcore"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_hardcore"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_hardcore" unique_id=71738106]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Hardcore"
 body = "This tag affects nothing gameplay-wise, and simply affects filtering."
 
-[node name="tag_mature" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_top = 181.0
-offset_right = 294.0
-offset_bottom = 225.0
+[node name="tag_mature" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=181539048 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 20 )
-theme_override_styles/hover = SubResource( 5 )
-theme_override_styles/pressed = SubResource( 6 )
-theme_override_styles/hover_pressed = SubResource( 7 )
-theme_override_styles/normal = SubResource( 8 )
+theme = ExtResource("20")
+theme_override_styles/normal = SubResource("8")
+theme_override_styles/pressed = SubResource("6")
+theme_override_styles/hover = SubResource("5")
+theme_override_styles/hover_pressed = SubResource("7")
 text = "Mature (18+)"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "mature"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_mature"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_mature" unique_id=1965231910]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Mature"
 body = "This tag is hidden by default in the browser, and requires players to accept a brief popup upon joining confirming they are aware the lobby could contain mature topics in the chat."
 
-[node name="tag_modded" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" groups=["tags"]]
-offset_left = 318.0
-offset_top = 181.0
-offset_right = 611.0
-offset_bottom = 225.0
+[node name="tag_modded" type="CheckBox" parent="create_lobby_tag_menu/Panel/Panel/tagbox" unique_id=127147380 groups=["tags"]]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 20 )
-theme_override_styles/hover = SubResource( 5 )
-theme_override_styles/pressed = SubResource( 6 )
-theme_override_styles/hover_pressed = SubResource( 7 )
-theme_override_styles/normal = SubResource( 8 )
+theme = ExtResource("20")
+theme_override_styles/normal = SubResource("8")
+theme_override_styles/pressed = SubResource("6")
+theme_override_styles/hover = SubResource("5")
+theme_override_styles/hover_pressed = SubResource("7")
 text = "Modded"
-align = 1
 icon_alignment = 1
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "modded"
 
-[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_modded"]
+[node name="TooltipNode" type="Control" parent="create_lobby_tag_menu/Panel/Panel/tagbox/tag_modded" unique_id=269112997]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Tag: Modded"
 body = "This tag is hidden by default in the browser, and requires players to accept a brief popup upon joining confirming they are aware the lobby could contain modifications that other players may have issues running."
 
-[node name="Button" type="Button" parent="create_lobby_tag_menu/Panel"]
+[node name="Button" type="Button" parent="create_lobby_tag_menu/Panel" unique_id=258166451]
+layout_mode = 0
 anchor_left = 0.76847
 anchor_top = 0.911074
 anchor_right = 1.01302
@@ -725,50 +709,47 @@ offset_top = 0.132782
 offset_right = 0.799988
 offset_bottom = -0.800018
 text = "Confirm Tags"
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("14")
 
-[node name="lobby_browser" type="Control" parent="."]
+[node name="lobby_browser" type="Control" parent="." unique_id=1806547513]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="lobby_browser"]
+[node name="ColorRect" type="ColorRect" parent="lobby_browser" unique_id=1068470772]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+color = Color(0.0627451, 0.109804, 0.192157, 0.431373)
 
-[node name="Panel" type="Panel" parent="lobby_browser"]
+[node name="Panel" type="Panel" parent="lobby_browser" unique_id=1734235982]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.2
 anchor_right = 0.8
 anchor_bottom = 0.8
 
-[node name="Label2" type="Label" parent="lobby_browser/Panel"]
+[node name="Label2" type="Label" parent="lobby_browser/Panel" unique_id=1454822044]
+layout_mode = 0
 anchor_left = 0.014
 anchor_top = 0.0126545
 anchor_right = 1.0
 anchor_bottom = 0.0651237
 text = "Join Game"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="sep2" type="TextureRect" parent="lobby_browser/Panel"]
+[node name="sep2" type="TextureRect" parent="lobby_browser/Panel" unique_id=370802395]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
 anchor_top = 0.0169755
 anchor_right = 1.0
 anchor_bottom = 0.0663585
-custom_minimum_size = Vector2( 0, 32 )
 size_flags_horizontal = 3
-texture = ExtResource( 12 )
-expand = true
+texture = ExtResource("12")
+expand_mode = 1
 stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Button" type="Button" parent="lobby_browser/Panel"]
+[node name="Button" type="Button" parent="lobby_browser/Panel" unique_id=138802829]
+layout_mode = 0
 anchor_left = 0.979167
 anchor_top = -0.0262346
 anchor_right = 1.01417
@@ -776,12 +757,10 @@ anchor_bottom = 0.0257654
 offset_right = 1.68005
 offset_bottom = 8.304
 text = "X"
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("14")
 
-[node name="code_join" type="Panel" parent="lobby_browser/Panel"]
+[node name="code_join" type="Panel" parent="lobby_browser/Panel" unique_id=620393952]
+layout_mode = 0
 anchor_top = 0.0661726
 anchor_right = 1.0
 anchor_bottom = 0.206174
@@ -789,12 +768,10 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_styles/panel = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+theme_override_styles/panel = ExtResource("11")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="lobby_browser/Panel/code_join"]
+[node name="HBoxContainer" type="HBoxContainer" parent="lobby_browser/Panel/code_join" unique_id=1853623528]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
@@ -803,46 +780,40 @@ offset_right = -16.0
 offset_bottom = -10.0
 theme_override_constants/separation = 12
 
-[node name="Label" type="Label" parent="lobby_browser/Panel/code_join/HBoxContainer"]
-offset_top = 2.0
-offset_right = 608.0
-offset_bottom = 36.0
+[node name="Label" type="Label" parent="lobby_browser/Panel/code_join/HBoxContainer" unique_id=72669994]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 text = "Join Game from Code"
-valign = 1
+vertical_alignment = 1
 
-[node name="serv_options" type="LineEdit" parent="lobby_browser/Panel/code_join/HBoxContainer"]
-offset_left = 620.0
-offset_right = 848.0
-offset_bottom = 38.0
+[node name="serv_options" type="LineEdit" parent="lobby_browser/Panel/code_join/HBoxContainer" unique_id=1828794567]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
-theme_override_colors/cursor_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_styles/focus = ExtResource( 13 )
-theme_override_styles/normal = ExtResource( 13 )
-align = 1
-max_length = 6
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_styles/normal = ExtResource("13")
+theme_override_styles/focus = ExtResource("13")
 placeholder_text = "Code Here  "
+max_length = 6
 
-[node name="Button" type="Button" parent="lobby_browser/Panel/code_join/HBoxContainer"]
-offset_left = 860.0
-offset_right = 1088.0
-offset_bottom = 38.0
+[node name="Button" type="Button" parent="lobby_browser/Panel/code_join/HBoxContainer" unique_id=577326253]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
 text = "Join Lobby"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/code_join/HBoxContainer/Button"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/code_join/HBoxContainer/Button" unique_id=213952806]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Join Lobby from Code"
 body = "Searches for a lobby with the entered code, and joins it."
 
-[node name="lobbies" type="Panel" parent="lobby_browser/Panel"]
+[node name="lobbies" type="Panel" parent="lobby_browser/Panel" unique_id=385576577]
+layout_mode = 0
 anchor_left = 0.28
 anchor_top = 0.18
 anchor_right = 1.0
@@ -851,44 +822,39 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_styles/panel = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+theme_override_styles/panel = ExtResource("11")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="lobby_browser/Panel/lobbies"]
+[node name="ScrollContainer" type="ScrollContainer" parent="lobby_browser/Panel/lobbies" unique_id=557759453]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-scroll_horizontal_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="lobby_browser/Panel/lobbies/ScrollContainer"]
-offset_right = 765.44
-offset_bottom = 467.36
+[node name="VBoxContainer" type="VBoxContainer" parent="lobby_browser/Panel/lobbies/ScrollContainer" unique_id=799320948]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="TextureRect" type="CenterContainer" parent="lobby_browser/Panel/lobbies"]
+[node name="TextureRect" type="CenterContainer" parent="lobby_browser/Panel/lobbies" unique_id=2041923477]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Control" type="Control" parent="lobby_browser/Panel/lobbies/TextureRect"]
-offset_left = 398.0
-offset_top = 249.0
-offset_right = 398.0
-offset_bottom = 249.0
+[node name="Control" type="Control" parent="lobby_browser/Panel/lobbies/TextureRect" unique_id=120055188]
+layout_mode = 2
 mouse_filter = 2
 
-[node name="dial" type="Sprite2D" parent="lobby_browser/Panel/lobbies/TextureRect/Control"]
+[node name="dial" type="Sprite2D" parent="lobby_browser/Panel/lobbies/TextureRect/Control" unique_id=423301723]
 visible = false
-texture = ExtResource( 15 )
+texture = ExtResource("15")
 
-[node name="filters" type="Panel" parent="lobby_browser/Panel"]
+[node name="filters" type="Panel" parent="lobby_browser/Panel" unique_id=1971332403]
+layout_mode = 0
 anchor_top = 0.18
 anchor_right = 0.3
 anchor_bottom = 1.0
@@ -896,397 +862,339 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_styles/panel = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+theme_override_styles/panel = ExtResource("11")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="lobby_browser/Panel/filters"]
+[node name="ScrollContainer" type="ScrollContainer" parent="lobby_browser/Panel/filters" unique_id=1287222861]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-scroll_horizontal_enabled = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer"]
-offset_right = 281.6
-offset_bottom = 467.36
+[node name="HBoxContainer" type="HBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer" unique_id=1094800852]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="side_sep2" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer"]
-offset_right = 6.0
-offset_bottom = 467.0
+[node name="side_sep2" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer" unique_id=1012485457]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 10 )
+theme_override_styles/separator = SubResource("10")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer"]
-offset_left = 10.0
-offset_right = 271.0
-offset_bottom = 467.0
+[node name="VBoxContainer" type="VBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer" unique_id=664564949]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_right = 261.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1224904383]
+layout_mode = 2
 text = "Search Filters"
-align = 1
+horizontal_alignment = 1
 
-[node name="playercount_filters" type="HBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 42.0
-offset_right = 261.0
-offset_bottom = 126.0
+[node name="playercount_filters" type="HBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1507790118]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HSeparator2" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters"]
-offset_right = 12.0
-offset_bottom = 84.0
+[node name="HSeparator2" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters" unique_id=706907595]
+layout_mode = 2
 theme_override_constants/separation = 12
-theme_override_styles/separator = SubResource( 11 )
+theme_override_styles/separator = SubResource("11")
 
-[node name="dial" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters" instance=ExtResource( 17 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 16.0
-offset_right = 245.0
-offset_bottom = 84.0
+[node name="dial" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters" unique_id=211248367 instance=ExtResource("17")]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HSeparator" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters"]
-offset_left = 249.0
-offset_right = 261.0
-offset_bottom = 84.0
+[node name="HSeparator" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/playercount_filters" unique_id=436600974]
+layout_mode = 2
 theme_override_constants/separation = 12
-theme_override_styles/separator = SubResource( 11 )
+theme_override_styles/separator = SubResource("11")
 
-[node name="HSeparator" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 134.0
-offset_right = 261.0
-offset_bottom = 146.0
+[node name="HSeparator" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=452865879]
+layout_mode = 2
 theme_override_constants/separation = 12
-theme_override_styles/separator = SubResource( 9 )
+theme_override_styles/separator = SubResource("9")
 
-[node name="Label2" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 154.0
-offset_right = 261.0
-offset_bottom = 188.0
+[node name="Label2" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=4002552]
+layout_mode = 2
 text = "Sort"
-align = 1
+horizontal_alignment = 1
 
-[node name="sort_list" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="sort_list" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2034115651]
 unique_name_in_owner = true
-offset_top = 196.0
-offset_right = 261.0
-offset_bottom = 230.0
-pivot_offset = Vector2( -322, 158.36 )
+layout_mode = 2
 text = "Players: High to Low"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/sort_list"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/sort_list" unique_id=749277531]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "List Sort"
 body = "Click to swap between how the lobby list is sorted."
 
-[node name="HSeparator2" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 238.0
-offset_right = 261.0
-offset_bottom = 250.0
+[node name="HSeparator2" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1575091937]
+layout_mode = 2
 theme_override_constants/separation = 12
-theme_override_styles/separator = SubResource( 9 )
+theme_override_styles/separator = SubResource("9")
 
-[node name="Label3" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 258.0
-offset_right = 261.0
-offset_bottom = 292.0
+[node name="Label3" type="Label" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=959450575]
+layout_mode = 2
 text = "Filters"
-align = 1
+horizontal_alignment = 1
 
-[node name="show_filters" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="show_filters" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2035057725]
 unique_name_in_owner = true
-offset_top = 300.0
-offset_right = 261.0
-offset_bottom = 334.0
+layout_mode = 2
 text = "Show Filters"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/show_filters"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/show_filters" unique_id=1569742102]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Toggle Filters"
 body = "Open the lobby filter menu for additional search parameters."
 
-[node name="filters" type="VBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="filters" type="VBoxContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=324167098]
 unique_name_in_owner = true
 visible = false
-offset_top = 342.0
-offset_right = 258.0
-offset_bottom = 578.0
+layout_mode = 2
 
-[node name="tag_filter_search" type="GridContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+[node name="tag_filter_search" type="GridContainer" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters" unique_id=1866094733]
 unique_name_in_owner = true
-offset_right = 258.0
-offset_bottom = 148.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/v_separation = 4
 theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 4
 columns = 2
 
-[node name="filter_talkative" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
-offset_right = 124.0
-offset_bottom = 34.0
+[node name="filter_talkative" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=2140326110]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-pressed = true
 text = "Talkative"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "talkative"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_talkative"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_talkative" unique_id=1575475972]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Filter: Talkative"
 body = "Allows lobbies with the tag \"Talkative\" to appear."
 
-[node name="filter_quiet" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
-offset_left = 134.0
-offset_right = 258.0
-offset_bottom = 34.0
+[node name="filter_quiet" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=436259577]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-pressed = true
 text = "Quiet"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "quiet"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_quiet"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_quiet" unique_id=1826208572]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Filter: Quiet"
 body = "Allows lobbies with the tag \"Quiet\" to appear."
 
-[node name="filter_grind" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
-offset_top = 38.0
-offset_right = 124.0
-offset_bottom = 72.0
+[node name="filter_grind" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=362656292]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-pressed = true
 text = "Grinding"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "grinding"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_grind"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_grind" unique_id=61692495]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Filter: Grinding"
 body = "Allows lobbies with the tag \"Grinding\" to appear."
 
-[node name="filter_chill" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
-offset_left = 134.0
-offset_top = 38.0
-offset_right = 258.0
-offset_bottom = 72.0
+[node name="filter_chill" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=1303915823]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-pressed = true
 text = "Chill"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "chill"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_chill"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_chill" unique_id=1389539449]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Filter: Chill"
 body = "Allows lobbies with the tag \"Chill\" to appear."
 
-[node name="filter_silly" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
-offset_top = 76.0
-offset_right = 124.0
-offset_bottom = 110.0
+[node name="filter_silly" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=2079737348]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-pressed = true
 text = "Silly"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "silly"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_silly"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_silly" unique_id=220051381]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Filter: Silly"
 body = "Allows lobbies with the tag \"Silly\" to appear."
 
-[node name="filter_hardcore" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
-offset_left = 134.0
-offset_top = 76.0
-offset_right = 258.0
-offset_bottom = 110.0
+[node name="filter_hardcore" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=1267357052]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-pressed = true
 text = "Hardcore"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "hardcore"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_hardcore"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_hardcore" unique_id=1244434691]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Filter: Hardcore"
 body = "Allows lobbies with the tag \"Hardcore\" to appear."
 
-[node name="filter_mature" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+[node name="filter_mature" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=1629355433]
 unique_name_in_owner = true
-offset_top = 114.0
-offset_right = 124.0
-offset_bottom = 148.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 20 )
+theme = ExtResource("20")
 text = "Mature"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "mature"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_mature"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_mature" unique_id=1081337805]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Bonus Filter: Mature"
 body = "Must accept a brief popup to toggle this on. Allows lobbies with the tag \"Mature\" to appear."
 
-[node name="filter_modded" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search"]
+[node name="filter_modded" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search" unique_id=1656331653]
 unique_name_in_owner = true
-offset_left = 134.0
-offset_top = 114.0
-offset_right = 258.0
-offset_bottom = 148.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 20 )
+theme = ExtResource("20")
 text = "Modded"
-script = ExtResource( 19 )
+script = ExtResource("19")
 lobby_tag = "modded"
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_modded"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/tag_filter_search/filter_modded" unique_id=1553286762]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Bonus Filter: Modded"
 body = "Must accept a brief popup to toggle this on. Allows lobbies with the tag \"Modded\" to appear."
 
-[node name="filter_dis" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
-offset_top = 152.0
-offset_right = 258.0
-offset_bottom = 160.0
+[node name="filter_dis" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters" unique_id=1583544097]
+layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 8
-theme_override_styles/separator = SubResource( 9 )
+theme_override_styles/separator = SubResource("9")
 
-[node name="hide_full" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+[node name="hide_full" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters" unique_id=817230572]
 unique_name_in_owner = true
-offset_top = 202.0
-offset_right = 258.0
-offset_bottom = 236.0
+layout_mode = 2
 text = "Hide Full"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/hide_full"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/hide_full" unique_id=1008747345]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Hide Full"
 body = "Hides lobbies that are at their allowed capacity."
 
-[node name="must_match" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
+[node name="must_match" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters" unique_id=1011843504]
 unique_name_in_owner = true
-offset_top = 164.0
-offset_right = 258.0
-offset_bottom = 198.0
+layout_mode = 2
 text = "Must Match"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/must_match"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/must_match" unique_id=1860004636]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Must Match Tags"
 body = "Only shows lobbies with exactly all the selected and unselected tags."
 
-[node name="show_names" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters"]
-offset_top = 202.0
-offset_right = 258.0
-offset_bottom = 236.0
-pressed = true
+[node name="show_names" type="CheckBox" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters" unique_id=1323286466]
+layout_mode = 2
 text = "Show Names"
-script = ExtResource( 14 )
+script = ExtResource("14")
 
-[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/show_names"]
+[node name="TooltipNode" type="Control" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer/filters/show_names" unique_id=2100174000]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 9 )
+script = ExtResource("9")
 header = "Toggle Names"
 body = "Swaps lobby names between a generic generated name and a user-created custom name."
 
-[node name="filter_dis" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="filter_dis" type="HSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=834081780]
 unique_name_in_owner = true
-offset_top = 342.0
-offset_right = 261.0
-offset_bottom = 425.0
+layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource( 9 )
+theme_override_styles/separator = SubResource("9")
 
-[node name="refresh" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 433.0
-offset_right = 261.0
-offset_bottom = 467.0
+[node name="refresh" type="Button" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1473973800]
+layout_mode = 2
 text = "REFRESH"
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("14")
 
-[node name="side_sep" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer"]
-offset_left = 275.0
-offset_right = 281.0
-offset_bottom = 467.0
+[node name="side_sep" type="VSeparator" parent="lobby_browser/Panel/filters/ScrollContainer/HBoxContainer" unique_id=1119219218]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 10 )
+theme_override_styles/separator = SubResource("10")
 
-[node name="Timer" type="Timer" parent="lobby_browser"]
+[node name="Timer" type="Timer" parent="lobby_browser" unique_id=426945010]
 autostart = true
 
-[node name="save_select" type="Control" parent="."]
+[node name="save_select" type="Control" parent="." unique_id=1700121014]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 16 )
+script = ExtResource("16")
 
-[node name="ColorRect" type="ColorRect" parent="save_select"]
+[node name="ColorRect" type="ColorRect" parent="save_select" unique_id=210202705]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+color = Color(0.0627451, 0.109804, 0.192157, 0.431373)
 
-[node name="Panel" type="Panel" parent="save_select"]
+[node name="Panel" type="Panel" parent="save_select" unique_id=428083253]
+layout_mode = 0
 anchor_left = 0.3
 anchor_top = 0.3
 anchor_right = 0.7
 anchor_bottom = 0.7
 
-[node name="VBoxContainer" type="VBoxContainer" parent="save_select/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="save_select/Panel" unique_id=1831481443]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
@@ -1295,16 +1203,18 @@ offset_right = -16.0
 offset_bottom = -16.0
 theme_override_constants/separation = 12
 
-[node name="Label" type="Label" parent="save_select/Panel"]
+[node name="Label" type="Label" parent="save_select/Panel" unique_id=1334890007]
+layout_mode = 0
 anchor_top = 0.0185185
 anchor_right = 1.0
 anchor_bottom = 0.0185185
 offset_bottom = 34.0
 text = "Choose a Save Profile"
-align = 1
-valign = 2
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="close" type="Button" parent="save_select"]
+[node name="close" type="Button" parent="save_select" unique_id=379094642]
+layout_mode = 0
 anchor_left = 0.689062
 anchor_top = 0.287037
 anchor_right = 0.708917
@@ -1312,10 +1222,7 @@ anchor_bottom = 0.319926
 offset_right = 3.88
 offset_bottom = 6.47995
 text = "x"
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("14")
 
 [connection signal="pressed" from="VBoxContainer/create_game" to="." method="_open_create_screen"]
 [connection signal="pressed" from="VBoxContainer/join_game" to="." method="_open_browser"]

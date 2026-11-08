@@ -1,26 +1,26 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://dhkn4bv4gr8po"]
 
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=1]
-[ext_resource path="res://Assets/Textures/Cosmetics/beanie_uv3.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Models/Cosmetics/beanie_v2.tres" type="ArrayMesh" id=3]
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons35.png" type="Texture2D" id=5]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://rcltcogn14qr" path="res://Assets/Textures/Cosmetics/beanie_uv3.png" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://devwekrl0bxlx" path="res://Assets/Models/Cosmetics/beanie_v2.tres" id="3"]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://de72pen5ohisr" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons35.png" id="5"]
 
-[sub_resource type="StandardMaterial3D" id=1]
-albedo_texture = ExtResource( 2 )
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_texture = ExtResource("2")
 
 [resource]
-script = ExtResource( 4 )
+script = ExtResource("4")
 name = "Black Beanie"
 desc = "Bean-like!"
 title = ""
-icon = ExtResource( 5 )
-mesh = ExtResource( 3 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 1 )
-material = SubResource( 1 )
-main_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-body_pattern = [  ]
+icon = ExtResource("5")
+mesh = ExtResource("3")
+species_alt_mesh = []
+mesh_skin = ExtResource("1")
+material = SubResource("1")
+main_color = Color(0.0627451, 0.109804, 0.192157, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

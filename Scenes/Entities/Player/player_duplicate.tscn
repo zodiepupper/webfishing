@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=3 uid="uid://dq8c8wst74lsd"]
 
-[ext_resource path="res://Scenes/Entities/actor.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://bh6kcvsykvhsj" path="res://Scenes/Entities/actor.gd" id="1"]
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" unique_id=534016904]
 collision_layer = 8
 collision_mask = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 delete_on_owner_disconnect = true
 has_shadow = true
 _can_be_hidden = true

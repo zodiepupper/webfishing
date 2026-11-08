@@ -1,11 +1,11 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=2]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://n6itm855c2au"]
 
-[ext_resource path="res://Assets/Textures/Guitar/music_notes3.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://p0uqxdscbpbq" path="res://Assets/Textures/Guitar/music_notes3.png" id="1"]
 
 [resource]
-flags_transparent = true
-params_billboard_mode = 3
+transparency = 1
+albedo_texture = ExtResource("1")
+billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-albedo_texture = ExtResource( 1 )

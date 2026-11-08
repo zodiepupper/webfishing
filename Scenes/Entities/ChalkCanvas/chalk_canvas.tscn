@@ -1,224 +1,311 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene format=3 uid="uid://bgywib42n5ovb"]
 
-[ext_resource path="res://Scenes/Entities/ChalkCanvas/chalk_canvas.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Materials/yellow.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Materials/white.tres" type="Material" id=3]
-[ext_resource path="res://Assets/Materials/red.tres" type="Material" id=4]
-[ext_resource path="res://Assets/Materials/blue.tres" type="Material" id=5]
-[ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=6]
-[ext_resource path="res://Assets/Materials/rainbow.tres" type="Material" id=7]
-[ext_resource path="res://Assets/Textures/chalk_texturemap.png" type="Texture2D" id=8]
-[ext_resource path="res://Assets/Materials/rainbow_texture.tres" type="Texture2D" id=9]
+[ext_resource type="Script" uid="uid://b1mjom1qyovge" path="res://Scenes/Entities/ChalkCanvas/chalk_canvas.gd" id="1"]
+[ext_resource type="Material" path="res://Assets/Materials/yellow.tres" id="2"]
+[ext_resource type="Material" path="res://Assets/Materials/white.tres" id="3"]
+[ext_resource type="Material" path="res://Assets/Materials/red.tres" id="4"]
+[ext_resource type="Material" path="res://Assets/Materials/blue.tres" id="5"]
+[ext_resource type="Material" path="res://Assets/Materials/dark.tres" id="6"]
+[ext_resource type="Material" uid="uid://dvaa1o1ap1d2b" path="res://Assets/Materials/rainbow.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://cskpwk1omeg81" path="res://Assets/Textures/chalk_texturemap.png" id="8"]
+[ext_resource type="Texture2D" path="res://Assets/Materials/rainbow_texture.tres" id="9"]
 
-[sub_resource type="PlaneMesh" id=5]
-material = ExtResource( 3 )
-size = Vector2( 0.1, 0.1 )
+[sub_resource type="PlaneMesh" id="5"]
+material = ExtResource("3")
+size = Vector2(0.1, 0.1)
 
-[sub_resource type="PlaneMesh" id=6]
-material = ExtResource( 6 )
-size = Vector2( 0.1, 0.1 )
+[sub_resource type="PlaneMesh" id="6"]
+material = ExtResource("6")
+size = Vector2(0.1, 0.1)
 
-[sub_resource type="PlaneMesh" id=7]
-material = ExtResource( 4 )
-size = Vector2( 0.1, 0.1 )
+[sub_resource type="PlaneMesh" id="7"]
+material = ExtResource("4")
+size = Vector2(0.1, 0.1)
 
-[sub_resource type="PlaneMesh" id=8]
-material = ExtResource( 5 )
-size = Vector2( 0.1, 0.1 )
+[sub_resource type="PlaneMesh" id="8"]
+material = ExtResource("5")
+size = Vector2(0.1, 0.1)
 
-[sub_resource type="PlaneMesh" id=3]
-material = ExtResource( 2 )
-size = Vector2( 0.1, 0.1 )
+[sub_resource type="PlaneMesh" id="3"]
+material = ExtResource("2")
+size = Vector2(0.1, 0.1)
 
-[sub_resource type="PlaneMesh" id=11]
-material = ExtResource( 7 )
-size = Vector2( 0.1, 0.1 )
+[sub_resource type="PlaneMesh" id="11"]
+material = ExtResource("7")
+size = Vector2(0.1, 0.1)
 
-[sub_resource type="MeshLibrary" id=2]
+[sub_resource type="MeshLibrary" id="2"]
 item/0/name = ""
-item/0/mesh = SubResource( 5 )
-item/0/mesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-item/0/shapes = [  ]
-item/0/navmesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/0/mesh = SubResource("5")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
 item/1/name = ""
-item/1/mesh = SubResource( 6 )
-item/1/mesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-item/1/shapes = [  ]
-item/1/navmesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/1/mesh = SubResource("6")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
 item/2/name = ""
-item/2/mesh = SubResource( 7 )
-item/2/mesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-item/2/shapes = [  ]
-item/2/navmesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/2/mesh = SubResource("7")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/mesh_cast_shadow = 1
+item/2/shapes = []
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
 item/3/name = ""
-item/3/mesh = SubResource( 8 )
-item/3/mesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-item/3/shapes = [  ]
-item/3/navmesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/3/mesh = SubResource("8")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/mesh_cast_shadow = 1
+item/3/shapes = []
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
 item/4/name = ""
-item/4/mesh = SubResource( 3 )
-item/4/mesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-item/4/shapes = [  ]
-item/4/navmesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/4/mesh = SubResource("3")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/mesh_cast_shadow = 1
+item/4/shapes = []
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1
 item/5/name = ""
-item/5/mesh = SubResource( 11 )
-item/5/mesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-item/5/shapes = [  ]
-item/5/navmesh_transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+item/5/mesh = SubResource("11")
+item/5/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/mesh_cast_shadow = 1
+item/5/shapes = []
+item/5/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/navigation_layers = 1
 
-[sub_resource type="SphereShape3D" id=4]
+[sub_resource type="SphereShape3D" id="4"]
 
-[sub_resource type="QuadMesh" id=12]
+[sub_resource type="QuadMesh" id="12"]
 
-[sub_resource type="ViewportTexture" id=13]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ga3o7"]
+texture = ExtResource("8")
+texture_region_size = Vector2i(1, 1)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
 
-[sub_resource type="StandardMaterial3D" id=14]
-resource_local_to_scene = true
-flags_transparent = true
-albedo_texture = SubResource( 13 )
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scwnb"]
+texture = ExtResource("8")
+margins = Vector2i(1, 0)
+texture_region_size = Vector2i(1, 1)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
 
-[sub_resource type="TileSet" id=15]
-0/name = "chalk_texturemap.png 0"
-0/texture = ExtResource( 8 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 1, 1 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "chalk_texturemap.png 1"
-1/texture = ExtResource( 8 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 1, 0, 1, 1 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-2/name = "chalk_texturemap.png 2"
-2/texture = ExtResource( 8 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 2, 0, 1, 1 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
-2/z_index = 0
-3/name = "chalk_texturemap.png 3"
-3/texture = ExtResource( 8 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 3, 0, 1, 1 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
-3/z_index = 0
-4/name = "chalk_texturemap.png 4"
-4/texture = ExtResource( 8 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 4, 0, 1, 1 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
-4/z_index = 0
-5/name = "rainbow_texture.tres 5"
-5/texture = ExtResource( 9 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 0, 1, 1 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
-5/z_index = 0
-6/name = "chalk_texturemap.png 6"
-6/texture = ExtResource( 8 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 5, 0, 1, 1 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shape_offset = Vector2( 0, 0 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape_one_way = false
-6/shape_one_way_margin = 0.0
-6/shapes = [  ]
-6/z_index = 0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njy0u"]
+texture = ExtResource("8")
+margins = Vector2i(2, 0)
+texture_region_size = Vector2i(1, 1)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
 
-[node name="chalk_canvas" type="Node3D"]
-script = ExtResource( 1 )
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4xlr"]
+texture = ExtResource("8")
+margins = Vector2i(3, 0)
+texture_region_size = Vector2i(1, 1)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
 
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = SubResource( 2 )
-cell_size = Vector3( 0.1, 0.1, 0.1 )
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mwjem"]
+texture = ExtResource("8")
+margins = Vector2i(4, 0)
+texture_region_size = Vector2i(1, 1)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67ghw"]
+texture = ExtResource("9")
+texture_region_size = Vector2i(1, 1)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esvxx"]
+texture = ExtResource("8")
+margins = Vector2i(5, 0)
+texture_region_size = Vector2i(1, 1)
+0:0/next_alternative_id = 8
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/4 = 4
+0:0/4/transpose = true
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/transpose = true
+0:0/6 = 6
+0:0/6/flip_v = true
+0:0/6/transpose = true
+0:0/7 = 7
+0:0/7/flip_h = true
+0:0/7/flip_v = true
+0:0/7/transpose = true
+
+[sub_resource type="TileSet" id="15"]
+tile_size = Vector2i(1, 1)
+sources/0 = SubResource("TileSetAtlasSource_ga3o7")
+sources/1 = SubResource("TileSetAtlasSource_scwnb")
+sources/2 = SubResource("TileSetAtlasSource_njy0u")
+sources/3 = SubResource("TileSetAtlasSource_n4xlr")
+sources/4 = SubResource("TileSetAtlasSource_mwjem")
+sources/5 = SubResource("TileSetAtlasSource_67ghw")
+sources/6 = SubResource("TileSetAtlasSource_esvxx")
+
+[node name="chalk_canvas" type="Node3D" unique_id=881068157]
+script = ExtResource("1")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=539606038]
+mesh_library = SubResource("2")
+cell_size = Vector3(0.1, 0.1, 0.1)
 data = {
-"cells": PackedInt32Array( 65286, 65286, 0, 65436, 65437, 0, 65526, 65527, 0 )
-}
-__meta__ = {
-"_editor_clip_": 0
+"cells": PackedInt32Array(65286, 65286, 0, 65436, 65437, 0, 65526, 65527, 0)
 }
 
-[node name="Area3D" type="Area3D" parent="." groups=["canvas"]]
-transform = Transform3D( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+[node name="Area3D" type="Area3D" parent="." unique_id=1793206349 groups=["canvas"]]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 monitoring = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource( 4 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1102946913]
+shape = SubResource("4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D( 20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, 0, 0.035, 0 )
-mesh = SubResource( 12 )
-material/0 = SubResource( 14 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=234140585]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, 0, 0.035, 0)
+mesh = SubResource("12")
 
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=145039424]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1325946336]
 wait_time = 2.0
 autostart = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2( 200, 200 )
-own_world = true
+[node name="SubViewport" type="SubViewport" parent="." unique_id=183778257]
 transparent_bg = true
-render_target_v_flip = true
+size = Vector2i(200, 200)
 
-[node name="TileMap" type="TileMap" parent="SubViewport"]
-tile_set = SubResource( 15 )
-cell_size = Vector2( 1, 1 )
-cell_quadrant_size = 32
-format = 1
+[node name="TileMap" type="TileMap" parent="SubViewport" unique_id=1150927430]
+tile_set = SubResource("15")
+rendering_quadrant_size = 32
+format = 2
 
 [connection signal="timeout" from="Timer" to="." method="_chalk_send"]

@@ -1,111 +1,105 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene format=4 uid="uid://d3rqpkvpu6fha"]
 
-[ext_resource path="res://Scenes/Entities/MetalSpawn/metal_spawn.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Entities/MetalSpawn/lo_Interactable.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/starb.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/ParticleResources/lvlup.tres" type="Material" id=4]
-[ext_resource path="res://Assets/Materials/dark_brown.tres" type="Material" id=5]
-[ext_resource path="res://Assets/Models/dirt.material" type="Material" id=6]
-[ext_resource path="res://Assets/Materials/dark_brown_alt.tres" type="Material" id=7]
+[ext_resource type="Script" uid="uid://biob3jkns3666" path="res://Scenes/Entities/MetalSpawn/metal_spawn.gd" id="1"]
+[ext_resource type="Script" uid="uid://dh8eeb7c33u7u" path="res://Scenes/Entities/MetalSpawn/lo_Interactable.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dljxchiy75iq6" path="res://Assets/Textures/UI/Fishing3Minigame/starb.png" id="3"]
+[ext_resource type="Material" uid="uid://voy13hqw75f3" path="res://Assets/ParticleResources/lvlup.tres" id="4"]
+[ext_resource type="Material" path="res://Assets/Models/dirt.material" id="6"]
+[ext_resource type="Material" path="res://Assets/Materials/dark_brown_alt.tres" id="7"]
 
-[sub_resource type="BoxShape3D" id=1]
+[sub_resource type="BoxShape3D" id="1"]
 
-[sub_resource type="BoxShape3D" id=3]
-extents = Vector3( 0.6, 0.6, 0.6 )
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(1.2, 1.2, 1.2)
 
-[sub_resource type="ArrayMesh" id=421]
+[sub_resource type="ArrayMesh" id="421"]
 resource_name = "spetral_hand_Icosphere"
-surfaces/0 = {
-"aabb": AABB( -1.14464, -0.00820135, -1.19097, 2.0957, 0.649493, 2.29783 ),
-"array_data": PackedByteArray( 91, 191, 107, 62, 182, 80, 75, 62, 33, 143, 54, 63, 16, 58, 161, 193, 139, 58, 123, 57, 81, 77, 26, 191, 164, 80, 75, 62, 115, 139, 226, 62, 215, 55, 143, 148, 209, 45, 123, 57, 81, 77, 26, 191, 164, 80, 75, 62, 115, 139, 226, 62, 215, 55, 150, 226, 0, 60, 123, 57, 81, 77, 26, 191, 164, 80, 75, 62, 179, 224, 221, 190, 185, 85, 126, 156, 93, 52, 123, 57, 91, 191, 107, 62, 182, 80, 75, 62, 193, 57, 52, 191, 67, 110, 95, 193, 69, 55, 123, 57, 46, 186, 62, 63, 203, 79, 75, 62, 32, 88, 149, 59, 60, 66, 0, 193, 23, 57, 123, 57, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 126, 131, 255, 209, 49, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 126, 126, 209, 209, 53, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 255, 126, 52, 192, 93, 56, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 255, 126, 204, 192, 209, 57, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 126, 130, 209, 69, 59, 56, 56, 135, 120, 115, 63, 0, 0, 0, 0, 231, 54, 158, 62, 77, 231, 230, 190, 116, 57, 28, 58, 135, 120, 115, 63, 0, 0, 0, 0, 231, 54, 158, 190, 101, 207, 26, 196, 186, 56, 28, 58, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 127, 63, 2, 226, 141, 190, 232, 58, 28, 58, 30, 121, 22, 63, 0, 0, 0, 0, 184, 27, 79, 63, 42, 233, 183, 195, 46, 58, 28, 58, 135, 120, 115, 191, 0, 0, 0, 0, 231, 54, 158, 62, 181, 231, 135, 146, 93, 48, 28, 58, 30, 121, 22, 191, 0, 0, 0, 0, 184, 27, 79, 63, 212, 233, 137, 223, 209, 41, 28, 58, 30, 121, 22, 191, 0, 0, 0, 0, 184, 27, 79, 63, 212, 233, 134, 222, 162, 59, 28, 58, 30, 121, 22, 191, 0, 0, 0, 0, 184, 27, 79, 191, 153, 174, 122, 164, 23, 53, 28, 58, 135, 120, 115, 191, 0, 0, 0, 0, 231, 54, 158, 190, 155, 205, 121, 240, 69, 51, 28, 58, 30, 121, 22, 63, 0, 0, 0, 0, 184, 27, 79, 191, 103, 172, 73, 190, 255, 55, 28, 58, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 127, 191, 97, 132, 115, 196, 139, 54, 28, 58, 213, 191, 18, 63, 174, 36, 135, 62, 117, 146, 215, 62, 41, 56, 203, 193, 209, 57, 123, 57, 129, 55, 96, 190, 214, 36, 135, 62, 40, 174, 45, 63, 240, 59, 130, 177, 69, 59, 123, 57, 99, 100, 53, 191, 166, 36, 135, 62, 32, 88, 149, 59, 196, 66, 130, 130, 209, 49, 123, 57, 129, 55, 96, 190, 214, 36, 135, 62, 200, 88, 43, 191, 190, 110, 126, 177, 209, 53, 123, 57, 213, 191, 18, 63, 174, 36, 135, 62, 179, 231, 210, 190, 70, 86, 53, 193, 93, 56, 123, 57, 176, 138, 3, 62, 13, 203, 14, 63, 221, 69, 207, 62, 13, 73, 202, 203, 46, 58, 217, 56, 176, 138, 3, 62, 13, 203, 14, 63, 221, 69, 207, 62, 13, 73, 153, 175, 232, 58, 217, 56, 38, 216, 212, 62, 233, 202, 14, 63, 100, 28, 27, 60, 46, 80, 34, 203, 186, 56, 217, 56, 38, 216, 212, 62, 233, 202, 14, 63, 100, 28, 27, 60, 46, 80, 221, 183, 116, 57, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 188, 243, 129, 62, 224, 69, 153, 137, 93, 48, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 188, 243, 129, 62, 224, 69, 150, 222, 162, 59, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 235, 131, 112, 190, 199, 93, 104, 249, 69, 51, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 235, 131, 112, 190, 199, 93, 106, 164, 23, 53, 217, 56, 176, 138, 3, 62, 13, 203, 14, 63, 21, 148, 197, 190, 53, 113, 103, 211, 139, 54, 217, 56, 176, 138, 3, 62, 13, 203, 14, 63, 21, 148, 197, 190, 53, 113, 54, 183, 255, 55, 217, 56, 204, 207, 186, 62, 100, 33, 175, 186, 229, 6, 139, 191, 26, 238, 173, 186, 139, 58, 123, 57, 204, 207, 186, 62, 100, 33, 175, 186, 229, 6, 139, 191, 26, 238, 169, 200, 139, 58, 123, 57, 56, 68, 155, 62, 100, 33, 175, 186, 226, 150, 141, 191, 193, 240, 142, 233, 209, 45, 123, 57, 56, 68, 155, 62, 100, 33, 175, 186, 226, 150, 141, 191, 193, 240, 142, 155, 0, 60, 123, 57, 56, 68, 155, 62, 100, 33, 175, 186, 168, 225, 149, 191, 146, 193, 126, 230, 93, 52, 123, 57, 204, 207, 186, 62, 100, 33, 175, 186, 166, 113, 152, 191, 108, 156, 95, 193, 69, 55, 123, 57, 228, 78, 206, 62, 100, 33, 175, 186, 69, 188, 145, 191, 104, 234, 0, 193, 23, 57, 123, 57, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 126, 126, 255, 209, 49, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 126, 126, 209, 209, 53, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 126, 53, 193, 93, 56, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 126, 203, 193, 209, 57, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 126, 130, 209, 69, 59, 56, 56, 227, 124, 100, 63, 100, 33, 175, 186, 142, 20, 110, 63, 26, 238, 173, 186, 139, 58, 123, 57, 227, 124, 100, 63, 100, 33, 175, 186, 142, 20, 110, 63, 26, 238, 169, 200, 139, 58, 123, 57, 23, 183, 84, 63, 100, 33, 175, 186, 148, 244, 104, 63, 193, 240, 142, 233, 209, 45, 123, 57, 23, 183, 84, 63, 100, 33, 175, 186, 148, 244, 104, 63, 193, 240, 142, 155, 0, 60, 123, 57, 23, 183, 84, 63, 100, 33, 175, 186, 8, 95, 88, 63, 146, 193, 126, 156, 93, 52, 123, 57, 227, 124, 100, 63, 100, 33, 175, 186, 12, 63, 83, 63, 108, 156, 95, 193, 69, 55, 123, 57, 111, 60, 110, 63, 100, 33, 175, 186, 206, 169, 96, 63, 104, 234, 0, 193, 23, 57, 123, 57, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 126, 126, 255, 209, 49, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 126, 126, 209, 209, 53, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 126, 53, 193, 93, 56, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 126, 203, 193, 209, 57, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 126, 130, 177, 69, 59, 56, 56, 6, 133, 238, 62, 112, 191, 100, 186, 149, 173, 141, 63, 26, 238, 173, 186, 139, 58, 123, 57, 6, 133, 238, 62, 112, 191, 100, 186, 149, 173, 141, 63, 26, 238, 169, 200, 139, 58, 123, 57, 226, 140, 209, 62, 112, 191, 100, 186, 41, 83, 139, 63, 193, 240, 142, 233, 209, 45, 123, 57, 226, 140, 209, 62, 112, 191, 100, 186, 41, 83, 139, 63, 193, 240, 142, 155, 0, 60, 123, 57, 226, 140, 209, 62, 112, 191, 100, 186, 187, 181, 131, 63, 146, 193, 126, 156, 93, 52, 123, 57, 6, 133, 238, 62, 112, 191, 100, 186, 79, 91, 129, 63, 108, 156, 95, 193, 69, 55, 123, 57, 70, 54, 0, 63, 112, 191, 100, 186, 114, 132, 135, 63, 104, 234, 0, 193, 23, 57, 123, 57, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 126, 126, 255, 209, 49, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 126, 126, 209, 209, 53, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 126, 53, 193, 93, 56, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 126, 203, 193, 209, 57, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 126, 130, 177, 69, 59, 56, 56, 14, 23, 129, 191, 240, 94, 6, 188, 122, 246, 106, 62, 26, 238, 173, 186, 139, 58, 123, 57, 14, 23, 129, 191, 240, 94, 6, 188, 122, 246, 106, 62, 26, 238, 169, 200, 139, 58, 123, 57, 168, 131, 146, 191, 240, 94, 6, 188, 160, 171, 61, 62, 193, 240, 142, 233, 209, 45, 123, 57, 168, 131, 146, 191, 240, 94, 6, 188, 160, 171, 61, 62, 193, 240, 142, 155, 0, 60, 123, 57, 168, 131, 146, 191, 240, 94, 6, 188, 239, 106, 44, 61, 146, 193, 126, 156, 93, 52, 123, 57, 14, 23, 129, 191, 240, 94, 6, 188, 224, 11, 12, 187, 108, 156, 95, 193, 69, 55, 123, 57, 96, 164, 108, 191, 240, 94, 6, 188, 92, 198, 232, 61, 104, 234, 0, 193, 23, 57, 123, 57, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 126, 126, 255, 209, 49, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 126, 126, 209, 209, 53, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 126, 53, 193, 93, 56, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 126, 203, 193, 209, 57, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 126, 130, 177, 69, 59, 56, 56 ),
-"array_index_data": PackedByteArray( 0, 0, 27, 0, 22, 0, 2, 0, 32, 0, 23, 0, 3, 0, 33, 0, 24, 0, 4, 0, 35, 0, 25, 0, 5, 0, 29, 0, 26, 0, 29, 0, 8, 0, 36, 0, 29, 0, 36, 0, 26, 0, 26, 0, 36, 0, 4, 0, 35, 0, 7, 0, 34, 0, 35, 0, 34, 0, 25, 0, 25, 0, 34, 0, 3, 0, 33, 0, 6, 0, 31, 0, 33, 0, 31, 0, 24, 0, 24, 0, 31, 0, 1, 0, 32, 0, 10, 0, 28, 0, 32, 0, 28, 0, 23, 0, 23, 0, 28, 0, 0, 0, 27, 0, 9, 0, 30, 0, 27, 0, 30, 0, 22, 0, 22, 0, 30, 0, 5, 0, 12, 0, 5, 0, 26, 0, 12, 0, 26, 0, 20, 0, 20, 0, 26, 0, 4, 0, 21, 0, 4, 0, 25, 0, 21, 0, 25, 0, 18, 0, 18, 0, 25, 0, 3, 0, 19, 0, 3, 0, 24, 0, 19, 0, 24, 0, 15, 0, 15, 0, 24, 0, 1, 0, 17, 0, 2, 0, 23, 0, 17, 0, 23, 0, 13, 0, 13, 0, 23, 0, 0, 0, 14, 0, 0, 0, 22, 0, 14, 0, 22, 0, 11, 0, 11, 0, 22, 0, 5, 0, 20, 0, 4, 0, 21, 0, 20, 0, 11, 0, 12, 0, 11, 0, 13, 0, 14, 0, 13, 0, 15, 0, 17, 0, 15, 0, 18, 0, 19, 0, 18, 0, 20, 0, 21, 0, 20, 0, 13, 0, 11, 0, 13, 0, 18, 0, 15, 0, 13, 0, 20, 0, 18, 0, 18, 0, 3, 0, 19, 0, 15, 0, 1, 0, 16, 0, 13, 0, 0, 0, 14, 0, 11, 0, 5, 0, 12, 0, 42, 0, 37, 0, 43, 0, 37, 0, 41, 0, 39, 0, 37, 0, 42, 0, 41, 0, 37, 0, 47, 0, 43, 0, 40, 0, 48, 0, 38, 0, 41, 0, 44, 0, 39, 0, 42, 0, 45, 0, 41, 0, 43, 0, 46, 0, 42, 0, 54, 0, 49, 0, 55, 0, 49, 0, 53, 0, 51, 0, 49, 0, 54, 0, 53, 0, 49, 0, 59, 0, 55, 0, 52, 0, 60, 0, 50, 0, 53, 0, 56, 0, 51, 0, 54, 0, 57, 0, 53, 0, 55, 0, 58, 0, 54, 0, 66, 0, 61, 0, 67, 0, 61, 0, 65, 0, 63, 0, 61, 0, 66, 0, 65, 0, 61, 0, 71, 0, 67, 0, 64, 0, 72, 0, 62, 0, 65, 0, 68, 0, 63, 0, 66, 0, 69, 0, 65, 0, 67, 0, 70, 0, 66, 0, 78, 0, 73, 0, 79, 0, 73, 0, 77, 0, 75, 0, 73, 0, 78, 0, 77, 0, 73, 0, 83, 0, 79, 0, 76, 0, 84, 0, 74, 0, 77, 0, 80, 0, 75, 0, 78, 0, 81, 0, 77, 0, 79, 0, 82, 0, 78, 0 ),
-"blend_shape_data": [  ],
-"format": 2194711,
+_surfaces = [{
+"aabb": AABB(-1.14464, -0.00820135, -1.19097, 2.0957, 0.649493, 2.29783),
+"attribute_data": PackedByteArray("AGBRPwBgLz8AILo9AGAvPwAAgD8AYC8/AKCLPgBgLz8AoOg+AGAvPwDgIj8AYC8/ACA6PgAABz8AILo+AAAHPwCgCz8AAAc/ACA6PwAABz8AoGg/AAAHPwCALj8AgEM/AEAXPwCAQz8AAF0/AIBDPwDART8AgEM/AKALPgCAQz8AIDo9AIBDPwBAdD8AgEM/AOCiPgCAQz8AoGg+AIBDPwDg/z4AgEM/AGDRPgCAQz8AIDo/AGAvPwCgaD8AYC8/ACA6PgBgLz8AILo+AGAvPwCgCz8AYC8/AMBFPwAgGz8AAF0/ACAbPwBAFz8AIBs/AIAuPwAgGz8AoAs+ACAbPwBAdD8AIBs/AKBoPgAgGz8A4KI+ACAbPwBg0T4AIBs/AOD/PgAgGz8AYFE/AGAvPwBgUT8AYC8/ACC6PQBgLz8AAIA/AGAvPwCgiz4AYC8/AKDoPgBgLz8A4CI/AGAvPwAgOj4AAAc/ACC6PgAABz8AoAs/AAAHPwAgOj8AAAc/AKBoPwAABz8AYFE/AGAvPwBgUT8AYC8/ACC6PQBgLz8AAIA/AGAvPwCgiz4AYC8/AKDoPgBgLz8A4CI/AGAvPwAgOj4AAAc/ACC6PgAABz8AoAs/AAAHPwAgOj8AAAc/AKBoPwAABz8AYFE/AGAvPwBgUT8AYC8/ACC6PQBgLz8AAIA/AGAvPwCgiz4AYC8/AKDoPgBgLz8A4CI/AGAvPwAgOj4AAAc/ACC6PgAABz8AoAs/AAAHPwAgOj8AAAc/AKBoPwAABz8AYFE/AGAvPwBgUT8AYC8/ACC6PQBgLz8AAIA/AGAvPwCgiz4AYC8/AKDoPgBgLz8A4CI/AGAvPwAgOj4AAAc/ACC6PgAABz8AoAs/AAAHPwAgOj8AAAc/AKBoPwAABz8="),
+"format": 34359742487,
 "index_count": 240,
-"material": ExtResource( 6 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 85
-}
+"index_data": PackedByteArray("AAAbABYAAgAgABcAAwAhABgABAAjABkABQAdABoAHQAIACQAHQAkABoAGgAkAAQAIwAHACIAIwAiABkAGQAiAAMAIQAGAB8AIQAfABgAGAAfAAEAIAAKABwAIAAcABcAFwAcAAAAGwAJAB4AGwAeABYAFgAeAAUADAAFABoADAAaABQAFAAaAAQAFQAEABkAFQAZABIAEgAZAAMAEwADABgAEwAYAA8ADwAYAAEAEQACABcAEQAXAA0ADQAXAAAADgAAABYADgAWAAsACwAWAAUAFAAEABUAFAALAAwACwANAA4ADQAPABEADwASABMAEgAUABUAFAANAAsADQASAA8ADQAUABIAEgADABMADwABABAADQAAAA4ACwAFAAwAKgAlACsAJQApACcAJQAqACkAJQAvACsAKAAwACYAKQAsACcAKgAtACkAKwAuACoANgAxADcAMQA1ADMAMQA2ADUAMQA7ADcANAA8ADIANQA4ADMANgA5ADUANwA6ADYAQgA9AEMAPQBBAD8APQBCAEEAPQBHAEMAQABIAD4AQQBEAD8AQgBFAEEAQwBGAEIATgBJAE8ASQBNAEsASQBOAE0ASQBTAE8ATABUAEoATQBQAEsATgBRAE0ATwBSAE4A"),
+"material": ExtResource("6"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 85,
+"vertex_data": PackedByteArray("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")
+}]
 
-[sub_resource type="StandardMaterial3D" id=419]
-flags_transparent = true
-params_billboard_mode = 3
+[sub_resource type="StandardMaterial3D" id="419"]
+transparency = 1
+albedo_texture = ExtResource("3")
+billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-albedo_texture = ExtResource( 3 )
 
-[sub_resource type="QuadMesh" id=420]
-material = SubResource( 419 )
+[sub_resource type="QuadMesh" id="420"]
+material = SubResource("419")
 
-[sub_resource type="Curve" id=422]
-_data = [ Vector2( 0, 0.569318 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="422"]
+_data = [Vector2(0, 0.569318), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="CurveTexture" id=14]
-curve = SubResource( 422 )
+[sub_resource type="CurveTexture" id="14"]
+curve = SubResource("422")
 
-[sub_resource type="ParticleProcessMaterial" id=423]
+[sub_resource type="ParticleProcessMaterial" id="423"]
 lifetime_randomness = 0.61
 emission_shape = 1
 emission_sphere_radius = 0.5
-direction = Vector3( 0, 1, 0 )
+direction = Vector3(0, 1, 0)
 spread = 24.0
-initial_velocity = 6.0
-initial_velocity_random = 0.42
-scale_random = 0.44
-scale_curve = SubResource( 14 )
+scale_curve = SubResource("14")
 
-[sub_resource type="SphereMesh" id=424]
-material = ExtResource( 7 )
+[sub_resource type="SphereMesh" id="424"]
+material = ExtResource("7")
 radius = 0.2
 height = 0.4
 radial_segments = 8
 rings = 4
 
-[node name="metal_spawn" type="CharacterBody3D" groups=["metal_spawn"]]
+[node name="metal_spawn" type="CharacterBody3D" unique_id=1234463855 groups=["metal_spawn"]]
 collision_layer = 512
 collision_mask = 512
-script = ExtResource( 1 )
+script = ExtResource("1")
 delete_on_owner_disconnect = true
 decay = true
 decay_timer = 10000
 packet_send_cooldown = 32
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D( 0.635382, 0, 0, 0, 0.635382, 0, 0, 0, 0.635382, 0, 0, 0 )
-shape = SubResource( 1 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1619420512]
+transform = Transform3D(0.635382, 0, 0, 0, 0.635382, 0, 0, 0, 0.635382, 0, 0, 0)
+shape = SubResource("1")
 
-[node name="Interactable" type="Area3D" parent="."]
+[node name="Interactable" type="Area3D" parent="." unique_id=1320527861]
 monitoring = false
-script = ExtResource( 2 )
+script = ExtResource("2")
 text = "PICK UP"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-shape = SubResource( 3 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1465496483]
+shape = SubResource("3")
 
-[node name="Icosphere2" type="MeshInstance3D" parent="."]
-transform = Transform3D( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0 )
-mesh = SubResource( 421 )
-skeleton = NodePath("")
-material/0 = ExtResource( 5 )
+[node name="Icosphere2" type="MeshInstance3D" parent="." unique_id=1013846547]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
+mesh = SubResource("421")
 
-[node name="lvl_particles" type="Particles" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.331942, 0 )
+[node name="lvl_particles" type="GPUParticles3D" parent="." unique_id=1261456778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.331942, 0)
 emitting = false
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
-local_coords = false
-process_material = ExtResource( 4 )
-draw_pass_1 = SubResource( 420 )
+process_material = ExtResource("4")
+draw_pass_1 = SubResource("420")
 
-[node name="Particles" type="Particles" parent="."]
+[node name="Particles" type="GPUParticles3D" parent="." unique_id=466893148]
 emitting = false
 amount = 16
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.18
-process_material = SubResource( 423 )
-draw_pass_1 = SubResource( 424 )
+process_material = SubResource("423")
+draw_pass_1 = SubResource("424")

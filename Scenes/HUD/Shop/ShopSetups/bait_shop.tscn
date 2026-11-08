@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene format=3 uid="uid://b4nshfmeycyc0"]
 
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=5]
+[ext_resource type="Script" uid="uid://dkjdk0ow8wojj" path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" id="1"]
+[ext_resource type="Script" uid="uid://c1itdgq3ynf24" path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" id="5"]
 
-[node name="bait_shop" type="Node"]
-script = ExtResource( 5 )
+[node name="bait_shop" type="Node" unique_id=1947365345]
+script = ExtResource("5")
 
-[node name="bait" type="Node" parent="."]
-script = ExtResource( 1 )
+[node name="bait" type="Node" parent="." unique_id=1008908588]
+script = ExtResource("1")
 category_title = "bait restock"
 replace = 4

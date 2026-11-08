@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=3 uid="uid://c6pre2k4blbip"]
 
-[ext_resource path="res://Scenes/Map/Tools/area_entrance.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://70nfritpbbv3" path="res://Scenes/Map/Tools/area_entrance.gd" id="1"]
 
-[node name="area_entrance" type="Marker3D"]
-script = ExtResource( 1 )
+[node name="area_entrance" type="Marker3D" unique_id=1499717715]
+script = ExtResource("1")

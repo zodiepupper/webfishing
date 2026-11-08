@@ -1,17 +1,17 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://cp45sny4tf8ca"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons62.png" type="Texture2D" id=2]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://y3y10vva8o3t" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons62.png" id="2"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Non-Binary Title"
 desc = "Non-Binary!"
 title = "Non-Binary"
-icon = ExtResource( 2 )
-species_alt_mesh = [  ]
-main_color = Color( 1, 1, 1, 1 )
-body_pattern = [  ]
+icon = ExtResource("2")
+species_alt_mesh = []
+main_color = Color(1, 1, 1, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

@@ -1,56 +1,48 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene format=3 uid="uid://dctxicxyrpjgo"]
 
-[ext_resource path="res://Scenes/Map/Zones/test_lake_zone.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Map/main_map.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Map/Props/water.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Textures/sand.png" type="Texture2D" id=5]
-[ext_resource path="res://Assets/world_env.tres" type="Environment" id=6]
-[ext_resource path="res://Scenes/Map/Zones/tent_zone.tscn" type="PackedScene" id=7]
+[ext_resource type="Script" uid="uid://cs0j3u4vpn03m" path="res://Scenes/Map/main_map.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bqgm60sy0dpf4" path="res://Scenes/Map/Props/water.tscn" id="4"]
+[ext_resource type="Environment" uid="uid://n6aa3q4akke0" path="res://Assets/world_env.tres" id="6"]
+[ext_resource type="PackedScene" uid="uid://4u7vkgalb4op" path="res://Scenes/Map/Zones/tent_zone.tscn" id="7"]
 
-[sub_resource type="PlaneMesh" id=3]
-size = Vector2( 400, 400 )
+[sub_resource type="PlaneMesh" id="3"]
+size = Vector2(400, 400)
 
-[sub_resource type="StandardMaterial3D" id=4]
-albedo_texture = ExtResource( 5 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
-uv1_triplanar = true
+[sub_resource type="BoxShape3D" id="2"]
+size = Vector3(400, 2, 400)
 
-[sub_resource type="BoxShape3D" id=2]
-extents = Vector3( 200, 1, 200 )
+[node name="main_map" type="Node3D" unique_id=1935486892]
+script = ExtResource("2")
 
-[node name="main_map" type="Node3D"]
-script = ExtResource( 2 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1742283954]
+environment = ExtResource("6")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 6 )
+[node name="spawn_position" type="Marker3D" parent="." unique_id=902120777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3566, 3.0158, -12.4937)
 
-[node name="spawn_position" type="Marker3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3566, 3.0158, -12.4937 )
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5.78214, 0 )
-light_color = Color( 0.709804, 0.827451, 0.709804, 1 )
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=65023517]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5.78214, 0)
+light_color = Color(0.709804, 0.827451, 0.709804, 1)
 light_energy = 0.12
 light_negative = true
 
-[node name="water" parent="." instance=ExtResource( 4 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50 )
+[node name="water" parent="." unique_id=1571881642 instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
 
-[node name="sand" type="MeshInstance3D" parent="water"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.91, 0 )
-mesh = SubResource( 3 )
+[node name="sand2" type="MeshInstance3D" parent="water" unique_id=1748618518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.91, 0)
+mesh = SubResource("3")
 skeleton = NodePath("../..")
-material/0 = SubResource( 4 )
 
-[node name="main_collision" type="StaticBody3D" parent="."]
+[node name="main_collision" type="StaticBody3D" parent="." unique_id=402964987]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="main_collision"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0 )
-shape = SubResource( 2 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="main_collision" unique_id=735650140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+shape = SubResource("2")
 
-[node name="zones" type="Node" parent="."]
+[node name="zones" type="Node" parent="." unique_id=864423035]
 
-[node name="lake_zone" parent="zones" instance=ExtResource( 1 )]
+[node name="lake_zone" parent="zones" unique_id=195399646]
 
-[node name="tent_zone" parent="zones" instance=ExtResource( 7 )]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 298.028, 1, -172.017 )
+[node name="tent_zone" parent="zones" unique_id=114861892 instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 298.028, 1, -172.017)

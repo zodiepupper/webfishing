@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene format=3 uid="uid://cy2gkd0vovqfx"]
 
-[ext_resource path="res://Assets/Textures/fly.png" type="Texture2D" id=1]
-[ext_resource path="res://Scenes/Singletons/FocusArrow/focus_arrow.gd" type="Script" id=2]
+[ext_resource type="Texture2D" uid="uid://b51o1srpakqv6" path="res://Assets/Textures/fly.png" id="1"]
+[ext_resource type="Script" uid="uid://2i6courpghyk" path="res://Scenes/Singletons/FocusArrow/focus_arrow.gd" id="2"]
 
-[node name="focus_arrow" type="CanvasLayer"]
+[node name="focus_arrow" type="CanvasLayer" unique_id=1322508836]
 layer = 35
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1569755983]
 offset_left = -6.0
 offset_top = -18.0
 offset_right = 61.0
 offset_bottom = 49.0
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1

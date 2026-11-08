@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://cxvcp0lwetmsi"]
 
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons11.png" type="Texture2D" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Models/Cosmetics/pants_long.tres" type="ArrayMesh" id=4]
+[ext_resource type="Texture2D" uid="uid://bn3rh0vxk3g18" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons11.png" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://bx3n4oofko5p" path="res://Assets/Models/Cosmetics/pants_long.tres" id="4"]
 
 [resource]
-script = ExtResource( 3 )
+script = ExtResource("3")
 name = "Red Pants"
 desc = "Covering up your bits!"
 title = ""
-icon = ExtResource( 1 )
-mesh = ExtResource( 4 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-main_color = Color( 1, 0, 0.192157, 1 )
-body_pattern = [  ]
+icon = ExtResource("1")
+mesh = ExtResource("4")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+main_color = Color(1, 0, 0.192157, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=3 uid="uid://q3hqmn2gtgxi"]
 
-[ext_resource path="res://Scenes/Map/Tools/transition_zone.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://d2ltxys8rkl48" path="res://Scenes/Map/Tools/transition_zone.gd" id="1"]
 
-[node name="transition_zone" type="Area3D"]
-script = ExtResource( 1 )
+[node name="transition_zone" type="Area3D" unique_id=1367917761]
+script = ExtResource("1")

@@ -1,53 +1,53 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene format=3 uid="uid://b762msfcstcku"]
 
-[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/HUD/CosmeticMenu/cosmetic_button.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Textures/UI/newbadge1.png" type="Texture2D" id=4]
+[ext_resource type="Theme" uid="uid://dk4lixgcevj1v" path="res://Assets/Themes/secondary.tres" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Singletons/Tooltips/tooltip_node.tscn" id="2"]
+[ext_resource type="Script" uid="uid://dl770xvorfm4" path="res://Scenes/HUD/CosmeticMenu/cosmetic_button.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://dx4dnxce3voem" path="res://Assets/Textures/UI/newbadge1.png" id="4"]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 0.933333, 0.835294, 1 )
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 0.933333, 0.835294, 1)
 draw_center = false
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color( 0.352941, 0.458824, 0.352941, 1 )
+border_color = Color(0.352941, 0.458824, 0.352941, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 expand_margin_left = 3.0
-expand_margin_right = 3.0
 expand_margin_top = 3.0
+expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" unique_id=1203118813]
+custom_minimum_size = Vector2(90, 90)
+anchors_preset = -1
 anchor_right = 0.0333333
 anchor_bottom = 0.0592593
 offset_right = -52.0
 offset_bottom = -44.0
-custom_minimum_size = Vector2( 90, 90 )
-theme = ExtResource( 1 )
-theme_override_colors/font_disabled_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-theme_override_colors/font_focus_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-theme_override_colors/font_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-theme_override_colors/font_hover_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-theme_override_colors/font_pressed_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+theme = ExtResource("1")
+theme_override_colors/font_color = Color(0.0627451, 0.109804, 0.192157, 1)
+theme_override_colors/font_focus_color = Color(0.0627451, 0.109804, 0.192157, 1)
+theme_override_colors/font_pressed_color = Color(0.0627451, 0.109804, 0.192157, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.109804, 0.192157, 1)
+theme_override_colors/font_disabled_color = Color(0.0627451, 0.109804, 0.192157, 1)
 clip_text = true
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("3")
 
-[node name="ColorRect" type="Panel" parent="."]
+[node name="ColorRect" type="Panel" parent="." unique_id=1338805291]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource( 1 )
+theme_override_styles/panel = SubResource("1")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=407679374]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 6.0
@@ -55,16 +55,18 @@ offset_top = 6.0
 offset_right = -6.0
 offset_bottom = -6.0
 mouse_filter = 2
-expand = true
+expand_mode = 1
 
-[node name="tooltip_node" parent="." instance=ExtResource( 2 )]
+[node name="tooltip_node" parent="." unique_id=1222775689 instance=ExtResource("2")]
+anchors_preset = 0
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=159410495]
+layout_mode = 0
 offset_left = -15.0
 offset_top = -15.0
 offset_right = 33.0
 offset_bottom = 33.0
-texture = ExtResource( 4 )
+texture = ExtResource("4")
 
 [connection signal="gui_input" from="." to="." method="_on_Button_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_Button_mouse_entered"]

@@ -1,25 +1,28 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene format=3 uid="uid://bx7ka7ut55pww"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/HUD/Inbox/inbox.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=3]
-[ext_resource path="res://Assets/Textures/UI/mailbox.png" type="Texture2D" id=4]
-[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=5]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="Script" uid="uid://qoxg2632jry0" path="res://Scenes/HUD/Inbox/inbox.gd" id="2"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_med.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://ev7l7miw0aox" path="res://Assets/Textures/UI/mailbox.png" id="4"]
+[ext_resource type="Script" uid="uid://cd5dpm1u0dx44" path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" id="5"]
 
-[node name="inbox" type="Control"]
+[node name="inbox" type="Control" unique_id=510099376]
+layout_mode = 3
 anchor_left = 0.02
 anchor_top = 0.02
 anchor_right = 0.98
 anchor_bottom = 0.98
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
+theme = ExtResource("1")
+script = ExtResource("2")
 
-[node name="letters" type="Control" parent="."]
+[node name="letters" type="Control" parent="." unique_id=485619320]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-pivot_offset = Vector2( -1179.4, -138.6 )
+pivot_offset = Vector2(-1179.4, -138.6)
 
-[node name="Label2" type="Label" parent="letters"]
+[node name="Label2" type="Label" parent="letters" unique_id=345910029]
+layout_mode = 0
 anchor_left = 0.00282986
 anchor_top = 0.0948766
 anchor_right = 1.0
@@ -29,18 +32,17 @@ offset_top = -0.368011
 offset_right = -10.2001
 offset_bottom = 0.454376
 text = "INBOX"
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": true
-}
+vertical_alignment = 2
 
-[node name="Panel" type="Panel" parent="letters"]
+[node name="Panel" type="Panel" parent="letters" unique_id=1896830351]
+layout_mode = 0
 anchor_top = 0.18
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="letters/Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="letters/Panel" unique_id=561802279]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
@@ -48,12 +50,13 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = -10.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="letters/Panel/ScrollContainer"]
-offset_right = 1823.2
+[node name="VBoxContainer" type="VBoxContainer" parent="letters/Panel/ScrollContainer" unique_id=1584523622]
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 7
 
-[node name="Button" type="Button" parent="letters"]
+[node name="Button" type="Button" parent="letters" unique_id=536358780]
+layout_mode = 0
 anchor_top = 0.02
 anchor_right = 1.0
 anchor_bottom = 0.1
@@ -61,9 +64,8 @@ offset_right = -0.200073
 offset_bottom = 0.0447845
 size_flags_horizontal = 3
 text = "CREATE LETTER"
-icon = ExtResource( 4 )
-align = 0
+icon = ExtResource("4")
 expand_icon = true
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [connection signal="pressed" from="letters/Button" to="." method="_create_letter"]

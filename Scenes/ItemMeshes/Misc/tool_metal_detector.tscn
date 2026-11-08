@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene format=3 uid="uid://c30lu1xhvhumn"]
 
-[ext_resource path="res://Assets/Materials/dark.tres" type="Material" id=1]
-[ext_resource path="res://Scenes/ItemMeshes/item_mesh.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Models/metaldetector.obj" type="ArrayMesh" id=3]
+[ext_resource type="Script" uid="uid://8wam0bbecndl" path="res://Scenes/ItemMeshes/item_mesh.gd" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://bippt7ym48gc0" path="res://Assets/Models/metaldetector.obj" id="3"]
 
-[node name="metal_detector" type="Node3D"]
-script = ExtResource( 2 )
+[node name="metal_detector" type="Node3D" unique_id=1400574959]
+script = ExtResource("2")
 hotspot_node = NodePath("Marker3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D( -0.259808, -0.075, 0.129904, 0, 0.259808, 0.15, -0.15, 0.129904, -0.225, -0.119, -0.012, -0.132 )
-mesh = ExtResource( 3 )
-material/0 = ExtResource( 1 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1748246855]
+transform = Transform3D(-0.259808, -0.075, 0.129904, 0, 0.259808, 0.15, -0.15, 0.129904, -0.225, -0.119, -0.012, -0.132)
+mesh = ExtResource("3")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1754814921]

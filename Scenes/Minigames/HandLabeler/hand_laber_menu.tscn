@@ -1,41 +1,46 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene format=3 uid="uid://vuxtljeed5ee"]
 
-[ext_resource path="res://Scenes/Minigames/HandLabeler/hand_laber_menu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/Textures/UI/HandLabeler/handlabelerbg.png" type="Texture2D" id=3]
-[ext_resource path="res://Scenes/HUD/inventory_item.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=5]
+[ext_resource type="Script" uid="uid://bihm6m2040wdx" path="res://Scenes/Minigames/HandLabeler/hand_laber_menu.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://dqb0tgferoytn" path="res://Assets/Textures/UI/HandLabeler/handlabelerbg.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://bquc221l76yqr" path="res://Scenes/HUD/inventory_item.tscn" id="4"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_med.tres" id="5"]
 
-[node name="hand_labeler" type="CanvasLayer"]
+[node name="hand_labeler" type="CanvasLayer" unique_id=1321263331]
 layer = 15
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=393028077]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 0.431373 )
+color = Color(0.0627451, 0.109804, 0.192157, 0.431373)
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=479244842]
+layout_mode = 3
 anchor_left = 0.35
 anchor_top = 0.42
 anchor_right = 0.65
 anchor_bottom = 0.58
-theme = ExtResource( 2 )
+theme = ExtResource("2")
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Control" unique_id=1936154603]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Panel" type="Panel" parent="Control/Panel"]
+[node name="Panel" type="Panel" parent="Control/Panel" unique_id=1004801524]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
 offset_top = 12.0
 offset_right = -12.0
 offset_bottom = -12.0
-theme_override_styles/panel = ExtResource( 5 )
+theme_override_styles/panel = ExtResource("5")
 
-[node name="Label" type="Label" parent="Control/Panel"]
+[node name="Label" type="Label" parent="Control/Panel" unique_id=869925181]
+layout_mode = 0
 anchor_left = 0.406056
 anchor_top = 0.120941
 anchor_right = 0.918736
@@ -45,11 +50,10 @@ offset_top = -0.0599995
 offset_right = -0.192017
 offset_bottom = -0.0800018
 text = "Hand Labeler"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="item" parent="Control" instance=ExtResource( 4 )]
+[node name="item" parent="Control" unique_id=1876010994 instance=ExtResource("4")]
+layout_mode = 0
+anchors_preset = 0
 anchor_left = 0.149
 anchor_top = 0.126704
 anchor_right = 0.306
@@ -60,7 +64,8 @@ offset_right = -0.256012
 offset_bottom = -0.0565262
 button_mask = 0
 
-[node name="name" type="LineEdit" parent="Control"]
+[node name="name" type="LineEdit" parent="Control" unique_id=635774293]
+layout_mode = 0
 anchor_left = 0.404097
 anchor_top = 0.336528
 anchor_right = 0.924028
@@ -69,13 +74,11 @@ offset_left = 0.23999
 offset_top = -0.152008
 offset_right = -0.240051
 offset_bottom = 0.151978
-max_length = 28
 placeholder_text = "New Name Here"
-__meta__ = {
-"_edit_use_anchors_": true
-}
+max_length = 28
 
-[node name="choose_item" type="Button" parent="Control"]
+[node name="choose_item" type="Button" parent="Control" unique_id=1005180058]
+layout_mode = 0
 anchor_left = 0.109375
 anchor_top = 0.697778
 anchor_right = 0.355889
@@ -84,11 +87,9 @@ offset_top = -0.576004
 offset_right = 0.00799561
 offset_bottom = 5.504
 text = "Choose Item"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="rename_button" type="Button" parent="Control"]
+[node name="rename_button" type="Button" parent="Control" unique_id=476798885]
+layout_mode = 0
 anchor_left = 0.597
 anchor_top = 0.697293
 anchor_right = 0.920139
@@ -97,11 +98,9 @@ offset_left = 0.12796
 offset_top = -0.492264
 offset_bottom = -0.444244
 text = "Name Item"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="close_button" type="Button" parent="Control"]
+[node name="close_button" type="Button" parent="Control" unique_id=1523684002]
+layout_mode = 0
 anchor_left = 0.965056
 anchor_top = -0.0723827
 anchor_right = 1.02431
@@ -110,11 +109,9 @@ offset_left = 0.12793
 offset_top = -0.492264
 offset_bottom = -5.44424
 text = "x"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1320375400]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 40.0
@@ -122,8 +119,8 @@ offset_top = 58.0
 offset_right = 40.0
 offset_bottom = 58.0
 mouse_filter = 2
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
 [connection signal="pressed" from="Control/choose_item" to="." method="_on_choose_item_pressed"]

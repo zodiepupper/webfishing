@@ -1,88 +1,94 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene format=3 uid="uid://wyumbru5ehcn"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/Minigames/ScratchTicket/scratch_spots.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Themes/accid___.ttf" type="FontFile" id=3]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/star.png" type="Texture2D" id=4]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="Script" uid="uid://clfag8b8qq1e" path="res://Scenes/Minigames/ScratchTicket/scratch_spots.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://56et5yqitr50" path="res://Assets/Themes/accid___.ttf" id="3"]
+[ext_resource type="Texture2D" uid="uid://bg1yk51n20l5t" path="res://Assets/Textures/UI/Fishing3Minigame/star.png" id="4"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 26.5, 11 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(53, 22)
 
-[sub_resource type="FontFile" id=2]
-size = 20
-extra_spacing_char = 2
-font_data = ExtResource( 3 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="Curve" id=8]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.312236, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.797468, 0 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.312236, 1), 0.0, 0.0, 0, 0, Vector2(0.797468, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id="7"]
+curve = SubResource("8")
 
-[sub_resource type="ParticleProcessMaterial" id=9]
-flag_disable_z = true
-direction = Vector3( 0.4, -1, 0 )
+[sub_resource type="ParticleProcessMaterial" id="9"]
+direction = Vector3(0.4, -1, 0)
 spread = 82.38
-gravity = Vector3( 0, 98, 0 )
-initial_velocity = 209.36
-initial_velocity_random = 0.55
-angular_velocity = 210.67
-angular_velocity_random = 0.91
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 7 )
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("7")
 
-[node name="scratch_spots" type="Node2D" groups=["scratch_spot"]]
-script = ExtResource( 2 )
+[node name="scratch_spots" type="Node2D" unique_id=1193428620 groups=["scratch_spot"]]
+script = ExtResource("2")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1951525358]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -0.5, -3 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=438926568]
+position = Vector2(-0.5, -3)
+shape = SubResource("1")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=176980303]
 offset_left = -25.0
 offset_top = -43.0
 offset_right = 25.0
 offset_bottom = -3.0
-theme = ExtResource( 1 )
-theme_override_colors/font_color = Color( 0.0196078, 0.0431373, 0.0823529, 1 )
+theme = ExtResource("1")
+theme_override_colors/font_color = Color(0.0196078, 0.0431373, 0.0823529, 1)
 text = "9"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." unique_id=1344048545]
 offset_left = -108.0
 offset_top = -24.0
 offset_right = 108.0
 offset_bottom = 16.0
-theme = ExtResource( 1 )
-theme_override_colors/font_color = Color( 0.0196078, 0.0431373, 0.0823529, 1 )
-theme_override_fonts/font = SubResource( 2 )
+theme = ExtResource("1")
+theme_override_colors/font_color = Color(0.0196078, 0.0431373, 0.0823529, 1)
+theme_override_fonts/font = SubResource("2")
 text = "NINE"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="." unique_id=147233511]
 offset_left = -95.0
 offset_top = -6.0
 offset_right = 95.0
 offset_bottom = 34.0
-theme = ExtResource( 1 )
-theme_override_colors/font_color = Color( 0.0196078, 0.0431373, 0.0823529, 1 )
+theme = ExtResource("1")
+theme_override_colors/font_color = Color(0.0196078, 0.0431373, 0.0823529, 1)
 text = "9"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="stars" type="GPUParticles2D" parent="."]
+[node name="stars" type="GPUParticles2D" parent="." unique_id=1177237598]
 emitting = false
 amount = 10
+texture = ExtResource("4")
 lifetime = 3.0
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
-process_material = SubResource( 9 )
-texture = ExtResource( 4 )
+process_material = SubResource("9")
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

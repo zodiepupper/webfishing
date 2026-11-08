@@ -1,13 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=3 uid="uid://54oa2vt1414u"]
 
-[ext_resource path="res://Scenes/Singletons/DebugScreen/debug_screen.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://v7sxh0iu7e23" path="res://Scenes/Singletons/DebugScreen/debug_screen.gd" id="1"]
 
-[node name="debug_screen" type="CanvasLayer"]
+[node name="debug_screen" type="CanvasLayer" unique_id=1948327764]
 layer = 100
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=817876746]
 visible = false
+anchors_preset = -1
 anchor_right = 0.139
 anchor_bottom = 0.196
 offset_right = -0.880035

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://cvh0xfwgpu7qo"]
 
-[ext_resource type="Shader" path="res://Assets/Shaders/extreme_water.tres" id="1"]
+[ext_resource type="Shader" uid="uid://dsa6c7fcq5fsj" path="res://Assets/Shaders/extreme_water.tres" id="1"]
 
 [resource]
 render_priority = 0

@@ -1,55 +1,74 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene format=3 uid="uid://dmm7h4g2jpxvd"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/Themes/coolvetica rg.otf" type="FontFile" id=2]
-[ext_resource path="res://Scenes/Entities/Player/player_label.gd" type="Script" id=3]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="FontFile" uid="uid://cg23txtdwu1pu" path="res://Assets/Themes/coolvetica rg.otf" id="2"]
+[ext_resource type="Script" uid="uid://bmmmgi5rmdev6" path="res://Scenes/Entities/Player/player_label.gd" id="3"]
 
-[sub_resource type="FontFile" id=2]
-size = 20
-outline_size = 2
-outline_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-extra_spacing_char = 2
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("2")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=3]
-size = 18
-outline_size = 2
-outline_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-extra_spacing_char = 2
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("2")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[node name="player_label" type="Control"]
+[node name="player_label" type="Control" unique_id=1148333756]
+custom_minimum_size = Vector2(240, 480)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 720.0
 offset_bottom = 960.0
-custom_minimum_size = Vector2( 240, 480 )
-theme = ExtResource( 1 )
-script = ExtResource( 3 )
+theme = ExtResource("1")
+script = ExtResource("3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1661235432]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 2
 
-[node name="Label" type="RichTextLabel" parent="VBoxContainer"]
-offset_top = 907.0
-offset_right = 720.0
-offset_bottom = 933.0
-theme_override_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
-theme_override_fonts/normal_font = SubResource( 2 )
+[node name="Label" type="RichTextLabel" parent="VBoxContainer" unique_id=1425205801]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.933333, 0.835294, 1)
+theme_override_fonts/normal_font = SubResource("2")
 bbcode_enabled = true
-fit_content_height = true
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
-offset_top = 937.0
-offset_right = 720.0
-offset_bottom = 960.0
-theme_override_colors/font_color = Color( 0.835294, 0.666667, 0.45098, 1 )
-theme_override_fonts/font = SubResource( 3 )
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1824068753]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.835294, 0.666667, 0.45098, 1)
+theme_override_fonts/font = SubResource("3")
 text = "PLAYER TITLE"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="bubble_box" type="VBoxContainer" parent="."]
+[node name="bubble_box" type="VBoxContainer" parent="." unique_id=633064664]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -96.0

@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://c2a5onnr5raj1"]
 
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=1]
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons1.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Models/Cosmetics/gloves.tres" type="ArrayMesh" id=4]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="1"]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cmq11n4s4y60d" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons1.png" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://c8om68bk6jrbm" path="res://Assets/Models/Cosmetics/gloves.tres" id="4"]
 
 [resource]
-script = ExtResource( 2 )
+script = ExtResource("2")
 name = "Black Gloves"
 desc = "Grippers!"
 title = ""
-icon = ExtResource( 3 )
-mesh = ExtResource( 4 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 1 )
-main_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-body_pattern = [  ]
+icon = ExtResource("3")
+mesh = ExtResource("4")
+species_alt_mesh = []
+mesh_skin = ExtResource("1")
+main_color = Color(0.0627451, 0.109804, 0.192157, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

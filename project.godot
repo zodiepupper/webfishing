@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0.0627451, 0.109804, 0.192157, 1)
 boot_splash/show_image=false
 config/icon="res://icon.png"
 
+[audio]
+
+buses/default_bus_layout="uid://by08m31tnp8lc"
+
 [autoload]
 
 Globals="*res://Scenes/Singletons/globals.gd"

@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://c1h5bhalrn1l2"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Assets/Models/Cosmetics/monocle.tres" type="ArrayMesh" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons15.png" type="Texture2D" id=4]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://c0yci81sx6inr" path="res://Assets/Models/Cosmetics/monocle.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://ce5yh04g6fjn7" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons15.png" id="4"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Gold Monocle"
 desc = "Keeping an eye out!"
 title = ""
-icon = ExtResource( 4 )
-mesh = ExtResource( 3 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-main_color = Color( 0.901961, 0.615686, 0, 1 )
-body_pattern = [  ]
+icon = ExtResource("4")
+mesh = ExtResource("3")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+main_color = Color(0.901961, 0.615686, 0, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "accessory"

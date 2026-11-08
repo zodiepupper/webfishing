@@ -1,6 +1,6 @@
-[gd_scene format=2]
+[gd_scene format=3 uid="uid://dou4ssjpa6bn2"]
 
-[node name="capo_button" type="Button"]
+[node name="capo_button" type="Button" unique_id=814037401]
 offset_right = 12.0
 offset_bottom = 20.0
 size_flags_horizontal = 3

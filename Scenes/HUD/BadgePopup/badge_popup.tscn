@@ -1,188 +1,185 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene format=3 uid="uid://b8783kp7fou4v"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/HUD/ItemDisplay/item_display.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Textures/Fish/prehistoric_fish1.png" type="Texture2D" id=3]
-[ext_resource path="res://Scenes/HUD/BadgePopup/badge_popup.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=5]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/HUD/ItemDisplay/item_display.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cf6l6d6u52oxi" path="res://Assets/Textures/Fish/prehistoric_fish1.png" id="3"]
+[ext_resource type="Script" uid="uid://g1mne6lej3ej" path="res://Scenes/HUD/BadgePopup/badge_popup.gd" id="4"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_green.tres" id="5"]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.643137, 0.666667, 0.223529, 1 )
-border_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-expand_margin_left = 2.0
-expand_margin_right = 2.0
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 0.001
 tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Control:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Control:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"points": PackedFloat32Array( -300, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Control/Panel:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "anim"
 length = 0.7
 tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Control:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.3, 0.5, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6)
 }
 tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Control:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"points": PackedFloat32Array( -300, -0.25, 0, 0.25, 0, 58.0572, -0.25, 0, 0.0664561, 1.11633, -15, -0.101516, 14.6202, 0.0684136, 3.05449, 0, -0.0404522, -8.80841, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.3, 0.5, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0, 58.0572, -0.25, 0, 0.0664561, 1.11633, -15, -0.101516, 14.6202, 0.0684136, 3.05449, 0, -0.0404522, -8.80841, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6)
 }
 tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Control/Panel:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"points": PackedFloat32Array( -5, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.3, 0.6, 0.7 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-5, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.7)
 }
 
-[node name="badge_popup" type="CanvasLayer"]
-layer = 25
-script = ExtResource( 4 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qj7ih"]
+_data = {
+&"RESET": SubResource("3"),
+&"anim": SubResource("4")
+}
 
-[node name="Control" type="Control" parent="."]
+[node name="badge_popup" type="CanvasLayer" unique_id=1321872469]
+layer = 25
+script = ExtResource("4")
+
+[node name="Control" type="Control" parent="." unique_id=1984756044]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -300.0
 offset_right = 5760.0
 offset_bottom = 2940.0
 mouse_filter = 2
-theme = ExtResource( 1 )
+theme = ExtResource("1")
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Control" unique_id=1364602998]
+layout_mode = 0
 anchor_left = 0.25
 anchor_top = 0.02
 anchor_right = 0.75
 anchor_bottom = 0.1
 offset_right = 40.0
 offset_bottom = 0.0399933
-pivot_offset = Vector2( 500, 60 )
+pivot_offset = Vector2(500, 60)
 mouse_filter = 2
 
-[node name="ProgressBar_prog" type="ProgressBar" parent="Control/Panel"]
+[node name="ProgressBar_prog" type="ProgressBar" parent="Control/Panel" unique_id=1295685722]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.5
 anchor_right = 0.98
 anchor_bottom = 0.875
 offset_bottom = 0.0207977
 mouse_filter = 2
-theme_override_styles/fg = SubResource( 1 )
 max_value = 200.0
-percent_visible = false
 
-[node name="ProgressBar_main" type="ProgressBar" parent="Control/Panel"]
+[node name="ProgressBar_main" type="ProgressBar" parent="Control/Panel" unique_id=1080995675]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.5
 anchor_right = 0.98
 anchor_bottom = 0.875
 offset_bottom = 0.0207977
 mouse_filter = 2
-theme_override_styles/bg = SubResource( 2 )
 max_value = 200.0
-percent_visible = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel" unique_id=1346578739]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.1
 anchor_right = 0.98
 anchor_bottom = 0.5
 mouse_filter = 2
 bbcode_enabled = true
-text = "CAMP SCOUT"
 text = "CAMP SCOUT"
 scroll_active = false
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/Panel"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/Panel" unique_id=1728111291]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.1
 anchor_right = 0.98
 anchor_bottom = 0.5
 mouse_filter = 2
 bbcode_enabled = true
-text = "[right]RANK 1"
 text = "RANK 1"
 scroll_active = false
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="Control/Panel"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/Panel" unique_id=592415623]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.481768
 anchor_right = 0.98
 anchor_bottom = 0.881768
 mouse_filter = 2
-theme_override_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/default_color = Color(1, 0.933333, 0.835294, 1)
 bbcode_enabled = true
 text = "[center]"
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="Control/Panel"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/Panel" unique_id=541246906]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 1.0255
 anchor_right = 0.98
 anchor_bottom = 1.4255
 mouse_filter = 2
-theme_override_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/default_color = Color(1, 0.933333, 0.835294, 1)
 bbcode_enabled = true
 text = "+50"
-text = "+50"
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Panel" type="Panel" parent="Control/Panel"]
+[node name="Panel" type="Panel" parent="Control/Panel" unique_id=2048114982]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -4.0
@@ -190,9 +187,10 @@ offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
 mouse_filter = 2
-theme_override_styles/panel = ExtResource( 5 )
+theme_override_styles/panel = ExtResource("5")
 
-[node name="item_display" parent="Control" instance=ExtResource( 2 )]
+[node name="item_display" parent="Control" unique_id=319055080 instance=ExtResource("2")]
+layout_mode = 0
 anchor_left = 0.270833
 anchor_top = 0.00370372
 anchor_right = 0.335667
@@ -200,15 +198,11 @@ anchor_bottom = 0.118852
 offset_right = -0.47998
 offset_bottom = -0.359993
 mouse_filter = 2
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
+texture = ExtResource("3")
+expand_mode = 1
 unique = true
 unique_scale = 5.0
 unique_speed = 0.45
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 3 )
-anims/anim = SubResource( 4 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1754567974]
+libraries/ = SubResource("AnimationLibrary_qj7ih")

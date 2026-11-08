@@ -1,1476 +1,1474 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene format=3 uid="uid://b6x6ina4g5ffx"]
 
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/UI/bait_icons3.png" type="Texture2D" id=3]
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_cosmetic_unlock.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_item.gd" type="Script" id=6]
-[ext_resource path="res://Sounds/npc_voice_4.ogg" type="AudioStream" id=7]
+[ext_resource type="PackedScene" uid="uid://gbefmpg6h88n" path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" id="1"]
+[ext_resource type="Script" uid="uid://c1itdgq3ynf24" path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b4cv21p2sci4o" path="res://Assets/Textures/UI/bait_icons3.png" id="3"]
+[ext_resource type="Script" uid="uid://bq4dv7egllum3" path="res://Scenes/HUD/Shop/ShopButtons/button_cosmetic_unlock.gd" id="4"]
+[ext_resource type="Script" uid="uid://dkjdk0ow8wojj" path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" id="5"]
+[ext_resource type="Script" uid="uid://bfmbjm2tum47d" path="res://Scenes/HUD/Shop/ShopButtons/button_item.gd" id="6"]
 
-[sub_resource type="AudioStreamRandomizer" id=1]
-audio_stream = ExtResource( 7 )
+[sub_resource type="AudioStreamRandomizer" id="1"]
 
-[node name="test_shop" type="Node"]
-script = ExtResource( 2 )
+[node name="test_shop" type="Node" unique_id=2121772637]
+script = ExtResource("2")
 shop_title = "general store"
 dialogue = true
-dialogue_open = [ "buy something... or whatever...", "you should really think about buying new clothes...", "you should buy something... or dont i dont care" ]
-dialogue_buy = [ "thanks! I mean-... ugh... thanks...", "cool", "sick", "sweet", "i like that one too" ]
-dialogue_voice = SubResource( 1 )
+dialogue_open = ["buy something... or whatever...", "you should really think about buying new clothes...", "you should buy something... or dont i dont care"]
+dialogue_buy = ["thanks! I mean-... ugh... thanks...", "cool", "sick", "sweet", "i like that one too"]
+dialogue_voice = SubResource("1")
 
-[node name="face" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="face" type="Node" parent="." unique_id=509280740]
+script = ExtResource("5")
 category_title = "face"
 
-[node name="shop_button9" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="face" unique_id=1610652609 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "nose_pierced"
 
-[node name="shop_button15" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="face" unique_id=753445650 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "nose_button"
 
-[node name="shop_button23" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button23" parent="face" unique_id=906105522 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "nose_nostril"
 
-[node name="shop_button24" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button24" parent="face" unique_id=459095676 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "nose_long"
 
-[node name="shop_button42" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button42" parent="face" unique_id=1271716024 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "nose_clown"
 
-[node name="shop_button10" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="face" unique_id=9484526 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_grin"
 
-[node name="shop_button11" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="face" unique_id=518334823 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_happy"
 
-[node name="shop_button16" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="face" unique_id=961158276 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_distraught"
 
-[node name="shop_button17" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="face" unique_id=955300817 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_bucktoothed"
 
-[node name="shop_button25" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button25" parent="face" unique_id=1266447491 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_toothier"
 
-[node name="shop_button26" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button26" parent="face" unique_id=451466601 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_sabertooth"
 
-[node name="shop_button28" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button28" parent="face" unique_id=554074289 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_hymn"
 
-[node name="shop_button36" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button36" parent="face" unique_id=707505418 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_braces"
 
-[node name="shop_button37" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button37" parent="face" unique_id=1415057357 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_fangs"
 
-[node name="shop_button38" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button38" parent="face" unique_id=1859746709 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_bite"
 
-[node name="shop_button39" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button39" parent="face" unique_id=29740741 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_drool"
 
-[node name="shop_button40" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button40" parent="face" unique_id=962967907 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "mouth_jaws"
 
-[node name="shop_button45" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button45" parent="face" unique_id=1776033479 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "mouth_fishy"
 
-[node name="shop_button13" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="face" unique_id=428818586 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "eye_angry"
 
-[node name="shop_button14" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="face" unique_id=501952085 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "eye_sad"
 
-[node name="shop_button18" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="face" unique_id=1298872753 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_froggy"
 
-[node name="shop_button19" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="face" unique_id=76712454 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_glare"
 
-[node name="shop_button20" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="face" unique_id=1283838176 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_haunted"
 
-[node name="shop_button21" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="face" unique_id=1726011990 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_possessed"
 
-[node name="shop_button22" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="face" unique_id=317512083 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_distraught"
 
-[node name="shop_button27" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button27" parent="face" unique_id=543808776 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_goat"
 
-[node name="shop_button29" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button29" parent="face" unique_id=1712111838 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_inverted"
 
-[node name="shop_button30" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button30" parent="face" unique_id=325637385 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_squared"
 
-[node name="shop_button31" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button31" parent="face" unique_id=10085878 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_starlight"
 
-[node name="shop_button32" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button32" parent="face" unique_id=956533440 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_harper"
 
-[node name="shop_button33" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button33" parent="face" unique_id=1421135139 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_lenny"
 
-[node name="shop_button34" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button34" parent="face" unique_id=1884168008 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_fierce"
 
-[node name="shop_button35" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button35" parent="face" unique_id=307439651 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_wings"
 
-[node name="shop_button41" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button41" parent="face" unique_id=1834901717 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_almond"
 
-[node name="shop_button43" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button43" parent="face" unique_id=939332091 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_catsoup"
 
-[node name="shop_button44" parent="face" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button44" parent="face" unique_id=407377785 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "eye_dispondant"
 
-[node name="hats" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="hats" type="Node" parent="." unique_id=519373629]
+script = ExtResource("5")
 category_title = "hats"
 
-[node name="shop_button9" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="hats" unique_id=1495373537 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_green"
 
-[node name="shop_button10" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="hats" unique_id=1348821303 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_missing"
 
-[node name="shop_button11" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="hats" unique_id=1576467620 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_orange"
 
-[node name="shop_button12" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="hats" unique_id=1389132828 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_size"
 
-[node name="shop_button13" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="hats" unique_id=1835926041 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_big"
 
-[node name="shop_button21" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="hats" unique_id=144168501 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_mcd"
 
-[node name="shop_button23" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button23" parent="hats" unique_id=477802695 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_sports"
 
-[node name="shop_button22" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="hats" unique_id=1124026691 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_pee"
 
-[node name="shop_button24" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button24" parent="hats" unique_id=1683268588 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "hat_baseball_cap_exclaim"
 
-[node name="shop_button14" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="hats" unique_id=422234509 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "hat_beanie_black"
 
-[node name="shop_button15" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="hats" unique_id=1769427646 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "hat_beanie_blue"
 
-[node name="shop_button16" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="hats" unique_id=1155793430 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "hat_beanie_green"
 
-[node name="shop_button17" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="hats" unique_id=544740194 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "hat_beanie_maroon"
 
-[node name="shop_button18" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="hats" unique_id=23138888 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "hat_beanie_teal"
 
-[node name="shop_button19" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="hats" unique_id=1111276025 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "hat_beanie_white"
 
-[node name="shop_button20" parent="hats" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="hats" unique_id=1916232457 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "hat_beanie_yellow"
 
-[node name="tshirts" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="tshirts" type="Node" parent="." unique_id=1308768083]
+script = ExtResource("5")
 category_title = "tshirts"
 
-[node name="shop_button9" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="tshirts" unique_id=480844397 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_white"
 
-[node name="shop_button10" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="tshirts" unique_id=1667730679 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_tan"
 
-[node name="shop_button11" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="tshirts" unique_id=1560906266 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_brown"
 
-[node name="shop_button12" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="tshirts" unique_id=1981163999 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_red"
 
-[node name="shop_button13" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="tshirts" unique_id=367318312 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_maroon"
 
-[node name="shop_button14" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="tshirts" unique_id=1839315424 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_salmon"
 
-[node name="shop_button15" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="tshirts" unique_id=418992540 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_olive"
 
-[node name="shop_button16" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="tshirts" unique_id=1755062164 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_green"
 
-[node name="shop_button17" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="tshirts" unique_id=1349602329 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_blue"
 
-[node name="shop_button18" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="tshirts" unique_id=517979127 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_grey"
 
-[node name="shop_button19" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="tshirts" unique_id=1395376545 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_purple"
 
-[node name="shop_button21" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="tshirts" unique_id=230011761 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_yellow"
 
-[node name="shop_button22" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="tshirts" unique_id=793685329 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_orange"
 
-[node name="shop_button20" parent="tshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="tshirts" unique_id=2098223109 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tshirt_black"
 
-[node name="graphic_ts" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="graphic_ts" type="Node" parent="." unique_id=1044796136]
+script = ExtResource("5")
 category_title = "graphic tshirts"
 
-[node name="shop_button9" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="graphic_ts" unique_id=1020150643 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "undershirt_graphic_tshirt_goodboy"
 
-[node name="shop_button10" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="graphic_ts" unique_id=1873693001 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "undershirt_graphic_tshirt_hooklite"
 
-[node name="shop_button11" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="graphic_ts" unique_id=711280717 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "undershirt_graphic_tshirt_smokemon"
 
-[node name="shop_button12" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="graphic_ts" unique_id=1374910830 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "undershirt_graphic_tshirt_soscary"
 
-[node name="shop_button13" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="graphic_ts" unique_id=1163034730 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "undershirt_graphic_tshirt_nobait"
 
-[node name="shop_button14" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="graphic_ts" unique_id=852281621 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "undershirt_graphic_tshirt_anchor"
 
-[node name="shop_button15" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="graphic_ts" unique_id=365231808 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_gay"
 
-[node name="shop_button16" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="graphic_ts" unique_id=250594968 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_bi"
 
-[node name="shop_button17" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="graphic_ts" unique_id=1625837822 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_pan"
 
-[node name="shop_button18" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="graphic_ts" unique_id=1716075061 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_trans"
 
-[node name="shop_button19" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="graphic_ts" unique_id=2137412365 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_ace"
 
-[node name="shop_button20" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="graphic_ts" unique_id=273008161 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_lesbian"
 
-[node name="shop_button21" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="graphic_ts" unique_id=1140488321 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_mlm"
 
-[node name="shop_button22" parent="graphic_ts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="graphic_ts" unique_id=1769321486 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_graphic_tshirt_nonbinary"
 
-[node name="tanktops" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="tanktops" type="Node" parent="." unique_id=224573192]
+script = ExtResource("5")
 category_title = "tanktops"
 
-[node name="shop_button9" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="tanktops" unique_id=1498447309 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_black"
 
-[node name="shop_button10" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="tanktops" unique_id=152308367 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_blue"
 
-[node name="shop_button11" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="tanktops" unique_id=1031880160 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_brown"
 
-[node name="shop_button12" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="tanktops" unique_id=1821131393 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_green"
 
-[node name="shop_button13" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="tanktops" unique_id=1734096877 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_grey"
 
-[node name="shop_button14" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="tanktops" unique_id=926338279 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_maroon"
 
-[node name="shop_button15" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="tanktops" unique_id=637030379 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_olive"
 
-[node name="shop_button16" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="tanktops" unique_id=1438770571 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_orange"
 
-[node name="shop_button17" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="tanktops" unique_id=897377881 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_purple"
 
-[node name="shop_button18" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="tanktops" unique_id=436704588 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_red"
 
-[node name="shop_button19" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="tanktops" unique_id=1023965955 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_salmon"
 
-[node name="shop_button20" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="tanktops" unique_id=960759305 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_tan"
 
-[node name="shop_button21" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="tanktops" unique_id=921684524 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_teal"
 
-[node name="shop_button22" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="tanktops" unique_id=954527326 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_white"
 
-[node name="shop_button23" parent="tanktops" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button23" parent="tanktops" unique_id=119748900 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 25
 cosmetic_unlock = "undershirt_tanktop_yellow"
 
-[node name="pants" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="pants" type="Node" parent="." unique_id=2089785488]
+script = ExtResource("5")
 category_title = "pants and shorts"
 
-[node name="shop_button9" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="pants" unique_id=1783957885 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_black"
 
-[node name="shop_button10" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="pants" unique_id=1664345386 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_blue"
 
-[node name="shop_button11" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="pants" unique_id=837836638 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_brown"
 
-[node name="shop_button12" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="pants" unique_id=1552747794 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_green"
 
-[node name="shop_button13" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="pants" unique_id=671118753 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_grey"
 
-[node name="shop_button14" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="pants" unique_id=1514988909 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_maroon"
 
-[node name="shop_button15" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="pants" unique_id=1318139444 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_olive"
 
-[node name="shop_button16" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="pants" unique_id=540788858 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_orange"
 
-[node name="shop_button17" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="pants" unique_id=1530186158 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_purple"
 
-[node name="shop_button18" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="pants" unique_id=961092769 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_red"
 
-[node name="shop_button19" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="pants" unique_id=239679483 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_salmon"
 
-[node name="shop_button20" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="pants" unique_id=635777134 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_tan"
 
-[node name="shop_button21" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="pants" unique_id=1020865950 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_teal"
 
-[node name="shop_button22" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="pants" unique_id=1607447711 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_white"
 
-[node name="shop_button23" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button23" parent="pants" unique_id=113895169 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_long_yellow"
 
-[node name="shop_button24" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button24" parent="pants" unique_id=1871737340 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_black"
 
-[node name="shop_button25" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button25" parent="pants" unique_id=1110128118 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_blue"
 
-[node name="shop_button26" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button26" parent="pants" unique_id=435619741 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_brown"
 
-[node name="shop_button27" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button27" parent="pants" unique_id=1085974981 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_green"
 
-[node name="shop_button28" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button28" parent="pants" unique_id=1453750025 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_grey"
 
-[node name="shop_button29" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button29" parent="pants" unique_id=976740614 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_maroon"
 
-[node name="shop_button30" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button30" parent="pants" unique_id=1260154940 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_olive"
 
-[node name="shop_button31" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button31" parent="pants" unique_id=1457701864 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_orange"
 
-[node name="shop_button32" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button32" parent="pants" unique_id=422300737 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_purple"
 
-[node name="shop_button33" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button33" parent="pants" unique_id=1344887937 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_red"
 
-[node name="shop_button34" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button34" parent="pants" unique_id=532545374 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_salmon"
 
-[node name="shop_button35" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button35" parent="pants" unique_id=474221314 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_tan"
 
-[node name="shop_button36" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button36" parent="pants" unique_id=2083361632 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_teal"
 
-[node name="shop_button37" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button37" parent="pants" unique_id=718709636 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_white"
 
-[node name="shop_button38" parent="pants" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button38" parent="pants" unique_id=1231221034 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "legs_pants_short_yellow"
 
-[node name="flannels" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="flannels" type="Node" parent="." unique_id=429129095]
+script = ExtResource("5")
 category_title = "flannels"
 loan_level_lock = 1
 
-[node name="shop_button9" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="flannels" unique_id=1539310042 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_red"
 
-[node name="shop_button10" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="flannels" unique_id=1119364889 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_white"
 
-[node name="shop_button11" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="flannels" unique_id=775541024 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_teal"
 
-[node name="shop_button12" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="flannels" unique_id=2078386080 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_green"
 
-[node name="shop_button13" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="flannels" unique_id=1189818537 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_olive"
 
-[node name="shop_button14" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="flannels" unique_id=1772401090 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_yellow"
 
-[node name="shop_button15" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="flannels" unique_id=1565317852 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_blue"
 
-[node name="shop_button16" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="flannels" unique_id=98897489 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_salmon"
 
-[node name="shop_button17" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="flannels" unique_id=1106367547 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_purple"
 
-[node name="shop_button18" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="flannels" unique_id=35171486 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_closed_black"
 
-[node name="shop_button19" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="flannels" unique_id=1501313807 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_red"
 
-[node name="shop_button20" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="flannels" unique_id=1336636728 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_white"
 
-[node name="shop_button21" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="flannels" unique_id=1597580335 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_teal"
 
-[node name="shop_button22" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="flannels" unique_id=882651711 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_green"
 
-[node name="shop_button23" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button23" parent="flannels" unique_id=1524953395 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_olive"
 
-[node name="shop_button24" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button24" parent="flannels" unique_id=1739835113 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_yellow"
 
-[node name="shop_button25" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button25" parent="flannels" unique_id=1802022798 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_blue"
 
-[node name="shop_button26" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button26" parent="flannels" unique_id=24711488 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_salmon"
 
-[node name="shop_button27" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button27" parent="flannels" unique_id=1534884657 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_purple"
 
-[node name="shop_button28" parent="flannels" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button28" parent="flannels" unique_id=499272510 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_flannel_open_black"
 
-[node name="sweatshirts" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="sweatshirts" type="Node" parent="." unique_id=994952513]
+script = ExtResource("5")
 category_title = "hoodies"
 loan_level_lock = 1
 
-[node name="shop_button9" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="sweatshirts" unique_id=1572285128 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_black"
 
-[node name="shop_button10" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="sweatshirts" unique_id=2050618387 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_blue"
 
-[node name="shop_button11" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="sweatshirts" unique_id=1970713142 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_brown"
 
-[node name="shop_button12" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="sweatshirts" unique_id=560371857 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_green"
 
-[node name="shop_button13" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="sweatshirts" unique_id=1263529264 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_grey"
 
-[node name="shop_button14" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="sweatshirts" unique_id=414499690 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_maroon"
 
-[node name="shop_button15" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="sweatshirts" unique_id=329073455 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_olive"
 
-[node name="shop_button16" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="sweatshirts" unique_id=1213320017 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_orange"
 
-[node name="shop_button17" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="sweatshirts" unique_id=1532536242 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_purple"
 
-[node name="shop_button18" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="sweatshirts" unique_id=470199621 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_red"
 
-[node name="shop_button19" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="sweatshirts" unique_id=1001327442 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_salmon"
 
-[node name="shop_button20" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="sweatshirts" unique_id=1117437548 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_tan"
 
-[node name="shop_button21" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="sweatshirts" unique_id=1258668941 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_teal"
 
-[node name="shop_button22" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="sweatshirts" unique_id=609794117 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_white"
 
-[node name="shop_button23" parent="sweatshirts" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button23" parent="sweatshirts" unique_id=105838412 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 loan_level_require = 1
 cosmetic_unlock = "overshirt_sweatshirt_yellow"
 
-[node name="accessories" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="accessories" type="Node" parent="." unique_id=1047561234]
+script = ExtResource("5")
 category_title = "accessories"
 
-[node name="shop_button18" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="accessories" unique_id=1071398034 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 50
 cosmetic_unlock = "accessory_glasses"
 
-[node name="shop_button17" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="accessories" unique_id=1686755676 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 100
 cosmetic_unlock = "accessory_glasses_round"
 
-[node name="shop_button9" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="accessories" unique_id=1780665758 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 150
 cosmetic_unlock = "accessory_rain_boots_yellow"
 
-[node name="shop_button11" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="accessories" unique_id=696869835 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 500
 cosmetic_unlock = "accessory_collar"
 
-[node name="shop_button10" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="accessories" unique_id=1172720016 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 550
 cosmetic_unlock = "accessory_collar_bell"
 
-[node name="shop_button12" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="accessories" unique_id=366485992 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 500
 cosmetic_unlock = "accessory_shades"
 
-[node name="shop_button15" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="accessories" unique_id=858405105 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 150
 cosmetic_unlock = "accessory_cig"
 
-[node name="shop_button16" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="accessories" unique_id=1011517819 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 200
 cosmetic_unlock = "accessory_hook"
 
-[node name="shop_button20" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="accessories" unique_id=2027553354 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 250
 cosmetic_unlock = "accessory_bandaid"
 
-[node name="shop_button21" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="accessories" unique_id=1995009970 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 200
 cosmetic_unlock = "accessory_antlers"
 
-[node name="shop_button13" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="accessories" unique_id=1007259413 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 5000
 loan_level_require = 3
 cosmetic_unlock = "accessory_heart_particles"
 
-[node name="shop_button14" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="accessories" unique_id=757612072 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 5000
 loan_level_require = 3
 cosmetic_unlock = "accessory_stink_particles"
 
-[node name="shop_button19" parent="accessories" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="accessories" unique_id=758826298 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 5000
 loan_level_require = 3
 cosmetic_unlock = "accessory_sparkle_particles"
 
-[node name="misc" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="misc" type="Node" parent="." unique_id=791067475]
+script = ExtResource("5")
 category_title = "misc"
 
-[node name="shop_button8" parent="misc" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button8" parent="misc" unique_id=1261447412 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 100
 item_id = "boxing_glove"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button10" parent="misc" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button10" parent="misc" unique_id=143858861 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 5000
 loan_level_require = 2
 item_id = "boxing_glove_super"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button13" parent="misc" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button13" parent="misc" unique_id=1216677727 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 500
 item_id = "hand_labeler"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button9" parent="misc" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="misc" unique_id=2047041711 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 500
 loan_level_require = 1
 cosmetic_unlock = "overshirt_overall_yellow"
 
-[node name="shop_button11" parent="misc" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="misc" unique_id=34526958 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 500
 loan_level_require = 1
 cosmetic_unlock = "overshirt_labcoat"
 
-[node name="shop_button12" parent="misc" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="misc" unique_id=178764537 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 500
 loan_level_require = 1
 cosmetic_unlock = "overshirt_trenchcoat"
 
-[node name="shop_button7" parent="misc" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button7" parent="misc" unique_id=438221384 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 1000
 item_id = "ringbox"
 item_no_duplicates = false
 max_item_owned = -1
 
-[node name="bobbers" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="bobbers" type="Node" parent="." unique_id=639523049]
+script = ExtResource("5")
 category_title = "bobbers"
 loan_level_lock = 1
 
-[node name="shop_button18" parent="bobbers" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="bobbers" unique_id=1516795848 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 500
 loan_level_require = 1
 cosmetic_unlock = "bobber_slip"
 
-[node name="shop_button19" parent="bobbers" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="bobbers" unique_id=2014158711 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 1500
 loan_level_require = 2
 cosmetic_unlock = "bobber_ducky"
 
-[node name="shop_button20" parent="bobbers" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="bobbers" unique_id=2129302750 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 1500
 loan_level_require = 2
 cosmetic_unlock = "bobber_lilypad"
 
-[node name="shop_button21" parent="bobbers" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="bobbers" unique_id=1769798533 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 1500
 loan_level_require = 2
 cosmetic_unlock = "bobber_bomb"
 
-[node name="titles" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="titles" type="Node" parent="." unique_id=1737227232]
+script = ExtResource("5")
 category_title = "titles"
 
-[node name="shop_button9" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button9" parent="titles" unique_id=1781602195 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_sillyguy"
 
-[node name="shop_button10" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button10" parent="titles" unique_id=362949455 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_littlelad"
 
-[node name="shop_button11" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button11" parent="titles" unique_id=723014522 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_soggy"
 
-[node name="shop_button12" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button12" parent="titles" unique_id=1829198326 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_stinkerdinker"
 
-[node name="shop_button13" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button13" parent="titles" unique_id=1544680847 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_iscool"
 
-[node name="shop_button14" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button14" parent="titles" unique_id=1868818609 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_gay"
 
-[node name="shop_button15" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button15" parent="titles" unique_id=1964687953 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_ace"
 
-[node name="shop_button16" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button16" parent="titles" unique_id=327124813 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_bi"
 
-[node name="shop_button17" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button17" parent="titles" unique_id=1657683966 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_pan"
 
-[node name="shop_button18" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button18" parent="titles" unique_id=1723091368 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_trans"
 
-[node name="shop_button19" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button19" parent="titles" unique_id=922147328 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_queer"
 
-[node name="shop_button25" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button25" parent="titles" unique_id=346023511 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_lesbian"
 
-[node name="shop_button31" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button31" parent="titles" unique_id=744996139 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_nonbinary"
 
-[node name="shop_button20" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button20" parent="titles" unique_id=110226289 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_equalsthree"
 
-[node name="shop_button21" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button21" parent="titles" unique_id=95616468 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_yapper"
 
-[node name="shop_button22" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button22" parent="titles" unique_id=1065375851 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_goober"
 
-[node name="shop_button23" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button23" parent="titles" unique_id=1893003754 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_puppy"
 
-[node name="shop_button24" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button24" parent="titles" unique_id=1307860381 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_kitten"
 
-[node name="shop_button26" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button26" parent="titles" unique_id=1328609613 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_goodboy"
 
-[node name="shop_button27" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button27" parent="titles" unique_id=1405690359 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_goodgirl"
 
-[node name="shop_button29" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button29" parent="titles" unique_id=1368667106 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_creature"
 
-[node name="shop_button30" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button30" parent="titles" unique_id=350627397 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 75
 cosmetic_unlock = "title_cryptid"
 
-[node name="shop_button28" parent="titles" instance=ExtResource( 1 )]
-icon = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="shop_button28" parent="titles" unique_id=247234630 instance=ExtResource("1")]
+icon = ExtResource("3")
+script = ExtResource("4")
 cost = 9999
 cosmetic_unlock = "title_straight"
 
-[node name="chalk" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="chalk" type="Node" parent="." unique_id=749048703]
+script = ExtResource("5")
 category_title = "chalk"
 
-[node name="shop_button7" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button7" parent="chalk" unique_id=1088312655 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 25
 item_id = "chalk_white"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button8" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button8" parent="chalk" unique_id=1553001731 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 25
 item_id = "chalk_black"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button9" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button9" parent="chalk" unique_id=244781719 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 25
 item_id = "chalk_red"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button10" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button10" parent="chalk" unique_id=3782613 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 25
 item_id = "chalk_blue"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button11" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button11" parent="chalk" unique_id=1604543067 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 25
 item_id = "chalk_yellow"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button14" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button14" parent="chalk" unique_id=2105829253 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 25
 item_id = "chalk_green"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button12" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button12" parent="chalk" unique_id=914728075 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 25
 item_id = "chalk_eraser"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button13" parent="chalk" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button13" parent="chalk" unique_id=1195598707 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 2000
 item_id = "chalk_special"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="instruments" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="instruments" type="Node" parent="." unique_id=716127937]
+script = ExtResource("5")
 category_title = "instruments"
 
-[node name="shop_button7" parent="instruments" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button7" parent="instruments" unique_id=689810969 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 250
 item_id = "guitar"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button8" parent="instruments" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button8" parent="instruments" unique_id=1768130068 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 400
 item_id = "guitar_gradient"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button9" parent="instruments" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button9" parent="instruments" unique_id=1360535728 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 400
 item_id = "guitar_stickers"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button10" parent="instruments" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button10" parent="instruments" unique_id=1626017020 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 400
 item_id = "guitar_black"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button11" parent="instruments" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button11" parent="instruments" unique_id=1813240207 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 400
 item_id = "guitar_pink"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button12" parent="instruments" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button12" parent="instruments" unique_id=687604340 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 9999
 loan_level_require = 3
 item_id = "guitar_gold"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button13" parent="instruments" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button13" parent="instruments" unique_id=1837323900 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 150
 item_id = "tambourine"
 item_no_duplicates = true

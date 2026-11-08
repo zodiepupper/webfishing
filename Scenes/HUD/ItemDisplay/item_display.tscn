@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene format=3 uid="uid://dc05joqtirvt3"]
 
-[ext_resource path="res://Scenes/HUD/ItemDisplay/item_display.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/Fish/fish32.png" type="Texture2D" id=2]
+[ext_resource type="Script" uid="uid://by15djph27lwo" path="res://Scenes/HUD/ItemDisplay/item_display.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dsj4k2duxtxw6" path="res://Assets/Textures/Fish/fish32.png" id="2"]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id="1"]
 code = "// Hey this is Hei! This shader \"fakes\" a 3D-camera perspective on CanvasItems.
 // License: MIT
 
@@ -62,17 +62,12 @@ void fragment(){
 	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/fov = 30.0
-shader_param/cull_back = false
-shader_param/y_rot = 0.0
-shader_param/x_rot = 0.0
-shader_param/inset = -3.5
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
 
-[node name="item_display" type="TextureRect"]
-material = SubResource( 2 )
+[node name="item_display" type="TextureRect" unique_id=879823986]
+material = SubResource("2")
 offset_right = 256.0
 offset_bottom = 256.0
-texture = ExtResource( 2 )
-script = ExtResource( 1 )
+texture = ExtResource("2")
+script = ExtResource("1")

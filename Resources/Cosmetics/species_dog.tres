@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://cq1o08kci11qc"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/dog_head.tres" type="ArrayMesh" id=2]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main.tres" type="Skin" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons2.png" type="Texture2D" id=4]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://b158snkblylcx" path="res://Assets/Models/Cosmetics/dog_head.tres" id="2"]
+[ext_resource type="Skin" uid="uid://badgg2ofvi0fr" path="res://Assets/Models/Cosmetics/rig_main.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://dr1qplvuxshbt" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons2.png" id="4"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Dog"
 desc = "Woof!"
 title = ""
-icon = ExtResource( 4 )
-mesh = ExtResource( 2 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 3 )
-main_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-body_pattern = [  ]
+icon = ExtResource("4")
+mesh = ExtResource("2")
+species_alt_mesh = []
+mesh_skin = ExtResource("3")
+main_color = Color(0.0627451, 0.109804, 0.192157, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

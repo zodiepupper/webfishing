@@ -1,20 +1,20 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene format=3 uid="uid://vxn6mgfbpqb1"]
 
-[ext_resource path="res://Scenes/Minigames/Fishing/fishing.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bg5.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bg3.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bg4.png" type="Texture2D" id=5]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/top1.png" type="Texture2D" id=6]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/progbar2.png" type="Texture2D" id=7]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/progbar1.png" type="Texture2D" id=8]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/bar.png" type="Texture2D" id=9]
-[ext_resource path="res://Assets/Textures/UI/FishingMinigame/progbar3.png" type="Texture2D" id=10]
-[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=11]
-[ext_resource path="res://Assets/Textures/UI/countdown4.png" type="Texture2D" id=12]
-[ext_resource path="res://Assets/Textures/UI/winmsg1.png" type="Texture2D" id=13]
+[ext_resource type="Script" uid="uid://c8jtthki3jejn" path="res://Scenes/Minigames/Fishing/fishing.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://c0ddvtsdkqa4e" path="res://Assets/Textures/UI/FishingMinigame/bg5.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://6627qmue4sna" path="res://Assets/Textures/UI/FishingMinigame/bg3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://kj6hkikr8ig3" path="res://Assets/Textures/UI/FishingMinigame/bg4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://drnk5icmuheel" path="res://Assets/Textures/UI/FishingMinigame/top1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://gtyy7t38cphx" path="res://Assets/Textures/UI/FishingMinigame/progbar2.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cn050j4uptox0" path="res://Assets/Textures/UI/FishingMinigame/progbar1.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cxsatyxhy8wu1" path="res://Assets/Textures/UI/FishingMinigame/bar.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bhw8bu03mu67c" path="res://Assets/Textures/UI/FishingMinigame/progbar3.png" id="10"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_med.tres" id="11"]
+[ext_resource type="Texture2D" uid="uid://d2hpkraur4vjx" path="res://Assets/Textures/UI/countdown4.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bj6pkq72csyl0" path="res://Assets/Textures/UI/winmsg1.png" id="13"]
 
-[sub_resource type="Shader" id=3]
+[sub_resource type="Shader" id="3"]
 code = "shader_type canvas_item;
 
 uniform vec2 motion = vec2(0.0);
@@ -25,83 +25,89 @@ void vertex(){
 	UV = (VERTEX + offset + TIME * motion) * TEXTURE_PIXEL_SIZE * (1.0/scale);
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 3 )
-shader_param/motion = Vector2( 16, 16 )
-shader_param/scale = 1.0
-shader_param/offset = Vector2( 0, 0 )
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("3")
+shader_parameter/motion = Vector2(16, 16)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
 
-[node name="fishing_minigame" type="CanvasLayer"]
+[node name="fishing_minigame" type="CanvasLayer" unique_id=18223476]
 layer = 5
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_horizontal_guides_": [  ]
-}
+script = ExtResource("1")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1354501450]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
+theme = ExtResource("2")
 
-[node name="frame" type="TextureRect" parent="Control"]
+[node name="frame" type="TextureRect" parent="Control" unique_id=510134587]
+layout_mode = 0
 anchor_left = 0.1
 anchor_top = 0.25
 anchor_right = 0.261
 anchor_bottom = 0.731
 offset_right = -117.12
 offset_bottom = -357.48
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 
-[node name="bg" type="TextureRect" parent="Control/frame"]
+[node name="bg" type="TextureRect" parent="Control/frame" unique_id=618135232]
 show_behind_parent = true
-material = SubResource( 2 )
+material = SubResource("2")
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = -4.0
 offset_bottom = -4.0
-texture = ExtResource( 5 )
-expand = true
+texture = ExtResource("5")
+expand_mode = 1
 
-[node name="bar_wipe" type="ColorRect" parent="Control/frame"]
+[node name="bar_wipe" type="ColorRect" parent="Control/frame" unique_id=493197159]
 show_behind_parent = true
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.290196, 0.172549, 0.290196, 1 )
+color = Color(0.290196, 0.172549, 0.290196, 1)
 
-[node name="bartop" type="ColorRect" parent="Control/frame"]
+[node name="bartop" type="ColorRect" parent="Control/frame" unique_id=296911345]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 offset_left = 4.0
 offset_right = -4.0
 offset_bottom = 15.0
-color = Color( 0.290196, 0.172549, 0.290196, 1 )
+color = Color(0.290196, 0.172549, 0.290196, 1)
 
-[node name="barbot" type="ColorRect" parent="Control/frame"]
+[node name="barbot" type="ColorRect" parent="Control/frame" unique_id=1763201933]
 show_behind_parent = true
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = -304.0
 offset_right = -4.0
-color = Color( 0.290196, 0.172549, 0.290196, 1 )
+color = Color(0.290196, 0.172549, 0.290196, 1)
 
-[node name="red" type="TextureProgressBar" parent="Control/frame"]
+[node name="red" type="TextureProgressBar" parent="Control/frame" unique_id=453320823]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 6.0
 offset_right = 6.0
-scale = Vector2( 0.95, 1 )
+scale = Vector2(0.95, 1)
 max_value = 520.0
 value = 25.0
-texture_progress = ExtResource( 4 )
 fill_mode = 2
+texture_progress = ExtResource("4")
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=839233399]
+layout_mode = 0
 anchor_left = 0.1
 anchor_top = 0.209
 anchor_right = 0.1
@@ -109,10 +115,11 @@ anchor_bottom = 0.24
 offset_top = -1.60001
 offset_right = 200.0
 offset_bottom = 5.92001
-texture = ExtResource( 6 )
+texture = ExtResource("6")
 
-[node name="prog" type="TextureProgressBar" parent="Control/TextureRect"]
+[node name="prog" type="TextureProgressBar" parent="Control/TextureRect" unique_id=960331307]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 41.0
@@ -122,11 +129,12 @@ offset_bottom = -0.119995
 max_value = 7.0
 step = 0.0
 value = 5.961
-texture_under = ExtResource( 7 )
-texture_progress = ExtResource( 8 )
+texture_under = ExtResource("7")
+texture_progress = ExtResource("8")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Control/TextureRect"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control/TextureRect" unique_id=145372199]
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 41.0
@@ -134,60 +142,67 @@ offset_top = -1.0
 offset_right = -6.0
 offset_bottom = -1.0
 value = 100.0
-texture_progress = ExtResource( 10 )
+texture_progress = ExtResource("10")
 
-[node name="Label" type="Label" parent="Control/TextureRect"]
+[node name="Label" type="Label" parent="Control/TextureRect" unique_id=1726761164]
+layout_mode = 0
 anchor_right = 0.216
 anchor_bottom = 1.0
 text = "99"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="bar" type="TextureRect" parent="Control"]
+[node name="bar" type="TextureRect" parent="Control" unique_id=147692446]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 273.0
 offset_right = 424.0
 offset_bottom = 305.0
-texture = ExtResource( 9 )
+texture = ExtResource("9")
 
-[node name="Control2" type="Control" parent="."]
+[node name="Control2" type="Control" parent="." unique_id=533515339]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
+theme = ExtResource("2")
 
-[node name="Panel" type="Panel" parent="Control2"]
+[node name="Panel" type="Panel" parent="Control2" unique_id=104688003]
+layout_mode = 0
 offset_left = 113.0
 offset_top = 393.0
 offset_right = 471.0
 offset_bottom = 635.0
-theme_override_styles/panel = ExtResource( 11 )
+theme_override_styles/panel = ExtResource("11")
 
-[node name="AnimatedSprite2D" type="TextureRect" parent="Control2/Panel"]
+[node name="AnimatedSprite2D" type="TextureRect" parent="Control2/Panel" unique_id=1524895019]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
 offset_top = 12.0
 offset_right = -12.0
 offset_bottom = -12.0
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 stretch_mode = 6
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=549071683]
 wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1531134384]
 offset_left = 116.0
 offset_top = 393.0
 offset_right = 470.0
 offset_bottom = 638.0
-theme = ExtResource( 2 )
+theme = ExtResource("2")
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=173633251]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 13 )
+texture = ExtResource("13")
 stretch_mode = 4
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

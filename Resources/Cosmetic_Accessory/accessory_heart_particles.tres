@@ -1,19 +1,19 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://b4gx3e4dvxe5s"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Particles/CosmeticParticles/heart_particle_cosmetic.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons39.png" type="Texture2D" id=3]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://d0trg38s23u0x" path="res://Scenes/Particles/CosmeticParticles/heart_particle_cosmetic.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://c53o1igts8d0x" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons39.png" id="3"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Heart Particles"
 desc = "Lovey-dovey!"
 title = ""
-icon = ExtResource( 3 )
-species_alt_mesh = [  ]
-main_color = Color( 1, 1, 1, 1 )
-body_pattern = [  ]
-scene_replace = ExtResource( 2 )
+icon = ExtResource("3")
+species_alt_mesh = []
+main_color = Color(1, 1, 1, 1)
+body_pattern = []
+scene_replace = ExtResource("2")
 mirror_face = true
 flip = false
 allow_blink = true

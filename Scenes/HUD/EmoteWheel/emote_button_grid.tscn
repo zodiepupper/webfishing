@@ -1,31 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene format=3 uid="uid://detfxc77cgwwf"]
 
-[ext_resource path="res://Scenes/HUD/EmoteWheel/emote_button.gd" type="Script" id=3]
+[ext_resource type="Script" uid="uid://dny75cjb0d3eg" path="res://Scenes/HUD/EmoteWheel/emote_button.gd" id="3"]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 0.933333, 0.835294, 1 )
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 0.933333, 0.835294, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[node name="TextureRect3" type="Panel"]
+[node name="TextureRect3" type="Panel" unique_id=1870128832]
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource( 1 )
-script = ExtResource( 3 )
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("3")
 emote_id = "emote_wave"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=341815216]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-expand = true
+expand_mode = 1
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1629176244]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1

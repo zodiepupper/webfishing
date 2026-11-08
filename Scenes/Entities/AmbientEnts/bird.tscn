@@ -1,55 +1,67 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene format=3 uid="uid://csp46wfac3q7y"]
 
-[ext_resource path="res://Assets/Textures/NPCs/bird1.png" type="Texture2D" id=1]
-[ext_resource path="res://Assets/Textures/NPCs/bird3.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Textures/NPCs/bird4.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Textures/NPCs/bird2.png" type="Texture2D" id=4]
-[ext_resource path="res://Scenes/Entities/AmbientEnts/bird.gd" type="Script" id=5]
-[ext_resource path="res://Sounds/bird_flutter.ogg" type="AudioStream" id=6]
+[ext_resource type="Texture2D" uid="uid://cov17n1iewirf" path="res://Assets/Textures/NPCs/bird1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://e5vfk1f75gxe" path="res://Assets/Textures/NPCs/bird3.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bfihrobdams17" path="res://Assets/Textures/NPCs/bird4.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bfox1hku1gx6h" path="res://Assets/Textures/NPCs/bird2.png" id="4"]
+[ext_resource type="Script" uid="uid://o5a1coebb5kb" path="res://Scenes/Entities/AmbientEnts/bird.gd" id="5"]
+[ext_resource type="AudioStream" uid="uid://ca3u3spoqcrtj" path="res://Sounds/bird_flutter.ogg" id="6"]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": 1,
+"name": &"default",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="SphereShape3D" id=2]
+[sub_resource type="SphereShape3D" id="2"]
 radius = 10.0
 
-[sub_resource type="BoxShape3D" id=3]
+[sub_resource type="BoxShape3D" id="3"]
 
-[node name="bird" type="CharacterBody3D" groups=["bird"]]
-script = ExtResource( 5 )
+[node name="bird" type="CharacterBody3D" unique_id=2033663676 groups=["bird"]]
+script = ExtResource("5")
 dead_actor = true
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.397, 0 )
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1209299639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.397, 0)
 billboard = 1
 shaded = true
-frames = SubResource( 1 )
+sprite_frames = SubResource("1")
 
-[node name="hop_timer" type="Timer" parent="."]
+[node name="hop_timer" type="Timer" parent="." unique_id=339311276]
 one_shot = true
 autostart = true
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=659033235]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource( 2 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1877471825]
+shape = SubResource("2")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1567775683]
 wait_time = 0.15
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 6 )
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1683545626]
+stream = ExtResource("6")
 unit_size = 2.5
 max_distance = 30.0
 attenuation_filter_cutoff_hz = 10000.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource( 3 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2104259994]
+shape = SubResource("3")
 disabled = true
 
 [connection signal="timeout" from="hop_timer" to="." method="_on_hop_timer_timeout"]

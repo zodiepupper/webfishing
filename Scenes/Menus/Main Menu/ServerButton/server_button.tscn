@@ -1,26 +1,29 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene format=3 uid="uid://d4k0klkclk1xi"]
 
-[ext_resource path="res://Scenes/Menus/Main Menu/ServerButton/server_button.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Themes/main_font_tiny.tres" type="FontFile" id=3]
-[ext_resource path="res://Assets/Textures/UI/request_icon2.png" type="Texture2D" id=4]
+[ext_resource type="Script" uid="uid://b6683sxaqos3j" path="res://Scenes/Menus/Main Menu/ServerButton/server_button.gd" id="1"]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="2"]
+[ext_resource type="FontFile" path="res://Assets/Themes/main_font_tiny.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://bwo3gltiq7i1s" path="res://Assets/Textures/UI/request_icon2.png" id="4"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[node name="server_button" type="Control"]
+[node name="server_button" type="Control" unique_id=572167586]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 3
 anchor_right = 0.021
 anchor_bottom = 0.059
 offset_right = 720.68
 offset_bottom = 4.27999
-custom_minimum_size = Vector2( 0, 68 )
 size_flags_horizontal = 3
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=455468441]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel" unique_id=921844114]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
@@ -29,30 +32,26 @@ offset_right = -16.0
 offset_bottom = -4.0
 alignment = 1
 
-[node name="Label" type="RichTextLabel" parent="Panel/HBoxContainer"]
-offset_right = 729.0
-offset_bottom = 28.0
+[node name="Label" type="RichTextLabel" parent="Panel/HBoxContainer" unique_id=115928625]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/default_color = Color(0.415686, 0.266667, 0.12549, 1)
 bbcode_enabled = true
-text = "Server Name (16/16)"
 text = "Server Name (16/16)"
 scroll_active = false
 
-[node name="tags" type="RichTextLabel" parent="Panel/HBoxContainer"]
-offset_top = 32.0
-offset_right = 729.0
-offset_bottom = 60.0
+[node name="tags" type="RichTextLabel" parent="Panel/HBoxContainer" unique_id=535976148]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource( 3 )
+theme_override_fonts/normal_font = ExtResource("3")
 bbcode_enabled = true
-text = "Talkative, Chill, Grinding"
 text = "Talkative, Chill, Grinding"
 scroll_active = false
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel" unique_id=1108048369]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
@@ -61,54 +60,42 @@ offset_right = -16.0
 offset_bottom = -16.0
 theme_override_constants/separation = 10
 
-[node name="VSeparator2" type="VSeparator" parent="Panel/HBoxContainer2"]
-offset_right = 158.0
-offset_bottom = 36.0
+[node name="VSeparator2" type="VSeparator" parent="Panel/HBoxContainer2" unique_id=2092251756]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="players" type="Label" parent="Panel/HBoxContainer2"]
-offset_left = 168.0
-offset_right = 486.0
-offset_bottom = 36.0
+[node name="players" type="Label" parent="Panel/HBoxContainer2" unique_id=95578911]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "11/10"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="request" type="TextureRect" parent="Panel/HBoxContainer2"]
+[node name="request" type="TextureRect" parent="Panel/HBoxContainer2" unique_id=1155517706]
 unique_name_in_owner = true
-offset_left = 496.0
-offset_right = 576.0
-offset_bottom = 36.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
-texture = ExtResource( 4 )
-expand = true
+texture = ExtResource("4")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Button" type="Button" parent="Panel/HBoxContainer2"]
-offset_left = 586.0
-offset_right = 729.0
-offset_bottom = 36.0
+[node name="Button" type="Button" parent="Panel/HBoxContainer2" unique_id=2041693308]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.45
 text = "Join"
 clip_text = true
 
-[node name="TooltipNode" type="Control" parent="Panel/HBoxContainer2/Button"]
+[node name="TooltipNode" type="Control" parent="Panel/HBoxContainer2/Button" unique_id=1922869014]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource("2")
 header = "Join Lobby"
 body = "Attempt to join this lobby!"
 

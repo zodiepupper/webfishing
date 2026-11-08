@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://dy5b3ub0kfgbo"]
 
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons12.png" type="Texture2D" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Models/Cosmetics/pants_short.tres" type="ArrayMesh" id=4]
+[ext_resource type="Texture2D" uid="uid://dvk8ovrxmd1x8" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons12.png" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://dx8pt52f7dfe5" path="res://Assets/Models/Cosmetics/pants_short.tres" id="4"]
 
 [resource]
-script = ExtResource( 3 )
+script = ExtResource("3")
 name = "Maroon Shorts"
 desc = "Showing some knee!"
 title = ""
-icon = ExtResource( 1 )
-mesh = ExtResource( 4 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-main_color = Color( 0.67451, 0, 0.160784, 1 )
-body_pattern = [  ]
+icon = ExtResource("1")
+mesh = ExtResource("4")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+main_color = Color(0.67451, 0, 0.160784, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

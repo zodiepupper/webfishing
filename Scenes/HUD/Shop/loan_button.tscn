@@ -1,44 +1,56 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene format=3 uid="uid://bcb8hl5wy5xqi"]
 
-[ext_resource path="res://Assets/Themes/secondary.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/HUD/Shop/loan_button.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=6]
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=7]
-[ext_resource path="res://Assets/Themes/coolvetica condensed rg.otf" type="FontFile" id=8]
+[ext_resource type="Theme" uid="uid://dk4lixgcevj1v" path="res://Assets/Themes/secondary.tres" id="1"]
+[ext_resource type="Script" uid="uid://djdtqiphxtmhc" path="res://Scenes/HUD/Shop/loan_button.gd" id="3"]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="5"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_green.tres" id="6"]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="7"]
+[ext_resource type="FontFile" uid="uid://dud1a31x684is" path="res://Assets/Themes/coolvetica condensed rg.otf" id="8"]
 
-[sub_resource type="FontFile" id=1]
-size = 22
-font_data = ExtResource( 8 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("8")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" unique_id=326974450]
+custom_minimum_size = Vector2(300, 72)
 offset_right = 92.0
 offset_bottom = 92.0
-custom_minimum_size = Vector2( 300, 72 )
 size_flags_horizontal = 3
-theme = ExtResource( 1 )
-script = ExtResource( 3 )
+theme = ExtResource("1")
+script = ExtResource("3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=26561438]
+layout_mode = 0
 anchor_left = 0.028
 anchor_right = 0.929
 anchor_bottom = 1.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
-offset_right = 270.0
-offset_bottom = 92.0
-mouse_filter = 2
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=1470950678]
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-theme_override_fonts/normal_font = SubResource( 1 )
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.415686, 0.266667, 0.12549, 1)
+theme_override_fonts/normal_font = SubResource("1")
 bbcode_enabled = true
-text = "Catch LAKE Fish (0/25)
-Reward: $25"
 text = "Catch LAKE Fish (0/25)
 Reward: $25"
 scroll_active = false
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1809456100]
+layout_mode = 0
 anchor_left = 0.756
 anchor_top = 0.423914
 anchor_right = 0.984
@@ -46,30 +58,25 @@ anchor_bottom = 0.880654
 offset_right = 0.100006
 offset_bottom = -0.0199966
 alignment = 2
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="cash" type="Panel" parent="HBoxContainer2"]
-offset_right = 100.0
-offset_bottom = 42.0
-custom_minimum_size = Vector2( 100, 0 )
+[node name="cash" type="Panel" parent="HBoxContainer2" unique_id=285208029]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+theme_override_styles/panel = ExtResource("6")
 
-[node name="Label" type="Label" parent="HBoxContainer2/cash"]
+[node name="Label" type="Label" parent="HBoxContainer2/cash" unique_id=1957495713]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 7 )
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme = ExtResource("7")
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "$999"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2019224191]
+layout_mode = 0
 anchor_left = 0.027
 anchor_top = 0.435
 anchor_right = 0.72
@@ -78,34 +85,33 @@ offset_left = -0.100006
 offset_top = -0.0200043
 offset_right = 0.0999756
 offset_bottom = -0.012001
-percent_visible = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Label" type="Label" parent="ProgressBar"]
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1051908045]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "$1000 REMAINING"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="confim" type="Panel" parent="."]
+[node name="confim" type="Panel" parent="." unique_id=85234795]
 visible = false
 show_behind_parent = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
-theme_override_styles/panel = ExtResource( 6 )
+theme_override_styles/panel = ExtResource("6")
 
-[node name="TooltipNode" type="Control" parent="."]
+[node name="TooltipNode" type="Control" parent="." unique_id=1887222974]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
+script = ExtResource("5")
 header = "Camp Tier Increase"
 body = "Pay towards increasing your CAMP TIER! Unlocking additional bait, lures, items, props, and cosmetics in the shops!"
 

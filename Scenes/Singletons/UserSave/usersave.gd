@@ -67,7 +67,8 @@ func _load_general_save():
 	print("Loading General Save")
 	
 	save = FileAccess.open(GENERAL_PATH, FileAccess.READ)
-	stored_general_save = save.get_var()
+	var loaded_save = save.get_var()
+	stored_general_save = loaded_save if loaded_save is Dictionary else {}
 	save.close()
 	
 	stored_general_save = _version_key_check(stored_general_save, true)

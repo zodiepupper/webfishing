@@ -1,404 +1,406 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene format=4 uid="uid://c7neyxb65d5yd"]
 
-[ext_resource path="res://Scenes/Interactables/npc_test.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/worm.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://Assets/Materials/pink.tres" type="Material" id=3]
-[ext_resource path="res://Assets/Models/dirt.material" type="Material" id=4]
-[ext_resource path="res://Assets/Models/sign.material" type="Material" id=5]
-[ext_resource path="res://Assets/Materials/pink_dark.tres" type="Material" id=6]
-[ext_resource path="res://Assets/Materials/green.tres" type="Material" id=7]
-[ext_resource path="res://Assets/Materials/dark_darker.tres" type="Material" id=8]
-[ext_resource path="res://Assets/Materials/dark_brown_alt.tres" type="Material" id=9]
-[ext_resource path="res://Assets/Materials/wood.tres" type="Material" id=10]
-[ext_resource path="res://Scenes/Interactables/npc_baitsell.gd" type="Script" id=16]
-[ext_resource path="res://Assets/Textures/sellsign.png" type="Texture2D" id=17]
-[ext_resource path="res://Assets/ParticleResources/dirt_pop.tres" type="Material" id=21]
-[ext_resource path="res://Sounds/rustle.ogg" type="AudioStream" id=22]
+[ext_resource type="Script" uid="uid://bkb5saknkoamu" path="res://Scenes/Interactables/npc_test.gd" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://blnnejoryr8yf" path="res://Assets/Models/worm.obj" id="2"]
+[ext_resource type="Material" path="res://Assets/Models/dirt.material" id="4"]
+[ext_resource type="Material" path="res://Assets/Models/sign.material" id="5"]
+[ext_resource type="Material" path="res://Assets/Materials/dark_brown_alt.tres" id="9"]
+[ext_resource type="Script" uid="uid://cdcxx7xpbsjy5" path="res://Scenes/Interactables/npc_baitsell.gd" id="16"]
+[ext_resource type="Material" uid="uid://cxwh4mn7ei4se" path="res://Assets/ParticleResources/dirt_pop.tres" id="21"]
 
-[sub_resource type="BoxShape3D" id=8]
-extents = Vector3( 1.5, 1.5, 1.5 )
+[sub_resource type="BoxShape3D" id="8"]
+size = Vector3(3, 3, 3)
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id="1"]
 resource_name = "npc_baitsell_Icosphere"
-surfaces/0 = {
-"aabb": AABB( -1.14464, -0.00820135, -1.19097, 2.0957, 0.649493, 2.27944 ),
-"array_data": PackedByteArray( 91, 191, 107, 62, 182, 80, 75, 62, 33, 143, 54, 63, 16, 58, 161, 193, 139, 58, 123, 57, 81, 77, 26, 191, 164, 80, 75, 62, 115, 139, 226, 62, 215, 55, 143, 148, 209, 45, 123, 57, 81, 77, 26, 191, 164, 80, 75, 62, 115, 139, 226, 62, 215, 55, 150, 226, 0, 60, 123, 57, 81, 77, 26, 191, 164, 80, 75, 62, 179, 224, 221, 190, 185, 85, 126, 156, 93, 52, 123, 57, 91, 191, 107, 62, 182, 80, 75, 62, 193, 57, 52, 191, 67, 110, 95, 193, 69, 55, 123, 57, 46, 186, 62, 63, 203, 79, 75, 62, 32, 88, 149, 59, 60, 66, 0, 193, 23, 57, 123, 57, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 127, 125, 255, 209, 49, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 127, 126, 209, 209, 53, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 127, 52, 192, 93, 56, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 127, 204, 192, 209, 57, 56, 56, 96, 196, 148, 51, 179, 43, 36, 63, 114, 217, 124, 188, 1, 127, 130, 209, 69, 59, 56, 56, 135, 120, 115, 63, 0, 0, 0, 0, 231, 54, 158, 62, 77, 231, 230, 190, 116, 57, 28, 58, 135, 120, 115, 63, 0, 0, 0, 0, 231, 54, 158, 190, 101, 207, 26, 196, 186, 56, 28, 58, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 127, 63, 2, 226, 141, 190, 232, 58, 28, 58, 30, 121, 22, 63, 0, 0, 0, 0, 184, 27, 79, 63, 42, 233, 183, 195, 46, 58, 28, 58, 135, 120, 115, 191, 0, 0, 0, 0, 231, 54, 158, 62, 181, 231, 135, 146, 93, 48, 28, 58, 30, 121, 22, 191, 0, 0, 0, 0, 184, 27, 79, 63, 212, 233, 137, 223, 209, 41, 28, 58, 30, 121, 22, 191, 0, 0, 0, 0, 184, 27, 79, 63, 212, 233, 134, 222, 162, 59, 28, 58, 30, 121, 22, 191, 0, 0, 0, 0, 184, 27, 79, 191, 153, 174, 122, 164, 23, 53, 28, 58, 135, 120, 115, 191, 0, 0, 0, 0, 231, 54, 158, 190, 155, 205, 121, 240, 69, 51, 28, 58, 30, 121, 22, 63, 0, 0, 0, 0, 184, 27, 79, 191, 103, 172, 73, 190, 255, 55, 28, 58, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 127, 191, 97, 132, 115, 196, 139, 54, 28, 58, 213, 191, 18, 63, 174, 36, 135, 62, 117, 146, 215, 62, 41, 56, 203, 193, 209, 57, 123, 57, 129, 55, 96, 190, 214, 36, 135, 62, 40, 174, 45, 63, 240, 59, 130, 177, 69, 59, 123, 57, 99, 100, 53, 191, 166, 36, 135, 62, 32, 88, 149, 59, 196, 66, 130, 130, 209, 49, 123, 57, 129, 55, 96, 190, 214, 36, 135, 62, 200, 88, 43, 191, 190, 110, 126, 177, 209, 53, 123, 57, 213, 191, 18, 63, 174, 36, 135, 62, 179, 231, 210, 190, 70, 86, 53, 193, 93, 56, 123, 57, 176, 138, 3, 62, 13, 203, 14, 63, 221, 69, 207, 62, 13, 73, 202, 203, 46, 58, 217, 56, 176, 138, 3, 62, 13, 203, 14, 63, 221, 69, 207, 62, 13, 73, 153, 175, 232, 58, 217, 56, 38, 216, 212, 62, 233, 202, 14, 63, 100, 28, 27, 60, 46, 80, 34, 203, 186, 56, 217, 56, 38, 216, 212, 62, 233, 202, 14, 63, 100, 28, 27, 60, 46, 80, 221, 183, 116, 57, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 188, 243, 129, 62, 224, 69, 153, 137, 93, 48, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 188, 243, 129, 62, 224, 69, 150, 222, 162, 59, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 235, 131, 112, 190, 199, 93, 104, 249, 69, 51, 217, 56, 183, 49, 172, 190, 10, 203, 14, 63, 235, 131, 112, 190, 199, 93, 106, 164, 23, 53, 217, 56, 176, 138, 3, 62, 13, 203, 14, 63, 21, 148, 197, 190, 53, 113, 103, 211, 139, 54, 217, 56, 176, 138, 3, 62, 13, 203, 14, 63, 21, 148, 197, 190, 53, 113, 54, 183, 255, 55, 217, 56, 204, 207, 186, 62, 100, 33, 175, 186, 229, 6, 139, 191, 26, 238, 169, 200, 139, 58, 123, 57, 56, 68, 155, 62, 100, 33, 175, 186, 226, 150, 141, 191, 193, 240, 142, 233, 209, 45, 123, 57, 56, 68, 155, 62, 100, 33, 175, 186, 226, 150, 141, 191, 193, 240, 142, 155, 0, 60, 123, 57, 56, 68, 155, 62, 100, 33, 175, 186, 168, 225, 149, 191, 146, 193, 126, 230, 93, 52, 123, 57, 204, 207, 186, 62, 100, 33, 175, 186, 166, 113, 152, 191, 108, 156, 95, 193, 69, 55, 123, 57, 228, 78, 206, 62, 100, 33, 175, 186, 69, 188, 145, 191, 104, 234, 0, 193, 23, 57, 123, 57, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 127, 127, 129, 209, 49, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 127, 127, 177, 209, 53, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 127, 53, 193, 93, 56, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 127, 203, 193, 209, 57, 56, 56, 200, 23, 178, 62, 235, 7, 6, 61, 69, 188, 145, 191, 0, 127, 129, 177, 69, 59, 56, 56, 227, 124, 100, 63, 100, 33, 175, 186, 142, 20, 110, 63, 26, 238, 169, 200, 139, 58, 123, 57, 23, 183, 84, 63, 100, 33, 175, 186, 148, 244, 104, 63, 193, 240, 142, 233, 209, 45, 123, 57, 23, 183, 84, 63, 100, 33, 175, 186, 148, 244, 104, 63, 193, 240, 142, 155, 0, 60, 123, 57, 23, 183, 84, 63, 100, 33, 175, 186, 8, 95, 88, 63, 146, 193, 126, 230, 93, 52, 123, 57, 227, 124, 100, 63, 100, 33, 175, 186, 12, 63, 83, 63, 108, 156, 95, 193, 69, 55, 123, 57, 111, 60, 110, 63, 100, 33, 175, 186, 206, 169, 96, 63, 104, 234, 0, 193, 23, 57, 123, 57, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 127, 127, 129, 209, 49, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 127, 127, 177, 209, 53, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 127, 53, 193, 93, 56, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 127, 203, 193, 209, 57, 56, 56, 223, 32, 96, 63, 235, 7, 6, 61, 206, 169, 96, 63, 0, 127, 129, 177, 69, 59, 56, 56, 6, 133, 238, 62, 112, 191, 100, 186, 149, 173, 141, 63, 26, 238, 169, 200, 139, 58, 123, 57, 226, 140, 209, 62, 112, 191, 100, 186, 41, 83, 139, 63, 193, 240, 142, 233, 209, 45, 123, 57, 226, 140, 209, 62, 112, 191, 100, 186, 41, 83, 139, 63, 193, 240, 142, 155, 0, 60, 123, 57, 226, 140, 209, 62, 112, 191, 100, 186, 187, 181, 131, 63, 146, 193, 126, 230, 93, 52, 123, 57, 6, 133, 238, 62, 112, 191, 100, 186, 79, 91, 129, 63, 108, 156, 95, 193, 69, 55, 123, 57, 70, 54, 0, 63, 112, 191, 100, 186, 114, 132, 135, 63, 104, 234, 0, 193, 23, 57, 123, 57, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 127, 127, 129, 209, 49, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 127, 127, 177, 209, 53, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 127, 53, 193, 93, 56, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 127, 203, 193, 209, 57, 56, 56, 66, 131, 230, 62, 80, 19, 249, 60, 114, 132, 135, 63, 0, 127, 129, 177, 69, 59, 56, 56, 14, 23, 129, 191, 240, 94, 6, 188, 122, 246, 106, 62, 26, 238, 169, 200, 139, 58, 123, 57, 168, 131, 146, 191, 240, 94, 6, 188, 160, 171, 61, 62, 193, 240, 142, 233, 209, 45, 123, 57, 168, 131, 146, 191, 240, 94, 6, 188, 160, 171, 61, 62, 193, 240, 142, 155, 0, 60, 123, 57, 168, 131, 146, 191, 240, 94, 6, 188, 239, 106, 44, 61, 146, 193, 126, 230, 93, 52, 123, 57, 14, 23, 129, 191, 240, 94, 6, 188, 224, 11, 12, 187, 108, 156, 95, 193, 69, 55, 123, 57, 96, 164, 108, 191, 240, 94, 6, 188, 92, 198, 232, 61, 104, 234, 0, 193, 23, 57, 123, 57, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 127, 127, 129, 209, 49, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 127, 127, 177, 209, 53, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 127, 53, 193, 93, 56, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 127, 203, 193, 209, 57, 56, 56, 238, 231, 133, 191, 175, 80, 137, 61, 92, 198, 232, 61, 0, 127, 129, 177, 69, 59, 56, 56 ),
-"array_index_data": PackedByteArray( 0, 0, 27, 0, 22, 0, 2, 0, 32, 0, 23, 0, 3, 0, 33, 0, 24, 0, 4, 0, 35, 0, 25, 0, 5, 0, 29, 0, 26, 0, 29, 0, 8, 0, 36, 0, 29, 0, 36, 0, 26, 0, 26, 0, 36, 0, 4, 0, 35, 0, 7, 0, 34, 0, 35, 0, 34, 0, 25, 0, 25, 0, 34, 0, 3, 0, 33, 0, 6, 0, 31, 0, 33, 0, 31, 0, 24, 0, 24, 0, 31, 0, 1, 0, 32, 0, 10, 0, 28, 0, 32, 0, 28, 0, 23, 0, 23, 0, 28, 0, 0, 0, 27, 0, 9, 0, 30, 0, 27, 0, 30, 0, 22, 0, 22, 0, 30, 0, 5, 0, 12, 0, 5, 0, 26, 0, 12, 0, 26, 0, 20, 0, 20, 0, 26, 0, 4, 0, 21, 0, 4, 0, 25, 0, 21, 0, 25, 0, 18, 0, 18, 0, 25, 0, 3, 0, 19, 0, 3, 0, 24, 0, 19, 0, 24, 0, 15, 0, 15, 0, 24, 0, 1, 0, 17, 0, 2, 0, 23, 0, 17, 0, 23, 0, 13, 0, 13, 0, 23, 0, 0, 0, 14, 0, 0, 0, 22, 0, 14, 0, 22, 0, 11, 0, 11, 0, 22, 0, 5, 0, 20, 0, 4, 0, 21, 0, 20, 0, 11, 0, 12, 0, 11, 0, 13, 0, 14, 0, 13, 0, 15, 0, 17, 0, 15, 0, 18, 0, 19, 0, 18, 0, 20, 0, 21, 0, 20, 0, 13, 0, 11, 0, 13, 0, 18, 0, 15, 0, 13, 0, 20, 0, 18, 0, 18, 0, 3, 0, 19, 0, 15, 0, 1, 0, 16, 0, 13, 0, 0, 0, 14, 0, 11, 0, 5, 0, 12, 0, 41, 0, 37, 0, 42, 0, 37, 0, 40, 0, 38, 0, 37, 0, 41, 0, 40, 0, 37, 0, 46, 0, 42, 0, 39, 0, 47, 0, 37, 0, 40, 0, 43, 0, 38, 0, 41, 0, 44, 0, 40, 0, 42, 0, 45, 0, 41, 0, 52, 0, 48, 0, 53, 0, 48, 0, 51, 0, 49, 0, 48, 0, 52, 0, 51, 0, 48, 0, 57, 0, 53, 0, 50, 0, 58, 0, 48, 0, 51, 0, 54, 0, 49, 0, 52, 0, 55, 0, 51, 0, 53, 0, 56, 0, 52, 0, 63, 0, 59, 0, 64, 0, 59, 0, 62, 0, 60, 0, 59, 0, 63, 0, 62, 0, 59, 0, 68, 0, 64, 0, 61, 0, 69, 0, 59, 0, 62, 0, 65, 0, 60, 0, 63, 0, 66, 0, 62, 0, 64, 0, 67, 0, 63, 0, 74, 0, 70, 0, 75, 0, 70, 0, 73, 0, 71, 0, 70, 0, 74, 0, 73, 0, 70, 0, 79, 0, 75, 0, 72, 0, 80, 0, 70, 0, 73, 0, 76, 0, 71, 0, 74, 0, 77, 0, 73, 0, 75, 0, 78, 0, 74, 0 ),
-"blend_shape_data": [  ],
-"format": 2194711,
+_surfaces = [{
+"aabb": AABB(-1.14464, -0.00820135, -1.19097, 2.0957, 0.649493, 2.27944),
+"attribute_data": PackedByteArray("AGBRPwBgLz8AILo9AGAvPwAAgD8AYC8/AKCLPgBgLz8AoOg+AGAvPwDgIj8AYC8/ACA6PgAABz8AILo+AAAHPwCgCz8AAAc/ACA6PwAABz8AoGg/AAAHPwCALj8AgEM/AEAXPwCAQz8AAF0/AIBDPwDART8AgEM/AKALPgCAQz8AIDo9AIBDPwBAdD8AgEM/AOCiPgCAQz8AoGg+AIBDPwDg/z4AgEM/AGDRPgCAQz8AIDo/AGAvPwCgaD8AYC8/ACA6PgBgLz8AILo+AGAvPwCgCz8AYC8/AMBFPwAgGz8AAF0/ACAbPwBAFz8AIBs/AIAuPwAgGz8AoAs+ACAbPwBAdD8AIBs/AKBoPgAgGz8A4KI+ACAbPwBg0T4AIBs/AOD/PgAgGz8AYFE/AGAvPwAguj0AYC8/AACAPwBgLz8AoIs+AGAvPwCg6D4AYC8/AOAiPwBgLz8AIDo+AAAHPwAguj4AAAc/AKALPwAABz8AIDo/AAAHPwCgaD8AAAc/AGBRPwBgLz8AILo9AGAvPwAAgD8AYC8/AKCLPgBgLz8AoOg+AGAvPwDgIj8AYC8/ACA6PgAABz8AILo+AAAHPwCgCz8AAAc/ACA6PwAABz8AoGg/AAAHPwBgUT8AYC8/ACC6PQBgLz8AAIA/AGAvPwCgiz4AYC8/AKDoPgBgLz8A4CI/AGAvPwAgOj4AAAc/ACC6PgAABz8AoAs/AAAHPwAgOj8AAAc/AKBoPwAABz8AYFE/AGAvPwAguj0AYC8/AACAPwBgLz8AoIs+AGAvPwCg6D4AYC8/AOAiPwBgLz8AIDo+AAAHPwAguj4AAAc/AKALPwAABz8AIDo/AAAHPwCgaD8AAAc/"),
+"format": 34359742487,
 "index_count": 240,
-"material": ExtResource( 4 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 81
-}
-surfaces/1 = {
-"aabb": AABB( 1.17039, -0.0710696, -0.904248, 0.167518, 1.9789, 1.8085 ),
-"array_data": PackedByteArray( 72, 136, 153, 63, 238, 140, 145, 189, 182, 30, 98, 61, 214, 214, 63, 47, 0, 48, 0, 52, 72, 136, 153, 63, 238, 140, 145, 189, 182, 30, 98, 61, 214, 214, 225, 95, 0, 54, 0, 0, 72, 136, 153, 63, 238, 140, 145, 189, 182, 30, 98, 61, 214, 214, 225, 95, 0, 54, 0, 60, 72, 136, 153, 63, 191, 218, 148, 63, 182, 30, 98, 61, 225, 63, 84, 105, 0, 57, 0, 0, 72, 136, 153, 63, 191, 218, 148, 63, 182, 30, 98, 61, 225, 63, 84, 105, 0, 57, 0, 60, 72, 136, 153, 63, 238, 140, 145, 189, 181, 30, 98, 189, 172, 172, 95, 31, 0, 48, 0, 56, 72, 136, 153, 63, 238, 140, 145, 189, 181, 30, 98, 189, 172, 172, 193, 111, 0, 54, 0, 58, 72, 136, 153, 63, 191, 218, 148, 63, 181, 30, 98, 189, 193, 95, 42, 84, 0, 57, 0, 58, 52, 170, 167, 63, 238, 140, 145, 189, 182, 30, 98, 61, 42, 214, 50, 95, 0, 54, 0, 52, 52, 170, 167, 63, 191, 218, 148, 63, 182, 30, 98, 61, 31, 63, 172, 105, 0, 57, 0, 52, 52, 170, 167, 63, 238, 140, 145, 189, 181, 30, 98, 189, 84, 172, 63, 101, 0, 54, 0, 56, 52, 170, 167, 63, 191, 218, 148, 63, 181, 30, 98, 189, 63, 95, 214, 84, 0, 57, 0, 56, 72, 136, 153, 63, 191, 218, 148, 63, 182, 30, 98, 61, 0, 127, 127, 63, 0, 57, 0, 0, 72, 136, 153, 63, 191, 218, 148, 63, 182, 30, 98, 61, 0, 127, 127, 63, 0, 57, 0, 60, 72, 136, 153, 63, 191, 218, 148, 63, 182, 30, 98, 61, 0, 127, 129, 63, 0, 59, 0, 52, 72, 136, 153, 63, 191, 218, 148, 63, 181, 30, 98, 189, 0, 127, 127, 63, 0, 57, 0, 58, 72, 136, 153, 63, 191, 218, 148, 63, 181, 30, 98, 189, 0, 127, 129, 63, 0, 59, 0, 56, 52, 170, 167, 63, 191, 218, 148, 63, 182, 30, 98, 61, 0, 127, 129, 63, 0, 57, 0, 52, 52, 170, 167, 63, 191, 218, 148, 63, 181, 30, 98, 189, 0, 127, 129, 63, 0, 57, 0, 56, 54, 207, 149, 63, 68, 19, 90, 63, 199, 124, 103, 63, 214, 214, 63, 47, 0, 48, 0, 52, 54, 207, 149, 63, 68, 19, 90, 63, 199, 124, 103, 63, 214, 214, 225, 95, 0, 54, 0, 0, 54, 207, 149, 63, 68, 19, 90, 63, 199, 124, 103, 63, 214, 214, 225, 95, 0, 54, 0, 60, 54, 207, 149, 63, 211, 51, 244, 63, 199, 124, 103, 63, 214, 42, 63, 111, 0, 57, 0, 0, 54, 207, 149, 63, 211, 51, 244, 63, 199, 124, 103, 63, 214, 42, 63, 111, 0, 57, 0, 60, 54, 207, 149, 63, 211, 51, 244, 63, 199, 124, 103, 63, 214, 42, 161, 31, 0, 59, 0, 52, 54, 207, 149, 63, 68, 19, 90, 63, 199, 124, 103, 191, 172, 172, 95, 31, 0, 48, 0, 56, 54, 207, 149, 63, 68, 19, 90, 63, 199, 124, 103, 191, 172, 172, 193, 111, 0, 54, 0, 58, 54, 207, 149, 63, 211, 51, 244, 63, 199, 124, 103, 191, 172, 84, 31, 95, 0, 57, 0, 58, 54, 207, 149, 63, 211, 51, 244, 63, 199, 124, 103, 191, 172, 84, 193, 47, 0, 59, 0, 56, 109, 64, 171, 63, 68, 19, 90, 63, 199, 124, 103, 63, 42, 214, 50, 95, 0, 54, 0, 52, 109, 64, 171, 63, 211, 51, 244, 63, 199, 124, 103, 63, 42, 42, 193, 101, 0, 57, 0, 52, 109, 64, 171, 63, 68, 19, 90, 63, 199, 124, 103, 191, 84, 172, 63, 101, 0, 54, 0, 56, 109, 64, 171, 63, 211, 51, 244, 63, 199, 124, 103, 191, 84, 84, 206, 95, 0, 57, 0, 56 ),
-"array_index_data": PackedByteArray( 2, 0, 7, 0, 4, 0, 2, 0, 6, 0, 7, 0, 6, 0, 11, 0, 7, 0, 6, 0, 10, 0, 11, 0, 10, 0, 9, 0, 11, 0, 10, 0, 8, 0, 9, 0, 8, 0, 3, 0, 9, 0, 8, 0, 1, 0, 3, 0, 5, 0, 8, 0, 10, 0, 5, 0, 0, 0, 8, 0, 7, 0, 13, 0, 4, 0, 7, 0, 15, 0, 13, 0, 18, 0, 14, 0, 16, 0, 18, 0, 17, 0, 14, 0, 3, 0, 17, 0, 9, 0, 3, 0, 12, 0, 17, 0, 11, 0, 15, 0, 7, 0, 11, 0, 18, 0, 15, 0, 9, 0, 18, 0, 11, 0, 9, 0, 17, 0, 18, 0, 21, 0, 27, 0, 23, 0, 21, 0, 26, 0, 27, 0, 26, 0, 32, 0, 27, 0, 26, 0, 31, 0, 32, 0, 31, 0, 30, 0, 32, 0, 31, 0, 29, 0, 30, 0, 29, 0, 22, 0, 30, 0, 29, 0, 20, 0, 22, 0, 25, 0, 29, 0, 31, 0, 25, 0, 19, 0, 29, 0, 32, 0, 24, 0, 28, 0, 32, 0, 30, 0, 24, 0 ),
-"blend_shape_data": [  ],
-"format": 2194711,
+"index_data": PackedByteArray("AAAbABYAAgAgABcAAwAhABgABAAjABkABQAdABoAHQAIACQAHQAkABoAGgAkAAQAIwAHACIAIwAiABkAGQAiAAMAIQAGAB8AIQAfABgAGAAfAAEAIAAKABwAIAAcABcAFwAcAAAAGwAJAB4AGwAeABYAFgAeAAUADAAFABoADAAaABQAFAAaAAQAFQAEABkAFQAZABIAEgAZAAMAEwADABgAEwAYAA8ADwAYAAEAEQACABcAEQAXAA0ADQAXAAAADgAAABYADgAWAAsACwAWAAUAFAAEABUAFAALAAwACwANAA4ADQAPABEADwASABMAEgAUABUAFAANAAsADQASAA8ADQAUABIAEgADABMADwABABAADQAAAA4ACwAFAAwAKQAlACoAJQAoACYAJQApACgAJQAuACoAJwAvACUAKAArACYAKQAsACgAKgAtACkANAAwADUAMAAzADEAMAA0ADMAMAA5ADUAMgA6ADAAMwA2ADEANAA3ADMANQA4ADQAPwA7AEAAOwA+ADwAOwA/AD4AOwBEAEAAPQBFADsAPgBBADwAPwBCAD4AQABDAD8ASgBGAEsARgBJAEcARgBKAEkARgBPAEsASABQAEYASQBMAEcASgBNAEkASwBOAEoA"),
+"material": ExtResource("4"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 81,
+"vertex_data": PackedByteArray("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")
+}, {
+"aabb": AABB(1.17039, -0.0710696, -0.904248, 0.167518, 1.9789, 1.8085),
+"attribute_data": PackedByteArray("AAAAPgAAgD4AAMA+AAAAAAAAwD4AAIA/AAAgPwAAAAAAACA/AACAPwAAAD4AAAA/AADAPgAAQD8AACA/AABAPwAAwD4AAIA+AAAgPwAAgD4AAMA+AAAAPwAAID8AAAA/AAAgPwAAAAAAACA/AACAPwAAYD8AAIA+AAAgPwAAQD8AAGA/AAAAPwAAID8AAIA+AAAgPwAAAD8AAAA+AACAPgAAwD4AAAAAAADAPgAAgD8AACA/AAAAAAAAID8AAIA/AABgPwAAgD4AAAA+AAAAPwAAwD4AAEA/AAAgPwAAQD8AAGA/AAAAPwAAwD4AAIA+AAAgPwAAgD4AAMA+AAAAPwAAID8AAAA/"),
+"format": 34359742487,
 "index_count": 96,
-"material": ExtResource( 5 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 33
-}
+"index_data": PackedByteArray("AgAHAAQAAgAGAAcABgALAAcABgAKAAsACgAJAAsACgAIAAkACAADAAkACAABAAMABQAIAAoABQAAAAgABwANAAQABwAPAA0AEgAOABAAEgARAA4AAwARAAkAAwAMABEACwAPAAcACwASAA8ACQASAAsACQARABIAFQAbABcAFQAaABsAGgAgABsAGgAfACAAHwAeACAAHwAdAB4AHQAWAB4AHQAUABYAGQAdAB8AGQATAB0AIAAYABwAIAAeABgA"),
+"material": ExtResource("5"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 33,
+"vertex_data": PackedByteArray("SIiZP+6Mkb22HmI9SIiZP+6Mkb22HmI9SIiZP+6Mkb22HmI9SIiZP7/alD+2HmI9SIiZP7/alD+2HmI9SIiZP+6Mkb21HmK9SIiZP+6Mkb21HmK9SIiZP7/alD+1HmK9NKqnP+6Mkb22HmI9NKqnP7/alD+2HmI9NKqnP+6Mkb21HmK9NKqnP7/alD+1HmK9SIiZP7/alD+2HmI9SIiZP7/alD+2HmI9SIiZP7/alD+2HmI9SIiZP7/alD+1HmK9SIiZP7/alD+1HmK9NKqnP7/alD+2HmI9NKqnP7/alD+1HmK9Ns+VP0QTWj/HfGc/Ns+VP0QTWj/HfGc/Ns+VP0QTWj/HfGc/Ns+VP9Mz9D/HfGc/Ns+VP9Mz9D/HfGc/Ns+VP9Mz9D/HfGc/Ns+VP0QTWj/HfGe/Ns+VP0QTWj/HfGe/Ns+VP9Mz9D/HfGe/Ns+VP9Mz9D/HfGe/bUCrP0QTWj/HfGc/bUCrP9Mz9D/HfGc/bUCrP0QTWj/HfGe/bUCrP9Mz9D/HfGe/rNWs1X6/Xq+s1azVwWC+36zVrNXBYL7fwuB+P6jU0unC4H4/qNTS6VirWKu+3z2fWKtYq4BA3u+CwL5fU6qo1FQqrNVksr7fPh9+P1Yr0umoVFirfr/K5X4/vl+rVajUAAD/f///fr8AAP9///9+vwAA/38AAH6/AAD/f///fr8AAP9/AAB+vwAA/38AAH6/AAD/fwAAfr+s1azVfr9er6zVrNXBYL7frNWs1cFgvt+s1VQqfr/e76zVVCp+v97vrNVUKkAgPZ9Yq1irvt89n1irWKuAQN7vWKuoVD2fvt9Yq6hUgEBer1QqrNVksr7fVCpUKoBAyuWoVFirfr/K5ahUqFSaTb7f")
+}]
 
-[sub_resource type="QuadMesh" id=15]
-size = Vector2( 1, 0.7 )
+[sub_resource type="QuadMesh" id="15"]
+size = Vector2(1, 0.7)
 
-[sub_resource type="StandardMaterial3D" id=16]
-flags_transparent = true
-params_depth_draw_mode = 3
-albedo_texture = ExtResource( 17 )
-
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id="10"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Node3D/Cube:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector3( -0.14798, -1.44139, 0.00480027 ) ]
+"values": [Vector3(-0.14798, -1.44139, 0.00480027)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Node3D/Cube:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Node3D/Cube:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector3( 0.436138, 0.436138, 0.436138 ) ]
+"values": [Vector3(0.436138, 0.436138, 0.436138)]
 }
 tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Node3D/Cube:position:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"points": PackedFloat32Array( -0.14798, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.14798, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Node3D/Cube:position:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"points": PackedFloat32Array( -1.44139, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.44139, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Node3D/Cube:position:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"points": PackedFloat32Array( 0.00480027, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.00480027, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Node3D/Cube:rotation_degrees:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Node3D/Cube:rotation_degrees:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Node3D/Cube:rotation_degrees:z")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Node3D/Cube:scale:x")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"points": PackedFloat32Array( 0.436138, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.436138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Node3D/Cube:scale:y")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"points": PackedFloat32Array( 0.436138, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.436138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Node3D/Cube:scale:z")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"points": PackedFloat32Array( 0.436138, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0 )
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.436138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Node3D:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id="9"]
 resource_name = "in"
 length = 0.65
 step = 0.05
 tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Node3D/Cube:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"points": PackedFloat32Array( -0.14798, -0.25, 0, 0.25, 0, -0.0603909, -0.25, 0, 0.177015, -0.0250486, -0.187746, -0.172985, 0.0285994, 0.0760436, 0.00828251, -0.14798, -0.0739564, -0.0300666, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-0.14798, -0.25, 0, 0.25, 0, -0.0603909, -0.25, 0, 0.177015, -0.0250486, -0.187746, -0.172985, 0.0285994, 0.0760436, 0.00828251, -0.14798, -0.0739564, -0.0300666, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Node3D/Cube:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"points": PackedFloat32Array( -1.44139, -0.25, 0, 0.25, 0, 1.01058, -0.25, 0, 0.173195, 0.0180238, 0.734912, -0.126805, 0.064429, 0.0915989, 0.0218101, 0.890874, -0.158401, -0.0484245, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-1.44139, -0.25, 0, 0.25, 0, 1.01058, -0.25, 0, 0.173195, 0.0180238, 0.734912, -0.126805, 0.064429, 0.0915989, 0.0218101, 0.890874, -0.158401, -0.0484245, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Node3D/Cube:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"points": PackedFloat32Array( 0.00480027, -0.25, 0, 0.25, 0, 0.00480027, -0.25, 0, 0.25, 0, 0.00480027, -0.25, 0, 0.25, 0, 0.00480027, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.00480027, -0.25, 0, 0.25, 0, 0.00480027, -0.25, 0, 0.25, 0, 0.00480027, -0.25, 0, 0.25, 0, 0.00480027, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Node3D/Cube:rotation_degrees:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, 2.9472e-07, -0.25, 0, 0.25, 0, -2.64965e-07, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2.9472e-07, -0.25, 0, 0.25, 0, -2.64965e-07, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Node3D/Cube:rotation_degrees:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, -2.54806e-08, -0.25, 0, 0.25, 0, -1.62341e-08, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -2.54806e-08, -0.25, 0, 0.25, 0, -1.62341e-08, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Node3D/Cube:rotation_degrees:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, -9.85968, -0.25, 0, 0.25, 0, 6.1444, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -9.85968, -0.25, 0, 0.25, 0, 6.1444, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Node3D/Cube:scale:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"points": PackedFloat32Array( 0.436138, -0.25, 0, 0.25, 0, 0.438173, -0.25, 0, 0.25, 0, 0.43631, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.436138, -0.25, 0, 0.25, 0, 0.438173, -0.25, 0, 0.25, 0, 0.43631, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Node3D/Cube:scale:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"points": PackedFloat32Array( 0.436138, -0.25, 0, 0.25, 0, 0.525645, -0.25, 0, 0.25, 0, 0.352479, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.436138, -0.25, 0, 0.25, 0, 0.525645, -0.25, 0, 0.25, 0, 0.352479, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Node3D/Cube:scale:z")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"points": PackedFloat32Array( 0.436138, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0 ),
-"times": PackedFloat32Array( 0, 0.25, 0.45, 0.6 )
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.436138, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0, 0.436138, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.6)
 }
 tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Particles")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0.1 ),
-"transitions": PackedFloat32Array( 1 ),
-"values": [ {
-"args": [  ],
-"method": "restart"
-} ]
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Node3D:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0, 0.05 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("popup")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0.1 ),
-"transitions": PackedFloat32Array( 1 ),
-"values": [ {
-"args": [ 0.0 ],
-"method": "play"
-} ]
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
-[sub_resource type="AudioStreamRandomizer" id=17]
-audio_stream = ExtResource( 22 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eeebv"]
+_data = {
+&"RESET": SubResource("10"),
+&"in": SubResource("9")
+}
 
-[sub_resource type="SphereMesh" id=12]
-material = ExtResource( 9 )
+[sub_resource type="AudioStreamRandomizer" id="17"]
+
+[sub_resource type="SphereMesh" id="12"]
+material = ExtResource("9")
 radius = 0.2
 height = 0.4
 radial_segments = 8
 rings = 4
 
-[node name="npc_test" type="Area3D"]
-script = ExtResource( 1 )
-text = "TALK"
+[node name="npc_test" type="Area3D" unique_id=1208664994]
+script = ExtResource("1")
 shop_id = "sell_alt"
 cam_offset = NodePath("Marker3D")
+text = "TALK"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource( 8 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1952154144]
+shape = SubResource("8")
 
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D( 0.846435, -0.0760592, 0.527032, 0, 0.989747, 0.142836, -0.532492, -0.120902, 0.837756, 0.374, 0.063, 2.7 )
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1417470306]
+transform = Transform3D(0.846435, -0.0760592, 0.527032, 0, 0.989747, 0.142836, -0.532492, -0.120902, 0.837756, 0.374, 0.063, 2.7)
 
-[node name="npc_baitsell" type="Node3D" parent="."]
-transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1, 0 )
-script = ExtResource( 16 )
+[node name="npc_baitsell" type="Node3D" parent="." unique_id=1786991774]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1, 0)
+script = ExtResource("16")
 
-[node name="Icosphere" type="MeshInstance3D" parent="npc_baitsell"]
-transform = Transform3D( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 9 )
-material/1 = ExtResource( 10 )
+[node name="Icosphere" type="MeshInstance3D" parent="npc_baitsell" unique_id=660467526]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+mesh = SubResource("1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="npc_baitsell/Icosphere"]
-transform = Transform3D( -1.99979e-08, 0, -1.43776, 0, 1.43776, 0, 1.43776, 0, -1.99979e-08, 1.16389, 1.38928, 5.08753e-08 )
-mesh = SubResource( 15 )
-material/0 = SubResource( 16 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="npc_baitsell/Icosphere" unique_id=1321001789]
+transform = Transform3D(-1.99979e-08, 0, -1.43776, 0, 1.43776, 0, 1.43776, 0, -1.99979e-08, 1.16389, 1.38928, 5.08753e-08)
+mesh = SubResource("15")
 
-[node name="Node3D" type="Node3D" parent="npc_baitsell"]
-transform = Transform3D( -0.1306, 0, -1.14174e-08, 0, 0.1306, 0, 1.14174e-08, 0, -0.1306, 0, 0.239774, 0 )
+[node name="Node3D" type="Node3D" parent="npc_baitsell" unique_id=1189003660]
+transform = Transform3D(-0.1306, 0, -1.14174e-08, 0, 0.1306, 0, 1.14174e-08, 0, -0.1306, 0, 0.239774, 0)
 visible = false
 
-[node name="Cube" type="MeshInstance3D" parent="npc_baitsell/Node3D"]
-transform = Transform3D( 0.436138, 0, 0, 0, 0.436138, 0, 0, 0, 0.436138, -0.14798, -1.44139, 0.00480027 )
-mesh = ExtResource( 2 )
+[node name="Cube" type="MeshInstance3D" parent="npc_baitsell/Node3D" unique_id=1576211796]
+transform = Transform3D(0.436138, 0, 0, 0, 0.436138, 0, 0, 0, 0.436138, -0.14798, -1.44139, 0.00480027)
+mesh = ExtResource("2")
 skeleton = NodePath("../..")
-material/0 = ExtResource( 3 )
-material/1 = ExtResource( 6 )
-material/2 = ExtResource( 8 )
-material/3 = ExtResource( 7 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="npc_baitsell"]
-anims/RESET = SubResource( 10 )
-anims/in = SubResource( 9 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="npc_baitsell" unique_id=1324220158]
+libraries/ = SubResource("AnimationLibrary_eeebv")
 
-[node name="popup" type="AudioStreamPlayer3D" parent="npc_baitsell"]
-transform = Transform3D( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.849238, 0 )
-stream = SubResource( 17 )
+[node name="popup" type="AudioStreamPlayer3D" parent="npc_baitsell" unique_id=394743016]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.849238, 0)
+stream = SubResource("17")
 unit_size = 5.0
 max_db = -16.0
 max_distance = 85.0
 
-[node name="Particles" type="Particles" parent="npc_baitsell"]
+[node name="Particles" type="GPUParticles3D" parent="npc_baitsell" unique_id=1150539140]
 emitting = false
 amount = 16
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.18
-process_material = ExtResource( 21 )
-draw_pass_1 = SubResource( 12 )
+process_material = ExtResource("21")
+draw_pass_1 = SubResource("12")
 
 [connection signal="_close" from="." to="npc_baitsell" method="_close"]
 [connection signal="_open" from="." to="npc_baitsell" method="_open"]

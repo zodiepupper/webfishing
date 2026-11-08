@@ -1,10 +1,9 @@
-[gd_scene format=2]
+[gd_scene format=3 uid="uid://dqf13ya7joloh"]
 
-[node name="Label" type="Label"]
+[node name="Label" type="Label" unique_id=1493528239]
+custom_minimum_size = Vector2(92, 92)
 offset_right = 40.0
 offset_bottom = 14.0
-custom_minimum_size = Vector2( 92, 92 )
 text = "and 1 more..."
-align = 1
-valign = 2
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 2

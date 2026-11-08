@@ -1,68 +1,74 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene format=3 uid="uid://bidb84wrm2q3h"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/Singletons/OptionsMenu/options_menu.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=3]
-[ext_resource path="res://Scenes/Singletons/OptionsMenu/input_remap_button.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=6]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="Script" uid="uid://cwgklgiadj8a6" path="res://Scenes/Singletons/OptionsMenu/options_menu.gd" id="2"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_med.tres" id="3"]
+[ext_resource type="Script" uid="uid://vy1y7btodn0e" path="res://Scenes/Singletons/OptionsMenu/input_remap_button.gd" id="4"]
+[ext_resource type="Script" uid="uid://cd5dpm1u0dx44" path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" id="5"]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="6"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id="2"]
 
-[node name="options_menu" type="CanvasLayer"]
+[node name="options_menu" type="CanvasLayer" unique_id=913736867]
 layer = 50
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=599550863]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
+theme = ExtResource("1")
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1522984822]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 0.313726 )
+color = Color(0.0627451, 0.109804, 0.192157, 0.313726)
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Control" unique_id=1282219920]
+layout_mode = 0
 anchor_left = 0.3
 anchor_top = 0.2
 anchor_right = 0.7
 anchor_bottom = 0.8
 
-[node name="buttons" type="Control" parent="Control/Panel"]
+[node name="buttons" type="Control" parent="Control/Panel" unique_id=1036688908]
 show_behind_parent = true
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Panel" type="Panel" parent="Control/Panel/buttons"]
+[node name="Panel" type="Panel" parent="Control/Panel/buttons" unique_id=1972620712]
 show_behind_parent = true
+layout_mode = 0
 anchor_top = -0.06
 anchor_right = 0.161736
 anchor_bottom = 0.125
 offset_top = -0.119999
 offset_right = -0.320007
 offset_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Label" type="Label" parent="Control/Panel/buttons/Panel"]
+[node name="Label" type="Label" parent="Control/Panel/buttons/Panel" unique_id=948128065]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.281
 offset_bottom = -0.00100327
 text = "Main"
-align = 1
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/Panel/buttons/Panel"]
+[node name="Button" type="Button" parent="Control/Panel/buttons/Panel" unique_id=421767819]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.617
 flat = true
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="Panel2" type="Panel" parent="Control/Panel/buttons"]
+[node name="Panel2" type="Panel" parent="Control/Panel/buttons" unique_id=487962644]
 show_behind_parent = true
+layout_mode = 0
 anchor_left = 0.161458
 anchor_top = -0.06
 anchor_right = 0.323194
@@ -70,25 +76,25 @@ anchor_bottom = 0.125
 offset_top = -0.119999
 offset_right = -0.320007
 offset_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Label" type="Label" parent="Control/Panel/buttons/Panel2"]
+[node name="Label" type="Label" parent="Control/Panel/buttons/Panel2" unique_id=757423339]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.281
 offset_bottom = -0.00100327
 text = "Controls"
-align = 1
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/Panel/buttons/Panel2"]
+[node name="Button" type="Button" parent="Control/Panel/buttons/Panel2" unique_id=366471952]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.617
 flat = true
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="Panel3" type="Panel" parent="Control/Panel/buttons"]
+[node name="Panel3" type="Panel" parent="Control/Panel/buttons" unique_id=1164699775]
 show_behind_parent = true
+layout_mode = 0
 anchor_left = 0.322917
 anchor_top = -0.06
 anchor_right = 0.484653
@@ -96,1263 +102,1009 @@ anchor_bottom = 0.125
 offset_top = -0.119999
 offset_right = -0.320007
 offset_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Label" type="Label" parent="Control/Panel/buttons/Panel3"]
+[node name="Label" type="Label" parent="Control/Panel/buttons/Panel3" unique_id=1008200321]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.281
 offset_bottom = -0.00100327
 text = "Misc
 "
-align = 1
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/Panel/buttons/Panel3"]
+[node name="Button" type="Button" parent="Control/Panel/buttons/Panel3" unique_id=1458655467]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.617
 flat = true
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="Panel" type="Panel" parent="Control/Panel"]
+[node name="Panel" type="Panel" parent="Control/Panel" unique_id=159069578]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 
-[node name="tabs_main" type="Control" parent="Control/Panel"]
+[node name="tabs_main" type="Control" parent="Control/Panel" unique_id=269032914]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="main" type="Control" parent="Control/Panel/tabs_main"]
+[node name="main" type="Control" parent="Control/Panel/tabs_main" unique_id=1405966554]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/tabs_main/main"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/tabs_main/main" unique_id=1583014141]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
 offset_top = 32.0
 offset_right = -32.0
 offset_bottom = -32.0
-__meta__ = {
-"_editor_description_": "	"
-}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer"]
-offset_right = 692.0
-offset_bottom = 1028.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer" unique_id=1865045355]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VSeparator" type="VSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer"]
-offset_right = 6.0
-offset_bottom = 1028.0
+[node name="VSeparator" type="VSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer" unique_id=1662119203]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer"]
-offset_left = 10.0
-offset_right = 682.0
-offset_bottom = 1028.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer" unique_id=190548546]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="resolution" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="resolution" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=494251664]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resolution"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resolution" unique_id=1283297766]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Display Resolution: "
 
-[node name="res" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resolution"]
+[node name="res" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resolution" unique_id=1395235183]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-text = "resolution"
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="fullscreen" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 38.0
-offset_right = 672.0
-offset_bottom = 72.0
+[node name="fullscreen" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1786272101]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fullscreen"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fullscreen" unique_id=1458498257]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Fullscreen: "
 
-[node name="fs" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fullscreen"]
+[node name="fs" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fullscreen" unique_id=585146179]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="vsync" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 76.0
-offset_right = 672.0
-offset_bottom = 110.0
+[node name="vsync" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1898244362]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/vsync"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/vsync" unique_id=1503797303]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Vsync: "
 
-[node name="vync" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/vsync"]
+[node name="vync" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/vsync" unique_id=825610419]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="resizeable" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 114.0
-offset_right = 672.0
-offset_bottom = 148.0
+[node name="resizeable" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=427984089]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resizeable"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resizeable" unique_id=536567521]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Resizable Window: "
 
-[node name="resizeable" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resizeable"]
+[node name="resizeable" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/resizeable" unique_id=1442239124]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="fps_limit" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 152.0
-offset_right = 672.0
-offset_bottom = 186.0
+[node name="fps_limit" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=110232651]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fps_limit"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fps_limit" unique_id=1506405965]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "FPS Limit: "
 
-[node name="fpslmit" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fps_limit"]
+[node name="fpslmit" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/fps_limit" unique_id=741332011]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="water_quality" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 190.0
-offset_right = 672.0
-offset_bottom = 224.0
+[node name="water_quality" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1800021918]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/water_quality"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/water_quality" unique_id=844936564]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Water Quality: "
 
-[node name="waterq" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/water_quality"]
+[node name="waterq" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/water_quality" unique_id=1058995914]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-text = "water qual"
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="view_distance" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 228.0
-offset_right = 672.0
-offset_bottom = 262.0
+[node name="view_distance" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1421597779]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/view_distance"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/view_distance" unique_id=136855405]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "View Distance:"
 
-[node name="viewd" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/view_distance"]
+[node name="viewd" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/view_distance" unique_id=1613900868]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="pixel_amount" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 266.0
-offset_right = 672.0
-offset_bottom = 300.0
+[node name="pixel_amount" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1650605263]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/pixel_amount"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/pixel_amount" unique_id=1740295884]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Pixelization: "
 
-[node name="pixel" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/pixel_amount"]
+[node name="pixel" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/pixel_amount" unique_id=827465295]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="HSeparator" type="HSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 304.0
-offset_right = 672.0
-offset_bottom = 320.0
+[node name="HSeparator" type="HSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=162083591]
+layout_mode = 2
 theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource( 2 )
+theme_override_styles/separator = SubResource("2")
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 324.0
-offset_right = 672.0
-offset_bottom = 358.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1078697793]
+layout_mode = 2
 text = "Audio Settings"
-valign = 2
+vertical_alignment = 2
 
-[node name="main_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 362.0
-offset_right = 672.0
-offset_bottom = 422.0
+[node name="main_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=782739026]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol"]
-offset_top = 13.0
-offset_right = 334.0
-offset_bottom = 47.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol" unique_id=949514003]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Master Volume: "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol"]
-offset_left = 338.0
-offset_right = 672.0
-offset_bottom = 60.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol" unique_id=1643241543]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = -6
 
-[node name="main_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol/VBoxContainer"]
+[node name="main_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol/VBoxContainer" unique_id=1912813189]
 unique_name_in_owner = true
-offset_right = 334.0
-offset_bottom = 34.0
+layout_mode = 2
 text = "100%"
-align = 2
+horizontal_alignment = 2
 
-[node name="main_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol/VBoxContainer"]
+[node name="main_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol/VBoxContainer" unique_id=206453601]
 unique_name_in_owner = true
-offset_top = 28.0
-offset_right = 334.0
-offset_bottom = 60.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 max_value = 2.0
 step = 0.01
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="sfx_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 426.0
-offset_right = 672.0
-offset_bottom = 486.0
+[node name="sfx_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1253198024]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol"]
-offset_top = 13.0
-offset_right = 334.0
-offset_bottom = 47.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol" unique_id=235270673]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Sound Effect Volume: "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol"]
-offset_left = 338.0
-offset_right = 672.0
-offset_bottom = 60.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol" unique_id=93262422]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = -6
 
-[node name="sfx_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol/VBoxContainer"]
+[node name="sfx_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol/VBoxContainer" unique_id=853341958]
 unique_name_in_owner = true
-offset_right = 334.0
-offset_bottom = 34.0
+layout_mode = 2
 text = "100%"
-align = 2
+horizontal_alignment = 2
 
-[node name="sfx_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol/VBoxContainer"]
+[node name="sfx_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol/VBoxContainer" unique_id=572749051]
 unique_name_in_owner = true
-offset_top = 28.0
-offset_right = 334.0
-offset_bottom = 60.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 max_value = 2.0
 step = 0.01
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="muc_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 490.0
-offset_right = 672.0
-offset_bottom = 550.0
+[node name="muc_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=105880289]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol"]
-offset_top = 13.0
-offset_right = 334.0
-offset_bottom = 47.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol" unique_id=2052212580]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Music Volume: "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol"]
-offset_left = 338.0
-offset_right = 672.0
-offset_bottom = 60.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol" unique_id=1583403444]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = -6
 
-[node name="music_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol/VBoxContainer"]
+[node name="music_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol/VBoxContainer" unique_id=1491461210]
 unique_name_in_owner = true
-offset_right = 334.0
-offset_bottom = 34.0
+layout_mode = 2
 text = "100%"
-align = 2
+horizontal_alignment = 2
 
-[node name="music_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol/VBoxContainer"]
+[node name="music_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol/VBoxContainer" unique_id=1590237665]
 unique_name_in_owner = true
-offset_top = 28.0
-offset_right = 334.0
-offset_bottom = 60.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 max_value = 2.0
 step = 0.01
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="ins_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 554.0
-offset_right = 672.0
-offset_bottom = 614.0
+[node name="ins_vol" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=614969083]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol"]
-offset_top = 13.0
-offset_right = 334.0
-offset_bottom = 47.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol" unique_id=2083360514]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Instrument Volume: "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol"]
-offset_left = 338.0
-offset_right = 672.0
-offset_bottom = 60.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol" unique_id=1587526215]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = -6
 
-[node name="ins_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol/VBoxContainer"]
+[node name="ins_label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol/VBoxContainer" unique_id=1638652703]
 unique_name_in_owner = true
-offset_right = 334.0
-offset_bottom = 34.0
+layout_mode = 2
 text = "100%"
-align = 2
+horizontal_alignment = 2
 
-[node name="ins_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol/VBoxContainer"]
+[node name="ins_vol" type="HSlider" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/ins_vol/VBoxContainer" unique_id=1056406207]
 unique_name_in_owner = true
-offset_top = 28.0
-offset_right = 334.0
-offset_bottom = 60.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 max_value = 2.0
 step = 0.01
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="HSeparator2" type="HSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 618.0
-offset_right = 672.0
-offset_bottom = 634.0
+[node name="HSeparator2" type="HSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=602923655]
+layout_mode = 2
 theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource( 2 )
+theme_override_styles/separator = SubResource("2")
 
-[node name="Label2" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 638.0
-offset_right = 672.0
-offset_bottom = 672.0
+[node name="Label2" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1762354772]
+layout_mode = 2
 text = "Safety / Accessibility"
-valign = 2
+vertical_alignment = 2
 
-[node name="punchable" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 676.0
-offset_right = 672.0
-offset_bottom = 710.0
+[node name="punchable" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1745690567]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/punchable"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/punchable" unique_id=275136833]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Griefable: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/punchable/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/punchable/Label" unique_id=1979659294]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Griefable"
 body = "Allows or Disallows being affected, punched, or knocked around by other players."
 
-[node name="punchable" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/punchable"]
+[node name="punchable" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/punchable" unique_id=937934494]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="sprint_toggle" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 714.0
-offset_right = 672.0
-offset_bottom = 748.0
+[node name="sprint_toggle" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=524850143]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sprint_toggle"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sprint_toggle" unique_id=1969413492]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Toggle Sprint: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sprint_toggle/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sprint_toggle/Label" unique_id=886258563]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Sprint Toggle"
 body = " Permanantly toggles sprint when pressing the sprint key, instead of on-hold."
 
-[node name="sprint_toggle" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sprint_toggle"]
+[node name="sprint_toggle" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sprint_toggle" unique_id=1319181478]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="disable_chalk" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 752.0
-offset_right = 672.0
-offset_bottom = 786.0
+[node name="disable_chalk" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1445943365]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/disable_chalk"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/disable_chalk" unique_id=827750760]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Disable Chalk: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/disable_chalk/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/disable_chalk/Label" unique_id=2019760155]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Disable Chalk"
 body = "Hides all Chalk drawing zones."
 
-[node name="disable_chalk" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/disable_chalk"]
+[node name="disable_chalk" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/disable_chalk" unique_id=1633447660]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="chat_filter" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 790.0
-offset_right = 672.0
-offset_bottom = 824.0
+[node name="chat_filter" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=913079442]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/chat_filter"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/chat_filter" unique_id=2124669929]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Chat Filter: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/chat_filter/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/chat_filter/Label" unique_id=548001688]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Chat Filter"
 body = "Adds a rudimentary chat filter to the game, preventing some words from appearing in the chat or in bubbles."
 
-[node name="chat_filter" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/chat_filter"]
+[node name="chat_filter" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/chat_filter" unique_id=1513261875]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="catch_bell" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 828.0
-offset_right = 672.0
-offset_bottom = 862.0
+[node name="catch_bell" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=908629377]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/catch_bell"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/catch_bell" unique_id=1630527459]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Catch Bell: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/catch_bell/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/catch_bell/Label" unique_id=1849785104]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Catch Bell"
 body = "Makes a brief ringing sound upon catching a fish."
 
-[node name="catch_bell" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/catch_bell"]
+[node name="catch_bell" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/catch_bell" unique_id=790282977]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="mail_close" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 866.0
-offset_right = 672.0
-offset_bottom = 900.0
+[node name="mail_close" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1180613797]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/mail_close"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/mail_close" unique_id=644875472]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Close Mailbox: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/mail_close/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/mail_close/Label" unique_id=1064116643]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Close Mailbox"
 body = "Automatically denies all letters when they enter your inbox."
 
-[node name="mail_close" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/mail_close"]
+[node name="mail_close" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/mail_close" unique_id=794522228]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="autoclick" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 904.0
-offset_right = 672.0
-offset_bottom = 938.0
+[node name="autoclick" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1958287136]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/autoclick"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/autoclick" unique_id=1397019012]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Autoclick: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/autoclick/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/autoclick/Label" unique_id=1466615098]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Autoclick"
 body = "[The game is NOT intended to be played with this active.]
 An accessibility feature which rapidly destroys the barriers automatically during the fishing minigame. "
 
-[node name="autoclick" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/autoclick"]
+[node name="autoclick" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/autoclick" unique_id=371501814]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="alternate_font" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 942.0
-offset_right = 672.0
-offset_bottom = 976.0
+[node name="alternate_font" type="HBoxContainer" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=529776907]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/alternate_font"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/alternate_font" unique_id=634347266]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Alternate Font: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/alternate_font/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/alternate_font/Label" unique_id=738780493]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Alternate Font"
 body = "Swap all fonts in the game to an alternate font. 
 (Note: Non-English characters are still not supported 100% fully.)"
 
-[node name="altfont" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/alternate_font"]
+[node name="altfont" type="OptionButton" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/alternate_font" unique_id=2053963877]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
-script = ExtResource( 5 )
+script = ExtResource("5")
 
-[node name="HSeparator3" type="HSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 980.0
-offset_right = 672.0
-offset_bottom = 1028.0
+[node name="HSeparator3" type="HSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1823393031]
+layout_mode = 2
 theme_override_constants/separation = 48
-theme_override_styles/separator = SubResource( 2 )
+theme_override_styles/separator = SubResource("2")
 
-[node name="VSeparator2" type="VSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer"]
-offset_left = 686.0
-offset_right = 692.0
-offset_bottom = 1028.0
+[node name="VSeparator2" type="VSeparator" parent="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer" unique_id=57924531]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="control" type="Control" parent="Control/Panel/tabs_main"]
+[node name="control" type="Control" parent="Control/Panel/tabs_main" unique_id=1161923291]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/tabs_main/control"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/tabs_main/control" unique_id=1798994712]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.964
 offset_left = 32.0
 offset_top = 32.0
 offset_right = -32.0
 offset_bottom = -32.0
-__meta__ = {
-"_editor_description_": "	"
-}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer"]
-offset_right = 704.0
-offset_bottom = 916.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer" unique_id=314062594]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VSeparator" type="VSeparator" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer"]
-offset_right = 6.0
-offset_bottom = 916.0
+[node name="VSeparator" type="VSeparator" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer" unique_id=1556806465]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer"]
-offset_left = 10.0
-offset_right = 682.0
-offset_bottom = 916.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer" unique_id=298411232]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="sens" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_right = 672.0
-offset_bottom = 60.0
+[node name="sens" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1783508350]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens"]
-offset_top = 13.0
-offset_right = 334.0
-offset_bottom = 47.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens" unique_id=1179525428]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Look Sensitivity: "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens"]
-offset_left = 338.0
-offset_right = 672.0
-offset_bottom = 60.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens" unique_id=432565124]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = -6
 
-[node name="sens_label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens/VBoxContainer"]
+[node name="sens_label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens/VBoxContainer" unique_id=198317412]
 unique_name_in_owner = true
-offset_right = 334.0
-offset_bottom = 34.0
+layout_mode = 2
 text = "100%"
-align = 2
+horizontal_alignment = 2
 
-[node name="sens_val" type="HSlider" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens/VBoxContainer"]
+[node name="sens_val" type="HSlider" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/sens/VBoxContainer" unique_id=2031587699]
 unique_name_in_owner = true
-offset_top = 28.0
-offset_right = 334.0
-offset_bottom = 60.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 min_value = 1.0
 value = 1.0
 
-[node name="invert" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 64.0
-offset_right = 672.0
-offset_bottom = 98.0
+[node name="invert" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=323979637]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/invert"]
-offset_right = 381.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/invert" unique_id=1306093693]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Invert Mouse: "
 
-[node name="invert" type="OptionButton" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/invert"]
+[node name="invert" type="OptionButton" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/invert" unique_id=25657164]
 unique_name_in_owner = true
-offset_left = 385.0
-offset_right = 672.0
-offset_bottom = 34.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
 
-[node name="HSeparator" type="HSeparator" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 102.0
-offset_right = 672.0
-offset_bottom = 118.0
+[node name="HSeparator" type="HSeparator" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1019602734]
+layout_mode = 2
 theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource( 2 )
+theme_override_styles/separator = SubResource("2")
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 122.0
-offset_right = 672.0
-offset_bottom = 156.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1349152134]
+layout_mode = 2
 text = "Input Remapping"
 
-[node name="input_forward" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 160.0
-offset_right = 672.0
-offset_bottom = 194.0
+[node name="input_forward" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1663594982]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_forward"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_forward" unique_id=1130780797]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Move Forward: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_forward"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_forward" unique_id=152368817]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 
-[node name="input_back" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 198.0
-offset_right = 672.0
-offset_bottom = 232.0
+[node name="input_back" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=79902469]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_back"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_back" unique_id=1722032579]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Move Backwards: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_back"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_back" unique_id=1284321427]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_back"
 
-[node name="input_right" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 236.0
-offset_right = 672.0
-offset_bottom = 270.0
+[node name="input_right" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=860573460]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_right"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_right" unique_id=1411592125]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Move Right: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_right"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_right" unique_id=613136046]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_right"
 
-[node name="input_left" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 274.0
-offset_right = 672.0
-offset_bottom = 308.0
+[node name="input_left" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1266463530]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_left"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_left" unique_id=518271759]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Move Left: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_left"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_left" unique_id=1254972934]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_left"
 
-[node name="input_sprint" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 312.0
-offset_right = 672.0
-offset_bottom = 346.0
+[node name="input_sprint" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2110934679]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sprint"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sprint" unique_id=401465310]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Sprint: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sprint"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sprint" unique_id=333779892]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_sprint"
 
-[node name="input_jump" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 350.0
-offset_right = 672.0
-offset_bottom = 384.0
+[node name="input_jump" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1441118274]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_jump"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_jump" unique_id=1445946930]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Jump/Dive/Get Up: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_jump"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_jump" unique_id=1451736688]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_jump"
 
-[node name="input_sneak" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 388.0
-offset_right = 672.0
-offset_bottom = 422.0
+[node name="input_sneak" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1438264672]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sneak"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sneak" unique_id=687275221]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Sneak: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sneak"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_sneak" unique_id=1492043483]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_sneak"
 
-[node name="input_walk" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 426.0
-offset_right = 672.0
-offset_bottom = 460.0
+[node name="input_walk" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1524497159]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_walk"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_walk" unique_id=1641541568]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Slow Walk: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_walk"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_walk" unique_id=1219569660]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_walk"
 
-[node name="input_interact" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 464.0
-offset_right = 672.0
-offset_bottom = 498.0
+[node name="input_interact" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1014100313]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_interact"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_interact" unique_id=1176502632]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Interact: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_interact"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_interact" unique_id=1704481468]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "interact"
 
-[node name="input_menu_open" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 502.0
-offset_right = 672.0
-offset_bottom = 536.0
+[node name="input_menu_open" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=410106913]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_menu_open"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_menu_open" unique_id=204664373]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Open Backpack: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_menu_open"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_menu_open" unique_id=201402378]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "menu_open"
 
-[node name="input_emote" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 540.0
-offset_right = 672.0
-offset_bottom = 574.0
+[node name="input_emote" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=853514865]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_emote"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_emote" unique_id=2113549926]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Open Emotes: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_emote"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_emote" unique_id=1330401836]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "emote_wheel"
 
-[node name="input_bait_menu" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 578.0
-offset_right = 672.0
-offset_bottom = 612.0
+[node name="input_bait_menu" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=275532016]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bait_menu"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bait_menu" unique_id=1121064492]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Open Tacklebox: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bait_menu"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bait_menu" unique_id=1347920760]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "bait_menu"
 
-[node name="input_prop_menu" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 616.0
-offset_right = 672.0
-offset_bottom = 650.0
+[node name="input_prop_menu" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=880010231]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_prop_menu"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_prop_menu" unique_id=1554732725]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Open Props: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_prop_menu"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_prop_menu" unique_id=1133798375]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "build"
 
-[node name="input_cam_move" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 654.0
-offset_right = 672.0
-offset_bottom = 688.0
+[node name="input_cam_move" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1086482463]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_cam_move"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_cam_move" unique_id=1513480782]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Toggle Free Camera3D: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_cam_move"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_cam_move" unique_id=632973978]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "cam_move"
 
-[node name="input_hudhide" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 692.0
-offset_right = 672.0
-offset_bottom = 726.0
+[node name="input_hudhide" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=856379184]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_hudhide"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_hudhide" unique_id=1463036140]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Toggle HUD: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_hudhide"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_hudhide" unique_id=1199722770]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "hide_hud"
 
-[node name="input_fly_up" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 730.0
-offset_right = 672.0
-offset_bottom = 764.0
+[node name="input_fly_up" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=908607969]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_up"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_up" unique_id=468899401]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Fly Up: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_up"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_up" unique_id=749558259]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_up"
 
-[node name="input_fly_down" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 768.0
-offset_right = 672.0
-offset_bottom = 802.0
+[node name="input_fly_down" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2061161250]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_down"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_down" unique_id=1980729748]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Fly Down: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_down"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_fly_down" unique_id=113423117]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "move_down"
 
-[node name="input_bark" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 806.0
-offset_right = 672.0
-offset_bottom = 840.0
+[node name="input_bark" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=2087690794]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bark"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bark" unique_id=465299882]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Bark/Meow: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bark"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_bark" unique_id=700099149]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "bark"
 
-[node name="input_kiss" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 844.0
-offset_right = 672.0
-offset_bottom = 878.0
+[node name="input_kiss" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1681200654]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_kiss"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_kiss" unique_id=491598361]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Kiss: "
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_kiss"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_kiss" unique_id=1361785684]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "kiss"
 
-[node name="input_primary" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_top = 882.0
-offset_right = 672.0
-offset_bottom = 916.0
+[node name="input_primary" type="HBoxContainer" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=376734781]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_primary"]
-offset_right = 494.0
-offset_bottom = 34.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_primary" unique_id=1765497413]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Alt Fishing Bind: "
 
-[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_primary/Label"]
+[node name="TooltipNode" type="Control" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_primary/Label" unique_id=977203413]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource("6")
 header = "Alt Fishing Bind"
 body = "Alternate button for use during the Fishing Minigame."
 
-[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_primary"]
-offset_left = 498.0
-offset_right = 672.0
-offset_bottom = 34.0
+[node name="input_forward" type="Button" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer/VBoxContainer/input_primary" unique_id=1958332298]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 toggle_mode = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 action = "alt_primary"
 
-[node name="VSeparator2" type="VSeparator" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer"]
-offset_left = 686.0
-offset_right = 692.0
-offset_bottom = 916.0
+[node name="VSeparator2" type="VSeparator" parent="Control/Panel/tabs_main/control/ScrollContainer/HBoxContainer" unique_id=984060091]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="misc" type="Control" parent="Control/Panel/tabs_main"]
+[node name="misc" type="Control" parent="Control/Panel/tabs_main" unique_id=282850675]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/tabs_main/misc"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/tabs_main/misc" unique_id=798639465]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
 offset_top = 32.0
 offset_right = -32.0
 offset_bottom = -32.0
-__meta__ = {
-"_editor_description_": "	"
-}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/tabs_main/misc/ScrollContainer"]
-offset_right = 715.0
-offset_bottom = 584.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/tabs_main/misc/ScrollContainer" unique_id=1395125532]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VSeparator" type="VSeparator" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer"]
-offset_right = 6.0
-offset_bottom = 584.0
+[node name="VSeparator" type="VSeparator" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer" unique_id=1841255081]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer"]
-offset_left = 10.0
-offset_right = 705.0
-offset_bottom = 584.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer" unique_id=2012106153]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer/VBoxContainer"]
-offset_right = 695.0
-offset_bottom = 552.0
+[node name="Label" type="Label" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1347614434]
+layout_mode = 2
 text = "Credits:
 
 Some Fish/Face Sprites: @zucchinifuzz
@@ -1369,28 +1121,25 @@ Royalty Free Boombox Music: Kevin MacLeod (incompetech.com)
 Everything Else: west, AKA lamedev
 @westthewerst"
 
-[node name="VSeparator2" type="VSeparator" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer"]
-offset_left = 709.0
-offset_right = 715.0
-offset_bottom = 584.0
+[node name="VSeparator2" type="VSeparator" parent="Control/Panel/tabs_main/misc/ScrollContainer/HBoxContainer" unique_id=13052561]
+layout_mode = 2
 theme_override_constants/separation = 6
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="close" type="Button" parent="Control/Panel"]
+[node name="close" type="Button" parent="Control/Panel" unique_id=879042775]
+layout_mode = 0
 anchor_left = 0.898438
 anchor_top = -0.0493827
 anchor_right = 1.03507
 anchor_bottom = 0.0319382
 offset_right = 0.0640259
 offset_bottom = 0.304016
-pivot_offset = Vector2( 243, 71 )
+pivot_offset = Vector2(243, 71)
 text = "Close"
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel" unique_id=1606173151]
+layout_mode = 0
 anchor_left = 0.307292
 anchor_top = 0.927469
 anchor_right = 1.03117
@@ -1399,69 +1148,62 @@ offset_right = 0.0639992
 offset_bottom = -0.176003
 theme_override_constants/separation = 13
 alignment = 2
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="reset" type="Button" parent="Control/Panel/HBoxContainer"]
-offset_right = 218.0
-offset_bottom = 73.0
-pivot_offset = Vector2( 243, 71 )
+[node name="reset" type="Button" parent="Control/Panel/HBoxContainer" unique_id=555807918]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset To Default"
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("5")
 
-[node name="apply" type="Button" parent="Control/Panel/HBoxContainer"]
-offset_left = 231.0
-offset_right = 556.0
-offset_bottom = 73.0
-pivot_offset = Vector2( 243, 71 )
+[node name="apply" type="Button" parent="Control/Panel/HBoxContainer" unique_id=1584017212]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.49
 text = "Confirm and Apply Changes"
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("5")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="Control" unique_id=859317955]
 visible = false
+layout_mode = 0
 anchor_top = 0.881
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -34.0
-theme_override_colors/font_color = Color( 1, 0, 0.192157, 1 )
+theme_override_colors/font_color = Color(1, 0, 0.192157, 1)
 text = "Some changes require a restart to work properly."
-align = 1
+horizontal_alignment = 1
 
-[node name="confirm_screen" type="Control" parent="."]
+[node name="confirm_screen" type="Control" parent="." unique_id=1972048026]
 visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
+theme = ExtResource("1")
 
-[node name="ColorRect2" type="ColorRect" parent="confirm_screen"]
+[node name="ColorRect2" type="ColorRect" parent="confirm_screen" unique_id=540815044]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0627451, 0.109804, 0.192157, 0.313726 )
+color = Color(0.0627451, 0.109804, 0.192157, 0.313726)
 
-[node name="Panel" type="Panel" parent="confirm_screen"]
+[node name="Panel" type="Panel" parent="confirm_screen" unique_id=217300361]
+layout_mode = 0
 anchor_left = 0.35
 anchor_top = 0.35
 anchor_right = 0.65
 anchor_bottom = 0.65
 
-[node name="Label" type="Label" parent="confirm_screen/Panel"]
+[node name="Label" type="Label" parent="confirm_screen/Panel" unique_id=256837646]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.75
 text = "Confirm Resolution Changes?"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="confirm_screen/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="confirm_screen/Panel" unique_id=941030006]
+layout_mode = 0
 anchor_left = 0.2
 anchor_top = 0.72
 anchor_right = 0.8
@@ -1471,27 +1213,24 @@ offset_top = -40.0
 offset_right = 20.0
 theme_override_constants/separation = 24
 
-[node name="Button" type="Button" parent="confirm_screen/Panel/HBoxContainer"]
-offset_right = 180.0
-offset_bottom = 72.0
+[node name="Button" type="Button" parent="confirm_screen/Panel/HBoxContainer" unique_id=1007231538]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "DENY"
 
-[node name="Button2" type="Button" parent="confirm_screen/Panel/HBoxContainer"]
-offset_left = 204.0
-offset_right = 385.0
-offset_bottom = 72.0
+[node name="Button2" type="Button" parent="confirm_screen/Panel/HBoxContainer" unique_id=1145300024]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "CONFIRM"
 
-[node name="Timer" type="Timer" parent="confirm_screen"]
+[node name="Timer" type="Timer" parent="confirm_screen" unique_id=435904961]
 autostart = true
 
-[connection signal="pressed" from="Control/Panel/buttons/Panel/Button" to="." method="_open_tab" binds= [ 0 ]]
-[connection signal="pressed" from="Control/Panel/buttons/Panel2/Button" to="." method="_open_tab" binds= [ 1 ]]
-[connection signal="pressed" from="Control/Panel/buttons/Panel3/Button" to="." method="_open_tab" binds= [ 2 ]]
+[connection signal="pressed" from="Control/Panel/buttons/Panel/Button" to="." method="_open_tab" binds= [0]]
+[connection signal="pressed" from="Control/Panel/buttons/Panel2/Button" to="." method="_open_tab" binds= [1]]
+[connection signal="pressed" from="Control/Panel/buttons/Panel3/Button" to="." method="_open_tab" binds= [2]]
 [connection signal="value_changed" from="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/main_vol/VBoxContainer/main_vol" to="." method="_on_main_vol_value_changed"]
 [connection signal="value_changed" from="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/sfx_vol/VBoxContainer/sfx_vol" to="." method="_on_sfx_vol_value_changed"]
 [connection signal="value_changed" from="Control/Panel/tabs_main/main/ScrollContainer/HBoxContainer/VBoxContainer/muc_vol/VBoxContainer/music_vol" to="." method="_on_music_vol_value_changed"]

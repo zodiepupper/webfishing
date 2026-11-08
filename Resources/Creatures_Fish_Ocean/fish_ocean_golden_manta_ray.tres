@@ -1,39 +1,22 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://bbkt8fmhklh4w"]
 
-[ext_resource path="res://Resources/Scripts/item_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/Creatures/creature_main76.png" type="Texture2D" id=2]
+[ext_resource type="Script" uid="uid://bwji7dkj1474s" path="res://Resources/Scripts/item_resource.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://clev0nr2hdts0" path="res://Assets/Textures/Creatures/creature_main76.png" id="2"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 item_name = "Golden Manta Ray"
 item_description = "Mobula aurum"
 catch_blurb = "Woah! What a catch!"
-item_is_hidden = false
-icon = ExtResource( 2 )
-show_item = true
-show_scene = false
+icon = ExtResource("2")
 uses_size = true
-action = ""
-action_params = [  ]
-release_action = ""
-prop_code = ""
-help_text = ""
 arm_value = 0.2
-hold_offset = 0.0
-unselectable = false
 category = "fish"
-alive = true
 tier = 2
 catch_difficulty = 5.5
-catch_speed = 120.0
 loot_table = "ocean"
 loot_weight = 0.03
 average_size = 600.0
 sell_value = 30
-sell_multiplier = 1.0
 obtain_xp = 60
-generate_worth = true
-can_be_sold = true
 rare = true
-show_bait = false
-detect_item = false

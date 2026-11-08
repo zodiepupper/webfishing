@@ -1,33 +1,36 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene format=3 uid="uid://cp608245ggdxc"]
 
-[ext_resource path="res://Scenes/HUD/Shop/shop.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/Themes/panel_med.tres" type="StyleBox" id=3]
-[ext_resource path="res://Assets/Themes/panel_green.tres" type="StyleBox" id=4]
-[ext_resource path="res://Assets/Textures/UI/knot_sep.png" type="Texture2D" id=5]
-[ext_resource path="res://Scenes/HUD/ItemDisplay/item_display.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Textures/UI/dialogue_arrow.png" type="Texture2D" id=7]
-[ext_resource path="res://Scenes/HUD/Shop/collapse.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/HUD/Shop/sellContainer.gd" type="Script" id=10]
+[ext_resource type="Script" uid="uid://b55fmi20no7oj" path="res://Scenes/HUD/Shop/shop.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="2"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_med.tres" id="3"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/panel_green.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://daxxukdlpk0gp" path="res://Assets/Textures/UI/knot_sep.png" id="5"]
+[ext_resource type="PackedScene" uid="uid://dc05joqtirvt3" path="res://Scenes/HUD/ItemDisplay/item_display.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://dn5n4lei7sqfe" path="res://Assets/Textures/UI/dialogue_arrow.png" id="7"]
+[ext_resource type="Script" uid="uid://d1te0t6t6mnhb" path="res://Scenes/HUD/Shop/collapse.gd" id="8"]
+[ext_resource type="Script" uid="uid://cd5dpm1u0dx44" path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" id="9"]
+[ext_resource type="Script" uid="uid://bprlbragapoy7" path="res://Scenes/HUD/Shop/sellContainer.gd" id="10"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[node name="shop" type="Control"]
+[node name="shop" type="Control" unique_id=1667975220]
+layout_mode = 3
 anchor_left = 0.1
 anchor_top = 0.15
 anchor_right = 0.6
 anchor_bottom = 0.85
-pivot_offset = Vector2( -1156, -310 )
-theme = ExtResource( 2 )
-script = ExtResource( 1 )
+pivot_offset = Vector2(-1156, -310)
+theme = ExtResource("2")
+script = ExtResource("1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1173587465]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Panel5" type="Panel" parent="."]
+[node name="Panel5" type="Panel" parent="." unique_id=573497101]
 visible = false
+layout_mode = 0
 anchor_left = 0.635
 anchor_right = 1.0
 anchor_bottom = 0.6
@@ -35,59 +38,58 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 
-[node name="item_display" parent="Panel5" instance=ExtResource( 6 )]
+[node name="item_display" parent="Panel5" unique_id=1388798102 instance=ExtResource("6")]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.0
 offset_bottom = 0.0
-expand = true
+expand_mode = 1
 stretch_mode = 6
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="." unique_id=858322642]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2" unique_id=1598595046]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.066
 offset_left = 12.0
 offset_top = 12.0
 offset_right = -12.0
 
-[node name="label" type="Label" parent="Panel2/HBoxContainer"]
-offset_right = 186.0
-offset_bottom = 34.0
+[node name="label" type="Label" parent="Panel2/HBoxContainer" unique_id=910727136]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "SHOP"
 
-[node name="timer" type="Label" parent="Panel2/HBoxContainer"]
-offset_left = 190.0
-offset_right = 377.0
-offset_bottom = 34.0
+[node name="timer" type="Label" parent="Panel2/HBoxContainer" unique_id=563730364]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "99:99:99"
-align = 1
+horizontal_alignment = 1
 
-[node name="cash" type="Label" parent="Panel2/HBoxContainer"]
-offset_left = 381.0
-offset_right = 568.0
-offset_bottom = 34.0
+[node name="cash" type="Label" parent="Panel2/HBoxContainer" unique_id=1359789489]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "$000"
-align = 2
+horizontal_alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel2" unique_id=136549102]
+layout_mode = 0
 anchor_left = 0.9
 anchor_right = 1.0
 offset_left = -332.0
@@ -96,77 +98,77 @@ offset_right = -12.0
 offset_bottom = 46.0
 alignment = 2
 
-[node name="cash" type="Panel" parent="Panel2/HBoxContainer2"]
-offset_left = 254.0
-offset_right = 412.0
-offset_bottom = 34.0
-custom_minimum_size = Vector2( 158, 0 )
-theme_override_styles/panel = ExtResource( 4 )
+[node name="cash" type="Panel" parent="Panel2/HBoxContainer2" unique_id=802124032]
+custom_minimum_size = Vector2(158, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4")
 
-[node name="Label" type="RichTextLabel" parent="Panel2/HBoxContainer2/cash"]
+[node name="Label" type="RichTextLabel" parent="Panel2/HBoxContainer2/cash" unique_id=65303688]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
 offset_right = -12.0
 bbcode_enabled = true
-text = "[right]$ 000000000"
 text = "$ 000000000"
 scroll_active = false
 
-[node name="MarginContainer2" type="MarginContainer" parent="Panel2"]
+[node name="MarginContainer2" type="MarginContainer" parent="Panel2" unique_id=17524650]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 50.0
 offset_bottom = -20.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel2/MarginContainer2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel2/MarginContainer2" unique_id=755625623]
 unique_name_in_owner = true
-offset_right = 928.0
-offset_bottom = 654.0
+layout_mode = 2
 size_flags_horizontal = 3
-scroll_horizontal_enabled = false
 
-[node name="HBoxContainer" type="MarginContainer" parent="Panel2/MarginContainer2/ScrollContainer"]
+[node name="HBoxContainer" type="MarginContainer" parent="Panel2/MarginContainer2/ScrollContainer" unique_id=1560117464]
 unique_name_in_owner = true
-offset_right = 928.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_right = 24
 theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/MarginContainer2/ScrollContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/MarginContainer2/ScrollContainer/HBoxContainer" unique_id=1164444118]
 unique_name_in_owner = true
-offset_left = 24.0
-offset_right = 904.0
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="Panel3" type="Panel" parent="." unique_id=1601572436]
 visible = false
+layout_mode = 0
 anchor_left = 1.02
 anchor_top = 0.65
 anchor_right = 1.65
 anchor_bottom = 1.0
 
-[node name="Panel" type="Panel" parent="Panel3"]
+[node name="Panel" type="Panel" parent="Panel3" unique_id=247099882]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 
-[node name="header" type="RichTextLabel" parent="Panel3"]
+[node name="header" type="RichTextLabel" parent="Panel3" unique_id=1010435650]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
 offset_top = 24.0
 offset_right = -24.0
 offset_bottom = -24.0
-theme_override_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/default_color = Color(1, 0.933333, 0.835294, 1)
 bbcode_enabled = true
 
-[node name="body" type="RichTextLabel" parent="Panel3"]
+[node name="body" type="RichTextLabel" parent="Panel3" unique_id=1509227313]
+layout_mode = 0
 anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -174,28 +176,31 @@ offset_left = 24.0
 offset_top = 46.0
 offset_right = -24.0
 offset_bottom = -24.0
-theme_override_colors/default_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/default_color = Color(1, 0.933333, 0.835294, 1)
 bbcode_enabled = true
 
-[node name="Panel4" type="Panel" parent="."]
+[node name="Panel4" type="Panel" parent="." unique_id=861057801]
+layout_mode = 0
 offset_left = -101.707
 offset_top = -58.364
 offset_right = 113.293
 offset_bottom = 17.636
 rotation = -2.7
-theme_override_styles/panel = ExtResource( 4 )
+theme_override_styles/panel = ExtResource("4")
 
-[node name="bplabel" type="Label" parent="Panel4"]
+[node name="bplabel" type="Label" parent="Panel4" unique_id=1578295985]
 unique_name_in_owner = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "shop"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="category_template" type="Control" parent="."]
+[node name="category_template" type="Control" parent="." unique_id=136271379]
 visible = false
+anchors_preset = 0
 anchor_left = -3.504
 anchor_right = -3.504
 anchor_bottom = 0.062
@@ -203,83 +208,89 @@ offset_left = -732.16
 offset_right = -732.16
 offset_bottom = -0.176003
 
-[node name="HSeparator" type="HSeparator" parent="category_template"]
+[node name="HSeparator" type="HSeparator" parent="category_template" unique_id=367296412]
+layout_mode = 0
 offset_right = 41.0
 offset_bottom = 16.0
 theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource( 1 )
+theme_override_styles/separator = SubResource("1")
 
-[node name="sep" type="TextureRect" parent="category_template"]
+[node name="sep" type="TextureRect" parent="category_template" unique_id=31542826]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
 offset_top = 16.0
 offset_right = 41.0
 offset_bottom = 48.0
-custom_minimum_size = Vector2( 0, 32 )
 size_flags_horizontal = 3
-texture = ExtResource( 5 )
-expand = true
+texture = ExtResource("5")
+expand_mode = 1
 stretch_mode = 4
 
-[node name="sublabel" type="Label" parent="category_template"]
+[node name="sublabel" type="Label" parent="category_template" unique_id=1199384182]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 0
 offset_top = 48.0
 offset_right = 41.0
 offset_bottom = 112.0
-custom_minimum_size = Vector2( 0, 64 )
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "bait"
-valign = 1
+vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="category_template"]
+[node name="GridContainer" type="GridContainer" parent="category_template" unique_id=1237545847]
+layout_mode = 0
 offset_top = 112.0
 offset_bottom = 112.0
 size_flags_horizontal = 0
-theme_override_constants/v_separation = 38
 theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 38
 columns = 8
 
-[node name="sellContainer" type="GridContainer" parent="category_template"]
+[node name="sellContainer" type="GridContainer" parent="category_template" unique_id=1930262549]
+layout_mode = 0
 offset_top = 112.0
 offset_bottom = 112.0
 size_flags_horizontal = 0
-theme_override_constants/v_separation = 38
 theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 38
 columns = 8
-script = ExtResource( 10 )
+script = ExtResource("10")
 
-[node name="GridContainerSmall" type="GridContainer" parent="category_template"]
+[node name="GridContainerSmall" type="GridContainer" parent="category_template" unique_id=368137985]
+layout_mode = 0
 offset_top = 112.0
 offset_bottom = 112.0
 size_flags_horizontal = 2
-theme_override_constants/v_separation = 38
 theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 38
 columns = 3
 
-[node name="questcont" type="VBoxContainer" parent="category_template"]
+[node name="questcont" type="VBoxContainer" parent="category_template" unique_id=1391501640]
+layout_mode = 0
 offset_top = 112.0
 offset_right = 547.0
 offset_bottom = 112.0
 theme_override_constants/separation = 16
 
-[node name="collapse" type="HBoxContainer" parent="category_template"]
+[node name="collapse" type="HBoxContainer" parent="category_template" unique_id=775818945]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
-script = ExtResource( 8 )
+script = ExtResource("8")
 
-[node name="Label" type="Label" parent="category_template/collapse"]
-offset_top = 3.0
-offset_bottom = 37.0
+[node name="Label" type="Label" parent="category_template/collapse" unique_id=896340068]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="category_template/collapse"]
-offset_left = 4.0
-offset_right = 79.0
-offset_bottom = 40.0
+[node name="Button" type="Button" parent="category_template/collapse" unique_id=698762238]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 text = "Expand"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1045215636]
+layout_mode = 0
 anchor_left = 0.982292
 anchor_top = -0.0198413
 anchor_right = 1.01796
@@ -287,25 +298,21 @@ anchor_bottom = 0.0251587
 offset_right = -0.240112
 offset_bottom = -0.0200005
 text = "x"
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+script = ExtResource("9")
 
-[node name="scroll_down" type="Label" parent="."]
+[node name="scroll_down" type="Label" parent="." unique_id=251363171]
+layout_mode = 0
 anchor_top = 0.899445
 anchor_right = 1.0
 anchor_bottom = 0.944444
 offset_left = 0.319946
 offset_top = 0.0199585
 text = "Scroll down for more!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
+horizontal_alignment = 1
 
-[node name="Panel2" type="Panel" parent="scroll_down"]
+[node name="Panel2" type="Panel" parent="scroll_down" unique_id=1033301487]
 show_behind_parent = true
+layout_mode = 0
 anchor_left = 0.35
 anchor_right = 0.65
 anchor_bottom = 1.0
@@ -313,28 +320,28 @@ offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
-theme_override_styles/panel = ExtResource( 4 )
+theme_override_styles/panel = ExtResource("4")
 
-[node name="Panel" type="Panel" parent="scroll_down"]
+[node name="Panel" type="Panel" parent="scroll_down" unique_id=760777723]
 show_behind_parent = true
+layout_mode = 0
 anchor_left = 0.35
 anchor_right = 0.65
 anchor_bottom = 1.0
 
-[node name="scroll_up" type="Label" parent="."]
+[node name="scroll_up" type="Label" parent="." unique_id=1266150023]
+layout_mode = 0
 anchor_top = 0.09
 anchor_right = 1.0
 anchor_bottom = 0.128
 offset_left = 0.319946
 offset_top = 0.0199585
 text = "Scroll up for more!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
+horizontal_alignment = 1
 
-[node name="Panel3" type="Panel" parent="scroll_up"]
+[node name="Panel3" type="Panel" parent="scroll_up" unique_id=692705630]
 show_behind_parent = true
+layout_mode = 0
 anchor_left = 0.35
 anchor_right = 0.65
 anchor_bottom = 1.0
@@ -342,15 +349,17 @@ offset_left = -4.0
 offset_top = -4.0
 offset_right = 4.0
 offset_bottom = 4.0
-theme_override_styles/panel = ExtResource( 4 )
+theme_override_styles/panel = ExtResource("4")
 
-[node name="Panel" type="Panel" parent="scroll_up"]
+[node name="Panel" type="Panel" parent="scroll_up" unique_id=1847286667]
 show_behind_parent = true
+layout_mode = 0
 anchor_left = 0.35
 anchor_right = 0.65
 anchor_bottom = 1.0
 
-[node name="dialogue" type="Control" parent="."]
+[node name="dialogue" type="Control" parent="." unique_id=1565424836]
+anchors_preset = 0
 anchor_left = 1.05
 anchor_top = 0.8
 anchor_right = 1.7
@@ -358,21 +367,24 @@ anchor_bottom = 1.0
 offset_right = -0.320004
 offset_bottom = -0.0680008
 
-[node name="Panel" type="Panel" parent="dialogue"]
+[node name="Panel" type="Panel" parent="dialogue" unique_id=442887167]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="dialogue"]
+[node name="RichTextLabel" type="RichTextLabel" parent="dialogue" unique_id=1635436512]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = -16.0
-theme_override_colors/default_color = Color( 0.415686, 0.266667, 0.12549, 1 )
+theme_override_colors/default_color = Color(0.415686, 0.266667, 0.12549, 1)
 bbcode_enabled = true
 
-[node name="TextureRect" type="TextureRect" parent="dialogue"]
+[node name="TextureRect" type="TextureRect" parent="dialogue" unique_id=473875478]
+layout_mode = 0
 anchor_left = 0.05
 anchor_top = -0.376
 anchor_right = 0.152
@@ -381,9 +393,9 @@ offset_left = -0.184006
 offset_top = 0.0256538
 offset_right = 0.200615
 offset_bottom = -0.0543246
-texture = ExtResource( 7 )
+texture = ExtResource("7")
 
-[node name="Timer" type="Timer" parent="dialogue"]
+[node name="Timer" type="Timer" parent="dialogue" unique_id=1826918863]
 wait_time = 0.05
 autostart = true
 

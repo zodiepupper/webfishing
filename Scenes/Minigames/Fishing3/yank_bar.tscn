@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene format=3 uid="uid://bub0304w7d3b0"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Assets/Textures/UI/Fishing3Minigame/bar.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/Minigames/Fishing3/yank_bar.gd" type="Script" id=3]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://ct4dxgi5qtvrn" path="res://Assets/Textures/UI/Fishing3Minigame/bar.png" id="2"]
+[ext_resource type="Script" uid="uid://cq1nuabd7yjv3" path="res://Scenes/Minigames/Fishing3/yank_bar.gd" id="3"]
 
-[node name="yank_hp" type="TextureRect"]
+[node name="yank_hp" type="TextureRect" unique_id=1034442975]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1856.0
 offset_bottom = -1052.0
-theme = ExtResource( 1 )
-texture = ExtResource( 2 )
-expand = true
-script = ExtResource( 3 )
+theme = ExtResource("1")
+texture = ExtResource("2")
+expand_mode = 1
+script = ExtResource("3")

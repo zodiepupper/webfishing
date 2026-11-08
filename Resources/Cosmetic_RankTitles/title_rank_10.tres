@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://kpwba8rt7uxr"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Second Class Scout Title"
 desc = "Getting the ropes!"
 title = "Second Class Scout"
-species_alt_mesh = [  ]
-main_color = Color( 1, 1, 1, 1 )
-body_pattern = [  ]
+species_alt_mesh = []
+main_color = Color(1, 1, 1, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "title"

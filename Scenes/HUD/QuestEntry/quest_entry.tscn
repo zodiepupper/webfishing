@@ -1,47 +1,53 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene format=3 uid="uid://dojg88n80jp3b"]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
-[ext_resource path="res://Scenes/HUD/QuestEntry/quest_entry.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/Fish/fish26.png" type="Texture2D" id=3]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="1"]
+[ext_resource type="Script" uid="uid://bco88myph6464" path="res://Scenes/HUD/QuestEntry/quest_entry.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bsi6r67vf2kat" path="res://Assets/Textures/Fish/fish26.png" id="3"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=712290734]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1408.0
 offset_bottom = -1048.0
-custom_minimum_size = Vector2( 128, 32 )
 size_flags_horizontal = 3
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
+theme = ExtResource("1")
+script = ExtResource("2")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1692618112]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=746673016]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 58.0
 offset_top = -2.0
 rotation = 0.0996978
 bbcode_enabled = true
-text = "Catch [color=#5a755a]Salmon[/color] (0/24)"
 text = "Catch Salmon (0/24)"
 scroll_active = false
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=698470992]
+layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 16.0
 offset_top = -20.0
 offset_right = 56.0
 offset_bottom = 20.0
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=189219848]
 visible = false
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,5 +55,4 @@ offset_left = 57.0
 offset_top = -18.0
 offset_right = -24.0
 offset_bottom = -14.0
-custom_minimum_size = Vector2( 0, 2 )
-color = Color( 0.835294, 0.666667, 0.45098, 1 )
+color = Color(0.835294, 0.666667, 0.45098, 1)

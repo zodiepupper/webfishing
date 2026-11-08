@@ -1,41 +1,40 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene format=3 uid="uid://chi8tla8ds63r"]
 
-[ext_resource path="res://Assets/Textures/Guitar/string.png" type="Texture2D" id=1]
-[ext_resource path="res://Scenes/Minigames/Guitar/string.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Shaders/guitar_string.tres" type="Material" id=3]
+[ext_resource type="Texture2D" uid="uid://bfndmrlqyogqy" path="res://Assets/Textures/Guitar/string.png" id="1"]
+[ext_resource type="Script" uid="uid://dpknonqq44aqx" path="res://Scenes/Minigames/Guitar/string.gd" id="2"]
+[ext_resource type="Material" uid="uid://d3efjubixj7xx" path="res://Assets/Shaders/guitar_string.tres" id="3"]
 
-[node name="string" type="Control"]
+[node name="string" type="Control" unique_id=1931338214]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 3
 anchor_right = 0.001
 anchor_bottom = 0.119
 offset_right = 22.08
 offset_bottom = 401.48
-custom_minimum_size = Vector2( 32, 0 )
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1860856280]
+layout_mode = 0
 anchor_left = 0.25
 anchor_right = 0.75
 anchor_bottom = 1.0
 theme_override_constants/separation = 0
 
-[node name="string_1" type="TextureRect" parent="VBoxContainer"]
-material = ExtResource( 3 )
-offset_right = 16.0
-offset_bottom = 265.0
-mouse_filter = 2
+[node name="string_1" type="TextureRect" parent="VBoxContainer" unique_id=1450611530]
+material = ExtResource("3")
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 1 )
-expand = true
+mouse_filter = 2
+texture = ExtResource("1")
+expand_mode = 1
 
-[node name="string_2" type="TextureRect" parent="VBoxContainer"]
-material = ExtResource( 3 )
-offset_top = 265.0
-offset_right = 16.0
-offset_bottom = 530.0
-mouse_filter = 2
+[node name="string_2" type="TextureRect" parent="VBoxContainer" unique_id=727250203]
+material = ExtResource("3")
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 1 )
-expand = true
+mouse_filter = 2
+texture = ExtResource("1")
+expand_mode = 1
 flip_v = true

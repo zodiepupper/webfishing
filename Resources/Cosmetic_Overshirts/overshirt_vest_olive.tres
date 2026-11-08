@@ -1,26 +1,26 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://co3engnp2rneh"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Assets/Models/Cosmetics/vest.tres" type="ArrayMesh" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons19.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/Textures/Cosmetics/vest_uv2.png" type="Texture2D" id=5]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://bxu34yd6n53ln" path="res://Assets/Models/Cosmetics/vest.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://sjy0wsq8o6i8" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons19.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dwf7ddnal0bd5" path="res://Assets/Textures/Cosmetics/vest_uv2.png" id="5"]
 
-[sub_resource type="StandardMaterial3D" id=1]
-albedo_texture = ExtResource( 5 )
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_texture = ExtResource("5")
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Olive Vest"
 desc = "Geared up!"
 title = ""
-icon = ExtResource( 4 )
-mesh = ExtResource( 3 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-material = SubResource( 1 )
-main_color = Color( 0.611765, 0.647059, 0.223529, 1 )
-body_pattern = [  ]
+icon = ExtResource("4")
+mesh = ExtResource("3")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+material = SubResource("1")
+main_color = Color(0.611765, 0.647059, 0.223529, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

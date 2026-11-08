@@ -1,41 +1,50 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene format=3 uid="uid://ch13hjirf4xj1"]
 
-[ext_resource path="res://Assets/Themes/coolvetica rg it.otf" type="FontFile" id=1]
-[ext_resource path="res://Scenes/Entities/Player/SpeechBubble/level_bubble.gd" type="Script" id=2]
+[ext_resource type="FontFile" uid="uid://tspxiw5p2dr4" path="res://Assets/Themes/coolvetica rg it.otf" id="1"]
+[ext_resource type="Script" uid="uid://c8b8vplyvanis" path="res://Scenes/Entities/Player/SpeechBubble/level_bubble.gd" id="2"]
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id="3"]
 blend_mode = 4
 
-[sub_resource type="FontFile" id=4]
-size = 48
-outline_size = 4
-outline_color = Color( 1, 0.933333, 0.835294, 1 )
-extra_spacing_char = 4
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="4"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[node name="level_bubble" type="CenterContainer"]
-material = SubResource( 3 )
+[node name="level_bubble" type="CenterContainer" unique_id=1998692264]
+material = SubResource("3")
 offset_right = 1210.0
 offset_bottom = 42.0
 size_flags_horizontal = 3
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 349.0
-offset_right = 861.0
-offset_bottom = 60.0
-custom_minimum_size = Vector2( 512, 0 )
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1233573913]
+custom_minimum_size = Vector2(512, 0)
 clip_contents = false
-theme_override_colors/default_color = Color( 1, 0, 0.192157, 1 )
-theme_override_fonts/normal_font = SubResource( 4 )
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0.192157, 1)
+theme_override_fonts/normal_font = SubResource("4")
 bbcode_enabled = true
-text = "[center][wave amp=50.0 freq=5.0 connected=1]RANK UP!"
-visible_characters = 0
-percent_visible = 0.0
 text = "RANK UP!"
-fit_content_height = true
+visible_characters = 0
+visible_ratio = 0.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2000692006]
 wait_time = 0.1
 autostart = true
 

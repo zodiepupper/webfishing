@@ -1,26 +1,26 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://jung3a38pjr5"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Assets/Models/shirt_update.tres" type="ArrayMesh" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons32.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/Textures/Cosmetics/undershirt_uv10.png" type="Texture2D" id=5]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://clbpfy7bax1yo" path="res://Assets/Models/shirt_update.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://bjfqbs423v2sk" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons32.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bgob5d0ncevgn" path="res://Assets/Textures/Cosmetics/undershirt_uv10.png" id="5"]
 
-[sub_resource type="StandardMaterial3D" id=1]
-albedo_texture = ExtResource( 5 )
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_texture = ExtResource("5")
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Burger T-Shirt"
 desc = "A real burger boy."
 title = ""
-icon = ExtResource( 4 )
-mesh = ExtResource( 3 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-material = SubResource( 1 )
-main_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
-body_pattern = [  ]
+icon = ExtResource("4")
+mesh = ExtResource("3")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+material = SubResource("1")
+main_color = Color(0.0627451, 0.109804, 0.192157, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

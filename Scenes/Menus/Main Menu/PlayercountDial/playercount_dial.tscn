@@ -1,84 +1,94 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene format=3 uid="uid://drmprmugr61k"]
 
-[ext_resource path="res://Assets/Textures/UI/playercount_dial_bg.png" type="Texture2D" id=1]
-[ext_resource path="res://Scenes/Menus/Main Menu/PlayercountDial/playercount_dial.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/UI/playercount_dial_blocks_tiny.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=4]
-[ext_resource path="res://Assets/Textures/UI/playercount_dial_bg2.png" type="Texture2D" id=5]
-[ext_resource path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" type="Script" id=6]
+[ext_resource type="Texture2D" uid="uid://ds3vskx1iy8m5" path="res://Assets/Textures/UI/playercount_dial_bg.png" id="1"]
+[ext_resource type="Script" uid="uid://c6xqynylxk7pb" path="res://Scenes/Menus/Main Menu/PlayercountDial/playercount_dial.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cvkv1bdxrwsgu" path="res://Assets/Textures/UI/playercount_dial_blocks_tiny.png" id="3"]
+[ext_resource type="Theme" uid="uid://dwxjtek5l8mec" path="res://Assets/Themes/main.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://dy8cd5fckn4x6" path="res://Assets/Textures/UI/playercount_dial_bg2.png" id="5"]
+[ext_resource type="Script" uid="uid://cd5dpm1u0dx44" path="res://Scenes/Menus/Main Menu/ui_generic_button.gd" id="6"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[node name="playercount_dial" type="Control"]
+[node name="playercount_dial" type="Control" unique_id=1980233396]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1687.0
 offset_bottom = -980.0
-custom_minimum_size = Vector2( 0, 84 )
-theme = ExtResource( 4 )
-script = ExtResource( 2 )
+theme = ExtResource("4")
+script = ExtResource("2")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1747799179]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 
-[node name="bar" type="TextureRect" parent="."]
+[node name="bar" type="TextureRect" parent="." unique_id=662799146]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
-expand = true
+texture = ExtResource("5")
+expand_mode = 1
 
-[node name="dials" type="Control" parent="."]
+[node name="dials" type="Control" parent="." unique_id=75426501]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="min_players" type="Button" parent="dials"]
+[node name="min_players" type="Button" parent="dials" unique_id=1129167169]
+layout_mode = 0
 anchor_right = 0.05
 anchor_bottom = 1.0
 offset_right = 27.9
-pivot_offset = Vector2( 38, 42 )
-theme_override_styles/focus = SubResource( 1 )
-icon = ExtResource( 3 )
+pivot_offset = Vector2(38, 42)
+theme_override_styles/focus = SubResource("1")
+icon = ExtResource("3")
 flat = true
 expand_icon = true
-script = ExtResource( 6 )
+script = ExtResource("6")
 
-[node name="Label" type="Label" parent="dials/min_players"]
+[node name="Label" type="Label" parent="dials/min_players" unique_id=38891973]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "0"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="max_players" type="Button" parent="dials"]
+[node name="max_players" type="Button" parent="dials" unique_id=1031909173]
+layout_mode = 0
 anchor_right = 0.05
 anchor_bottom = 1.0
 offset_right = 27.9
-pivot_offset = Vector2( 38, 42 )
-theme_override_styles/focus = SubResource( 1 )
-icon = ExtResource( 3 )
+pivot_offset = Vector2(38, 42)
+theme_override_styles/focus = SubResource("1")
+icon = ExtResource("3")
 flat = true
 expand_icon = true
-script = ExtResource( 6 )
+script = ExtResource("6")
 
-[node name="Label" type="Label" parent="dials/max_players"]
+[node name="Label" type="Label" parent="dials/max_players" unique_id=2046025224]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 1, 0.933333, 0.835294, 1 )
+theme_override_colors/font_color = Color(1, 0.933333, 0.835294, 1)
 text = "0"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="lbl" type="Label" parent="."]
+[node name="lbl" type="Label" parent="." unique_id=2050698800]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = 12.0
 text = "1 - 12"
-align = 1
-valign = 2
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [connection signal="button_down" from="dials/min_players" to="." method="_on_min_players_button_down"]
 [connection signal="button_down" from="dials/max_players" to="." method="_on_max_players_button_down"]

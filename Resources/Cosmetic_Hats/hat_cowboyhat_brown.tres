@@ -1,25 +1,25 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://c3sfwyub00tse"]
 
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=1]
-[ext_resource path="res://Assets/Materials/white.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Materials/brown.tres" type="Material" id=3]
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons27.png" type="Texture2D" id=5]
-[ext_resource path="res://Assets/Models/Cosmetics/cowboy_hat.tres" type="ArrayMesh" id=6]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="1"]
+[ext_resource type="Material" uid="uid://fgoajaps25td" path="res://Assets/Materials/white.tres" id="2"]
+[ext_resource type="Material" uid="uid://ci6swpdssd3n3" path="res://Assets/Materials/brown.tres" id="3"]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bjgkiuqb081jh" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons27.png" id="5"]
+[ext_resource type="ArrayMesh" uid="uid://d3l36tyjssg65" path="res://Assets/Models/Cosmetics/cowboy_hat.tres" id="6"]
 
 [resource]
-script = ExtResource( 4 )
+script = ExtResource("4")
 name = "Brown Cowboy Hat"
 desc = "Yee-haw!"
 title = ""
-icon = ExtResource( 5 )
-mesh = ExtResource( 6 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 1 )
-material = ExtResource( 3 )
-secondary_material = ExtResource( 2 )
-main_color = Color( 0.415686, 0.266667, 0.12549, 1 )
-body_pattern = [  ]
+icon = ExtResource("5")
+mesh = ExtResource("6")
+species_alt_mesh = []
+mesh_skin = ExtResource("1")
+material = ExtResource("3")
+secondary_material = ExtResource("2")
+main_color = Color(0.415686, 0.266667, 0.12549, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "hat"

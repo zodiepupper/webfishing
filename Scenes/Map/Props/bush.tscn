@@ -1,73 +1,63 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene format=3 uid="uid://bekq0skkjic2r"]
 
-[ext_resource path="res://Assets/Models/bush.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Assets/Textures/bush_leaf.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/Map/Props/prop_shadow.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Map/Props/prop.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Textures/bush_leaf2.png" type="Texture2D" id=5]
-[ext_resource path="res://Scenes/Map/Props/bush_particle_detect.gd" type="Script" id=6]
-[ext_resource path="res://Sounds/Old/leaves.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Assets/ParticleResources/bush.tres" type="Material" id=8]
+[ext_resource type="ArrayMesh" uid="uid://dsvlesw8itqqu" path="res://Assets/Models/bush.obj" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Map/Props/prop_shadow.tscn" id="3"]
+[ext_resource type="Script" uid="uid://dermtwlpxd54j" path="res://Scenes/Map/Props/prop.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://dau32ak7sakf5" path="res://Assets/Textures/bush_leaf2.png" id="5"]
+[ext_resource type="Script" uid="uid://dgmg5scu2a0bc" path="res://Scenes/Map/Props/bush_particle_detect.gd" id="6"]
+[ext_resource type="Material" uid="uid://dp0q7hvj4nnte" path="res://Assets/ParticleResources/bush.tres" id="8"]
 
-[sub_resource type="StandardMaterial3D" id=1]
-flags_transparent = true
-params_cull_mode = 2
-params_depth_draw_mode = 3
-albedo_texture = ExtResource( 2 )
+[sub_resource type="SphereShape3D" id="2"]
 
-[sub_resource type="SphereShape3D" id=2]
-
-[sub_resource type="StandardMaterial3D" id=340]
-flags_transparent = true
-params_billboard_mode = 3
+[sub_resource type="StandardMaterial3D" id="340"]
+transparency = 1
+albedo_texture = ExtResource("5")
+billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-albedo_texture = ExtResource( 5 )
 
-[sub_resource type="QuadMesh" id=338]
-material = SubResource( 340 )
+[sub_resource type="QuadMesh" id="338"]
+material = SubResource("340")
 
-[sub_resource type="AudioStreamRandomizer" id=339]
-audio_stream = ExtResource( 7 )
+[sub_resource type="AudioStreamRandomizer" id="339"]
 
-[node name="bush" type="Node3D" groups=["bush"]]
-script = ExtResource( 4 )
+[node name="bush" type="Node3D" unique_id=1456680043 groups=["bush"]]
+script = ExtResource("4")
 random_scale = false
 
-[node name="Leaf" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1.8, 0, 0, 0, 1.5, 0, 0, 0, 1.8, 0, 0, 0 )
-mesh = ExtResource( 1 )
-material/0 = SubResource( 1 )
+[node name="Leaf" type="MeshInstance3D" parent="." unique_id=2013737421]
+transform = Transform3D(1.8, 0, 0, 0, 1.5, 0, 0, 0, 1.8, 0, 0, 0)
+mesh = ExtResource("1")
 
-[node name="shadow" parent="." instance=ExtResource( 3 )]
-transform = Transform3D( 4.2698, 0, 0, 0, -1.86639e-07, 4.2698, 0, -4.2698, -1.86639e-07, 0, 0.01, 0 )
+[node name="shadow" parent="." unique_id=1362958129 instance=ExtResource("3")]
+transform = Transform3D(4.2698, 0, 0, 0, -1.86639e-07, 4.2698, 0, -4.2698, -1.86639e-07, 0, 0.01, 0)
 
-[node name="bush_particle_detect" type="Area3D" parent="."]
+[node name="bush_particle_detect" type="Area3D" parent="." unique_id=2070154981]
 monitorable = false
-script = ExtResource( 6 )
+script = ExtResource("6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bush_particle_detect"]
-transform = Transform3D( 1.46813, 0, 0, 0, 1.46813, 0, 0, 0, 1.46813, 0, 0.55197, 0 )
-shape = SubResource( 2 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bush_particle_detect" unique_id=1315595047]
+transform = Transform3D(1.46813, 0, 0, 0, 1.46813, 0, 0, 0, 1.46813, 0, 0.55197, 0)
+shape = SubResource("2")
 
-[node name="Particles" type="Particles" parent="bush_particle_detect"]
+[node name="Particles" type="GPUParticles3D" parent="bush_particle_detect" unique_id=1951067179]
 emitting = false
 lifetime = 1.5
 one_shot = true
 explosiveness = 0.92
-process_material = ExtResource( 8 )
-draw_pass_1 = SubResource( 338 )
+process_material = ExtResource("8")
+draw_pass_1 = SubResource("338")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="bush_particle_detect"]
-stream = SubResource( 339 )
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="bush_particle_detect" unique_id=138458982]
+stream = SubResource("339")
 unit_size = 2.2
 max_db = -6.0
-bus = "SFX"
+bus = &"SFX"
 attenuation_filter_cutoff_hz = 7000.0
 
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624505, 0 )
-aabb = AABB( -2.71039, -1.69975, -2.84559, 5.42079, 3.3995, 5.69117 )
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=1172595147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624505, 0)
+aabb = AABB(-2.71039, -1.69975, -2.84559, 5.42079, 3.3995, 5.69117)
 
 [connection signal="body_entered" from="bush_particle_detect" to="bush_particle_detect" method="_on_bush_particle_detect_body_entered"]

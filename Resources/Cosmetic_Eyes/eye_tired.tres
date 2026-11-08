@@ -1,22 +1,22 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://c2xc0g4te5n6s"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/Face/eyes_base14.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Textures/Face/eyes_base19.png" type="Texture2D" id=3]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c2c3jlvfvp58u" path="res://Assets/Textures/Face/eyes_base14.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d1nbmr1jlfdlo" path="res://Assets/Textures/Face/eyes_base19.png" id="3"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Tired"
 desc = "Bags are in these days."
 title = ""
-icon = ExtResource( 2 )
-species_alt_mesh = [  ]
-main_color = Color( 1, 1, 1, 1 )
-body_pattern = [  ]
+icon = ExtResource("2")
+species_alt_mesh = []
+main_color = Color(1, 1, 1, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true
-alt_blink = ExtResource( 3 )
+alt_blink = ExtResource("3")
 category = "eye"
 cos_internal_id = 0
 in_rotation = false

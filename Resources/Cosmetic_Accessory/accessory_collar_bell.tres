@@ -1,25 +1,25 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://ckvu1dn1ewkfc"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Assets/Materials/yellow.tres" type="Material" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons29.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/Materials/maroon.tres" type="Material" id=5]
-[ext_resource path="res://Assets/Models/Cosmetics/collar_bell.tres" type="ArrayMesh" id=6]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="Material" uid="uid://c84n5fittqqmn" path="res://Assets/Materials/yellow.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://b1y72jhnwxb5r" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons29.png" id="4"]
+[ext_resource type="Material" uid="uid://bmnw0au4gb48s" path="res://Assets/Materials/maroon.tres" id="5"]
+[ext_resource type="ArrayMesh" uid="uid://tums1uj17115" path="res://Assets/Models/Cosmetics/collar_bell.tres" id="6"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Belled Collar"
 desc = "Kittencoded (Puppycoded?)"
 title = ""
-icon = ExtResource( 4 )
-mesh = ExtResource( 6 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-material = ExtResource( 5 )
-secondary_material = ExtResource( 3 )
-main_color = Color( 0.67451, 0, 0.160784, 1 )
-body_pattern = [  ]
+icon = ExtResource("4")
+mesh = ExtResource("6")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+material = ExtResource("5")
+secondary_material = ExtResource("3")
+main_color = Color(0.67451, 0, 0.160784, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "accessory"

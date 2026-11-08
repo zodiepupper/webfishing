@@ -1,29 +1,28 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://cl73h0c2dxmm1"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Models/Cosmetics/rig_main_updated.tres" type="Skin" id=2]
-[ext_resource path="res://Assets/Models/Cosmetics/shades.tres" type="ArrayMesh" id=3]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons8.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/Textures/Cosmetics/shades_uv3.png" type="Texture2D" id=5]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
+[ext_resource type="Skin" uid="uid://cccj6dmc2714q" path="res://Assets/Models/Cosmetics/rig_main_updated.tres" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://n3bvtejw2h1u" path="res://Assets/Models/Cosmetics/shades.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://p47w72wpvw1p" path="res://Assets/Textures/CosmeticIcons/cosmetic_icons8.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d2dlosm03xj13" path="res://Assets/Textures/Cosmetics/shades_uv3.png" id="5"]
 
-[sub_resource type="StandardMaterial3D" id=1]
+[sub_resource type="StandardMaterial3D" id="1"]
 render_priority = 1
-flags_transparent = true
-params_depth_draw_mode = 3
-albedo_texture = ExtResource( 5 )
+transparency = 4
+albedo_texture = ExtResource("5")
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Golden Shades"
 desc = "VERY cool."
 title = ""
-icon = ExtResource( 4 )
-mesh = ExtResource( 3 )
-species_alt_mesh = [  ]
-mesh_skin = ExtResource( 2 )
-material = SubResource( 1 )
-main_color = Color( 0.901961, 0.615686, 0, 1 )
-body_pattern = [  ]
+icon = ExtResource("4")
+mesh = ExtResource("3")
+species_alt_mesh = []
+mesh_skin = ExtResource("2")
+material = SubResource("1")
+main_color = Color(0.901961, 0.615686, 0, 1)
+body_pattern = []
 mirror_face = true
 flip = false
 allow_blink = true

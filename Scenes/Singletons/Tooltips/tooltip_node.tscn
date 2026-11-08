@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=3 uid="uid://mjw2cq1jawxb"]
 
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://niufntrkbkyv" path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" id="1"]
 
-[node name="tooltip_node" type="Control"]
+[node name="tooltip_node" type="Control" unique_id=1721714463]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
-script = ExtResource( 1 )
+script = ExtResource("1")
 header = "beeblo!"
 body = "bonglo.."

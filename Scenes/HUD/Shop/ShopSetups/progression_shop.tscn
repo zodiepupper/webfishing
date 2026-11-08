@@ -1,67 +1,65 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene format=3 uid="uid://q0bwhf4eedqa"]
 
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Textures/UI/bait_icons2.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_bait_unlock.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_item.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_lure_unlock.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/HUD/Shop/ShopButtons/button_rod_upgrade.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/HUD/Shop/loan_button.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Textures/Items/upgrade_icons1.png" type="Texture2D" id=10]
-[ext_resource path="res://Assets/Textures/Items/upgrade_icons4.png" type="Texture2D" id=11]
-[ext_resource path="res://Assets/Textures/Items/upgrade_icons6.png" type="Texture2D" id=12]
-[ext_resource path="res://Assets/Textures/Items/upgrade_icons3.png" type="Texture2D" id=13]
-[ext_resource path="res://Assets/Textures/Items/upgrade_icons2.png" type="Texture2D" id=14]
-[ext_resource path="res://Assets/Textures/Items/upgrade_icons5.png" type="Texture2D" id=15]
-[ext_resource path="res://Assets/Textures/Items/upgrade_icons7.png" type="Texture2D" id=16]
-[ext_resource path="res://Sounds/npc_voice_2.ogg" type="AudioStream" id=17]
+[ext_resource type="PackedScene" uid="uid://gbefmpg6h88n" path="res://Scenes/HUD/Shop/ShopButtons/shop_button.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bd4kogbr14ska" path="res://Assets/Textures/UI/bait_icons2.png" id="2"]
+[ext_resource type="Script" uid="uid://bgv2jch8v37m3" path="res://Scenes/HUD/Shop/ShopButtons/button_bait_unlock.gd" id="3"]
+[ext_resource type="Script" uid="uid://c1itdgq3ynf24" path="res://Scenes/HUD/Shop/ShopSetups/shop_setup.gd" id="4"]
+[ext_resource type="Script" uid="uid://bfmbjm2tum47d" path="res://Scenes/HUD/Shop/ShopButtons/button_item.gd" id="5"]
+[ext_resource type="Script" uid="uid://bwstn6aefwvev" path="res://Scenes/HUD/Shop/ShopButtons/button_lure_unlock.gd" id="6"]
+[ext_resource type="Script" uid="uid://dkjdk0ow8wojj" path="res://Scenes/HUD/Shop/ShopSetups/shop_category.gd" id="7"]
+[ext_resource type="Script" uid="uid://706jvfudqiog" path="res://Scenes/HUD/Shop/ShopButtons/button_rod_upgrade.gd" id="8"]
+[ext_resource type="PackedScene" uid="uid://bcb8hl5wy5xqi" path="res://Scenes/HUD/Shop/loan_button.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://c7csnrkh7ptpj" path="res://Assets/Textures/Items/upgrade_icons1.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://rqbl42dbpboe" path="res://Assets/Textures/Items/upgrade_icons4.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dthckf6ac4c6h" path="res://Assets/Textures/Items/upgrade_icons6.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dqcpveq8f8pax" path="res://Assets/Textures/Items/upgrade_icons3.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://djrpojrsphnnx" path="res://Assets/Textures/Items/upgrade_icons2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://drrglowl4vawo" path="res://Assets/Textures/Items/upgrade_icons5.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://caaf61cj630l6" path="res://Assets/Textures/Items/upgrade_icons7.png" id="16"]
 
-[sub_resource type="AudioStreamRandomizer" id=1]
-audio_stream = ExtResource( 17 )
+[sub_resource type="AudioStreamRandomizer" id="1"]
 
-[node name="test_shop" type="Node"]
-script = ExtResource( 4 )
+[node name="test_shop" type="Node" unique_id=742364592]
+script = ExtResource("4")
 shop_title = "fishing store"
 dialogue = true
-dialogue_open = [ "Welcome to camp!", "How's it goin!", "Helllllooooo!", "Hi there!" ]
-dialogue_buy = [ "Pleasure doin' business!", "Good choice!", "Hope it helps!", "'ppreciate it!" ]
-dialogue_voice = SubResource( 1 )
+dialogue_open = ["Welcome to camp!", "How's it goin!", "Helllllooooo!", "Hi there!"]
+dialogue_buy = ["Pleasure doin' business!", "Good choice!", "Hope it helps!", "'ppreciate it!"]
+dialogue_voice = SubResource("1")
 
-[node name="loan" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="loan" type="Node" parent="." unique_id=1806348596]
+script = ExtResource("7")
 category_title = "camp tier"
 box_type = 1
 
-[node name="Button" parent="loan" instance=ExtResource( 9 )]
+[node name="Button" parent="loan" unique_id=980530072 instance=ExtResource("9")]
 offset_right = 300.0
 
-[node name="license" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="license" type="Node" parent="." unique_id=1057227731]
+script = ExtResource("7")
 category_title = "bait licenses"
 
-[node name="lake2" parent="license" instance=ExtResource( 1 )]
-icon = ExtResource( 2 )
-script = ExtResource( 3 )
+[node name="lake2" parent="license" unique_id=991926909 instance=ExtResource("1")]
+icon = ExtResource("2")
+script = ExtResource("3")
 cost = 100
 level_require = 0
 slot_name = "Jig License"
 slot_desc = "Allows the purchase of the Jig bait type."
 bait_add = "cricket"
 
-[node name="lake3" parent="license" instance=ExtResource( 1 )]
-icon = ExtResource( 2 )
-script = ExtResource( 3 )
+[node name="lake3" parent="license" unique_id=189280594 instance=ExtResource("1")]
+icon = ExtResource("2")
+script = ExtResource("3")
 cost = 400
 level_require = 0
 slot_name = "Lure License"
 slot_desc = "Allows the purchse of the Lure bait type."
 bait_add = "leech"
 
-[node name="oc1" parent="license" instance=ExtResource( 1 )]
-icon = ExtResource( 2 )
-script = ExtResource( 3 )
+[node name="oc1" parent="license" unique_id=454976945 instance=ExtResource("1")]
+icon = ExtResource("2")
+script = ExtResource("3")
 cost = 1250
 level_require = 0
 loan_level_require = 1
@@ -69,9 +67,9 @@ slot_name = "Minnow License"
 slot_desc = "Allows the purchse of the Minnow bait type."
 bait_add = "minnow"
 
-[node name="oc2" parent="license" instance=ExtResource( 1 )]
-icon = ExtResource( 2 )
-script = ExtResource( 3 )
+[node name="oc2" parent="license" unique_id=565083973 instance=ExtResource("1")]
+icon = ExtResource("2")
+script = ExtResource("3")
 cost = 8500
 level_require = 0
 loan_level_require = 1
@@ -79,154 +77,154 @@ slot_name = "Ocean Lure License"
 slot_desc = "Allows the purchse of the Ocean Lure bait type."
 bait_add = "squid"
 
-[node name="oc3" parent="license" instance=ExtResource( 1 )]
-icon = ExtResource( 2 )
-script = ExtResource( 3 )
+[node name="oc3" parent="license" unique_id=1016229362 instance=ExtResource("1")]
+icon = ExtResource("2")
+script = ExtResource("3")
 cost = 15000
 loan_level_require = 2
 slot_name = "Ocean Lure 2 License"
 slot_desc = "Allows the purchse of the Ocean Lure 2 bait type."
 bait_add = "nautilus"
 
-[node name="oc4" parent="license" instance=ExtResource( 1 )]
-icon = ExtResource( 2 )
-script = ExtResource( 3 )
+[node name="oc4" parent="license" unique_id=60140345 instance=ExtResource("1")]
+icon = ExtResource("2")
+script = ExtResource("3")
 cost = 35000
 loan_level_require = 2
 bait_add = "gildedworm"
 
-[node name="rods" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="rods" type="Node" parent="." unique_id=1279998566]
+script = ExtResource("7")
 category_title = "upgrades"
 
-[node name="shop_button7" parent="rods" instance=ExtResource( 1 )]
-icon = ExtResource( 10 )
-script = ExtResource( 8 )
+[node name="shop_button7" parent="rods" unique_id=890350467 instance=ExtResource("1")]
+icon = ExtResource("10")
+script = ExtResource("8")
 type = 0
 
-[node name="shop_button8" parent="rods" instance=ExtResource( 1 )]
-icon = ExtResource( 14 )
-script = ExtResource( 8 )
+[node name="shop_button8" parent="rods" unique_id=2133278937 instance=ExtResource("1")]
+icon = ExtResource("14")
+script = ExtResource("8")
 type = 1
 
-[node name="shop_button9" parent="rods" instance=ExtResource( 1 )]
-icon = ExtResource( 16 )
-script = ExtResource( 8 )
+[node name="shop_button9" parent="rods" unique_id=1328144253 instance=ExtResource("1")]
+icon = ExtResource("16")
+script = ExtResource("8")
 type = 2
 
-[node name="shop_button2" parent="rods" instance=ExtResource( 1 )]
-icon = ExtResource( 13 )
-script = ExtResource( 8 )
+[node name="shop_button2" parent="rods" unique_id=1713717154 instance=ExtResource("1")]
+icon = ExtResource("13")
+script = ExtResource("8")
 type = 6
 
-[node name="shop_button" parent="rods" instance=ExtResource( 1 )]
-icon = ExtResource( 11 )
-script = ExtResource( 8 )
+[node name="shop_button" parent="rods" unique_id=1186587844 instance=ExtResource("1")]
+icon = ExtResource("11")
+script = ExtResource("8")
 type = 3
 
-[node name="lures" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="lures" type="Node" parent="." unique_id=414672829]
+script = ExtResource("7")
 category_title = "lures"
 
-[node name="shop_button" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button" parent="lures" unique_id=1223214636 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 50
 lure_add = "fly_hook"
 
-[node name="shop_button3" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button3" parent="lures" unique_id=331863452 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 50
 lure_add = "patient_lure"
 
-[node name="shop_button2" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button2" parent="lures" unique_id=1197654375 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 100
 lure_add = "lucky_hook"
 
-[node name="shop_button14" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button14" parent="lures" unique_id=825007448 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 100
 lure_add = "challenge_lure"
 
-[node name="shop_button10" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button10" parent="lures" unique_id=299972008 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 100
 loan_level_require = 1
 lure_add = "salty_lure"
 
-[node name="shop_button12" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button12" parent="lures" unique_id=59860282 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 100
 loan_level_require = 1
 lure_add = "fresh_lure"
 
-[node name="shop_button4" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button4" parent="lures" unique_id=884609455 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 500
 loan_level_require = 1
 lure_add = "quick_jig"
 
-[node name="shop_button5" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button5" parent="lures" unique_id=614188539 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 500
 loan_level_require = 1
 lure_add = "efficient_lure"
 
-[node name="shop_button6" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button6" parent="lures" unique_id=1443630524 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 500
 loan_level_require = 1
 lure_add = "magnet_lure"
 
-[node name="shop_button7" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button7" parent="lures" unique_id=2076050222 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 2000
 loan_level_require = 2
 lure_add = "large_lure"
 
-[node name="shop_button8" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button8" parent="lures" unique_id=1312484113 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 2000
 loan_level_require = 2
 lure_add = "attractive_angler"
 
-[node name="shop_button9" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button9" parent="lures" unique_id=1357252643 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 2000
 loan_level_require = 2
 lure_add = "sparkling_lure"
 
-[node name="shop_button11" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button11" parent="lures" unique_id=1483493832 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 2000
 loan_level_require = 2
 lure_add = "double_hook"
 
-[node name="shop_button15" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button15" parent="lures" unique_id=81910768 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 2000
 loan_level_require = 2
 lure_add = "rain_lure"
 
-[node name="shop_button13" parent="lures" instance=ExtResource( 1 )]
-script = ExtResource( 6 )
+[node name="shop_button13" parent="lures" unique_id=175967745 instance=ExtResource("1")]
+script = ExtResource("6")
 cost = 9999
 loan_level_require = 3
 lure_add = "gold_hook"
 
-[node name="rod_items" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="rod_items" type="Node" parent="." unique_id=546034123]
+script = ExtResource("7")
 category_title = "rods"
 
-[node name="shop_button4" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button4" parent="rod_items" unique_id=651945948 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 1
 item_id = "fishing_rod_simple"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button5" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button5" parent="rod_items" unique_id=1068953182 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 150
 tag_require = "journal_all"
 tag_warning = "Requires at least one catch on each creature in the journal, in any quality."
@@ -234,8 +232,8 @@ item_id = "fishing_rod_travelers"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button12" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button12" parent="rod_items" unique_id=2052504875 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 250
 tag_require = "journal_0"
 tag_warning = "Requires journal to be completed in NORMAL quality."
@@ -243,8 +241,8 @@ item_id = "fishing_rod_collectors"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button6" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button6" parent="rod_items" unique_id=66501866 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 500
 tag_require = "journal_1"
 tag_warning = "Requires journal to be completed in SHINING quality."
@@ -252,8 +250,8 @@ item_id = "fishing_rod_collectors_shining"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button7" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button7" parent="rod_items" unique_id=1421500357 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 1500
 tag_require = "journal_2"
 tag_warning = "Requires journal to be completed in GLISTENING quality."
@@ -261,8 +259,8 @@ item_id = "fishing_rod_collectors_glistening"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button8" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button8" parent="rod_items" unique_id=1664953157 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 5000
 tag_require = "journal_3"
 tag_warning = "Requires journal to be completed in OPULENT quality."
@@ -270,8 +268,8 @@ item_id = "fishing_rod_collectors_opulent"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button9" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button9" parent="rod_items" unique_id=769117816 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 15000
 tag_require = "journal_4"
 tag_warning = "Requires journal to be completed in RADIANT quality."
@@ -279,8 +277,8 @@ item_id = "fishing_rod_collectors_radiant"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button10" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button10" parent="rod_items" unique_id=1534847847 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 25000
 tag_require = "journal_5"
 tag_warning = "Requires journal to be completed in ALPHA quality."
@@ -288,48 +286,48 @@ item_id = "fishing_rod_collectors_alpha"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button11" parent="rod_items" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button11" parent="rod_items" unique_id=1269781425 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 9999999
 item_id = "fishing_rod_prosperous"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="buddy" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="buddy" type="Node" parent="." unique_id=124314000]
+script = ExtResource("7")
 category_title = "fishing buddies"
 
-[node name="shop_button4" parent="buddy" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button4" parent="buddy" unique_id=554212547 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 200
 item_id = "fish_trap"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button5" parent="buddy" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button5" parent="buddy" unique_id=1535423075 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 500
 loan_level_require = 1
 item_id = "fish_trap_ocean"
 item_no_duplicates = true
 max_item_owned = -1
 
-[node name="shop_button6" parent="buddy" instance=ExtResource( 1 )]
-icon = ExtResource( 15 )
-script = ExtResource( 8 )
+[node name="shop_button6" parent="buddy" unique_id=1945972004 instance=ExtResource("1")]
+icon = ExtResource("15")
+script = ExtResource("8")
 type = 4
 
-[node name="shop_button7" parent="buddy" instance=ExtResource( 1 )]
-icon = ExtResource( 12 )
-script = ExtResource( 8 )
+[node name="shop_button7" parent="buddy" unique_id=926341126 instance=ExtResource("1")]
+icon = ExtResource("12")
+script = ExtResource("8")
 type = 5
 
-[node name="misc" type="Node" parent="."]
-script = ExtResource( 7 )
+[node name="misc" type="Node" parent="." unique_id=445238722]
+script = ExtResource("7")
 category_title = "misc"
 
-[node name="shop_button4" parent="misc" instance=ExtResource( 1 )]
-script = ExtResource( 5 )
+[node name="shop_button4" parent="misc" unique_id=1664152423 instance=ExtResource("1")]
+script = ExtResource("5")
 cost = 25
 item_id = "portable_bait"
 item_no_duplicates = false

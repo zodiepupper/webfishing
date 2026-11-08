@@ -1,22 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene format=3 uid="uid://c2pmlyb2ujj36"]
 
-[ext_resource path="res://Scenes/HUD/JournalEntry/journal_entry.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/UI/journal_dots1.png" type="Texture2D" id=2]
-[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" uid="uid://ce7iewq261esg" path="res://Scenes/HUD/JournalEntry/journal_entry.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cqj8budodctlb" path="res://Assets/Textures/UI/journal_dots1.png" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Singletons/Tooltips/tooltip_node.tscn" id="3"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=1935635911]
+custom_minimum_size = Vector2(148, 92)
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1920.0
 offset_bottom = -1080.0
-custom_minimum_size = Vector2( 148, 92 )
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1049594550]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=662795103]
+layout_mode = 0
 anchor_top = 0.0326087
 anchor_right = 1.0
 anchor_bottom = 1.03261
@@ -24,57 +28,41 @@ offset_left = 6.0
 offset_top = 6.0
 offset_right = -6.0
 offset_bottom = -6.0
-expand = true
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="quality" type="HBoxContainer" parent="."]
+[node name="quality" type="HBoxContainer" parent="." unique_id=2023161209]
+layout_mode = 0
 anchor_top = -0.0108696
 anchor_right = 1.0
 anchor_bottom = -0.0108696
 offset_bottom = 24.0
 theme_override_constants/separation = -6
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="TextureRect" type="TextureRect" parent="quality"]
-offset_left = 17.0
-offset_right = 41.0
-offset_bottom = 24.0
-texture = ExtResource( 2 )
+[node name="TextureRect" type="TextureRect" parent="quality" unique_id=1588849048]
+layout_mode = 2
+texture = ExtResource("2")
 
-[node name="TextureRect6" type="TextureRect" parent="quality"]
-offset_left = 35.0
-offset_right = 59.0
-offset_bottom = 24.0
-texture = ExtResource( 2 )
+[node name="TextureRect6" type="TextureRect" parent="quality" unique_id=2059986614]
+layout_mode = 2
+texture = ExtResource("2")
 
-[node name="TextureRect2" type="TextureRect" parent="quality"]
-offset_left = 53.0
-offset_right = 77.0
-offset_bottom = 24.0
-texture = ExtResource( 2 )
+[node name="TextureRect2" type="TextureRect" parent="quality" unique_id=145320726]
+layout_mode = 2
+texture = ExtResource("2")
 
-[node name="TextureRect3" type="TextureRect" parent="quality"]
-offset_left = 71.0
-offset_right = 95.0
-offset_bottom = 24.0
-texture = ExtResource( 2 )
+[node name="TextureRect3" type="TextureRect" parent="quality" unique_id=458503860]
+layout_mode = 2
+texture = ExtResource("2")
 
-[node name="TextureRect4" type="TextureRect" parent="quality"]
-offset_left = 89.0
-offset_right = 113.0
-offset_bottom = 24.0
-texture = ExtResource( 2 )
+[node name="TextureRect4" type="TextureRect" parent="quality" unique_id=128714163]
+layout_mode = 2
+texture = ExtResource("2")
 
-[node name="TextureRect5" type="TextureRect" parent="quality"]
-offset_left = 107.0
-offset_right = 131.0
-offset_bottom = 24.0
-texture = ExtResource( 2 )
+[node name="TextureRect5" type="TextureRect" parent="quality" unique_id=2008808138]
+layout_mode = 2
+texture = ExtResource("2")
 
-[node name="tooltip_node" parent="." instance=ExtResource( 3 )]
+[node name="tooltip_node" parent="." unique_id=1869965597 instance=ExtResource("3")]
+anchors_preset = 0

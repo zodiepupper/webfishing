@@ -1,83 +1,77 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene format=3 uid="uid://bq7jndgbq2no8"]
 
-[ext_resource path="res://Scenes/Interactables/npc_test.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Materials/tan.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Materials/brown.tres" type="Material" id=3]
-[ext_resource path="res://Assets/Materials/maroon.tres" type="Material" id=4]
-[ext_resource path="res://Assets/Models/noticeboard.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://Assets/Textures/noticeboard1.png" type="Texture2D" id=6]
-[ext_resource path="res://Assets/Textures/noticeboard3.png" type="Texture2D" id=7]
-[ext_resource path="res://Assets/Textures/noticeboard2.png" type="Texture2D" id=8]
-[ext_resource path="res://Assets/Textures/noticeboard4.png" type="Texture2D" id=9]
-[ext_resource path="res://Assets/Textures/catchpopup.png" type="Texture2D" id=10]
-[ext_resource path="res://Scenes/Interactables/questboard_popup.gd" type="Script" id=11]
+[ext_resource type="Script" uid="uid://bkb5saknkoamu" path="res://Scenes/Interactables/npc_test.gd" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://dlcw2ri4pa6r4" path="res://Assets/Models/noticeboard.obj" id="5"]
+[ext_resource type="Texture2D" uid="uid://bha8g25gvnxb5" path="res://Assets/Textures/noticeboard1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c6buig1qu85wq" path="res://Assets/Textures/noticeboard3.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dfgaxggcl1ky6" path="res://Assets/Textures/noticeboard2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://byqymwpvkjw0s" path="res://Assets/Textures/noticeboard4.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cmsqm0m3q2e1k" path="res://Assets/Textures/catchpopup.png" id="10"]
+[ext_resource type="Script" uid="uid://dysyav1l25e43" path="res://Scenes/Interactables/questboard_popup.gd" id="11"]
 
-[sub_resource type="BoxShape3D" id=10]
-extents = Vector3( 4.65124, 1.84215, 1.04565 )
+[sub_resource type="BoxShape3D" id="10"]
+size = Vector3(9.30248, 3.6843, 2.0913)
 
-[sub_resource type="BoxShape3D" id=9]
-extents = Vector3( 4.997, 3.482, 0.515 )
+[sub_resource type="BoxShape3D" id="9"]
+size = Vector3(9.994, 6.964, 1.03)
 
-[node name="npc_test" type="Area3D"]
-script = ExtResource( 1 )
-text = "READ QUEST BOARD"
+[node name="npc_test" type="Area3D" unique_id=1757638614]
+script = ExtResource("1")
 shop_id = "quest_board"
 cam_offset = NodePath("Marker3D")
+text = "READ QUEST BOARD"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25883 )
-shape = SubResource( 10 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=939266711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25883)
+shape = SubResource("10")
 
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D( -0.961923, 0.0459201, -0.269436, 0, 0.985786, 0.168008, 0.273322, 0.16161, -0.948249, 1.926, 0.696, -13.241 )
+[node name="Marker3D" type="Marker3D" parent="." unique_id=475877513]
+transform = Transform3D(-0.961923, 0.0459201, -0.269436, 0, 0.985786, 0.168008, 0.273322, 0.16161, -0.948249, 1.926, 0.696, -13.241)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource( 5 )
-material/0 = ExtResource( 4 )
-material/1 = ExtResource( 2 )
-material/2 = ExtResource( 3 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=208045105]
+mesh = ExtResource("5")
 
-[node name="notice" type="Sprite3D" parent="."]
-transform = Transform3D( -1.95519, 0, -1.70928e-07, 0, 1.95519, 0, 1.70928e-07, 0, -1.95519, 0, 1.1334, -0.324307 )
+[node name="notice" type="Sprite3D" parent="." unique_id=1149184340]
+transform = Transform3D(-1.95519, 0, -1.70928e-07, 0, 1.95519, 0, 1.70928e-07, 0, -1.95519, 0, 1.1334, -0.324307)
 shaded = true
 double_sided = false
-texture = ExtResource( 6 )
+texture = ExtResource("6")
 
-[node name="notice2" type="Sprite3D" parent="."]
-transform = Transform3D( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.65391, 0.777641, -0.327505 )
+[node name="notice2" type="Sprite3D" parent="." unique_id=406409044]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.65391, 0.777641, -0.327505)
 shaded = true
 double_sided = false
-texture = ExtResource( 8 )
+texture = ExtResource("8")
 
-[node name="notice5" type="Sprite3D" parent="."]
-transform = Transform3D( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.28572, -0.502005, -0.327505 )
+[node name="notice5" type="Sprite3D" parent="." unique_id=1569812743]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.28572, -0.502005, -0.327505)
 shaded = true
 double_sided = false
-texture = ExtResource( 8 )
+texture = ExtResource("8")
 
-[node name="notice3" type="Sprite3D" parent="."]
-transform = Transform3D( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.39993, 0.425042, -0.327505 )
+[node name="notice3" type="Sprite3D" parent="." unique_id=543415561]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.39993, 0.425042, -0.327505)
 shaded = true
 double_sided = false
-texture = ExtResource( 7 )
+texture = ExtResource("7")
 
-[node name="notice4" type="Sprite3D" parent="."]
-transform = Transform3D( -1.63832, 0, -1.43226e-07, 0, 1.63832, 0, 1.43226e-07, 0, -1.63832, -2.136, 0.0893146, -0.327505 )
+[node name="notice4" type="Sprite3D" parent="." unique_id=224491969]
+transform = Transform3D(-1.63832, 0, -1.43226e-07, 0, 1.63832, 0, 1.43226e-07, 0, -1.63832, -2.136, 0.0893146, -0.327505)
 shaded = true
 double_sided = false
-texture = ExtResource( 9 )
+texture = ExtResource("9")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1264742940]
 collision_layer = 257
 collision_mask = 257
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource( 9 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=601539087]
+shape = SubResource("9")
 
-[node name="popup" type="Sprite3D" parent="."]
-transform = Transform3D( 5.66348, 0, 0, 0, 5.66348, 0, 0, 0, 5.66348, 0, 7.22966, 0 )
-offset = Vector2( 0, 1.766 )
+[node name="popup" type="Sprite3D" parent="." unique_id=1975323613]
+transform = Transform3D(5.66348, 0, 0, 0, 5.66348, 0, 0, 0, 5.66348, 0, 7.22966, 0)
+offset = Vector2(0, 1.766)
 billboard = 1
 alpha_cut = 2
-texture = ExtResource( 10 )
-script = ExtResource( 11 )
+texture = ExtResource("10")
+script = ExtResource("11")

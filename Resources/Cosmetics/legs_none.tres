@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" script_class="CosmeticResource" format=3 uid="uid://dfee0x3td1ewr"]
 
-[ext_resource path="res://Resources/Scripts/cosmetic_resource.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://dfjodf5en7n1i" path="res://Resources/Scripts/cosmetic_resource.gd" id="1"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "No Pants"
 desc = "Show the world your true self."
 title = ""
-species_alt_mesh = [  ]
-main_color = Color( 0, 0, 0, 1 )
-body_pattern = [  ]
+species_alt_mesh = []
+main_color = Color(0, 0, 0, 1)
+body_pattern = []
 mirror_face = true
 allow_blink = true
 category = "legs"
